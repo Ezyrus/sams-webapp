@@ -9,8 +9,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="styles/schoolYear11.css?v=<?php echo time(); ?>">
-   <script src="js/schoolYear11.js"></script>
+   <link rel="stylesheet" href="../styles/gradeLevel11.css?v=<?php echo time(); ?>">
+
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -20,7 +20,7 @@
    <header>
       <div class="calLogo">
          <div>
-            <img src="assets/calHigh.png" alt="Caloocan Highschool Logo">
+            <img src="../assets/calHigh.png" alt="Caloocan Highschool Logo">
          </div>
       </div>
 
@@ -31,7 +31,7 @@
 
       <div class="depEdLogo">
          <div>
-            <img src="assets/depEd.png" alt="DepEd Logo">
+            <img src="../assets/depEd.png" alt="DepEd Logo">
          </div>
       </div>
    </header>
@@ -39,9 +39,9 @@
    <div class="schoolYearContainer">
 
       <div class="year">
-         <h6 onclick="previousYear()"><</h6>
-         <h6 id="recentYear">2022-2023</h6>
-         <h6 onclick="nextYear()">></h6>
+         <h6><</h6>
+         <h6>2022-2023</h6>
+         <h6>></h6>
       </div>
 
       <div class="month">
@@ -71,36 +71,35 @@
 
    </div>
 
-
    <footer>
 
       <div class="fdswdLogo">
          <div>
-            <img src="assets/dswd.png" alt="DWSD LOGO">
+            <img src="../assets/dswd.png" alt="DWSD LOGO">
          </div>
       </div>
 
       <div class="fdepEdLogo">
          <div>
-            <img src="assets/depEdSeal.png" alt="DEPED SEAL">
+            <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
          </div>
       </div>
 
       <div class="fcalCityLogo">
          <div>
-            <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
+            <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
          </div>
       </div>
 
       <div class="fCalHighLogo">
          <div>
-            <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+            <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
          </div>
       </div>
 
       <div class="fFourPs">
          <div>
-            <img src="assets/fourPs.png" alt="4P'S LOGO">
+            <img src="../assets/fourPs.png" alt="4P'S LOGO">
          </div>
       </div>
 

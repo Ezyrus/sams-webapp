@@ -39,7 +39,7 @@
    <div class="section-container">
 
       <section class="grade11">
-         <h1><a href="schoolYear11.php">GRADE 11</a></h1>
+         <h1><a href="grade11/gradeLevel11.php">GRADE 11</a></h1>
       </section>
 
       <section class="grade12">
