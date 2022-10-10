@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(168, 255, 118);
+  box-shadow: 0px 3px 5px rgb(49, 134, 0);
+}
+
+
+header div {
+  height: 100%;
+}
+
+/* CALOOCAN HIGH SCHOOL LOGO */
+.calLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.calLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+}
+/* CALOOCAN HIGH SCHOOL LOGO */
+
+/* SYSTEM NAME */
+.title {
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h5 {
+  padding-top: 1%;
+}
+/* SYSTEM NAME */
+
+/* DEPED LOGO */
+.depEdLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.depEdLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 3%;
+}
+/* DEPED LOGO */
+
+div.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/loginBg02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+div.signup-container section {
+  justify-content: center;
+  width: 35%;
+  height: 60%;
+}
+
+section.someInformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.signupFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.signupFormContainer form h3 {
+  color: rgb(17, 48, 0);
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-align: center;
+  width: 90%;
+  text-shadow: -2px -2px 3px rgb(168, 255, 118);
+  align-self: center;
+}
+
+section.signupFormContainer form {
+  font-family: "Tomorrow", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(43, 255, 0, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+  width: 70%;
+}
+
+section.signupFormContainer form:hover {
+  border-top: 1px solid rgb(0, 226, 19);
+  border-bottom: 1px solid rgb(0, 226, 19);
+}
+
+section.signupFormContainer form label {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-top: 15px;
+  text-shadow: -1px -1px 2px rgb(168, 255, 118);
+}
+
+section.signupFormContainer form input {
+  text-indent: 5px;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding: 3px;
+  width: 70%;
+  border-radius: 8px;
+  border-color: rgb(19, 114, 0);
+  margin-top: 3px;
+}
+
+.button-signUp {
+  padding: 5px;
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 5px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  font-weight: bolder;
+  border-style: none;
+  color: white;
+  background-color: black;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+.button-signUp:hover {
+  cursor: pointer;
+  background-color: rgb(168, 255, 118);
+  color: black;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1600px) {
+  .title {
+    font-size: smaller;
+  }
+  section.signupFormContainer form label {
+    font-size: smaller;
+    margin-top: 10px;
+  }
+
+  section.signupFormContainer form input {
+    font-size: smaller;
+  }
+
+  section.signupFormContainer form h3 {
+    font-size: x-large;
+  }
+
+  section.signupFormContainer form h6 {
+    font-size: x-small;
+  }
+
+  section.signupFormContainer form button.button-signUp {
+    font-size:small;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+  section.signupFormContainer form label {
+    font-size: smaller;
+    margin-top: 10px;
+  }
+
+  section.signupFormContainer form input {
+    font-size: smaller;
+  }
+
+  section.signupFormContainer form h3 {
+    font-size: x-large;
+  }
+
+  section.signupFormContainer form h6 {
+    font-size: x-small;
+  }
+
+  section.signupFormContainer form button.button-signUp {
+    font-size:x-small;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+footer {
+  color: white;
+  background-color: rgb(26, 156, 139,0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -3px 5px rgb(49, 134, 0);
+}
+
+footer div {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer div div img {
+  padding: 5%;
+}
+
+footer div div img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

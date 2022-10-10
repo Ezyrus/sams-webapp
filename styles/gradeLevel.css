@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(168, 255, 118);
+  box-shadow: 0px 3px 5px rgb(49, 134, 0);
+}
+
+header div {
+  height: 100%;
+}
+
+/* CALOOCAN HIGH SCHOOL LOGO */
+.calLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.calLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 6%;
+}
+/* CALOOCAN HIGH SCHOOL LOGO */
+
+/* SYSTEM NAME */
+.title {
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h5 {
+  padding-top: 1%;
+}
+/* SYSTEM NAME */
+
+/* DEPED LOGO */
+.depEdLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.depEdLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 6%;
+}
+/* DEPED LOGO */
+
+div.section-container {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+div.section-container section {
+  font-family: "Tomorrow", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  height: 100vh;
+  width: 100%;
+}
+
+div.section-container section:hover {
+  background-color: rgb(26, 156, 139);
+  height: 80vh;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(168, 255, 118);
+  text-shadow:-3px 3px 5px rgb(168, 255, 118);
+  
+}
+
+section.grade11 {
+  background-color: rgb(128, 255, 156);
+}
+
+section.grade11 h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+section.grade12 {
+  background-color: rgb(137, 255, 239);
+}
+
+section.grade12 h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1600px) {
+  .title {
+    font-size: smaller;
+  }
+  div.section-container section h1 {
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+  div.section-container section h1 {
+    font-size: smaller;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+footer {
+  color: white;
+  background-color: rgb(26, 156, 139,0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -1px 5px rgb(49, 134, 0);
+}
+
+footer div {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer div div img {
+  padding: 5%;
+}
+
+footer div div img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
