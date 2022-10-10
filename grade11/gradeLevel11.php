@@ -11,6 +11,7 @@
 
    <link rel="stylesheet" href="../styles/gradeLevel11.css?v=<?php echo time(); ?>">
 
+
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -47,7 +48,7 @@
       <div class="month">
 
          <div class="JanApr">
-            <h3>January</h3>
+            <h3>January</h3>/
             <h3>February</h3>
             <h3>March</h3>
             <h3>April</h3>
