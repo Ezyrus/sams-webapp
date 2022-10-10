@@ -47,24 +47,24 @@
       <div class="month">
 
          <div class="JanApr">
-            <h3 onclick="noData()">January</h3>
-            <h3 onclick="noData()">February</h3>
-            <h3 onclick="noData()">March</h3>
-            <h3 onclick="noData()">April</h3>
+            <h3>January</h3>
+            <h3>February</h3>
+            <h3>March</h3>
+            <h3>April</h3>
          </div>
 
          <div class="MayAug">
-            <h3 onclick="noData()">May</h3>
-            <h3 onclick="noData()">June</h3>
-            <h3 onclick="noData()">July</h3>
-            <h3 onclick="noData()">August</h3>
+            <h3>May</h3>
+            <h3>June</h3>
+            <h3>July</h3>
+            <h3>August</h3>
          </div>
 
          <div class="SepDec">
-            <h3 onclick="noData()">September</h3>
-            <h3>October</h3>
-            <h3 onclick="noData()">November</h3>
-            <h3 onclick="noData()">December</h3>
+            <h3>September</h3>
+            <h3><a href="">October</a></h3>
+            <h3>November</h3>
+            <h3>December</h3>
          </div>
 
       </div>

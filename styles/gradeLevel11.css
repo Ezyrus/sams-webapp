@@ -80,6 +80,11 @@ div.schoolYearContainer {
   
 }
 
+ a {
+  text-decoration: none;
+  color: white;
+ }
+
 div.schoolYearContainer div.year {
   margin-top: 6vh;
   width: 97%;
