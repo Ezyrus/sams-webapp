@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <link rel="stylesheet" href="../styles/grade11year2022.css?v=<?php echo time(); ?>">
-
+   <script src="js/gradeLevel.js"></script>
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -38,9 +38,9 @@
 
    <div class="schoolYearContainer">
       <div class="year">
-         <h6 id="previousYear"><</h6>
-         <h6 id="recentYear">2022</h6>
-         <h6 id="nextYear">></h6>
+         <h5 onclick="noData()"><</h5>
+         <h6 id="recentYear">Grade 11 - Year 2022</h6>
+         <h5 id="nextYear()">></h5>
       </div>
 
       <div class="month">
