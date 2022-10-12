@@ -77,13 +77,12 @@ div.schoolYearContainer {
   align-items: center;
   flex-direction: column;
   font-family: "Tomorrow", sans-serif;
-  
 }
 
- a {
+a {
   text-decoration: none;
   color: white;
- }
+}
 
 div.schoolYearContainer div.year {
   margin-top: 6vh;
@@ -102,7 +101,6 @@ div.year h5 {
   width: 5%;
   text-align: center;
   font-size: 50px;
-  letter-spacing: 3px;
 }
 
 div.year h5:hover {
@@ -121,12 +119,11 @@ div.year a {
   color: black;
 }
 
-
 div.schoolYearContainer div.month {
   font-size: 20px;
   width: 95%;
   height: 60vh;
-  background-color: rgb(26, 156, 139,0.3);
+  background-color: rgb(26, 156, 139, 0.3);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -135,7 +132,7 @@ div.schoolYearContainer div.month {
   border-radius: 0px 0px 25px 25px;
 }
 
-div.month div{
+div.month div {
   height: 100%;
   width: 100%;
   display: flex;
@@ -155,23 +152,34 @@ div.month div h3 {
   font-size: 23px;
   letter-spacing: 3px;
   box-shadow: 0px 0px 2px rgb(168, 255, 118);
-  
 }
 
 div.month div h3:hover {
   cursor: pointer;
-  background-color: rgb(168, 255, 118,0.2);
+  background-color: rgb(168, 255, 118, 0.2);
   box-shadow: 0px 0px 2px rgb(168, 255, 118);
   font-size: xx-large;
   border-radius: 0px 0px 25px 25px;
   transition: 0.2s;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1600px) {
   .title {
     font-size: smaller;
+  }
+  div.year h5 {
+    font-size: 40px;
+  }
+  div.year h6 {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+  }
+  div.month div h3{
+    font-size: 18px;
+  }
+  div.month div h3:hover {
+    font-size: 23px;
   }
 }
 
@@ -179,12 +187,25 @@ div.month div h3:hover {
   .title {
     font-size: smaller;
   }
+  div.year h5 {
+    font-size: 40px;
+  }
+  div.year h6 {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+  }
+  div.month div h3{
+    font-size: 18px;
+  }
+  div.month div h3:hover {
+    font-size: 23px;
+  }
 }
 /* RESPONSIVE DESIGN */
 
 footer {
   color: white;
-  background-color: rgb(26, 156, 139,0.5);
+  background-color: rgb(26, 156, 139, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
