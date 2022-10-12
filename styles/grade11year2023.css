@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(168, 255, 118);
+  box-shadow: 0px 3px 5px rgb(49, 134, 0);
+}
+
+header div {
+  height: 100%;
+}
+
+/* CALOOCAN HIGH SCHOOL LOGO */
+.calLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.calLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 6%;
+}
+/* CALOOCAN HIGH SCHOOL LOGO */
+
+/* SYSTEM NAME */
+.title {
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h5 {
+  padding-top: 1%;
+}
+/* SYSTEM NAME */
+
+/* DEPED LOGO */
+.depEdLogo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.depEdLogo div img {
+  height: 100%;
+  width: 100%;
+  padding: 6%;
+}
+/* DEPED LOGO */
+
+div.schoolYearContainer {
+  position: absolute;
+  margin-top: 10vh;
+  height: 90vh;
+  width: 100%;
+  background-image: url("../assets/loginBg02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Tomorrow", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+div.schoolYearContainer div.year {
+  margin-top: 6vh;
+  width: 97%;
+  height: 7vh;
+  background-color: rgb(168, 255, 118, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  color: black;
+  border-radius: 5px;
+}
+
+div.year h5 {
+  width: 5%;
+  text-align: center;
+  font-size: 50px;
+}
+
+div.year h5:hover {
+  cursor: pointer;
+}
+
+div.year h6 {
+  width: 60%;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 5px;
+}
+
+div.year a {
+  text-decoration: none;
+  color: black;
+}
+
+div.schoolYearContainer div.month {
+  font-size: 20px;
+  width: 95%;
+  height: 60vh;
+  background-color: rgb(26, 156, 139, 0.3);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0px 1px 2px rgb(49, 134, 0);
+  border-radius: 0px 0px 25px 25px;
+}
+
+div.month div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+div.month div h3 {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 30px;
+  font-size: 23px;
+  letter-spacing: 3px;
+  box-shadow: 0px 0px 2px rgb(168, 255, 118);
+}
+
+div.month div h3:hover {
+  cursor: pointer;
+  background-color: rgb(168, 255, 118, 0.2);
+  box-shadow: 0px 0px 2px rgb(168, 255, 118);
+  font-size: xx-large;
+  border-radius: 0px 0px 25px 25px;
+  transition: 0.2s;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1600px) {
+  .title {
+    font-size: smaller;
+  }
+  div.year h5 {
+    font-size: 40px;
+  }
+  div.year h6 {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+  }
+  div.month div h3{
+    font-size: 18px;
+  }
+  div.month div h3:hover {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+  div.year h5 {
+    font-size: 40px;
+  }
+  div.year h6 {
+    font-size: 25px;
+    letter-spacing: 2.5px;
+  }
+  div.month div h3{
+    font-size: 18px;
+  }
+  div.month div h3:hover {
+    font-size: 23px;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+footer {
+  color: white;
+  background-color: rgb(26, 156, 139, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -3px 5px rgb(49, 134, 0);
+}
+
+footer div {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer div div img {
+  padding: 5%;
+}
+
+footer div div img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
