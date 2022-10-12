@@ -9,8 +9,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/grade11year2022.css?v=<?php echo time(); ?>">
-   <script src="../js/gradeLevel.js"></script>
+   <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
+
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -36,36 +36,7 @@
       </div>
    </header>
 
-   <div class="schoolYearContainer">
-      <div class="year">
-         <h5 onclick="noData()"><</h5>
-         <h6 id="recentYear"><a href="../gradeLevel.php">Grade 11</a> - Year 2022</h6>
-         <h5><a href="grade11year2023.php">></a></h5>
-      </div>
 
-      <div class="month">
-         <div class="JanApr">
-            <h3 onclick="noData()"><a href="#">January</a></h3>
-            <h3 onclick="noData()"><a href="#">February</a></h3>
-            <h3 onclick="noData()"><a href="#">March</a></h3>
-            <h3 onclick="noData()"><a href="#">April</a></h3>
-         </div>
-
-         <div class="MayAug">
-            <h3 onclick="noData()"><a href="#">May</a></h3>
-            <h3 onclick="noData()"><a href="#">June</a></h3>
-            <h3 onclick="noData()"><a href="#">July</a></h3>
-            <h3 onclick="noData()"><a href="#">August</a></h3>
-         </div>
-
-         <div class="SepDec">
-            <h3 onclick="noData()"><a href="#">September</a></h3>
-            <h3><a href="grade11october2022.php">October</a></h3>
-            <h3 onclick="noData()"><a href="#">November</a></h3>
-            <h3 onclick="noData()"><a href="#">December</a></h3>
-         </div>
-      </div>
-   </div>
 
    <footer>
 
