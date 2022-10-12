@@ -9,7 +9,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/gradeLevel11.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/grade11year2022.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
 
@@ -37,15 +37,13 @@
    </header>
 
    <div class="schoolYearContainer">
-
       <div class="year">
-         <h6><</h6>
-         <h6>2022</h6>
-         <h6>></h6>
+         <h6 id="previousYear"><</h6>
+         <h6 id="recentYear">2022</h6>
+         <h6 id="nextYear">></h6>
       </div>
 
       <div class="month">
-
          <div class="JanApr">
             <h3>January</h3>
             <h3>February</h3>
@@ -62,13 +60,11 @@
 
          <div class="SepDec">
             <h3>September</h3>
-            <h3><a href="">October</a></h3>
+            <h3><a href="#">October</a></h3>
             <h3>November</h3>
             <h3>December</h3>
          </div>
-
       </div>
-
    </div>
 
    <footer>
