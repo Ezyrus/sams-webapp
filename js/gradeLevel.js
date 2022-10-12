@@ -1,3 +1,3 @@
 function noData() {
-    alert('No data available to display');
+    alert('No data available to display.');
 }

@@ -116,6 +116,11 @@ div.year h6 {
   letter-spacing: 5px;
 }
 
+div.year a {
+  text-decoration: none;
+  color: black;
+}
+
 
 div.schoolYearContainer div.month {
   font-size: 20px;
