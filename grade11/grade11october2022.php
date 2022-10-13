@@ -1,3 +1,6 @@
+<?php 
+   session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +39,16 @@
       </div>
    </header>
 
+   <section class="nav">
+     
+      <div class="admin">
+         <h6><?php echo $_SESSION['username']; ?></h6>
+         <h3>Admin</h3>
+      </div>
 
+
+      <h1>logout</h1>
+   </section>
 
    <footer>
 
