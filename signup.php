@@ -1,4 +1,5 @@
 <?php
+    session_start(); 
     require_once "databaseConnection.php";
 
     if (isset($_POST['goSignUp'])) {
