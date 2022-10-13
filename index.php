@@ -63,17 +63,16 @@
 
          <form action="" method="post">
             <h3>Log-in here</h3>
-            <label for="Username">Username</label>
 
-            <input type="username" placeholder="Username..." id="username" name="username">
+            <label for="Username">Username</label>
+               <input type="username" placeholder="Username..." id="username" name="username">
 
             <label for="Password">Password</label>
-
-            <input type="password" placeholder="Password..." id="password" name="password">
+               <input type="password" placeholder="Password..." id="password" name="password">
 
             <button type="submit" class="button-LogIn" name="goLog">Log-In</button>
-
             <h6>Not a member? <a href="signup.php">Sign-Up now</a></h6>
+
          </form>
       </section>
    </div>

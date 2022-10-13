@@ -7,7 +7,7 @@
 
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $validationQuery = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
+            $validationQuery = "SELECT * FROM admin WHERE username = '$username'";
             $validationResult = mysqli_query(databaseConnection(), $validationQuery);
             $validationCount = mysqli_num_rows($validationResult);
 
