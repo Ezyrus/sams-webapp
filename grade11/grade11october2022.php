@@ -43,12 +43,19 @@
    <section class="nav">
      
       <div class="admin">
-      <h3>Administrator</h3>
-      <h6><?php echo $_SESSION['username']; ?></h6>
+         <h3>Administrator</h3>
+         <h6><?php echo $_SESSION['username']; ?></h6>
       </div>
 
+      <div class="title">
+        <h3>October 2022</h3>
+         <h6>4p's Grade 11 Student's Records</h6>
+      </div>
 
+      <div class="navigate">
+      <h2 class="goback"><a href="grade11year2022.php">go back</a></h2>
       <h1><a href="../logout.php">logout</a></h1>
+      </div>
    </section>
 
    <footer>
