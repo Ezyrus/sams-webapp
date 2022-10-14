@@ -69,7 +69,7 @@ section.nav {
   width: 30vh;
   left: 0;
   z-index: -1;
-  position: fixed;
+  position: absolute;
   background-color: rgb(77, 209, 0);
   display: flex;
   flex-direction: column;
@@ -140,6 +140,17 @@ section.nav .navigate h1 a {
   letter-spacing: 3px;
   text-decoration: none;
   color: rgb(160, 0, 0);
+}
+
+section.main {
+  z-index: -1;
+  background-color: aqua;
+  position: absolute;
+  top: 13vh;
+  right: 0;
+  bottom: 0;
+  width: 83%;
+  height: 77vh;
 }
 
 /* RESPONSIVE DESIGN */
