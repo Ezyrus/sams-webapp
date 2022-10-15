@@ -5,8 +5,11 @@
    if (isset($_POST['goLog'])) {
       $adminUsername = $_POST['username'];
       $adminPassword = $_POST['password'];
+
       $validationQuery = "SELECT * FROM ADMIN WHERE username = '$adminUsername' AND PASSWORD = '$adminPassword'";
+
       $validationResult = mysqli_query(databaseConnection(), $validationQuery);
+
       $validationCount = mysqli_num_rows($validationResult);
 
       if ($validationCount > 0) {
@@ -71,6 +74,7 @@
                <input type="password" placeholder="Password..." id="password" name="password">
 
             <button type="submit" class="button-LogIn" name="goLog">Log-In</button>
+            
             <h6>Not a member? <a href="signup.php">Sign-Up now</a></h6>
 
          </form>
