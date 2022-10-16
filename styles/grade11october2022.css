@@ -144,7 +144,6 @@ section.nav .navigate h1 a {
 
 section.main {
   z-index: -1;
-  border: 2px darkblue solid;
   position: absolute;
   top: 13vh;
   right: 0;
