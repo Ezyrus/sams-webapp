@@ -67,40 +67,78 @@
       <table>
          <tr>
             <th>Student ID</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-            <th>10</th>
-            <th>11</th>
-            <th>12</th>
-            <th>13</th>
-            <th>14</th>
-            <th>15</th>
-            <th>16</th>
-            <th>17</th>
-            <th>18</th>
-            <th>19</th>
-            <th>20</th>
-            <th>21</th>
-            <th>22</th>
-            <th>23</th>
-            <th>24</th>
-            <th>25</th>
-            <th>26</th>
-            <th>27</th>
-            <th>28</th>
-            <th>29</th>
-            <th>30</th>
-            <th>31</th>
+            <th class="monthDays">1</th>
+            <th class="monthDays">2</th>
+            <th class="monthDays">3</th>
+            <th class="monthDays">4</th>
+            <th class="monthDays">5</th>
+            <th class="monthDays">6</th>
+            <th class="monthDays">7</th>
+            <th class="monthDays">8</th>
+            <th class="monthDays">9</th>
+            <th class="monthDays">10</th>
+            <th class="monthDays">11</th>
+            <th class="monthDays">12</th>
+            <th class="monthDays">13</th>
+            <th class="monthDays">14</th>
+            <th class="monthDays">15</th>
+            <th class="monthDays">16</th>
+            <th class="monthDays">17</th>
+            <th class="monthDays">18</th>
+            <th class="monthDays">19</th>
+            <th class="monthDays">20</th>
+            <th class="monthDays">21</th>
+            <th class="monthDays">22</th>
+            <th class="monthDays">23</th>
+            <th class="monthDays">24</th>
+            <th class="monthDays">25</th>
+            <th class="monthDays">26</th>
+            <th class="monthDays">27</th>
+            <th class="monthDays">28</th>
+            <th class="monthDays">29</th>
+            <th class="monthDays">30</th>
+            <th class="monthDays">31</th>
             <th>School Days</th>
             <th>Total Present</th>
             <th>Total Absent</th>
+         </tr>
+
+         <tr>
+            <td>1</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>P</td>
+            <td>21</td>
+            <td>21</td>
+            <td>0</td>
          </tr>
       </table>
    </section>

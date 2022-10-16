@@ -162,13 +162,19 @@ div.clickable {
 }
 
 table {
-  background-color: antiquewhite;
+  text-align: center;
   width: 100%;
 }
 
 tr {
-  
   width: 100%;
+}
+
+th {
+  background-color:bisque;
+}
+th.monthDays {
+  width: 2.5%;
 }
 
 /* RESPONSIVE DESIGN */
