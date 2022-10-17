@@ -68,6 +68,7 @@ div.section-container {
   letter-spacing: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -109,6 +110,33 @@ section.grade12 h1 a {
   text-decoration: none;
   color: black;
 }
+
+div.addStudent {
+  height: 5vh;
+  width: 17%;
+  bottom: 10vh;
+  position: absolute;
+  border-radius: 20px 20px 0px 0px ;
+  background-color: rgba(0, 158, 92, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+div.addStudent h3 a {
+  color: white;
+  width: 100%;
+  text-decoration: none;
+  letter-spacing: 5px;
+}
+
+div.addStudent:hover {
+  height: 6vh;
+  transition: 0.5s;
+}
+
+
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1600px) {

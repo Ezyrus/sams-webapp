@@ -50,19 +50,19 @@
       <div class="title">
         <h3>October 2022</h3>
          <h6>4p's Grade 11 Student's Records</h6>
+         <hr>
+         <h3><a href="#">Register students</a></h3>
       </div>
 
+      
       <div class="navigate">
       <h2 class="goback"><a href="grade11year2022.php">go back</a></h2>
       <h1><a href="../logout.php">logout</a></h1>
       </div>
+
    </section>
 
    <section class="main">
-
-      <div class="clickables">
-         
-      </div>
 
       <table>
          <tr>
@@ -104,7 +104,7 @@
          </tr>
 
          <tr>
-            <td>1</td>
+            <td><a href="">1</a></td>
             <td>P</td>
             <td>P</td>
             <td>P</td>

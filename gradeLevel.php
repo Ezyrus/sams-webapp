@@ -50,7 +50,14 @@
          <h1><a href="#">GRADE 12</a></h1>
       </section>
 
+      <div class="addStudent">
+         <h3><a href="#">Register Students</a>
+      </h3>
+      </div>
+      
    </div>
+
+  
 
    <footer>
 
