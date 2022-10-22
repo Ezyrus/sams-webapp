@@ -66,10 +66,10 @@ header div {
 section.nav {
   font-family: "Tomorrow", sans-serif;
   height: 100vh;
-  width: 30vh;
+  width: 27vh;
   left: 0;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   background-color: rgb(77, 209, 0);
   display: flex;
   flex-direction: column;
@@ -140,7 +140,7 @@ section.nav div.title hr {
 
 section.nav .navigate  {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
   align-items: center;
@@ -161,13 +161,14 @@ section.nav .navigate h1 a {
 }
 
 section.main {
+  font-family: "Tomorrow", sans-serif;
+  overflow-x:auto;
   z-index: -1;
   position: absolute;
   top: 13vh;
   right: 0;
   bottom: 0;
-  width: 83.5%;
-  height: 77vh;
+  width: 86%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -179,18 +180,39 @@ section.main table {
   width: 100%;
 }
 
-section.main table tr {
+section.main table tr.tableHeader{
+  font-size: 16px;
+  background-color: rgb(212, 212, 212);
   width: 100%;
 }
 
-section.main table tr th {
-  background-color:bisque;
+section.main table tr.tableHeader th.otherInfo{
+  width: 5% ;
+  padding: 1px;
+}
+
+section.main table tr.tableHeader th.monthDays {
+  width: 1.8%;
+}
+
+.classDay01 {
+  background-color: green;
+}
+.classDay02 {
+  background-color: red;
+}
+.classDay03 {
+  background-color: yellow;
+}
+
+section.main table tr td.studentInfo {
+  padding: 2px;
+  text-align: center;
   font-size: 15px;
 }
 
-section.main table th.monthDays {
-  width: 2.5%;
-}
+
+
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1600px) {

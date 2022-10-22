@@ -43,15 +43,15 @@
    <section class="nav">
      
       <div class="admin">
-         <h3>Administrator</h3>
+         <h3>Admin</h3>
          <h6><?php echo $_SESSION['username']; ?></h6>
       </div>
 
       <div class="title">
         <h3>October 2022</h3>
-         <h6>4p's Grade 11 Student's Records</h6>
+         <h6>4p's Grade 11 Student Records</h6>
          <hr>
-         <h3><a href="#">Register students</a></h3>
+         <h3><a href="#">Add students</a></h3>
       </div>
 
       
@@ -65,8 +65,10 @@
    <section class="main">
 
       <table>
-         <tr>
-            <th>Student ID</th>
+         <tr class="tableHeader">
+            <th  class="otherInfo">LRN</th>
+            <th  class="otherInfo">Student Name</th>
+            <th  class="otherInfo">Strand/ Section</th>
             <th class="monthDays">1</th>
             <th class="monthDays">2</th>
             <th class="monthDays">3</th>
@@ -98,52 +100,56 @@
             <th class="monthDays">29</th>
             <th class="monthDays">30</th>
             <th class="monthDays">31</th>
-            <th>School Days</th>
-            <th>Total Present</th>
-            <th>Total Absent</th>
+            <th  class="otherInfo">School Days</th>
+            <th  class="otherInfo">Total Present</th>
+            <th  class="otherInfo">Total Absent</th>
          </tr>
 
          <tr>
-            <td><a href="">1</a></td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>P</td>
-            <td>21</td>
-            <td>21</td>
-            <td>0</td>
+            <td class="studentInfo">20200231-M</td>
+            <td class="studentInfo">Cyrus C. Cantero</td>
+            <td class="studentInfo">STEM 12-1</td>
+            <td class="classDays classDay01"></td>
+            <td class="classDays classDay02"></td>
+            <td class="classDays classDay03"></td>
+            <td class="classDays classDay04"></td>
+            <td class="classDays classDay05"></td>
+            <td class="classDays classDay06"></td>
+            <td class="classDays classDay07"></td>
+            <td class="classDays classDay08"></td>
+            <td class="classDays classDay09"></td>
+            <td class="classDays classDay10"></td>
+            <td class="classDays classDay11"></td>
+            <td class="classDays classDay12"></td>
+            <td class="classDays classDay13"></td>
+            <td class="classDays classDay14"></td>
+            <td class="classDays classDay15"></td>
+            <td class="classDays classDay16"></td>
+            <td class="classDays classDay17"></td>
+            <td class="classDays classDay18"></td>
+            <td class="classDays classDay19"></td>
+            <td class="classDays classDay20"></td>
+            <td class="classDays classDay21"></td>
+            <td class="classDays classDay22"></td>
+            <td class="classDays classDay23"></td>
+            <td class="classDays classDay24"></td>
+            <td class="classDays classDay25"></td>
+            <td class="classDays classDay26"></td>
+            <td class="classDays classDay27"></td>
+            <td class="classDays classDay28"></td>
+            <td class="classDays classDay29"></td>
+            <td class="classDays classDay30"></td>
+            <td class="classDays classDay31"></td>
+            <td class="studentInfo">31</td>
+            <td class="studentInfo">31</td>
+            <td class="studentInfo">0</td>
          </tr>
+
+         
       </table>
    </section>
    
-   <footer>
+   <!-- <footer>
 
       <div class="fdswdLogo">
          <div>
@@ -175,7 +181,7 @@
          </div>
       </div>
 
-   </footer>
+   </footer> -->
 
    
 </body>
