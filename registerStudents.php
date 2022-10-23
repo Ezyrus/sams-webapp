@@ -48,34 +48,34 @@
             <div class="studentInfo">
                 
                 <div class="mainInfo">
-                    <label for="lrn">LRN :</label>
+                    <label for="lrn">LRN</label>
                     <input type="text" name="lrn">
 
-                    <label for="name">Name : </label>
+                    <label for="name">Name</label>
                     <input type="text" name="name">
 
-                    <label for="section">Section : </label>
+                    <label for="section">Section</label>
                     <input type="text" name="section">
                 </div>
 
                 <div class="otherInfo">
-                    <label for="age">Age : </label>
+                    <label for="age">Age</label>
                     <input type="" name="age">
 
-                    <label for="address">Address : </label>
+                    <label for="address">Address</label>
                     <input type="text" name="address">
 
-                    <label for="email">Email: </label>
+                    <label for="email">Email</label>
                     <input type="text" name="email">
 
-                    <label for="number">Number : </label>
+                    <label for="number">Number</label>
                     <input type="text" name="number">
                 </div>
 
             </div>
+
                 <button type="submit" name="registStudent">Register</button>
 
-            
         </form>
 
     </div>
