@@ -18,8 +18,6 @@
          if ($validationCount) {
             echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
          } else {
-            
-
             if(empty($studentLrn)) {
                echo '<script>alert("Student LRN field is required")</script>';
             } else {
