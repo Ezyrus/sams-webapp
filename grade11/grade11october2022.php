@@ -54,6 +54,23 @@
          <h3><a href="#">Add students</a></h3>
       </div>
 
+      <div class="legend">
+         <div class="present">
+            <h3>present :</h3>
+            <h3 class="color present">color</h3>
+         </div>
+
+         <div class="absent">
+            <h3>absent :</h3>
+            <h3 class="color absent">color</h3>
+         </div>
+
+         <div class="schoolDays">
+            <h3>No Class :</h3>
+            <h3 class="color schoolDays">color</h3>
+         </div>
+      </div>
+
       
       <div class="navigate">
       <h2 class="goback"><a href="grade11year2022.php">go back</a></h2>
@@ -106,9 +123,9 @@
          </tr>
 
          <tr>
-            <td class="studentInfo">20200231-M</td>
-            <td class="studentInfo">Cyrus C. Cantero</td>
-            <td class="studentInfo">STEM 12-1</td>
+            <td class="studentInfo">136618123456</td>
+            <td class="studentInfo">cyrus c. cantero</td>
+            <td class="studentInfo">STEM 11-1</td>
             <td class="classDays classDay01"></td>
             <td class="classDays classDay02"></td>
             <td class="classDays classDay03"></td>
@@ -140,8 +157,128 @@
             <td class="classDays classDay29"></td>
             <td class="classDays classDay30"></td>
             <td class="classDays classDay31"></td>
-            <td class="studentInfo">31</td>
-            <td class="studentInfo">31</td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">0</td>
+         </tr>
+
+         <tr>
+            <td class="studentInfo">136612070392</td>
+            <td class="studentInfo">john edrich viray</td>
+            <td class="studentInfo">STEM 11-1</td>
+            <td class="classDays classDay01"></td>
+            <td class="classDays classDay02"></td>
+            <td class="classDays classDay03"></td>
+            <td class="classDays classDay04"></td>
+            <td class="classDays classDay05"></td>
+            <td class="classDays classDay06"></td>
+            <td class="classDays classDay07"></td>
+            <td class="classDays classDay08"></td>
+            <td class="classDays classDay09"></td>
+            <td class="classDays classDay10"></td>
+            <td class="classDays classDay11"></td>
+            <td class="classDays classDay12"></td>
+            <td class="classDays classDay13"></td>
+            <td class="classDays classDay14"></td>
+            <td class="classDays classDay15"></td>
+            <td class="classDays classDay16"></td>
+            <td class="classDays classDay17"></td>
+            <td class="classDays classDay18"></td>
+            <td class="classDays classDay19"></td>
+            <td class="classDays classDay20"></td>
+            <td class="classDays classDay21"></td>
+            <td class="classDays classDay22"></td>
+            <td class="classDays classDay23"></td>
+            <td class="classDays classDay24"></td>
+            <td class="classDays classDay25"></td>
+            <td class="classDays classDay26"></td>
+            <td class="classDays classDay27"></td>
+            <td class="classDays classDay28"></td>
+            <td class="classDays classDay29"></td>
+            <td class="classDays classDay30"></td>
+            <td class="classDays classDay31"></td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">0</td>
+         </tr>
+
+         <tr>
+            <td class="studentInfo">136618070392</td>
+            <td class="studentInfo">paolo rafael s. tampico</td>
+            <td class="studentInfo">ICT 11-1</td>
+            <td class="classDays classDay01"></td>
+            <td class="classDays classDay02"></td>
+            <td class="classDays classDay03"></td>
+            <td class="classDays classDay04"></td>
+            <td class="classDays classDay05"></td>
+            <td class="classDays classDay06"></td>
+            <td class="classDays classDay07"></td>
+            <td class="classDays classDay08"></td>
+            <td class="classDays classDay09"></td>
+            <td class="classDays classDay10"></td>
+            <td class="classDays classDay11"></td>
+            <td class="classDays classDay12"></td>
+            <td class="classDays classDay13"></td>
+            <td class="classDays classDay14"></td>
+            <td class="classDays classDay15"></td>
+            <td class="classDays classDay16"></td>
+            <td class="classDays classDay17"></td>
+            <td class="classDays classDay18"></td>
+            <td class="classDays classDay19"></td>
+            <td class="classDays classDay20"></td>
+            <td class="classDays classDay21"></td>
+            <td class="classDays classDay22"></td>
+            <td class="classDays classDay23"></td>
+            <td class="classDays classDay24"></td>
+            <td class="classDays classDay25"></td>
+            <td class="classDays classDay26"></td>
+            <td class="classDays classDay27"></td>
+            <td class="classDays classDay28"></td>
+            <td class="classDays classDay29"></td>
+            <td class="classDays classDay30"></td>
+            <td class="classDays classDay31"></td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">0</td>
+         </tr>
+
+         <tr>
+            <td class="studentInfo">223505070048</td>
+            <td class="studentInfo">arabella belardo</td>
+            <td class="studentInfo">ICT 11-1</td>
+            <td class="classDays classDay01"></td>
+            <td class="classDays classDay02"></td>
+            <td class="classDays classDay03"></td>
+            <td class="classDays classDay04"></td>
+            <td class="classDays classDay05"></td>
+            <td class="classDays classDay06"></td>
+            <td class="classDays classDay07"></td>
+            <td class="classDays classDay08"></td>
+            <td class="classDays classDay09"></td>
+            <td class="classDays classDay10"></td>
+            <td class="classDays classDay11"></td>
+            <td class="classDays classDay12"></td>
+            <td class="classDays classDay13"></td>
+            <td class="classDays classDay14"></td>
+            <td class="classDays classDay15"></td>
+            <td class="classDays classDay16"></td>
+            <td class="classDays classDay17"></td>
+            <td class="classDays classDay18"></td>
+            <td class="classDays classDay19"></td>
+            <td class="classDays classDay20"></td>
+            <td class="classDays classDay21"></td>
+            <td class="classDays classDay22"></td>
+            <td class="classDays classDay23"></td>
+            <td class="classDays classDay24"></td>
+            <td class="classDays classDay25"></td>
+            <td class="classDays classDay26"></td>
+            <td class="classDays classDay27"></td>
+            <td class="classDays classDay28"></td>
+            <td class="classDays classDay29"></td>
+            <td class="classDays classDay30"></td>
+            <td class="classDays classDay31"></td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
          </tr>
 

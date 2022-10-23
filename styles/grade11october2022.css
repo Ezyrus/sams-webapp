@@ -74,7 +74,7 @@ section.nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap:20%;
+  gap:7%;
   align-items: center;
 }
 
@@ -138,6 +138,43 @@ section.nav div.title hr {
 }
 
 
+div.legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+div.legend div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+div.legend div h3.color {
+  width: 100%;
+  background-color: aliceblue;
+}
+
+div.legend div h3.present {
+  background-color: green;
+  color: green;
+}
+
+div.legend div h3.absent {
+  background-color: red;
+  color: red;
+}
+
+div.legend div h3.schoolDays {
+  background-color: yellow;
+  color: yellow;
+}
+
 section.nav .navigate  {
   display: flex;
   flex-direction: column;
@@ -195,13 +232,11 @@ section.main table tr.tableHeader th.monthDays {
   width: 1.8%;
 }
 
-.classDay01 {
+.classDay01, .classDay02, .classDay03, .classDay04, .classDay05, .classDay06, .classDay07, .classDay08, .classDay09, .classDay10, .classDay11, .classDay12, .classDay13, .classDay14, .classDay15, .classDay16, .classDay22, .classDay23, .classDay24, .classDay25, .classDay26, .classDay27, .classDay28 {
   background-color: green;
 }
-.classDay02 {
-  background-color: red;
-}
-.classDay03 {
+
+.classDay08, .classDay09, .classDay17, .classDay18, .classDay29, .classDay30, .classDay19, .classDay20, .classDay21, .classDay31 {
   background-color: yellow;
 }
 

@@ -157,11 +157,9 @@ div.studentProfile div div form button:hover {
 
 div.studentProfile div table {
   width: 97%;
-  table-layout: fixed;
 }
 
 div.studentProfile div table tr th {
-  height: 10%;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -169,6 +167,7 @@ div.studentProfile div table tr th {
 }
 
 div.studentProfile div table tr td {
+  text-transform: lowercase;
   text-shadow: -1px 1px 1px black;
   color: white;
   text-align: center;
