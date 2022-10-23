@@ -42,7 +42,11 @@
     </header>
 
     <div class="studentProfile">
-        
+        <h3>Student Profile</h3>
+
+        <form action="" method="get">
+            <input type="text" name="search" namespace="Search by student ... ">
+        </form>
     </div>
 
     <footer>
