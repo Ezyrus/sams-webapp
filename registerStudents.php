@@ -1,17 +1,16 @@
 <?php 
    session_start(); 
 
-   $studentLrn = $_POST['lrn'];
-   $studentName = $_POST['name'];
-   $studentSection = $_POST['section'];
-   $studentAge = $_POST['age'];
-   $studentAddress = $_POST['address'];
-   $studentEmail = $_POST['email'];
-   $studentNumber = $_POST['number'];
    $registerStudentBtn = $_POST['registStudent'];
 
-   if (isset()) {
-
+   if (isset($registerStudentBtn)) {
+      $studentLrn = $_POST['lrn'];
+      $studentName = $_POST['name'];
+      $studentSection = $_POST['section'];
+      $studentAge = $_POST['age'];
+      $studentAddress = $_POST['address'];
+      $studentEmail = $_POST['email'];
+      $studentNumber = $_POST['number'];
    }
 ?>
 
