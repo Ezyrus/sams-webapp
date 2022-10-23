@@ -1,6 +1,8 @@
 <?php 
    session_start(); 
    require_once "databaseConnection.php";
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -52,26 +54,28 @@
 
             <table>
                 <tr>
-                    <th>lrn</th>
-                    <th>name</th>
-                    <th>section</th>
-                    <th>age</th>
-                    <th>address</th>
-                    <th>email</th>
-                    <th>number</th>
-                    <th>update</th>
+                    <th class="lrn">LRN</th>
+                    <th class="name">Full Name</th>
+                    <th class="section">Section</th>
+                    <th class="age">Age</th>
+                    <th class="address">Address</th>
+                    <th class="email">Email</th>
+                    <th class="number">Number</th>
+                    <th class="function">Function</th>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>20200231-M</td>
+                    <td>Cyrus C. Cantero</td>
+                    <td>Stem 12-1</td>
+                    <td>20</td>
+                    <td>Caloocan City</td>
+                    <td>ccantero27@yahoo.com</td>
+                    <td>09517563059</td>
+                    <td>Edit</td>
                 </tr>
+
+            
             </table>
         </div>
     </div>

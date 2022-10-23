@@ -115,10 +115,11 @@ div.registerContainer div.studentInfo div {
 }
 
 div.registerContainer form div label {
+  color: white;
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 2px;
-  text-shadow: -1px 1px 1px rgb(85, 202, 112);
+  text-shadow: -1px 1px 1px rgb(0, 0, 0);
 }
 
 div.registerContainer form div input {
@@ -159,6 +160,7 @@ div.registerContainer form div.navigate button:hover {
 }
 
 div.registerContainer form div.navigate h3 {
+  
   font-family: "Tomorrow", sans-serif;
   font-size: 20px;
   width: 33.3%;
