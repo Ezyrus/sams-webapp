@@ -1,5 +1,18 @@
 <?php 
    session_start(); 
+
+   $studentLrn = $_POST['lrn'];
+   $studentName = $_POST['name'];
+   $studentSection = $_POST['section'];
+   $studentAge = $_POST['age'];
+   $studentAddress = $_POST['address'];
+   $studentEmail = $_POST['email'];
+   $studentNumber = $_POST['number'];
+   $registerStudentBtn = $_POST['registStudent'];
+
+   if (isset()) {
+
+   }
 ?>
 
 <!DOCTYPE html>
@@ -7,15 +20,15 @@
 
 <head>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="styles/registerStudents.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="styles/registerStudents.css?v=<?php echo time(); ?>">
 
-<title>Student Attendance Monitoring System</title>
+   <title>Student Attendance Monitoring System</title>
 
 </head>
 
