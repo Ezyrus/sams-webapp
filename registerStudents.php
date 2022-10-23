@@ -24,7 +24,7 @@
                $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
                $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
-               echo '<script>alert("Student Added.")</script>';
+               echo '<script>alert("Student Added")</script>';
             }
          }
    }

@@ -2,7 +2,10 @@
    session_start(); 
    require_once "databaseConnection.php";
 
-   
+   $studentRowSql = "SELECT * FROM students";
+   $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
+   $studentRow = $studentRowResult->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -44,14 +47,21 @@
     </header>
 
     <div class="studentProfile">
-        <div>
-            <h3>Student Profile</h3>
+        <div class="profileContainer">
+            <h3 class="title">Student Profile</h3>
 
-            <form action="" method="get">
-                <input type="text" name="search" namespace="Search by student ... ">
-                <button type="submit">Search</button>
-            </form>
+            <div class="navigate">
 
+                <h3><a href="gradeLevel.php">< Back</a></h3>
+
+                <form action="" method="get">
+                    <input type="text" name="search" namespace="Search by student ... ">
+                    <button type="submit">Search</button>
+                </form>
+
+                <h3><a href="registerStudents.php">Register Students</a></h3>
+
+            </div>
             <table>
                 <tr>
                     <th class="lrn">LRN</th>
@@ -64,18 +74,20 @@
                     <th class="function">Function</th>
                 </tr>
 
-                <tr>
-                    <td>20200231-M</td>
-                    <td>Cyrus C. Cantero</td>
-                    <td>Stem 12-1</td>
-                    <td>20</td>
-                    <td>Caloocan City</td>
-                    <td>ccantero27@yahoo.com</td>
-                    <td>09517563059</td>
-                    <td>Edit</td>
-                </tr>
+                <?php do{ ?>
+                    <tr>
+                        <td><?php echo $studentRow['lrn']; ?></td>
+                        <td><?php echo $studentRow['name']; ?></td>
+                        <td><?php echo $studentRow['section']; ?></td>
+                        <td><?php echo $studentRow['age']; ?></td>
+                        <td><?php echo $studentRow['address']; ?></td>
+                        <td><?php echo $studentRow['email']; ?></td>
+                        <td><?php echo $studentRow['contact_number']; ?></td>
+                        <td><a href="">EDIT</a>
+                                <a href="">DELETE</a></td>
+                    </tr>
+                <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
 
-            
             </table>
         </div>
     </div>

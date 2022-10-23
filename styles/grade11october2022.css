@@ -224,18 +224,29 @@ section.main table tr td.studentInfo {
 }
 /* RESPONSIVE DESIGN */
 
+/* FOOTER */
 footer {
   color: white;
   background-color: rgb(26, 156, 139);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 10vh;
+  height: 5vh;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+footer:hover {
+  box-shadow: 0px -1px 5px rgb(49, 134, 0);
+  opacity: 1;
+  filter: blur(0px);
+  transition: 0.5s;
+  height: 10vh;
 }
 
 footer div {
@@ -253,3 +264,4 @@ footer div div img:hover {
   cursor: pointer;
   opacity: 0.5;
 }
+/* FOOTER */
