@@ -46,7 +46,21 @@
 
         <form action="" method="get">
             <input type="text" name="search" namespace="Search by student ... ">
+            <button type="submit">Search</button>
         </form>
+
+        <table>
+            <tr>
+                <th>lrn</th>
+                <th>name</th>
+                <th>section</th>
+                <th>age</th>
+                <th>address</th>
+                <th>email</th>
+                <th>number</th>
+                <th>update</th>
+            </tr>
+        </table>
     </div>
 
     <footer>
