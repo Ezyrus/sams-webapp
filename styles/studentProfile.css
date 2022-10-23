@@ -59,6 +59,18 @@
   }
   /* HEADER */
 
+ div.studentProfile {
+   font-family: "Tomorrow", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/loginBg02.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 
   /* FOOTER */
 footer {
