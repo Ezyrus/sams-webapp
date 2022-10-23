@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+ /* HEADER */
 header {
   justify-content: center;
   display: flex;
@@ -18,7 +19,6 @@ header div {
   height: 100%;
 }
 
-/* CALOOCAN HIGH SCHOOL LOGO */
 .calLogo {
   width: 20%;
   display: flex;
@@ -30,9 +30,7 @@ header div {
   width: 100%;
   padding: 6%;
 }
-/* CALOOCAN HIGH SCHOOL LOGO */
 
-/* SYSTEM NAME */
 .title {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
@@ -47,9 +45,7 @@ header div {
 .title h5 {
   padding-top: 1%;
 }
-/* SYSTEM NAME */
 
-/* DEPED LOGO */
 .depEdLogo {
   width: 20%;
   display: flex;
@@ -61,7 +57,7 @@ header div {
   width: 100%;
   padding: 6%;
 }
-/* DEPED LOGO */
+ /* HEADER */
 
 div.section-container {
   text-transform: uppercase;
@@ -89,7 +85,7 @@ div.section-container section:hover {
   border-style: solid;
   border-width: 5px;
   border-color: rgb(168, 255, 118);
-  text-shadow:-3px 3px 5px rgb(168, 255, 118);
+  text-shadow:-3px 3px 4px rgb(168, 255, 118);
   
 }
 
@@ -112,15 +108,19 @@ section.grade12 h1 a {
 }
 
 div.addStudent {
-  height: 5vh;
+  font-family: "Tomorrow", sans-serif;
+  margin-bottom: -45px;
+  height: 10vh;
   width: 17%;
   bottom: 10vh;
   position: absolute;
   border-radius: 20px 20px 0px 0px ;
   background-color: rgba(0, 158, 92, 0.5);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15%;
   
 }
 
@@ -132,9 +132,17 @@ div.addStudent h3 a {
 }
 
 div.addStudent:hover {
-  height: 6vh;
+  background-color:  rgba(0, 158, 92, 0.8);
+  box-shadow: -2px 2px 5px rgb(49, 134, 0);
+  margin-bottom: 0;
   transition: 0.5s;
 }
+
+div.addStudent a:hover {
+  color: black ;
+}
+
+
 
 
 
@@ -158,9 +166,10 @@ div.addStudent:hover {
 }
 /* RESPONSIVE DESIGN */
 
+ /* FOOTER */
 footer {
   color: white;
-  background-color: rgb(26, 156, 139,0.5);
+  background-color: rgb(26, 156, 139);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -188,3 +197,4 @@ footer div div img:hover {
   cursor: pointer;
   opacity: 0.5;
 }
+ /* FOOTER */

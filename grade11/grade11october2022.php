@@ -68,7 +68,7 @@
          <tr class="tableHeader">
             <th  class="otherInfo">LRN</th>
             <th  class="otherInfo">Student Name</th>
-            <th  class="otherInfo">Strand/ Section</th>
+            <th  class="otherInfo">Section</th>
             <th class="monthDays">1</th>
             <th class="monthDays">2</th>
             <th class="monthDays">3</th>

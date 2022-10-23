@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
 }
-
+ /* HEADER */
 header {
   justify-content: center;
   display: flex;
@@ -14,12 +14,10 @@ header {
   box-shadow: 0px 3px 5px rgb(49, 134, 0);
 }
 
-
 header div {
   height: 100%;
 }
 
-/* CALOOCAN HIGH SCHOOL LOGO */
 .calLogo {
   width: 20%;
   display: flex;
@@ -31,9 +29,7 @@ header div {
   width: 100%;
   padding: 5%;
 }
-/* CALOOCAN HIGH SCHOOL LOGO */
 
-/* SYSTEM NAME */
 .title {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
@@ -48,9 +44,7 @@ header div {
 .title h5 {
   padding-top: 1%;
 }
-/* SYSTEM NAME */
 
-/* DEPED LOGO */
 .depEdLogo {
   width: 20%;
   display: flex;
@@ -62,7 +56,7 @@ header div {
   width: 100%;
   padding: 3%;
 }
-/* DEPED LOGO */
+ /* HEADER */
 
 div.signup-container {
   display: flex;
@@ -219,6 +213,7 @@ section.signupFormContainer form input {
 }
 /* RESPONSIVE DESIGN */
 
+ /* FOOTER */
 footer {
   color: white;
   background-color: rgb(26, 156, 139,0.5);
@@ -249,3 +244,4 @@ footer div div img:hover {
   cursor: pointer;
   opacity: 0.5;
 }
+ /* FOOTER */

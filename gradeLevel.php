@@ -51,13 +51,12 @@
       </section>
 
       <div class="addStudent">
-         <h3><a href="#">Register Students</a>
+         <h3><a href="registerStudents.php">Register Students</a>
+         <h3><a href="studentProfile">Student Profile</a>
       </h3>
       </div>
       
    </div>
-
-  
 
    <footer>
 
