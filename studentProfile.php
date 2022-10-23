@@ -1,5 +1,6 @@
 <?php 
    session_start(); 
+   require_once "databaseConnection.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +14,15 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="styles/gradeLevel.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="styles/studentProfile.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
 
 </head>
 
 <body>
-
-   <header>
+    
+    <header>
       <div class="calLogo">
          <div>
             <img src="assets/calHigh.png" alt="Caloocan Highschool Logo">
@@ -38,59 +39,41 @@
             <img src="assets/depEd.png" alt="DepEd Logo">
          </div>
       </div>
-   </header>
+    </header>
 
-   <div class="section-container">
 
-      <section class="grade11">
-         <h1><a href="grade11/grade11year2022.php">GRADE 11</a></h1>
-      </section>
 
-      <section class="grade12">
-         <h1><a href="#">GRADE 12</a></h1>
-      </section>
-
-      <div class="addStudent">
-         <h3><a href="registerStudents.php">Register Students</a>
-         <h3><a href="studentProfile.php">Student Profile</a>
-      </h3>
-      </div>
-      
-   </div>
-
-   <footer>
-
-      <div class="fdswdLogo">
-         <div>
+    <footer>
+        <div class="fdswdLogo">
+        <div>
             <img src="assets/dswd.png" alt="DWSD LOGO">
-         </div>
-      </div>
+        </div>
+        </div>
 
-      <div class="fdepEdLogo">
-         <div>
+        <div class="fdepEdLogo">
+        <div>
             <img src="assets/depEdSeal.png" alt="DEPED SEAL">
-         </div>
-      </div>
+        </div>
+        </div>
 
-      <div class="fcalCityLogo">
-         <div>
+        <div class="fcalCityLogo">
+        <div>
             <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
-         </div>
-      </div>
+        </div>
+        </div>
 
-      <div class="fCalHighLogo">
-         <div>
+        <div class="fCalHighLogo">
+        <div>
             <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-         </div>
-      </div>
+        </div>
+        </div>
 
-      <div class="fFourPs">
-         <div>
+        <div class="fFourPs">
+        <div>
             <img src="assets/fourPs.png" alt="4P'S LOGO">
-         </div>
-      </div>
-
-   </footer>
+        </div>
+        </div>
+    </footer>
 
 </body>
 
