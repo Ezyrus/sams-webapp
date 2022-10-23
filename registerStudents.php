@@ -18,13 +18,15 @@
          if ($validationCount) {
             echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
          } else {
-            $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+            
 
-            $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
-            echo '<script>alert("Student Added.")</script>';
-
-            if(empty($studentLrn) {
+            if(empty($studentLrn)) {
                echo '<script>alert("Student LRN field is required")</script>';
+            } else {
+               $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+
+               $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
+               echo '<script>alert("Student Added.")</script>';
             }
          }
    }
