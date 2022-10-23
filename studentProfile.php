@@ -42,36 +42,38 @@
     </header>
 
     <div class="studentProfile">
-        <h3>Student Profile</h3>
+        <div>
+            <h3>Student Profile</h3>
 
-        <form action="" method="get">
-            <input type="text" name="search" namespace="Search by student ... ">
-            <button type="submit">Search</button>
-        </form>
+            <form action="" method="get">
+                <input type="text" name="search" namespace="Search by student ... ">
+                <button type="submit">Search</button>
+            </form>
 
-        <table>
-            <tr>
-                <th>lrn</th>
-                <th>name</th>
-                <th>section</th>
-                <th>age</th>
-                <th>address</th>
-                <th>email</th>
-                <th>number</th>
-                <th>update</th>
-            </tr>
+            <table>
+                <tr>
+                    <th>lrn</th>
+                    <th>name</th>
+                    <th>section</th>
+                    <th>age</th>
+                    <th>address</th>
+                    <th>email</th>
+                    <th>number</th>
+                    <th>update</th>
+                </tr>
 
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <footer>
