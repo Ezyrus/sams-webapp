@@ -1,9 +1,8 @@
 <?php 
    session_start(); 
+   require_once "databaseConnection.php";
 
-   $registerStudentBtn = $_POST['registStudent'];
-
-   if (isset($registerStudentBtn)) {
+   if (isset($_POST['registerStudent'])) {
       $studentLrn = $_POST['lrn'];
       $studentName = $_POST['name'];
       $studentSection = $_POST['section'];
@@ -11,7 +10,21 @@
       $studentAddress = $_POST['address'];
       $studentEmail = $_POST['email'];
       $studentNumber = $_POST['number'];
+
+      $validationQuery = "SELECT * FROM students WHERE lrn = '$studentLrn'";
+      $validationResult = mysqli_query(databaseConnection(), $validationQuery);
+      $validationCount = mysqli_num_rows($validationResult);
+      
+         if ($validationCount) {
+            echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist.")</script>';
+         } else {
+            $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+
+            $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
+            echo '<script>alert("Student Added.")</script>';
+         }
    }
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +99,7 @@
 
             </div>
 
-                <button type="submit" name="registStudent">Register</button>
+                <button type="submit" name="registerStudent">Register</button>
 
         </form>
 

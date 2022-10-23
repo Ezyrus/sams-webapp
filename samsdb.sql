@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 07:49 PM
+-- Generation Time: Oct 23, 2022 at 08:54 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -94,14 +94,24 @@ CREATE TABLE `october2022` (
 --
 
 CREATE TABLE `students` (
-  `lrn` int(10) NOT NULL,
+  `lrn` int(15) NOT NULL,
   `name` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   `age` int(5) NOT NULL,
   `address` varchar(100) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `contact_number` varchar(10) DEFAULT NULL
+  `contact_number` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES
+(1, '', '', 0, '', NULL, NULL),
+(2, '', '', 0, '', '', ''),
+(20200231, 'cyrus c. cantero', 'stem 12-1', 20, 'caloocan city', 'ccantero27@yahoo.com', '0951756305'),
+(20200232, 'cyrus c. cantero', 'stem 12-1', 20, 'caloocan city', 'ccantero27@yahoo.com', '');
 
 --
 -- Indexes for dumped tables
@@ -146,7 +156,7 @@ ALTER TABLE `october2022`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `lrn` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `lrn` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20200233;
 
 --
 -- Constraints for dumped tables
