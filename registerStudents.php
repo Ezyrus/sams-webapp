@@ -16,12 +16,16 @@
       $validationCount = mysqli_num_rows($validationResult);
       
          if ($validationCount) {
-            echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist.")</script>';
+            echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
          } else {
             $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
             $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
             echo '<script>alert("Student Added.")</script>';
+
+            if(empty($studentLrn) {
+               echo '<script>alert("Student LRN field is required")</script>';
+            }
          }
    }
 
@@ -68,42 +72,42 @@
     <div class="registerContainer">
         
         <form action="" method="POST">
-        <h3>Register Students</h3>
+         <h3>Register Students</h3>
 
-            <div class="studentInfo">
-                
-                <div class="mainInfo">
-                    <label for="lrn">LRN</label>
-                    <input type="text" name="lrn">
+               <div class="studentInfo">
+                  
+                  <div class="mainInfo">
+                     <label for="lrn">LRN</label>
+                     <input type="text" name="lrn">
 
-                    <label for="name">Name</label>
-                    <input type="text" name="name">
+                     <label for="name">Name</label>
+                     <input type="text" name="name">
 
-                    <label for="section">Section</label>
-                    <input type="text" name="section">
-                </div>
+                     <label for="section">Section</label>
+                     <input type="text" name="section">
+                  </div>
 
-                <div class="otherInfo">
-                    <label for="age">Age</label>
-                    <input type="" name="age">
+                  <div class="otherInfo">
+                     <label for="age">Age</label>
+                     <input type="" name="age">
 
-                    <label for="address">Address</label>
-                    <input type="text" name="address">
+                     <label for="address">Address</label>
+                     <input type="text" name="address">
 
-                    <label for="email">Email</label>
-                    <input type="text" name="email">
+                     <label for="email">Email</label>
+                     <input type="text" name="email">
 
-                    <label for="number">Number</label>
-                    <input type="text" name="number">
-                </div>
+                     <label for="number">Number</label>
+                     <input type="text" name="number">
+                  </div>
 
+               </div>
+
+               <div class="navigate">
+                  <h3><a href="gradeLevel.php">< Back</a></h3>
+                  <button type="submit" name="registerStudent">Register</button>
+                  <h3><a href="#">Student Profile > </a></h3>
             </div>
-
-            <div class="navigate">
-               <h3><a href="gradeLevel.php">< Back</a></h3>
-                <button type="submit" name="registerStudent">Register</button>
-                <h3><a href="#">Student Profile > </a></h3>
-         </div>
         </form>
         
     </div>
