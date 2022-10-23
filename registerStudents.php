@@ -42,32 +42,41 @@
 
     <div class="registerContainer">
         
-    <form action="" method="POST">
+        <form action="" method="POST">
         <h3>Register Students</h3>
 
-        <label for="lrn">LRN</label>
-        <input type="text" name="lrn">
+            <div class="studentInfo">
+                
+                <div class="mainInfo">
+                    <label for="lrn">LRN :</label>
+                    <input type="text" name="lrn">
 
-        <label for="name">Name : </label>
-        <input type="text" name="name">
+                    <label for="name">Name : </label>
+                    <input type="text" name="name">
 
-        <label for="section">Section : </label>
-        <input type="text" name="section">
+                    <label for="section">Section : </label>
+                    <input type="text" name="section">
+                </div>
 
-        <label for="age">Age : </label>
-        <input type="" name="age">
+                <div class="otherInfo">
+                    <label for="age">Age : </label>
+                    <input type="" name="age">
 
-        <label for="address">Address : </label>
-        <input type="text" name="address">
+                    <label for="address">Address : </label>
+                    <input type="text" name="address">
 
-        <label for="email">Email: </label>
-        <input type="text" name="email">
+                    <label for="email">Email: </label>
+                    <input type="text" name="email">
 
-        <label for="number">Number : </label>
-        <input type="text" name="number">
+                    <label for="number">Number : </label>
+                    <input type="text" name="number">
+                </div>
 
-        <button type="submit" name="registStudent">Register</button>
-    </form>
+            </div>
+                <button type="submit" name="registStudent">Register</button>
+
+            
+        </form>
 
     </div>
 

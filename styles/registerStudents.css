@@ -60,6 +60,7 @@
   /* HEADER */
 
  div.registerContainer {
+  font-family: "Tomorrow", sans-serif;
   width: 100%;
   height: 100vh;
   background-color: bisque;
@@ -69,7 +70,32 @@
  }
 
  div.registerContainer form {
+  height: 50%;
+  width: 70%;
   background-color: aquamarine;
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
+
+ div.registerContainer div.studentInfo {
+  background-color: antiquewhite;
+  height: 50%;
+  width:80%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-direction: row;
+ }
+
+ div.registerContainer div.studentInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
  }
   
     /* FOOTER */
