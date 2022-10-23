@@ -99,10 +99,13 @@
 
             </div>
 
+            <div class="navigate">
+               <h3><a href="gradeLevel.php">< Back</a></h3>
                 <button type="submit" name="registerStudent">Register</button>
-
+                <h3><a href="#">Student Profile > </a></h3>
+         </div>
         </form>
-
+        
     </div>
 
 
