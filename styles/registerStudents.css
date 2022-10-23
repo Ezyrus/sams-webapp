@@ -72,12 +72,13 @@ div.registerContainer {
 div.registerContainer form {
   height: 50%;
   width: 70%;
-  background-color: aquamarine;
+  background-color: rgb(26, 156, 139, 0.5);
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 50px;
 }
 
 div.registerContainer form h3 {
@@ -88,13 +89,31 @@ div.registerContainer form h3 {
 
 div.registerContainer div.studentInfo {
   background-color: antiquewhite;
-  height: 50%;
+  height: 60%;
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
 }
+
+div.registerContainer form div label, input {
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+div.registerContainer form button {
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: greenyellow;
+}
+
 
 div.registerContainer div.studentInfo div {
   display: flex;
