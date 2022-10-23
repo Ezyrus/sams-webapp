@@ -171,6 +171,11 @@ div.registerContainer form div.navigate h3 a {
   text-decoration: none;
 }
 
+div.registerContainer form div.navigate h3:hover {
+  text-shadow: -2px 1px 1px rgb(0, 207, 86);
+
+}
+
 /* FOOTER */
 footer {
   color: white;
