@@ -75,7 +75,7 @@ div.registerContainer {
 div.registerContainer form {
   height: 50%;
   width: 50%;
-  background-color: rgb(26, 156, 139,0.5);
+  background-color: rgb(26, 156, 139, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +104,6 @@ div.registerContainer div.studentInfo {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-
 }
 
 div.registerContainer div.studentInfo div {
@@ -115,7 +114,7 @@ div.registerContainer div.studentInfo div {
   align-items: center;
 }
 
-div.registerContainer form div label{
+div.registerContainer form div label {
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 2px;
@@ -132,13 +131,12 @@ div.registerContainer form div input {
   border: 1px solid black;
 }
 
-.navigate {
+div.registerContainer form div.navigate {
   display: flex;
   flex-direction: row;
-  justify-items:center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: aqua;
 }
 
 div.registerContainer form div.navigate button {
@@ -149,7 +147,7 @@ div.registerContainer form div.navigate button {
   padding: 5px;
   border-radius: 7px;
   border: 1px solid black;
-  background-color: black;
+  background-color: rgb(0, 77, 66);
   color: white;
 }
 
@@ -161,9 +159,11 @@ div.registerContainer form div.navigate button:hover {
 }
 
 div.registerContainer form div.navigate h3 {
-  background-color: antiquewhite;
   font-family: "Tomorrow", sans-serif;
   font-size: 20px;
+  width: 33.3%;
+  text-shadow: -2px 1px 1px rgb(26, 156, 139);
+  text-align: center;
 }
 
 div.registerContainer form div.navigate h3 a {
@@ -171,12 +171,10 @@ div.registerContainer form div.navigate h3 a {
   text-decoration: none;
 }
 
-
-
 /* FOOTER */
 footer {
   color: white;
-  background-color: rgb(26, 156, 139,0.5);
+  background-color: rgb(26, 156, 139, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-around;

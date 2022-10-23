@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 08:54 AM
+-- Generation Time: Oct 23, 2022 at 09:28 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -50,7 +50,8 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `october2022` (
   `month_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `student_name` varchar(50) NOT NULL,
+  `section` varchar(20) NOT NULL,
   `1` varchar(10) NOT NULL,
   `2` varchar(10) NOT NULL,
   `3` varchar(10) NOT NULL,
@@ -104,16 +105,6 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES
-(1, '', '', 0, '', NULL, NULL),
-(2, '', '', 0, '', '', ''),
-(20200231, 'cyrus c. cantero', 'stem 12-1', 20, 'caloocan city', 'ccantero27@yahoo.com', '0951756305'),
-(20200232, 'cyrus c. cantero', 'stem 12-1', 20, 'caloocan city', 'ccantero27@yahoo.com', '');
-
---
 -- Indexes for dumped tables
 --
 
@@ -127,14 +118,7 @@ ALTER TABLE `admin`
 -- Indexes for table `october2022`
 --
 ALTER TABLE `october2022`
-  ADD PRIMARY KEY (`month_id`),
-  ADD KEY `student_id` (`student_id`);
-
---
--- Indexes for table `students`
---
-ALTER TABLE `students`
-  ADD PRIMARY KEY (`lrn`);
+  ADD PRIMARY KEY (`month_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -151,22 +135,6 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `october2022`
   MODIFY `month_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `students`
---
-ALTER TABLE `students`
-  MODIFY `lrn` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20200233;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `october2022`
---
-ALTER TABLE `october2022`
-  ADD CONSTRAINT `october2022_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`lrn`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
