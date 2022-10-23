@@ -48,7 +48,7 @@
         <label for="lrn">LRN</label>
         <input type="text" name="lrn">
 
-        <label for="name">Student Name : </label>
+        <label for="name">Name : </label>
         <input type="text" name="name">
 
         <label for="section">Section : </label>

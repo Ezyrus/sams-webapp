@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2022 at 07:33 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Oct 23, 2022 at 07:49 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,11 +94,13 @@ CREATE TABLE `october2022` (
 --
 
 CREATE TABLE `students` (
-  `student_id` int(10) NOT NULL,
+  `lrn` int(10) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `contact_number` varchar(10) NOT NULL,
-  `year_level` varchar(10) NOT NULL,
-  `strand` varchar(50) NOT NULL
+  `section` varchar(50) NOT NULL,
+  `age` int(5) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `contact_number` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -122,7 +124,7 @@ ALTER TABLE `october2022`
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
-  ADD PRIMARY KEY (`student_id`);
+  ADD PRIMARY KEY (`lrn`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -144,7 +146,7 @@ ALTER TABLE `october2022`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `lrn` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -154,7 +156,7 @@ ALTER TABLE `students`
 -- Constraints for table `october2022`
 --
 ALTER TABLE `october2022`
-  ADD CONSTRAINT `october2022_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`);
+  ADD CONSTRAINT `october2022_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`lrn`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
