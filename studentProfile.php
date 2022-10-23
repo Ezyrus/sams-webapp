@@ -41,7 +41,9 @@
       </div>
     </header>
 
-
+    <div class="studentProfile">
+        
+    </div>
 
     <footer>
         <div class="fdswdLogo">
