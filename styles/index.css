@@ -162,33 +162,6 @@ section.loginFormContainer form input {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 1600px) {
-  .title {
-    font-size: smaller;
-  }
-
-  section.loginFormContainer form label {
-    font-size: smaller;
-    margin-top: 10px;
-  }
-
-  section.loginFormContainer form input {
-    font-size: smaller;
-  }
-
-  section.loginFormContainer form h3 {
-    font-size: x-large;
-  }
-
-  section.loginFormContainer form h6 {
-    font-size: x-small;
-  }
-
-  section.loginFormContainer form button.button-LogIn {
-    font-size:small;
-  }
-}
-
 @media screen and (max-width: 1366px) {
   .title {
     font-size: smaller;

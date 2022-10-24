@@ -197,6 +197,12 @@ div.studentProfile div table tr a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+}
+
 
 /* FOOTER */
 footer {

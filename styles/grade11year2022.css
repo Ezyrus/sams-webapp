@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+ /* HEADER */
 header {
   justify-content: center;
   display: flex;
@@ -18,7 +19,6 @@ header div {
   height: 100%;
 }
 
-/* CALOOCAN HIGH SCHOOL LOGO */
 .calLogo {
   width: 20%;
   display: flex;
@@ -30,9 +30,7 @@ header div {
   width: 100%;
   padding: 6%;
 }
-/* CALOOCAN HIGH SCHOOL LOGO */
 
-/* SYSTEM NAME */
 .title {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
@@ -47,9 +45,7 @@ header div {
 .title h5 {
   padding-top: 1%;
 }
-/* SYSTEM NAME */
 
-/* DEPED LOGO */
 .depEdLogo {
   width: 20%;
   display: flex;
@@ -61,7 +57,7 @@ header div {
   width: 100%;
   padding: 6%;
 }
-/* DEPED LOGO */
+ /* HEADER */
 
 div.schoolYearContainer {
   position: absolute;
@@ -164,25 +160,6 @@ div.month div h3:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 1600px) {
-  .title {
-    font-size: smaller;
-  }
-  div.year h5 {
-    font-size: 40px;
-  }
-  div.year h6 {
-    font-size: 25px;
-    letter-spacing: 2.5px;
-  }
-  div.month div h3{
-    font-size: 18px;
-  }
-  div.month div h3:hover {
-    font-size: 23px;
-  }
-}
-
 @media screen and (max-width: 1366px) {
   .title {
     font-size: smaller;

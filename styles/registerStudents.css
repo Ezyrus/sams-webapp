@@ -176,6 +176,15 @@ div.registerContainer form div.navigate h3:hover {
   text-shadow: -1px 0px 1px rgb(148, 252, 171);
 }
 
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+
 /* FOOTER */
 footer {
   color: white;
