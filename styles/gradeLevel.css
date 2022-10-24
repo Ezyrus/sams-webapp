@@ -83,17 +83,17 @@ div.section-container section:hover {
 }
 
 section.grade11 {
-  background-color: rgb(168, 255, 118);
+  background-color: rgb(26, 156, 139);
 }
 
 section.grade11 h1 a {
   text-decoration: none;
-  text-shadow: -2px 1px 1px black;
-  color: rgb(26, 156, 139);
+  text-shadow: -2px 2px 1px black;
+  color: rgb(168, 255, 118);
 }
 
 section.grade11:hover {
-  background-color: rgb(26, 156, 139);
+  background-color: rgba(0, 158, 92, 1);
 }
 
 section.grade12 {
@@ -103,8 +103,13 @@ section.grade12 {
 section.grade12 h1 a {
   text-decoration: none;
   color: rgb(168, 255, 118);
-  text-shadow: -2px 1px 1px black;
+  text-shadow: -2px 2px 1px black;
 }
+
+section.grade12:hover {
+  background-color: rgba(0, 158, 92, 1);
+}
+
 
 div.addStudent {
   font-family: "Tomorrow", sans-serif;
@@ -132,13 +137,13 @@ div.addStudent h3 a {
 
 div.addStudent:hover {
   background-color:  rgba(0, 158, 92, 0.8);
-  box-shadow: -2px 2px 5px rgb(49, 134, 0);
+  box-shadow: -2px 2px 5px rgb(168, 255, 118);
   margin-bottom: 0;
   transition: 0.5s;
 }
 
 div.addStudent a:hover {
-  color: black ;
+  color: rgb(168, 255, 118);
 }
 
 /* RESPONSIVE DESIGN */
@@ -173,7 +178,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px -1px 5px rgb(49, 134, 0);
+  box-shadow: 0px -1px 5px rgb(168, 255, 118);
 }
 
 footer div {
