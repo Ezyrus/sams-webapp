@@ -59,7 +59,7 @@ header div {
 }
 /* HEADER */
 
-div.studentProfile {
+div.registerContainer {
   font-family: "Tomorrow", sans-serif;
   width: 100%;
   height: 100vh;
@@ -72,74 +72,74 @@ div.studentProfile {
   align-items: center;
 }
 
-div.studentProfile div.profileContainer {
-  overflow-x: auto;
+div.registerContainer form {
+  height: 50%;
+  width: 50%;
+  background-color: rgb(26, 156, 139, 0.5);
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  width: 95%;
-  height: 70%;
-  background-color: rgb(26, 156, 139, 0.5);
   border-radius: 20px;
 }
 
-div.studentProfile div h3.title {
-  margin-top: 2%;
+div.registerContainer form:hover {
+  transition: 0.5s;
+  border-top: 2px solid rgb(26, 156, 139);
+  border-bottom: 2px solid rgb(26, 156, 139);
+}
+
+div.registerContainer form h3 {
   text-transform: uppercase;
   font-size: 40px;
-  text-shadow: -2px 1px 1px rgb(148, 252, 171);
+  text-shadow: -1px 1px 1px rgb(148, 252, 171);
   color: black;
   letter-spacing: 5px;
 }
 
-div.studentProfile div div form {
-  gap: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-}
-
-div.studentProfile div div.navigate {
+div.registerContainer div.studentInfo {
+  height: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
+}
+
+div.registerContainer div.studentInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  align-items: center;
+}
+
+div.registerContainer form div label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-shadow: -1px 1px 1px rgb(0, 0, 0);
+}
+
+div.registerContainer form div input {
+  text-align: center;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+div.registerContainer form div.navigate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
 
-div.studentProfile div div.navigate h3 {
-  font-family: "Tomorrow", sans-serif;
-  font-size: 20px;
-  width: 33.3%;
-  text-shadow: -1px 0px 1px white;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-div.studentProfile div div.navigate a {
-  color: black;
-  text-decoration: none;
-}
-
-div.studentProfile div div.navigate h3:hover {
-  text-shadow: -1px 0px 1px rgb(148, 252, 171);
-}
-
-div.studentProfile div div form input {
-  text-align: center;
-  font-family: "Tomorrow", sans-serif;
-  font-size: 23px;
-  border-radius: 10px;
-  align-self: center;
-  background-color:white;
-  border: 0px solid black;
-}
-
-div.studentProfile div div form button {
+div.registerContainer form div.navigate button {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
@@ -151,56 +151,31 @@ div.studentProfile div div form button {
   color: white;
 }
 
-div.studentProfile div div form button:hover {
+div.registerContainer form div.navigate button:hover {
   transition: 0.5s;
   cursor: pointer;
   border: none;
   background-color: green;
 }
 
-div.studentProfile div table {
-  width: 97%;
-}
-
-div.studentProfile div table tr th {
+div.registerContainer form div.navigate h3 {
+  
+  font-family: "Tomorrow", sans-serif;
   font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  background-color: rgb(168, 255, 118);
-}
-
-div.studentProfile div table tr td {
-  padding: 3px 0px;
-  text-transform: lowercase;
-  text-shadow: -1px 1px 1px black;
-  color: white;
+  width: 33.3%;
+  text-shadow: -1px 0px 1px white;
   text-align: center;
 }
 
-div.studentProfile div table tr:hover {
-  cursor: pointer;
-  background-color:rgb(168, 255, 118,0.3);
-  
-}
-
-div.studentProfile div table tr td.name {
-  text-transform: capitalize;
-}
-
-div.studentProfile div table tr td.section {
-  text-transform: uppercase;
-}
-
-div.studentProfile div table tr td.function {
-  text-transform: uppercase;
-}
-
-div.studentProfile div table tr a {
+div.registerContainer form div.navigate h3 a {
+  color: black;
   text-decoration: none;
-  color: rgb(255, 153, 139);
-  cursor: pointer;
 }
 
+div.registerContainer form div.navigate h3:hover {
+  text-shadow: -1px 0px 1px rgb(148, 252, 171);
+
+}
 
 /* FOOTER */
 footer {

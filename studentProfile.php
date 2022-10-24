@@ -76,14 +76,15 @@
 
                 <?php do{ ?>
                     <tr>
-                        <td><?php echo $studentRow['lrn']; ?></td>
-                        <td><?php echo $studentRow['name']; ?></td>
-                        <td><?php echo $studentRow['section']; ?></td>
-                        <td><?php echo $studentRow['age']; ?></td>
-                        <td><?php echo $studentRow['address']; ?></td>
-                        <td><?php echo $studentRow['email']; ?></td>
-                        <td><?php echo $studentRow['contact_number']; ?></td>
-                        <td><a href="">EDIT</a>
+                        <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
+                        <td class="name"><?php echo $studentRow['name']; ?></td>
+                        <td class="section"><?php echo $studentRow['section']; ?></td>
+                        <td class="age"><?php echo $studentRow['age']; ?></td>
+                        <td class="address"><?php echo $studentRow['address']; ?></td>
+                        <td class="email"><?php echo $studentRow['email']; ?></td>
+                        <td class="number"><?php echo $studentRow['contact_number']; ?></td>
+                        <td class="function">
+                                <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
                                 <a href="">DELETE</a></td>
                     </tr>
                 <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
