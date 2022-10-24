@@ -19,7 +19,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="styles/studentProfile.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="styles/searchProfile.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
 
@@ -62,6 +62,7 @@
                 <h3><a href="registerStudents.php">Register Students</a></h3>
 
             </div>
+            
             <table>
                 <tr>
                     <th class="lrn">LRN</th>
