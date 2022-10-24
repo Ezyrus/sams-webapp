@@ -92,6 +92,10 @@ section.grade11 h1 a {
   color: rgb(26, 156, 139);
 }
 
+section.grade11:hover {
+  background-color: rgb(26, 156, 139);
+}
+
 section.grade12 {
   background-color: rgb(26, 156, 139);
 }
