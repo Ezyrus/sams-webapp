@@ -90,7 +90,7 @@ div.section-container section:hover {
 }
 
 section.grade11 {
-  background-color: rgb(71, 210, 101);
+  background-color: rgba(153, 232, 107, 1)
 }
 
 section.grade11 h1 a {
@@ -99,7 +99,7 @@ section.grade11 h1 a {
 }
 
 section.grade12 {
-  background-color: rgb(84, 208, 191);
+  background-color: rgba(32, 191, 170, 1)
 }
 
 section.grade12 h1 a {
