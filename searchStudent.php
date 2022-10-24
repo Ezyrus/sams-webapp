@@ -2,9 +2,13 @@
    session_start(); 
    require_once "databaseConnection.php";
 
-   $studentRowSql = "SELECT * FROM students";
-   $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
-   $studentRow = $studentRowResult->fetch_assoc();
+   $searchResult = $_GET['search'];
+
+    $searchResultSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'";
+
+    $searchRowResult = databaseConnection()->query($searchResultSql) or die (databaseConnection()->error);
+
+    $searchRow = $searchRowResult->fetch_assoc();
 
 ?>
 
@@ -19,7 +23,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="styles/searchProfile.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="styles/searchStudent.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
 
@@ -52,17 +56,18 @@
 
             <div class="navigate">
 
-                <h3><a href="gradeLevel.php">< Back</a></h3>
+                <h3><a href="studentProfile.php">< Back</a></h3>
 
                 <form action="" method="get">
                     <input type="text" name="search" namespace="Search by student ... ">
+
                     <button type="submit">Search</button>
                 </form>
 
                 <h3><a href="registerStudents.php">Register Students</a></h3>
 
             </div>
-            
+
             <table>
                 <tr>
                     <th class="lrn">LRN</th>
@@ -77,18 +82,18 @@
 
                 <?php do{ ?>
                     <tr>
-                        <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
-                        <td class="name"><?php echo $studentRow['name']; ?></td>
-                        <td class="section"><?php echo $studentRow['section']; ?></td>
-                        <td class="age"><?php echo $studentRow['age']; ?></td>
-                        <td class="address"><?php echo $studentRow['address']; ?></td>
-                        <td class="email"><?php echo $studentRow['email']; ?></td>
-                        <td class="number"><?php echo $studentRow['contact_number']; ?></td>
+                        <td class="lrn"><?php echo $searchRow['lrn']; ?></td>
+                        <td class="name"><?php echo $searchRow['name']; ?></td>
+                        <td class="section"><?php echo $searchRow['section']; ?></td>
+                        <td class="age"><?php echo $searchRow['age']; ?></td>
+                        <td class="address"><?php echo $searchRow['address']; ?></td>
+                        <td class="email"><?php echo $searchRow['email']; ?></td>
+                        <td class="number"><?php echo $searchRow['contact_number']; ?></td>
                         <td class="function">
-                                <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
-                                <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></td>
+                                <a href="updateStudents.php?ID=<?php echo $searchRow['lrn']; ?>">UPDATE</a>
+                                <a href="deleteStudent.php?ID=<?php echo $searchRow['lrn']; ?>">DELETE</a></td>
                     </tr>
-                <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
+                <?php } while($searchRow =  $searchRowResult->fetch_assoc())?>
 
             </table>
         </div>

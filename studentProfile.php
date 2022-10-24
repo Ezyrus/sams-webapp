@@ -54,8 +54,8 @@
 
                 <h3><a href="gradeLevel.php">< Back</a></h3>
 
-                <form action="" method="get">
-                    <input type="text" name="search" namespace="Search by student ... ">
+                <form action="searchStudent.php" method="get">
+                    <input type="text" name="search">
                     <button type="submit">Search</button>
                 </form>
 
