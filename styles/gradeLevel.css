@@ -115,7 +115,7 @@ div.addStudent {
   bottom: 10vh;
   position: absolute;
   border-radius: 20px 20px 0px 0px ;
-  background-color: rgba(0, 158, 92, 0.5);
+  background-color: rgba(0, 158, 92, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +129,6 @@ div.addStudent h3 a {
   width: 100%;
   text-decoration: none;
   letter-spacing: 5px;
-  text-align: center;
 }
 
 div.addStudent:hover {

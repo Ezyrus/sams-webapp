@@ -204,6 +204,9 @@ div.studentProfile div table tr a {
   .title {
     font-size: smaller;
   }
+  div.studentProfile div h3.title {
+    font-size: 35px;
+  }
   div.studentProfile div table tr th {
     font-size: 15px;
     letter-spacing: 2px;

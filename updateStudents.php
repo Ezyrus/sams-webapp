@@ -101,7 +101,7 @@
 
                <div class="navigate">
                   <h3><a href="studentProfile.php">< Back</a></h3>
-                  <button type="submit" name="registerStudent">Register</button>
+                  <button type="submit" name="registerStudent">Update</button>
                   <h3><a href="studentProfile.php">Student Profile > </a></h3>
             </div>
         </form>
