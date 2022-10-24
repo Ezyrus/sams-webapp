@@ -126,7 +126,7 @@ section.signupFormContainer form label {
 }
 
 section.signupFormContainer form input {
-  text-indent: 5px;
+  text-align: center;
   font-family: "Tomorrow", sans-serif;
   font-size: 17px;
   letter-spacing: 1px;

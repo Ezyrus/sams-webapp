@@ -128,7 +128,7 @@ section.loginFormContainer form label {
 }
 
 section.loginFormContainer form input {
-  text-indent: 5px;
+  text-align: center;
   font-family: "Tomorrow", sans-serif;
   font-size: 17px;
   letter-spacing: 1px;
@@ -177,7 +177,9 @@ section.loginFormContainer form input {
   }
 
   section.loginFormContainer form h3 {
-    font-size: x-large;
+    font-size: 25px;
+  
+   
   }
 
   section.loginFormContainer form h6 {
