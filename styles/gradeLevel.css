@@ -79,32 +79,27 @@ div.section-container section {
 }
 
 div.section-container section:hover {
-  background-color: rgb(26, 156, 139);
-  height: 80vh;
   cursor: pointer;
-  border-style: solid;
-  border-width: 5px;
-  border-color: rgb(168, 255, 118);
-  text-shadow:-3px 3px 4px rgb(168, 255, 118);
-  
 }
 
 section.grade11 {
-  background-color: rgba(153, 232, 107, 1)
+  background-color: rgb(168, 255, 118);
 }
 
 section.grade11 h1 a {
   text-decoration: none;
-  color: black;
+  text-shadow: -2px 1px 1px black;
+  color: rgb(26, 156, 139);
 }
 
 section.grade12 {
-  background-color: rgba(32, 191, 170, 1)
+  background-color: rgb(26, 156, 139);
 }
 
 section.grade12 h1 a {
   text-decoration: none;
-  color: black;
+  color: rgb(168, 255, 118);
+  text-shadow: -2px 1px 1px black;
 }
 
 div.addStudent {
@@ -142,14 +137,13 @@ div.addStudent a:hover {
   color: black ;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   .title {
     font-size: smaller;
   }
   div.section-container section h1 {
-    font-size: smaller;
+    font-size: 40px;
   }
   div.addStudent {
     gap: 10%;
