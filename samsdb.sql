@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2022 at 01:31 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Oct 24, 2022 at 05:10 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -95,7 +95,7 @@ CREATE TABLE `october2022` (
 --
 
 CREATE TABLE `students` (
-  `lrn` int(15) NOT NULL,
+  `lrn` varchar(15) NOT NULL,
   `name` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   `age` int(5) NOT NULL,
@@ -103,6 +103,17 @@ CREATE TABLE `students` (
   `email` varchar(50) DEFAULT NULL,
   `contact_number` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES
+('136606090102', 'Monica E. Paredes', 'ICT 11 - 1', 20, '103 Francisco St. Brgy. 71 Caloocan City', 'nicaembateparedes@gmail.com', '09451323281'),
+('136612070392', 'John Edrich Viray', 'STEM 11 - 1', 20, '#75 Dau St., 6th Ave., Caloocan City', 'Virayjohnedrich@gmail.com', '09760500860'),
+('136618070392', 'Paolo Rafael S. Tampico', 'ICT 11 - 1', 20, '791B P. Galauran St. 8th Ave. Caloocan City', 'paolorafaeltampico@gmail.com', '09219098950'),
+('136618123456', 'Cyrus C. Cantero', 'STEM 11 - 1', 20, '888 Brgy. 160 Libis Baesa Caloocan City', 'slimshady.ca26@gmail.com', '09517563059'),
+('223505070048', 'Arabella Belardo', 'ICT 11 - 1', 19, 'Blk15 lot11 North Triangle Caloocan City', 'belardoarabella05@gmail.com', '09219098950');
 
 --
 -- Indexes for dumped tables
@@ -121,6 +132,12 @@ ALTER TABLE `october2022`
   ADD PRIMARY KEY (`month_id`);
 
 --
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`lrn`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -128,7 +145,7 @@ ALTER TABLE `october2022`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `october2022`
