@@ -4,7 +4,7 @@
   margin: 0;
 }
 
- /* HEADER */
+/* HEADER */
 header {
   justify-content: center;
   display: flex;
@@ -57,7 +57,7 @@ header div {
   width: 100%;
   padding: 6%;
 }
- /* HEADER */
+/* HEADER */
 
 section.nav {
   font-family: "Tomorrow", sans-serif;
@@ -70,7 +70,7 @@ section.nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap:7%;
+  gap: 7%;
   align-items: center;
 }
 
@@ -94,9 +94,8 @@ section.nav .admin h3 {
   text-transform: uppercase;
 }
 
-
 section.nav .title {
-  padding: 20px 0px;
+  padding: 10px 0px;
   width: 100%;
   gap: 3px;
   display: flex;
@@ -107,12 +106,12 @@ section.nav .title {
   text-align: center;
 }
 
-section.nav .title h3{
+section.nav .title h3 {
   font-size: 20px;
   letter-spacing: 3px;
 }
 
-section.nav .title h6{
+section.nav .title h6 {
   font-style: italic;
   text-align: center;
   font-size: 15px;
@@ -133,7 +132,6 @@ section.nav div.title hr {
   color: green;
 }
 
-
 div.legend {
   width: 100%;
   display: flex;
@@ -149,6 +147,8 @@ div.legend div {
   align-items: center;
   width: 100%;
   justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 div.legend div h3.color {
@@ -171,7 +171,7 @@ div.legend div h3.schoolDays {
   color: yellow;
 }
 
-section.nav .navigate  {
+section.nav .navigate {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,7 +195,7 @@ section.nav .navigate h1 a {
 
 section.main {
   font-family: "Tomorrow", sans-serif;
-  overflow-x:auto;
+  overflow-x: auto;
   z-index: -1;
   position: absolute;
   top: 13vh;
@@ -213,14 +213,14 @@ section.main table {
   width: 100%;
 }
 
-section.main table tr.tableHeader{
+section.main table tr.tableHeader {
   font-size: 16px;
   background-color: rgb(212, 212, 212);
   width: 100%;
 }
 
-section.main table tr.tableHeader th.otherInfo{
-  width: 5% ;
+section.main table tr.tableHeader th.otherInfo {
+  width: 5%;
   padding: 1px;
 }
 
@@ -228,11 +228,42 @@ section.main table tr.tableHeader th.monthDays {
   width: 1.8%;
 }
 
-.classDay01, .classDay02, .classDay03, .classDay04, .classDay05, .classDay06, .classDay07, .classDay08, .classDay09, .classDay10, .classDay11, .classDay12, .classDay13, .classDay14, .classDay15, .classDay16, .classDay22, .classDay23, .classDay24, .classDay25, .classDay26, .classDay27, .classDay28 {
+.classDay01,
+.classDay02,
+.classDay03,
+.classDay04,
+.classDay05,
+.classDay06,
+.classDay07,
+.classDay08,
+.classDay09,
+.classDay10,
+.classDay11,
+.classDay12,
+.classDay13,
+.classDay14,
+.classDay15,
+.classDay16,
+.classDay22,
+.classDay23,
+.classDay24,
+.classDay25,
+.classDay26,
+.classDay27,
+.classDay28 {
   background-color: green;
 }
 
-.classDay08, .classDay09, .classDay17, .classDay18, .classDay29, .classDay30, .classDay19, .classDay20, .classDay21, .classDay31 {
+.classDay08,
+.classDay09,
+.classDay17,
+.classDay18,
+.classDay29,
+.classDay30,
+.classDay19,
+.classDay20,
+.classDay21,
+.classDay31 {
   background-color: yellow;
 }
 
@@ -242,12 +273,59 @@ section.main table tr td.studentInfo {
   font-size: 15px;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
 
+  section.main table tr.tableHeader th.otherInfo {
+    font-size: 13px;
+    width: 2%;
+    padding: 1px;
+  }
+
+  section.main table tr.tableHeader th.monthDays {
+    font-size: 13px;
+    width: 1%;
+  }
+
+  section.main table tr td.studentInfo {
+    padding: 2px;
+    font-size: 10px;
+  }
+  section.main {
+    width: 83.5%;
+  }
+  section.nav .title h6 {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.title h3 a {
+    font-size: 13px;
+  }
+
+  section.nav .title h3 {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  section.nav .admin h6 {
+    font-size: 15px;
+  }
+
+  section.nav .admin h3 {
+    font-size: 23px;
+  }
+  div.legend {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+  section.nav .navigate {
+    font-size: 15px;
+  }
 }
-
 /* RESPONSIVE DESIGN */
 
 /* FOOTER */

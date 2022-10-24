@@ -56,24 +56,24 @@
 
       <div class="legend">
          <div class="present">
-            <h3>present :</h3>
+            <h3>present</h3>
             <h3 class="color present">color</h3>
          </div>
 
          <div class="absent">
-            <h3>absent :</h3>
+            <h3>absent</h3>
             <h3 class="color absent">color</h3>
          </div>
 
          <div class="schoolDays">
-            <h3>No Class :</h3>
+            <h3>No Class</h3>
             <h3 class="color schoolDays">color</h3>
          </div>
       </div>
 
       
       <div class="navigate">
-      <h2 class="goback"><a href="grade11year2022.php">go back</a></h2>
+      <h2 class="goback"><a href="grade11year2022.php">< go back</a></h2>
       <h1><a href="../logout.php">logout</a></h1>
       </div>
 

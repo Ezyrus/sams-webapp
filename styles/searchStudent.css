@@ -197,12 +197,34 @@ div.studentProfile div table tr a {
   cursor: pointer;
 }
 
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   .title {
     font-size: smaller;
   }
+  div.studentProfile div table tr th {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  div.studentProfile div table tr td {
+    padding: 3px 0px;
+    font-size: 14px;
+  }
+  div.studentProfile div div.navigate h3 {
+    font-family: "Tomorrow", sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+  div.studentProfile div div form button {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  div.studentProfile div div form input {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
 }
-
+/* RESPONSIVE DESIGN */
 
 /* FOOTER */
 footer {

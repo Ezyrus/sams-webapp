@@ -176,6 +176,31 @@ div.registerContainer form div.navigate h3:hover {
   text-shadow: -1px 0px 1px rgb(148, 252, 171);
 }
 
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1366px) {
+  .title {
+    font-size: smaller;
+  }
+  div.registerContainer form h3 {
+    font-size: 30px;
+  }
+  div.registerContainer form div label {
+    font-size: 15px;
+  }
+  div.registerContainer form div input {
+    font-size: 13px;
+  }
+  div.registerContainer form div.navigate h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  div.registerContainer form div.navigate button {
+    font-size: 13px;
+  }
+}
+/* RESPONSIVE DESIGN */
+
+
 /* FOOTER */
 footer {
   color: white;

@@ -135,7 +135,7 @@ div.studentProfile div div form input {
   font-size: 23px;
   border-radius: 10px;
   align-self: center;
-  background-color:white;
+  background-color: white;
   border: 0px solid black;
 }
 
@@ -163,6 +163,7 @@ div.studentProfile div table {
 }
 
 div.studentProfile div table tr th {
+  padding: 2px;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -179,15 +180,16 @@ div.studentProfile div table tr td {
 
 div.studentProfile div table tr:hover {
   cursor: pointer;
-  background-color:rgb(168, 255, 118,0.3);
-  
+  background-color: rgb(168, 255, 118, 0.3);
 }
 
-div.studentProfile div table tr td.name, div.studentProfile div table tr td.address {
+div.studentProfile div table tr td.name,
+div.studentProfile div table tr td.address {
   text-transform: capitalize;
 }
 
-div.studentProfile div table tr td.section, div.studentProfile div table tr td.function {
+div.studentProfile div table tr td.section,
+div.studentProfile div table tr td.function {
   text-transform: uppercase;
 }
 
@@ -197,12 +199,34 @@ div.studentProfile div table tr a {
   cursor: pointer;
 }
 
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   .title {
     font-size: smaller;
   }
+  div.studentProfile div table tr th {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  div.studentProfile div table tr td {
+    padding: 3px 0px;
+    font-size: 14px;
+  }
+  div.studentProfile div div.navigate h3 {
+    font-family: "Tomorrow", sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+  div.studentProfile div div form button {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  div.studentProfile div div form input {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
 }
-
+/* RESPONSIVE DESIGN */
 
 /* FOOTER */
 footer {
