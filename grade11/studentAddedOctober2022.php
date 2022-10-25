@@ -14,24 +14,16 @@
     $studentSection = $studentRow['section'];
 
     //Month Table 
-    $monthRowSql = "SELECT * FROM  october2022";
+    // $monthRowSql = "SELECT * FROM  october2022";
 
-    $monthRowResult = databaseConnection()->query($monthRowSql) or die (databaseConnection()->error);
-    $monthtRow = $monthRowResult->fetch_assoc();
+    // $monthRowResult = databaseConnection()->query($monthRowSql) or die (databaseConnection()->error);
+    // $monthRow = $monthRowResult->fetch_assoc();
 
-    print_r ($monthRow['lrn']);
+    
+        $addStudentSql = "INSERT INTO `october2022`(`month_id`,  `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`) VALUES ('','$studentLrn','$studentName','$studentSection','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')";
 
-    // if ($addLrn == $studentLrn) {
-    //     echo "$monthStudentLrn | $studentLrn = Same";
-    //     // $addStudentSql = "INSERT INTO `october2022`(`month_id`,  `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`) VALUES ('','$studentLrn','$studentName','$studentSection','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','')";
+        databaseConnection()->query($addStudentSql) or die (databaseConnection()->error);
 
-    //     // databaseConnection()->query($addStudentSql) or die (databaseConnection()->error);
-
-    //     // echo header("Location: addStudents.php");
-    // } else {
-    //     echo "$monthStudentLrn | $studentLrn = Not Same";
-    // }
-
-
+        echo header("Location: addStudentsOctober2022.php");
 
 ?>
