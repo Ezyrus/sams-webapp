@@ -64,7 +64,7 @@
 
          <div class="SepDec">
             <h3 onclick="noData()"><a href="#">September</a></h3>
-            <h3><a href="./october2022/grade11october2022.php">October</a></h3>
+            <h3><a href="grade11october2022.php">October</a></h3>
             <h3 onclick="noData()"><a href="#">November</a></h3>
             <h3 onclick="noData()"><a href="#">December</a></h3>
          </div>
