@@ -52,8 +52,7 @@
 
       <div class="addStudent">
          <h3><a href="registerStudents.php">Register Students</a>
-         <h3><a href="studentProfile.php">Student Profile</a>
-      </h3>
+         <h3><a href="studentProfile.php">Student Profile</a></h3>
       </div>
       
    </div>
