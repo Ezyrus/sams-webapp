@@ -18,9 +18,9 @@
       $studentEmail = $_POST['email'];
       $studentNumber = $_POST['number'];
 
-      $validationQuery = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
+      $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
       
-      databaseConnection()->query($validationQuery) or die (databaseConnection()->error);
+      databaseConnection()->query($updateStudentSql) or die (databaseConnection()->error);
    
       echo header("Location: studentProfile.php?ID=" . $studentLrn);
    }
