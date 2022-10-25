@@ -1,6 +1,6 @@
 <?php 
    session_start(); 
-   require_once "databaseConnection.php";
+   require_once "../databaseConnection.php";
 
    $studentRowSql = "SELECT * FROM students";
    $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
@@ -19,7 +19,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="styles/addStudents.css?v=<?php echo time(); ?>">
+        <link rel="stylesheet" href="../styles/addStudents.css?v=<?php echo time(); ?>">
 
         <title>Student Attendance Monitoring System</title>
 
@@ -85,7 +85,7 @@
                             <td class="email"><?php echo $studentRow['email']; ?></td>
                             <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                             <td class="function">
-                                    <a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>">Add</a>
+                                    <a href="studentAddedOctober2022.php?ID=<?php echo $studentRow['lrn']; ?>">Add</a>
                         </tr>
                     <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
 
