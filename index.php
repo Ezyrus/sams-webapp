@@ -13,7 +13,7 @@
       $adminTableNumRows = mysqli_num_rows($initiateSelectSql);
 
       if ($adminTableNumRows > 0) {
-         $adminTableRows= mysqli_fetch_array($initiateSelectSql);
+         $adminTableRows= mysqli_fetch_assoc($initiateSelectSql);
 
          $_SESSION['username'] = $adminTableRows['username'];
 
