@@ -9,23 +9,26 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $validationQuery = "SELECT * FROM admin WHERE username = '$username'";
-            $validationResult = mysqli_query(databaseConnection(), $validationQuery);
-            $validationCount = mysqli_num_rows($validationResult);
+            $adminValidateSql = "SELECT * FROM admin WHERE username = '$username'";
 
-            if ($validationCount) {
-                echo '<script>alert("Username ' . $username . ' already exist, please choose another.")</script>';
+            $initiateValidateSql = mysqli_query(databaseConnection(), $adminValidateSql);
+
+            $adminTableNumRows = mysqli_num_rows($initiateValidateSql);
+
+            if ($adminTableNumRows) {
+                echo '<script>alert("Admin : ' . $username . ' already exist, please choose another.")</script>';
             } else {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $insertToDatabase = "INSERT INTO admin (username,password) VALUES ('$username','$password')";
+                $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username','$password')";
 
-                $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
+                $initiateValidateSql = mysqli_query(databaseConnection(), $insertAdminSql);
+
                 echo '<script>alert("New Administrator has been successfully Registered")</script>';
             }
         } else {
-            echo '<script>alert("All field are required!")</script>';
+            echo '<script>alert("All fields are required!")</script>';
         }
     }
 ?>
