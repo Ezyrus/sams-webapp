@@ -10,8 +10,6 @@
 
     $searchRow = mysqli_fetch_assoc($initiateSelectSql);
 
-
-
 ?>
 
 <!DOCTYPE html>
