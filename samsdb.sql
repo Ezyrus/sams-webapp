@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2022 at 05:10 AM
+-- Generation Time: Oct 26, 2022 at 01:33 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -50,6 +50,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `october2022` (
   `month_id` int(11) NOT NULL,
+  `lrn` int(30) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(10) NOT NULL,
@@ -85,7 +86,8 @@ CREATE TABLE `october2022` (
   `31` varchar(10) NOT NULL,
   `school_days` int(10) NOT NULL,
   `present_total` int(10) NOT NULL,
-  `absent_total` int(10) NOT NULL
+  `absent_total` int(10) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -95,25 +97,26 @@ CREATE TABLE `october2022` (
 --
 
 CREATE TABLE `students` (
-  `lrn` varchar(15) NOT NULL,
+  `lrn` varchar(30) NOT NULL,
   `name` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   `age` int(5) NOT NULL,
   `address` varchar(100) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `contact_number` varchar(15) DEFAULT NULL
+  `contact_number` varchar(15) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES
-('136606090102', 'Monica E. Paredes', 'ICT 11 - 1', 20, '103 Francisco St. Brgy. 71 Caloocan City', 'nicaembateparedes@gmail.com', '09451323281'),
-('136612070392', 'John Edrich Viray', 'STEM 11 - 1', 20, '#75 Dau St., 6th Ave., Caloocan City', 'Virayjohnedrich@gmail.com', '09760500860'),
-('136618070392', 'Paolo Rafael S. Tampico', 'ICT 11 - 1', 20, '791B P. Galauran St. 8th Ave. Caloocan City', 'paolorafaeltampico@gmail.com', '09219098950'),
-('136618123456', 'Cyrus C. Cantero', 'STEM 11 - 1', 20, '888 Brgy. 160 Libis Baesa Caloocan City', 'slimshady.ca26@gmail.com', '09517563059'),
-('223505070048', 'Arabella Belardo', 'ICT 11 - 1', 19, 'Blk15 lot11 North Triangle Caloocan City', 'belardoarabella05@gmail.com', '09219098950');
+INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`, `timestamp`) VALUES
+('136606090102', 'Monica E. Paredes', 'ICT 11 - 1', 20, '103 Francisco St. Brgy. 71 Caloocan City', 'nicaembateparedes@gmail.com', '09451323281', '2022-10-25 11:06:58'),
+('136612070392', 'John Edrich Viray', 'STEM 11 - 1', 20, '#75 Dau St., 6th Ave., Caloocan City', 'Virayjohnedrich@gmail.com', '09760500860', '2022-10-25 11:06:58'),
+('136618070392', 'Paolo Rafael S. Tampico', 'ICT 11 - 1', 20, '791B P. Galauran St. 8th Ave. Caloocan City', 'paolorafaeltampico@gmail.com', '09219098950', '2022-10-25 11:06:58'),
+('136618123456', 'Cyrus C. Cantero', 'STEM 11 - 1', 20, '#888 Brgy. 160 Libis Baesa Caloocan City', 'slimshady.ca26@gmail.com', '09517563059', '2022-10-25 11:06:58'),
+('223505070048', 'Arabella Belardo', 'ICT 11 - 1', 19, 'Blk15 lot11 North Triangle Caloocan City', 'belardoarabella05@gmail.com', '09219098950', '2022-10-25 11:06:58');
 
 --
 -- Indexes for dumped tables
@@ -145,7 +148,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `october2022`
