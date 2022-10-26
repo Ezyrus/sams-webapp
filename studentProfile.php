@@ -2,9 +2,9 @@
    session_start(); 
    require_once "databaseConnection.php";
 
-   $studentRowSql = "SELECT * FROM students";
-   $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
-   $studentRow = $studentRowResult->fetch_assoc();
+   $selectStudentSql = "SELECT * FROM students";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+   $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
 ?>
 
@@ -23,7 +23,7 @@
 
         <title>Student Attendance Monitoring System</title>
 
-    </head>
+    </head> 
 
     <body>
         
@@ -52,7 +52,7 @@
 
                 <div class="navigate">
 
-                    <h3><a href="gradeLevel.php">< Back</a></h3>
+                    <h3><a href="gradeLevel.php">Grade Level</a></h3>
 
                     <form action="searchStudent.php" method="get">
                         <input type="text" name="search">
@@ -88,7 +88,7 @@
                                     <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
                                     <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></td>
                         </tr>
-                    <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
+                    <?php } while($studentRow = $initiateSelectSql->fetch_assoc())?>
 
                 </table>
             </div>

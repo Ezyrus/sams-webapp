@@ -5,7 +5,7 @@
     $deleteLrn = $_GET['ID'];
     $deleteStudent = "DELETE FROM students WHERE lrn =  '$deleteLrn'";
 
-    databaseConnection()->query($deleteStudent) or die (databaseConnection()->error);
-
+    mysqli_query(databaseConnection(), $deleteStudent);
+    
     echo header("Location: studentProfile.php");
 ?>

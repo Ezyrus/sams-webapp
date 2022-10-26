@@ -11,11 +11,13 @@
       $studentEmail = $_POST['email'];
       $studentNumber = $_POST['number'];
 
-      $validationQuery = "SELECT * FROM students WHERE lrn = '$studentLrn'";
-      $validationResult = mysqli_query(databaseConnection(), $validationQuery);
-      $validationCount = mysqli_num_rows($validationResult);
+      $selectStudentSql = "SELECT * FROM students WHERE lrn = '$studentLrn'";
+
+      $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+
+      $studentTableNumRows = mysqli_num_rows($initiateSelectSql);
       
-         if ($validationCount) {
+         if ($studentTableNumRows) {
             echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
          } else {
             if(empty($studentLrn)) {
@@ -104,7 +106,7 @@
                </div>
 
                <div class="navigate">
-                  <h3><a href="gradeLevel.php">< Back</a></h3>
+                  <h3><a href="gradeLevel.php">Grade Level</a></h3>
                   <button type="submit" name="registerStudent">Register</button>
                   <h3><a href="studentProfile.php">Student Profile > </a></h3>
             </div>

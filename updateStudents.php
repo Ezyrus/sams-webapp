@@ -3,11 +3,12 @@
    require_once "databaseConnection.php";
 
    $updateLrn = $_GET['ID'];
-   $studentRowSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
-   $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
-   $studentRow = $studentRowResult->fetch_assoc();
-  
+   $selectStudentSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
+   
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 
+   $studentRow = mysqli_fetch_assoc($initiateSelectSql);
+  
 
    if (isset($_POST['registerStudent'])) {
       $studentLrn = $_POST['lrn'];
@@ -20,7 +21,7 @@
 
       $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
       
-      databaseConnection()->query($updateStudentSql) or die (databaseConnection()->error);
+      mysqli_query(databaseConnection(), $updateStudentSql);
    
       echo header("Location: studentProfile.php?ID=" . $studentLrn);
    }

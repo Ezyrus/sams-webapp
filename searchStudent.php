@@ -4,11 +4,13 @@
 
    $searchResult = $_GET['search'];
 
-    $searchStudentResultSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'";
+    $selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'";
 
-    $initiateStudentSearch = databaseConnection()->query($searchStudentResultSql) or die (databaseConnection()->error);
+    $initiateSelectSql = mysqli_query(databaseConnection(),$selectStudentSql);
 
-    $searchRow = $initiateStudentSearch ->fetch_assoc();
+    $searchRow = mysqli_fetch_assoc($initiateSelectSql);
+
+
 
 ?>
 
@@ -93,7 +95,7 @@
                                 <a href="updateStudents.php?ID=<?php echo $searchRow['lrn']; ?>">UPDATE</a>
                                 <a href="deleteStudent.php?ID=<?php echo $searchRow['lrn']; ?>">DELETE</a></td>
                     </tr>
-                <?php } while($searchRow =  $initiateStudentSearch->fetch_assoc())?>
+                <?php } while($searchRow = mysqli_fetch_assoc($initiateSelectSql))?>
 
             </table>
         </div>
