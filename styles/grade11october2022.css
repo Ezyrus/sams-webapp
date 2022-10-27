@@ -228,7 +228,7 @@ section.main table tr.tableHeader th.monthDays {
   width: 1.8%;
 }
 
-/* .classDay01,
+.classDay01,
 .classDay02,
 .classDay03,
 .classDay04,
@@ -265,7 +265,7 @@ section.main table tr.tableHeader th.monthDays {
 .classDay21,
 .classDay31 {
   background-color: yellow;
-} */
+}
 
 section.main table tr td.studentInfo {
   padding: 2px;
@@ -296,7 +296,7 @@ section.main table tr td.studentInfo {
     font-size: 10px;
   }
   section.main {
-    width: 83.5%;
+    width: 86%;
   }
   section.nav .title h6 {
     font-size: 11px;

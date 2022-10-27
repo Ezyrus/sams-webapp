@@ -120,6 +120,7 @@
                <th  class="otherInfo">School Days</th>
                <th  class="otherInfo">Total Present</th>
                <th  class="otherInfo">Total Absent</th>
+               <th  class="otherInfo">Attendance Rate (%)</th>
             </tr>
 
             <tr>
@@ -159,7 +160,7 @@
                <td class="classDays classDay31"></td>
                <td class="studentInfo">21</td>
                <td class="studentInfo">21</td>
-               <td class="studentInfo">0</td>
+               <td class="studentInfo">0</td> <td class="studentInfo">100%</td>
             </tr>
 
             <tr>
@@ -200,6 +201,7 @@
                <td class="studentInfo">21</td>
                <td class="studentInfo">21</td>
                <td class="studentInfo">0</td>
+               <td class="studentInfo">100%</td>
             </tr>
 
             <tr>
@@ -240,6 +242,7 @@
                <td class="studentInfo">21</td>
                <td class="studentInfo">21</td>
                <td class="studentInfo">0</td>
+               <td class="studentInfo">100%</td>
             </tr>
 
             <tr>
@@ -280,6 +283,7 @@
                <td class="studentInfo">21</td>
                <td class="studentInfo">21</td>
                <td class="studentInfo">0</td>
+               <td class="studentInfo">100%</td>
             </tr>
 
             <tr>
@@ -320,6 +324,7 @@
                <td class="studentInfo">21</td>
                <td class="studentInfo">21</td>
                <td class="studentInfo">0</td>
+               <td class="studentInfo">100%</td>
             </tr>
 
             
