@@ -121,7 +121,7 @@ div.registerContainer form div.navigate h3:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1366px) {
   div.registerContainer form {
     gap: 15px;
   }

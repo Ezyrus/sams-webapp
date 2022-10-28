@@ -37,7 +37,7 @@ section.loginFormContainer form {
   align-items: center;
   flex-direction: column;
   gap: 5px;
-  background-color: rgba(43, 255, 0, 0.4);
+  background-color: rgba(43, 255, 0, 0.35);
   border-radius: 15px;
   height: 60%;
   width: 25%;
@@ -54,7 +54,7 @@ section.loginFormContainer form h3 {
 }
 
 section.loginFormContainer form:hover {
-  border-top: 1px solid rgb(0, 226, 19);
+  border-top: 2px solid rgb(0, 226, 19);
   border-bottom: 1px solid rgb(0, 226, 19);
 }
 
@@ -115,26 +115,32 @@ section.loginFormContainer form a:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1366px) {
+  section.loginFormContainer form {
+    height: 65%;
+  }
   section.loginFormContainer form label {
-    font-size: smaller;
-    margin-top: 10px;
+    font-size: 15px;
+    margin-top: 7px;
   }
 
   section.loginFormContainer form input {
-    font-size: smaller;
+    font-size: 13px;
   }
 
   section.loginFormContainer form h3 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   section.loginFormContainer form h6 {
-    font-size: x-small;
+    font-size: 10px;
   }
 
-  section.loginFormContainer form button.button-LogIn {
-    font-size: x-small;
+  .button-LogIn {
+    margin-top: 5px;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 8px;
   }
 }
 
