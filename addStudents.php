@@ -1,12 +1,12 @@
 <?php
-session_start();
-require_once "databaseConnection.php";
+    session_start();
+    require_once "databaseConnection.php";
 
-$studentSelectSql = "SELECT * FROM students";
-$initiateSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
-$studentRow = mysqli_fetch_assoc($initiateSelectSql);
+    $studentSelectSql = "SELECT * FROM students";
+    $initiateSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
+    $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
-$monthYear = $_SESSION['monthYear'];
+    $monthYear = $_SESSION['monthYear'];
 
 ?>
 
@@ -22,6 +22,7 @@ $monthYear = $_SESSION['monthYear'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/addStudents.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="styles/header-footer.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
 

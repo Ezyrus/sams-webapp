@@ -4,61 +4,6 @@
   margin: 0;
 }
 
-/* HEADER */
-header {
-  justify-content: center;
-  display: flex;
-  position: fixed;
-  height: 10vh;
-  width: 100%;
-  background-color: rgb(168, 255, 118);
-  box-shadow: 0px 3px 5px rgb(49, 134, 0);
-}
-
-header div {
-  height: 100%;
-}
-
-.calLogo {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-}
-
-.calLogo div img {
-  height: 100%;
-  width: 100%;
-  padding: 6%;
-}
-
-.title {
-  font-family: "Tomorrow", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.title h5 {
-  padding-top: 1%;
-}
-
-.depEdLogo {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-}
-
-.depEdLogo div img {
-  height: 100%;
-  width: 100%;
-  padding: 6%;
-}
-/* HEADER */
-
 section.nav {
   font-family: "Tomorrow", sans-serif;
   height: 100vh;
@@ -277,7 +222,7 @@ section.main table tr td.studentInfo {
 /* RESPONSIVE DESIGN */
 @media screen and (min-width: 768px) {
   .title {
-    font-size: smaller;
+    font-size: xx-small;
   }
 
   section.main table tr.tableHeader th.otherInfo {
@@ -328,45 +273,3 @@ section.main table tr td.studentInfo {
   }
 }
 /* RESPONSIVE DESIGN */
-
-/* FOOTER */
-footer {
-  color: white;
-  background-color: rgb(26, 156, 139);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  height: 5vh;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0.5;
-  filter: blur(1px);
-}
-
-footer:hover {
-  box-shadow: 0px -1px 5px rgb(49, 134, 0);
-  opacity: 1;
-  filter: blur(0px);
-  transition: 0.5s;
-  height: 10vh;
-}
-
-footer div {
-  display: flex;
-  height: 100%;
-  flex-direction: row;
-  justify-content: center;
-}
-
-footer div div img {
-  padding: 5%;
-}
-
-footer div div img:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
-/* FOOTER */
