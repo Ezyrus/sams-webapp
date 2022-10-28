@@ -147,7 +147,7 @@ div.addStudent a:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 1366px) {
+@media screen and (min-width: 768px) {
   .title {
     font-size: smaller;
   }
@@ -156,7 +156,7 @@ div.addStudent a:hover {
   }
   div.addStudent {
     gap: 10%;
-    margin-bottom: -35px;
+    margin-bottom: -25px;
   }
   div.addStudent h3 a{
     letter-spacing: 4px;

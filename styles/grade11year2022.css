@@ -160,7 +160,7 @@ div.month div h3:hover {
 }
 
 /* RESPONSIVE DESIGN */
-@media screen and (max-width: 1366px) {
+@media screen and (min-width: 768px) {
   .title {
     font-size: smaller;
   }
