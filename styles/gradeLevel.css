@@ -58,19 +58,26 @@ section.grade12:hover {
 
 div.addStudent {
   font-family: "Tomorrow", sans-serif;
-  margin-bottom: -45px;
-  height: 10vh;
+  z-index: 1;
+  margin-top: -10vh;
+  height: 15vh;
   width: 17%;
-  bottom: 10vh;
+  top: 10vh;
   position: absolute;
-  border-radius: 20px 20px 0px 0px ;
-  background-color: rgba(0, 158, 92, 0.7);
+  border-radius: 0px 0px 10px 10px ;
+  background-color: rgb(63, 186, 135);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15%;
-  
+}
+
+div.addStudent:hover {
+  background-color: rgb(26, 156, 139, 0.5);
+  box-shadow: 0px 0px 50px rgb(168, 255, 118);
+  margin-top: 0;
+  transition: 0.5s;
 }
 
 div.addStudent h3 a {
@@ -80,21 +87,23 @@ div.addStudent h3 a {
   letter-spacing: 5px;
 }
 
-div.addStudent:hover {
-  background-color:  rgba(0, 158, 92, 0.8);
-  box-shadow: -2px 2px 5px rgb(168, 255, 118);
-  margin-bottom: 0;
-  transition: 0.5s;
-}
-
 div.addStudent a:hover {
   color: rgb(168, 255, 118);
+}
+
+div.addStudent h3.logout {
+  letter-spacing: 1px;
+  text-transform: none;
+}
+
+div.addStudent h3.logout a {
+ color: rgb(160, 0, 0);
 }
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   div.section-container section h1 {
-    font-size: 40px;
+    font-size: 45px;
   }
   div.addStudent {
     gap: 10%;
@@ -103,6 +112,13 @@ div.addStudent a:hover {
   div.addStudent h3 a{
     letter-spacing: 4px;
     font-size: 13px;
+  }
+  div.addStudent {
+    margin-top: -28px;
+    top: 10vh;
+    gap: 3%;
+    padding-bottom: 5px;
+    text-align: center;
   }
 }
 /* RESPONSIVE DESIGN */

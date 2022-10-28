@@ -6,6 +6,7 @@ header {
   height: 10vh;
   width: 100%;
   background-color: rgb(168, 255, 118);
+  z-index: 5;
 }
 header div {
   height: 100%;
