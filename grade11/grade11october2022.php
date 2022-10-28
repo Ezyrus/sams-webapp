@@ -52,7 +52,7 @@
          <h3>October 2022</h3>
             <h6>4p's Grade 11 Student Records</h6>
             <hr>
-            <h3><a href="addStudentsOctober2022.php?ID=<?php echo "october2022" ?>">Add students</a></h3>
+            <h3><a href="../addStudents.php"><?php $_SESSION['monthYear'] = "october2022"; ?>Add students</a></h3>
          </div>
 
          <div class="legend">
