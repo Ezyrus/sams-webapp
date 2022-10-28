@@ -1,37 +1,36 @@
-<?php 
-    session_start(); 
-    require_once "databaseConnection.php";
-  
-    $selectLrn = $_GET['ID'];
-    $monthYear = $_SESSION['monthYear'];
+<?php
+session_start();
+require_once "databaseConnection.php";
 
-    $studentSelectSql = "SELECT * FROM students WHERE lrn = '$selectLrn'";
+$selectLrn = $_GET['ID'];
+$monthYear = $_SESSION['monthYear'];
 
-    $initiateStudentSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
+//Student Table
+$studentSelectSql = "SELECT * FROM students WHERE lrn = '$selectLrn'";
 
-    $studentRow = mysqli_fetch_assoc($initiateStudentSelectSql);
+$initiateStudentSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
 
-    $studentLrn = $studentRow['lrn']; 
-    $studentName = $studentRow['name'];
-    $studentSection = $studentRow['section'];
+$studentRow = mysqli_fetch_assoc($initiateStudentSelectSql);
 
-    //Month Table 
-    $monthSelectSql = "SELECT * FROM $monthYear";
+$studentLrn = $studentRow['lrn'];
+$studentName = $studentRow['name'];
+$studentSection = $studentRow['section'];
 
-    $initiateMonthSelectSql = mysqli_query(databaseConnection(), $monthSelectSql);
+$monthSelectSql = "SELECT * FROM $monthYear WHERE lrn = '$selectLrn'";
 
-    $monthRow = mysqli_fetch_assoc($initiateMonthSelectSql);
+$initiateMonthSelectSql = mysqli_query(databaseConnection(), $monthSelectSql);
 
-    if ($selectLrn == $monthRow['lrn']) {
-        echo '<script>alert("Student LRN :  '. $selectLrn. ' already exist in October 2022 Record.")
+$monthRow = mysqli_fetch_assoc($initiateMonthSelectSql);
+
+$monthTableNumRows = mysqli_num_rows($initiateMonthSelectSql);
+
+if ($monthTableNumRows) {
+    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in October 2022 Record.")
         document.location = "addStudents.php"</script>';
-    } else {
-        $addStudentSql = "INSERT INTO `$monthYear`(`lrn`, `student_name`, `section`) VALUES ('$studentLrn','$studentName','$studentSection')";
-        mysqli_query(databaseConnection(), $addStudentSql);   
-        
-        echo '<script>alert("Student LRN :  '. $selectLrn. ' has been successfully added")
-        document.location = "addStudents.php"</script>';
-    }
-        
+} else {
+    $addStudentSql = "INSERT INTO `$monthYear`(`lrn`, `student_name`, `section`) VALUES ('$studentLrn','$studentName','$studentSection')";
+    mysqli_query(databaseConnection(), $addStudentSql);
 
-?>
+    echo '<script>alert("Student LRN :  ' . $selectLrn . ' has been successfully added")
+        document.location = "addStudents.php"</script>';
+}
