@@ -106,20 +106,18 @@ div.addStudent h3.logout a {
     font-size: 45px;
   }
   div.addStudent {
-    gap: 10%;
-    margin-bottom: -25px;
+    height: 16vh;
+    gap: 7%;
+    margin-top: -10vh;
   }
   div.addStudent h3 a{
     letter-spacing: 4px;
     font-size: 13px;
   }
-  div.addStudent {
-    margin-top: -28px;
-    top: 10vh;
-    gap: 3%;
-    padding-bottom: 5px;
-    text-align: center;
+  div.addStudent h3.logout {
+    font-size: 13px;
   }
+  
 }
 /* RESPONSIVE DESIGN */
 
