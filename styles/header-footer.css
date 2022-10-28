@@ -31,7 +31,7 @@ header div {
   justify-content: center;
 }
 .title h2 {
-  font-size: 30px;
+  font-size: 40px;
 }
 .title h5 {
   font-size: 13px;
@@ -92,11 +92,12 @@ footer div div img:hover {
 /* FOOTER */
 
 @media screen and (min-width: 768px) {
-    .title h2 {
-        font-size: 18px;
-      }
-      .title h5 {
-        font-size: 10px;
-        padding-top: 7px;
-      }
+  .title h2 {
+    font-size: 15px;
+  }
+
+  .title h5 {
+    font-size: 10px;
+    padding-top: 7px;
+  }
 }
