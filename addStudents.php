@@ -1,6 +1,6 @@
 <?php 
    session_start(); 
-   require_once "../databaseConnection.php";
+   require_once "databaseConnection.php";
 
    $studentSelectSql = "SELECT * FROM students";
    $initiateSelectSql = mysqli_query(databaseConnection(),$studentSelectSql);
@@ -21,7 +21,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../styles/addStudents.css?v=<?php echo time(); ?>">
+        <link rel="stylesheet" href="styles/addStudents.css?v=<?php echo time(); ?>">
 
         <title>Student Attendance Monitoring System</title>
 
@@ -54,7 +54,7 @@
 
                 <div class="navigate">
 
-                    <h3><a href="/Sams/grade11/grade11october2022.php">< Back</a></h3>
+                    <h3><a href="gradeLevel.php">Grade Level</a></h3>
 
                     <form action="searchStudent.php" method="get">
                         <input type="text" name="search">
