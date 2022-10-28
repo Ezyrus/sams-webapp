@@ -2,9 +2,11 @@
    session_start(); 
    require_once "../databaseConnection.php";
 
-   $studentRowSql = "SELECT * FROM students";
-   $studentRowResult = databaseConnection()->query($studentRowSql) or die (databaseConnection()->error);
-   $studentRow = $studentRowResult->fetch_assoc();
+   $monthYear = $_GET['ID'];
+
+   $studentSelectSql = "SELECT * FROM students";
+   $initiateSelectSql = mysqli_query(databaseConnection(),$studentSelectSql);
+   $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
 ?>
 
@@ -48,7 +50,7 @@
 
         <div class="studentProfile">
             <div class="profileContainer">
-                <h3 class="title">Add Students | October 2022 </h3>
+                <h3 class="title">Add Students</h3>
 
                 <div class="navigate">
 
@@ -87,7 +89,7 @@
                             <td class="function">
                                     <a href="studentAddedOctober2022.php?ID=<?php echo $studentRow['lrn']; ?>">Add</a>
                         </tr>
-                    <?php } while($studentRow = $studentRowResult->fetch_assoc())?>
+                    <?php } while($studentRow = $initiateSelectSql->fetch_assoc())?>
 
                 </table>
             </div>

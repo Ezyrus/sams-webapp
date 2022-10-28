@@ -9,11 +9,11 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $adminValidateSql = "SELECT * FROM admin WHERE username = '$username'";
+            $adminSelectSql = "SELECT * FROM admin WHERE username = '$username'";
 
-            $initiateValidateSql = mysqli_query(databaseConnection(), $adminValidateSql);
+            $initiateSelectSql = mysqli_query(databaseConnection(), $adminSelectSql);
 
-            $adminTableNumRows = mysqli_num_rows($initiateValidateSql);
+            $adminTableNumRows = mysqli_num_rows($initiateSelectSql);
 
             if ($adminTableNumRows) {
                 echo '<script>alert("Admin : ' . $username . ' already exist, please choose another.")</script>';
@@ -23,7 +23,7 @@
 
                 $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username','$password')";
 
-                $initiateValidateSql = mysqli_query(databaseConnection(), $insertAdminSql);
+                $initiateSelectSql = mysqli_query(databaseConnection(), $insertAdminSql);
 
                 echo '<script>alert("New Administrator has been successfully Registered")</script>';
             }

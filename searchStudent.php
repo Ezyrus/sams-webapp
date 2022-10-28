@@ -8,7 +8,7 @@
 
     $initiateSelectSql = mysqli_query(databaseConnection(),$selectStudentSql);
 
-    $searchRow = mysqli_fetch_assoc($initiateSelectSql);
+    $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
 ?>
 
@@ -82,18 +82,18 @@
 
                 <?php do{ ?>
                     <tr>
-                        <td class="lrn"><?php echo $searchRow['lrn']; ?></td>
-                        <td class="name"><?php echo $searchRow['name']; ?></td>
-                        <td class="section"><?php echo $searchRow['section']; ?></td>
-                        <td class="age"><?php echo $searchRow['age']; ?></td>
-                        <td class="address"><?php echo $searchRow['address']; ?></td>
-                        <td class="email"><?php echo $searchRow['email']; ?></td>
-                        <td class="number"><?php echo $searchRow['contact_number']; ?></td>
+                        <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
+                        <td class="name"><?php echo $studentRow['name']; ?></td>
+                        <td class="section"><?php echo $studentRow['section']; ?></td>
+                        <td class="age"><?php echo $studentRow['age']; ?></td>
+                        <td class="address"><?php echo $studentRow['address']; ?></td>
+                        <td class="email"><?php echo $studentRow['email']; ?></td>
+                        <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                         <td class="function">
-                                <a href="updateStudents.php?ID=<?php echo $searchRow['lrn']; ?>">UPDATE</a>
-                                <a href="deleteStudent.php?ID=<?php echo $searchRow['lrn']; ?>">DELETE</a></td>
+                                <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
+                                <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></td>
                     </tr>
-                <?php } while($searchRow = mysqli_fetch_assoc($initiateSelectSql))?>
+                <?php } while($studentRow = mysqli_fetch_assoc($initiateSelectSql))?>
 
             </table>
         </div>
