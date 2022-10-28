@@ -18,25 +18,16 @@ div.login-container {
 
 div.login-container section {
   justify-content: center;
-  width: 25%;
+  width: 100%;
   height: 60%;
 }
 
 section.loginFormContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-section.loginFormContainer form h3 {
-  color: rgb(17, 48, 0);
-  text-transform: uppercase;
-  font-size: 40px;
-  letter-spacing: 10px;
-  text-align: center;
-  width: 70%;
-  text-shadow: -2px -2px 3px rgb(168, 255, 118);
-  align-self: center;
 }
 
 section.loginFormContainer form {
@@ -45,10 +36,22 @@ section.loginFormContainer form {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 3px;
   background-color: rgba(43, 255, 0, 0.5);
-  padding: 10px;
-  border-radius: 20px;
-  width: 70%;
+ 
+  border-radius: 10px;
+  height: 50%;
+  width: 25%;
+}
+
+section.loginFormContainer form h3 {
+  font-size: 30px;
+  color:black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+  text-shadow: -2px 2px 1px rgb(168, 255, 118);
+  align-self: center;
 }
 
 section.loginFormContainer form:hover {
@@ -100,10 +103,6 @@ section.loginFormContainer form input {
 
 /* RESPONSIVE DESIGN */
 @media screen and (min-width: 768px) {
-  .title {
-    font-size: smaller;
-  }
-
   section.loginFormContainer form label {
     font-size: smaller;
     margin-top: 10px;

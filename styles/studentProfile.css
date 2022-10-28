@@ -147,9 +147,6 @@ div.studentProfile div table tr a {
 
 /* RESPONSIVE DESIGN */
 @media screen and (min-width: 768px) {
-  .title {
-    font-size: smaller;
-  }
   div.studentProfile div h3.title {
     font-size: 35px;
   }

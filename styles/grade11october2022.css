@@ -221,10 +221,6 @@ section.main table tr td.studentInfo {
 
 /* RESPONSIVE DESIGN */
 @media screen and (min-width: 768px) {
-  .title {
-    font-size: xx-small;
-  }
-
   section.main table tr.tableHeader th.otherInfo {
     font-size: 13px;
     width: 2%;
