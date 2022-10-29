@@ -22,6 +22,7 @@ section.nav {
 }
 
 section.nav:hover {
+  background-color: rgb(63, 186, 135, 0.8);
   margin-top: 0vh;
   transition: 0.5s;
 }
@@ -31,14 +32,15 @@ section.nav div.legend {
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   gap: 17px;
+  cursor: pointer;
 }
 
 section.nav div.legend div {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   justify-content: space-around;
@@ -48,7 +50,7 @@ section.nav div.legend h1 {
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 5px;
-  text-shadow: -1px 1px 1px black;
+  text-shadow: -1px 1px 1px white;
 }
 
 section.nav div.legend div div {
@@ -57,7 +59,6 @@ section.nav div.legend div div {
   gap: 20px;
   align-items: center;
   justify-content: center;
-
 }
 
 section.nav div.legend div div h2 {
@@ -69,14 +70,17 @@ section.nav div.legend div div h2 {
 
 span.green {
   color: green;
+  text-shadow: -1px 1px 1px black;
 }
 
 span.red {
   color: red;
+  text-shadow: -1px 1px 1px black;
 }
 
 span.yellow {
   color: yellow;
+  text-shadow: -1px 1px 1px black;
 }
 section.nav div.legend div div.present h3.present {
   background-color: green;
@@ -139,7 +143,7 @@ section.nav .navigate {
   height: 60%;
   flex-direction: column;
   gap: 3px;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   text-transform: uppercase;
 }
@@ -152,6 +156,7 @@ section.nav .navigate div {
   justify-content: space-around;
   align-items: center;
 }
+
 section.nav .navigate div a {
   letter-spacing: 3px;
   text-decoration: none;
