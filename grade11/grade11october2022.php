@@ -44,23 +44,26 @@ session_start();
    <section class="nav">
 
       <div class="legend">
+
          <div>
             <div class="present">
-               <h3>present</h3>
-               <h3 class="color present">color</h3>
+               <h2>present:</h2>
+               <h3 class="color present">###</h3>
             </div>
 
             <div class="absent">
-               <h3>absent</h3>
-               <h3 class="color absent">color</h3>
+               <h2>absent:</h3>
+               <h3 class="color absent">###</h3>
             </div>
 
             <div class="schoolDays">
-               <h3>No Class</h3>
-               <h3 class="color schoolDays">color</h3>
+               <h2>No Class:</h2>
+               <h3 class="color schoolDays">###</h3>
             </div>
          </div>
-         <h1>Legend</h1>
+
+         <h1><span class = "green">︾ L</span>e<span class = "red">ge</span>n<span class = "yellow">ds</span></h1>
+
       </div>
 
       <div class="title">

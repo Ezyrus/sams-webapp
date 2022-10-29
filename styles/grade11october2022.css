@@ -31,37 +31,64 @@ section.nav div.legend {
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  text-transform: capitalize;
+  gap: 17px;
 }
 
 section.nav div.legend div {
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   align-items: center;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+section.nav div.legend h1 {
   text-transform: uppercase;
-  letter-spacing: 4px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px black;
 }
 
-section.nav div.legend div h3.color {
-  width: 100%;
-  background-color: aliceblue;
+section.nav div.legend div div {
+  width: 33.33%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+
 }
 
-section.nav div.legend div h3.present {
+section.nav div.legend div div h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+span.green {
+  color: green;
+}
+
+span.red {
+  color: red;
+}
+
+span.yellow {
+  color: yellow;
+}
+section.nav div.legend div div.present h3.present {
   background-color: green;
   color: green;
 }
 
-section.nav div.legend div h3.absent {
+section.nav div.legend div div.absent h3.absent {
   background-color: red;
   color: red;
 }
 
-section.nav div.legend div h3.schoolDays {
+section.nav div.legend div div.schoolDays h3.schoolDays {
   background-color: yellow;
   color: yellow;
 }
