@@ -77,6 +77,7 @@ section.signupFormContainer form input {
 }
 
 section.signupFormContainer form h6 {
+  text-shadow: 0px 0px 5px white;
   letter-spacing: 1px;
 }
 
