@@ -82,6 +82,7 @@ span.yellow {
   color: yellow;
   text-shadow: -1px 1px 1px black;
 }
+
 section.nav div.legend div div.present h3.present {
   background-color: green;
   color: green;
@@ -268,51 +269,78 @@ section.main table tr td.studentInfo {
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
-  section.main table tr.tableHeader th.otherInfo {
+  section.nav div.title h6.adminLogged {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  section.nav .title {
+    gap: 2px;
+    padding-bottom: 2px;
+  }
+
+  section.nav .title div h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  section.nav .title div h6 {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  section.nav .navigate {
+    gap: 0px;
+  }
+
+  section.nav .navigate div {
+    padding-bottom: 0px;
+    gap: 30px;
+  }
+
+  section.nav .navigate div:last-child {
+    padding-bottom: 10px;
+  }
+
+  section.nav .navigate div a {
+    font-size: 17px;
+  }
+
+  section.nav div.legend {
+    gap: 5px;
+  }
+
+  section.nav div.legend h1 {
+    font-size: 17px;
+  }
+
+  section.nav div.legend div div {
+    gap: 10px;
+  }
+
+  section.nav div.legend div div h2 {
     font-size: 13px;
+  }
+
+  section.nav div.legend div div h3.color {
+    font-size: 12px;
+  }
+
+  section.main table tr.tableHeader th.otherInfo {
+    font-size: 12px;
     width: 2%;
-    padding: 1px;
+    padding: 2px;
   }
 
   section.main table tr.tableHeader th.monthDays {
-    font-size: 13px;
+    font-size: 12px;
     width: 1%;
   }
 
   section.main table tr td.studentInfo {
     padding: 2px;
-    font-size: 10px;
-  }
-  section.main {
-    width: 86%;
-  }
-  section.nav .title h6 {
     font-size: 11px;
-    letter-spacing: 3px;
   }
 
-  section.nav div.title h3 a {
-    font-size: 13px;
-  }
-
-  section.nav .title h3 {
-    font-size: 18px;
-    letter-spacing: 3px;
-  }
-
-  section.nav .admin h6 {
-    font-size: 15px;
-  }
-
-  section.nav .admin h3 {
-    font-size: 23px;
-  }
-  div.legend {
-    font-size: 15px;
-    letter-spacing: 3px;
-  }
-  section.nav .navigate {
-    font-size: 15px;
-  }
 }
 /* RESPONSIVE DESIGN */

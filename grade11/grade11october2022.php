@@ -352,7 +352,6 @@ session_start();
       </table>
    </section>
 
-
    <footer>
       <div class="fdswdLogo">
          <div>
