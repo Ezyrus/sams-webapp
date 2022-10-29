@@ -15,6 +15,7 @@ session_start();
 
    <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+   <script src="../js/addStudentAttendance.js?v=<?php echo time(); ?>"></script>
 
    <title>Student Attendance Monitoring System</title>
 
@@ -141,6 +142,7 @@ session_start();
             <th class="otherInfo">Total Present</th>
             <th class="otherInfo">Total Absent</th>
             <th class="otherInfo">Attendance Rate (%)</th>
+            <th class="otherInfo">FUNCTION</th>
          </tr>
 
          <tr>
@@ -182,6 +184,7 @@ session_start();
             <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
          </tr>
 
          <tr>
@@ -223,6 +226,7 @@ session_start();
             <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
          </tr>
 
          <tr>
@@ -264,6 +268,7 @@ session_start();
             <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
          </tr>
 
          <tr>
@@ -305,6 +310,7 @@ session_start();
             <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
          </tr>
 
          <tr>
@@ -346,6 +352,7 @@ session_start();
             <td class="studentInfo">21</td>
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
          </tr>
 
 
