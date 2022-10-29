@@ -1,5 +1,5 @@
 <?php
-   session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -43,41 +43,56 @@
 
    <section class="nav">
 
-      <div class="admin">
-         <h3>Admin</h3>
-         <h6><?php echo $_SESSION['username']; ?></h6>
+      <div class="legend">
+         <div>
+            <div class="present">
+               <h3>present</h3>
+               <h3 class="color present">color</h3>
+            </div>
+
+            <div class="absent">
+               <h3>absent</h3>
+               <h3 class="color absent">color</h3>
+            </div>
+
+            <div class="schoolDays">
+               <h3>No Class</h3>
+               <h3 class="color schoolDays">color</h3>
+            </div>
+         </div>
+         <h1>Legend</h1>
       </div>
 
       <div class="title">
-         <h3>October 2022</h3>
-         <h6>4p's Grade 11 Student Records</h6>
-         <hr>
-         <h3><a href="../addStudents.php"><?php $_SESSION['monthYear'] = "october2022"; ?>Add students</a></h3>
+         <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
+
+         <div>
+            <h3>October 2022</h3>
+            <h6>4p's Grade 11 Student Records</h6>
+         </div>
+
       </div>
-
-      <div class="legend">
-         <div class="present">
-            <h3>present</h3>
-            <h3 class="color present">color</h3>
-         </div>
-
-         <div class="absent">
-            <h3>absent</h3>
-            <h3 class="color absent">color</h3>
-         </div>
-
-         <div class="schoolDays">
-            <h3>No Class</h3>
-            <h3 class="color schoolDays">color</h3>
-         </div>
-      </div>
-
 
       <div class="navigate">
-         <h2 class="goback"><a href="grade11year2022.php">
-               < go back</a>
-         </h2>
-         <h1><a href="../logout.php">logout</a></h1>
+
+         <div>
+            <h2 class="addStudents"><a href="../addStudents.php">
+                  <?php $_SESSION['monthYear'] = "october2022"; ?>Add students</a>
+            </h2>
+            <h2 class="studentProfile">
+               <a href="../studentProfile.php">Student Profile</a>
+            </h2>
+         </div>
+
+         <div>
+            <h2 class="gradeLevel">
+               <a href="../gradeLevel.php">Grade Level</a>
+            </h2>
+            <h2 class="logout">
+               <a href="../logout.php">logout ︾</a>
+            </h2>
+         </div>
+
       </div>
 
    </section>

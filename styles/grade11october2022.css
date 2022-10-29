@@ -6,79 +6,29 @@
 
 section.nav {
   font-family: "Tomorrow", sans-serif;
-  height: 100vh;
-  width: 27vh;
+  height: 10vh;
+  margin-top: -4vh;
+  top: 10vh;
+  width: 100%;
   left: 0;
-  z-index: -1;
-  position: fixed;
-  background-color: rgb(77, 209, 0);
+  z-index: 1;
+  position: absolute;
+  background-color: rgb(63, 186, 135, 0.5);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 7%;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  box-shadow: -2px 0px 1px rgb(63, 186, 135, 0.5);
 }
 
-section.nav .admin {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+section.nav:hover {
+  margin-top: 0vh;
+  transition: 0.5s;
 }
 
-section.nav .admin h6 {
-  color: rgb(17, 0, 255);
-  font-size: 20px;
-  letter-spacing: 2px;
-  font-style: italic;
-}
-
-section.nav .admin h3 {
-  font-size: 25px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-section.nav .title {
-  padding: 10px 0px;
-  width: 100%;
-  gap: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  text-align: center;
-}
-
-section.nav .title h3 {
-  font-size: 20px;
-  letter-spacing: 3px;
-}
-
-section.nav .title h6 {
-  font-style: italic;
-  text-align: center;
-  font-size: 15px;
-  letter-spacing: 3px;
-}
-
-section.nav div.title h3 a {
-  font-size: 15px;
-  text-align: center;
-  text-decoration: none;
-  color: green;
-  font-style: italic;
-  text-transform: capitalize;
-}
-
-section.nav div.title hr {
-  width: 80%;
-  color: green;
-}
-
-div.legend {
-  width: 100%;
+section.nav div.legend {
+  height: 100%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +36,7 @@ div.legend {
   text-transform: capitalize;
 }
 
-div.legend div {
+section.nav div.legend div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,45 +46,110 @@ div.legend div {
   letter-spacing: 4px;
 }
 
-div.legend div h3.color {
+section.nav div.legend div h3.color {
   width: 100%;
   background-color: aliceblue;
 }
 
-div.legend div h3.present {
+section.nav div.legend div h3.present {
   background-color: green;
   color: green;
 }
 
-div.legend div h3.absent {
+section.nav div.legend div h3.absent {
   background-color: red;
   color: red;
 }
 
-div.legend div h3.schoolDays {
+section.nav div.legend div h3.schoolDays {
   background-color: yellow;
   color: yellow;
 }
 
-section.nav .navigate {
+section.nav .title {
+  width: 40%;
+  gap: 10px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+}
+
+section.nav div.title h6.adminLogged {
+  padding-top: 10px;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 3px;
+}
+
+section.nav div.title h6.adminLogged span {
+  text-transform: none;
+  color: green;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+section.nav .title div h3 {
+  font-size: 23px;
+  letter-spacing: 5px;
+}
+
+section.nav .title div h6 {
+  padding-top: -10px;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+section.nav .navigate {
+  width: 30%;
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  gap: 3px;
+  justify-content:center;
   align-items: center;
   text-transform: uppercase;
-  width: 100%;
 }
 
-section.nav .navigate .goback a {
+section.nav .navigate div {
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+section.nav .navigate div a {
   letter-spacing: 3px;
   text-decoration: none;
-  color: blue;
+  font-size: 20px;
+  color: black;
+  text-shadow: -1px 1px 1px white;
 }
 
-section.nav .navigate h1 a {
-  letter-spacing: 3px;
-  text-decoration: none;
+/* section.nav .navigate div h2.studentProfile a {
+  color: black;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav .navigate div h2.addStudents a {
+  color: black;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav .navigate div h2.gradeLevel a {
+  color: black;
+  text-shadow: -1px 1px 1px white;
+}
+*/
+
+section.nav .navigate div h2.logout a {
   color: rgb(160, 0, 0);
 }
 
@@ -143,10 +158,10 @@ section.main {
   overflow-x: auto;
   z-index: -1;
   position: absolute;
-  top: 13vh;
+  top: 16vh;
   right: 0;
   bottom: 0;
-  width: 86%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
