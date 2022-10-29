@@ -206,18 +206,24 @@ section.main table {
 
 section.main table tr.tableHeader {
   font-size: 16px;
-  background-color: rgb(63, 186, 135);
   width: 100%;
 }
 
 section.main table tr.tableHeader th.otherInfo {
   width: 5%;
   padding: 5px;
+  background-color: rgb(63, 186, 135);
 }
 
 section.main table tr.tableHeader th.monthDays {
   width: 1.8%;
+  background-color: rgb(63, 186, 135);
 }
+
+section.main table tr:hover {
+  background-color: rgb(63, 186, 135, 0.3);
+}
+
 
 .classDay01,
 .classDay02,
@@ -264,6 +270,10 @@ section.main table tr td.studentInfo {
   text-align: center;
   font-size: 13px;
   text-transform: capitalize;
+}
+
+section.main table tr td.classDays:hover {
+  background-color:  rgb(63, 186, 135, 0.3);
 }
 
 section.main table tr td.classDays {
