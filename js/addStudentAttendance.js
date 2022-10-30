@@ -1,4 +1,5 @@
 // function addAttendance() {
+
 // let text = "Press a button!\nEither OK or Cancel.";
 //   if (confirm(text) == true) {
 //     text = "You pressed OK!";
