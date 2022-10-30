@@ -1,10 +1,8 @@
-// function addAttendance() {
+function addAttendance(studentLrn) {
 
-// let text = "Press a button!\nEither OK or Cancel.";
-//   if (confirm(text) == true) {
-//     text = "You pressed OK!";
-//   } else {
-//     text = "You canceled!";
-//   }
-//   document.getElementById("demo").innerHTML = text;
-// }
+  if (confirm("OK = Present\nCancel = Absent") == true) {
+    alert("Student LRN is : " + studentLrn);
+  } else {
+    alert("You pressed Cancel");
+  }
+}

@@ -49,17 +49,17 @@ session_start();
          <div>
             <div class="present">
                <h2>present:</h2>
-               <h3 class="color present">###</h3>
+               <h3 class="color present">#P#</h3>
             </div>
 
             <div class="absent">
                <h2>absent:</h3>
-               <h3 class="color absent">###</h3>
+               <h3 class="color absent">#A#</h3>
             </div>
 
             <div class="schoolDays">
                <h2>No Class:</h2>
-               <h3 class="color schoolDays">###</h3>
+               <h3 class="color schoolDays">NC#</h3>
             </div>
          </div>
 
@@ -149,7 +149,7 @@ session_start();
             <td class="studentInfo">136618123456</td>
             <td class="studentInfo">cyrus c. cantero</td>
             <td class="studentInfo">STEM 11-1</td>
-            <td class="classDays classDay01"></td>
+            <td class="classDays classDay01"  onclick="addAttendance(<?php echo "12345"; ?>)"></td>
             <td class="classDays classDay02"></td>
             <td class="classDays classDay03"></td>
             <td class="classDays classDay04"></td>
