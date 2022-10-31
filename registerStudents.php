@@ -74,67 +74,37 @@ if (isset($_POST['registerStudent'])) {
 
    <section class="nav">
 
-      <div class="legend">
+      <div class="back-container">
 
-         <div>
-            <div class="present">
-               <h2>present:</h2>
-               <h3 class="color present">#P#</h3>
-            </div>
-
-            <div class="absent">
-               <h2>absent:</h3>
-                  <h3 class="color absent">#A#</h3>
-            </div>
-
-            <div class="schoolDays">
-               <h2>No Class:</h2>
-               <h3 class="color schoolDays">NC#</h3>
-            </div>
-         </div>
-
-         <h1><span class="green">︾ L</span>e<span class="red">ge</span>n<span class="yellow">ds</span></h1>
+         <h1 onclick="history.go(-1);">
+            < BACK</h1>
+               <h1><a href="studentProfile.php">Student Profile</a></h1>
+       
 
       </div>
 
       <div class="title">
+         <div>
+            <h3>Register Students</h3>
+            <h6>4p's Students of Caloocan High School</h6>
+         </div>
+
+      </div>
+
+      <div class="admin-container">
+
          <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
 
-         <div>
-            <h3>October 2022</h3>
-            <h6>4p's Grade 11 Student Records</h6>
-         </div>
+         <h2 class="logout">
+            <a href="logout.php">logout</a>
+         </h2>
 
       </div>
-
-      <div class="navigate">
-
-         <div>
-            <h2 class="addStudents"><a href="../addStudents.php">
-                  <?php $_SESSION['monthYear'] = "october2022"; ?>Add students</a>
-            </h2>
-            <h2 class="studentProfile">
-               <a href="../studentProfile.php">Student Profile</a>
-            </h2>
-         </div>
-
-         <div>
-            <h2 class="gradeLevel">
-               <a href="../gradeLevel.php">Grade Level</a>
-            </h2>
-            <h2 class="logout">
-               <a href="../logout.php">logout ︾</a>
-            </h2>
-         </div>
-
-      </div>
-
    </section>
 
    <div class="registerContainer">
 
       <form action="" method="POST">
-         <h3>Register Students</h3>
 
          <div class="studentInfo">
 
@@ -154,10 +124,10 @@ if (isset($_POST['registerStudent'])) {
                <input type="" name="age">
 
                <label for="address">Address</label>
-               <input type="text" name="address">
+               <textarea name="address"></textarea>
 
                <label for="email">Email</label>
-               <input type="text" name="email">
+               <textarea name="email"></textarea>
 
                <label for="number">Number</label>
                <input type="text" name="number">
@@ -165,11 +135,9 @@ if (isset($_POST['registerStudent'])) {
 
          </div>
 
-         <div class="navigate">
-            <h3><a href="gradeLevel.php">Grade Level</a></h3>
-            <button type="submit" name="registerStudent">Register</button>
-            <h3><a href="studentProfile.php">Student Profile > </a></h3>
-         </div>
+
+         <button type="submit" name="registerStudent">Register</button>
+
       </form>
 
    </div>

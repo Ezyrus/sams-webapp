@@ -4,6 +4,105 @@
   margin: 0;
 }
 
+/* NAVIGATION BAR */
+section.nav {
+  font-family: "Tomorrow", sans-serif;
+  height: 5vh;
+  top: 10vh;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  background-color: rgb(63, 186, 135,0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section.nav div.back-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+section.nav div.back-container h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav div.back-container h1 a{
+  text-decoration: none;
+  color: black;
+}
+
+section.nav .title {
+  width: 40%;
+  gap: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+}
+
+section.nav .title div h3 {
+  font-size: 23px;
+  letter-spacing: 5px;
+}
+
+section.nav .title div h6 {
+  padding-top: -10px;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+
+section.nav div.admin-container {
+  width: 30%;
+  display: flex;
+  height: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+section.nav div.admin-container h6.adminLogged {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav div.admin-container h6.adminLogged span {
+  text-transform: none;
+  color: green;
+  letter-spacing: 2px;
+  font-style: italic;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px rgb(148, 252, 171);
+} 
+
+section.nav div.admin-container h2.logout a {
+  text-decoration: none;
+  color: rgb(160, 0, 0);
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+/* NAVIGATION BAR */
+
 div.registerContainer {
   font-family: "Tomorrow", sans-serif;
   width: 100%;
@@ -18,14 +117,15 @@ div.registerContainer {
 }
 
 div.registerContainer form {
-  height: 50%;
-  width: 50%;
-  background-color: rgb(26, 156, 139, 0.5);
+  height: 65%;
+  margin-top: 10vh;
+  width: 70%;
+  background-color: rgb(63, 186, 135,0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 div.registerContainer form:hover {
@@ -34,16 +134,9 @@ div.registerContainer form:hover {
   border-bottom: 2px solid rgb(26, 156, 139);
 }
 
-div.registerContainer form h3 {
-  text-transform: uppercase;
-  font-size: 40px;
-  text-shadow: -1px 1px 1px rgb(148, 252, 171);
-  color: black;
-  letter-spacing: 5px;
-}
 
 div.registerContainer div.studentInfo {
-  height: 60%;
+  height: 70%;
   width: 80%;
   display: flex;
   align-items: center;
@@ -55,15 +148,27 @@ div.registerContainer div.studentInfo div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 9px;
+  gap: 15px;
   align-items: center;
+  height: 100%;
+  width: 30%;
+}
+
+div.registerContainer div.studentInfo div.otherInfo textarea {
+  width: 100%;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  border: 1px solid black;
+  resize: none;
+  font-size: 18px;
+  text-align: center;
 }
 
 div.registerContainer form div label {
   color: white;
   text-transform: uppercase;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 25px;
+  letter-spacing: 5px;
   text-shadow: -1px 1px 1px rgb(0, 0, 0);
 }
 
@@ -71,8 +176,9 @@ div.registerContainer form div input {
   text-align: center;
   font-family: "Tomorrow", sans-serif;
   font-size: 18px;
+  width: 100%;
   letter-spacing: 2px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid black;
 }
 
@@ -84,41 +190,27 @@ div.registerContainer form div.navigate {
   width: 100%;
 }
 
-div.registerContainer form div.navigate button {
+div.registerContainer form button {
+  padding: 10px;
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 2px;
-  padding: 5px;
-  border-radius: 7px;
-  border: 1px solid black;
-  background-color: rgb(0, 77, 66);
+  letter-spacing: 5px;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  font-weight: bolder;
+  border-style: none;
   color: white;
+  background-color: black;
+  margin-top: 10px;
 }
 
-div.registerContainer form div.navigate button:hover {
-  transition: 0.5s;
+div.registerContainer form button:hover {
   cursor: pointer;
-  border: none;
+  color: white;
   background-color: green;
 }
 
-div.registerContainer form div.navigate h3 {
-  font-family: "Tomorrow", sans-serif;
-  font-size: 20px;
-  width: 33.3%;
-  text-shadow: -1px 0px 1px white;
-  text-align: center;
-}
-
-div.registerContainer form div.navigate h3 a {
-  color: black;
-  text-decoration: none;
-}
-
-div.registerContainer form div.navigate h3:hover {
-  text-shadow: -1px 0px 1px rgb(148, 252, 171);
-}
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
