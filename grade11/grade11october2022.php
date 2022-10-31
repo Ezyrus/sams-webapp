@@ -5,6 +5,8 @@
    $selectMonthYearSql = "SELECT * FROM october2022";
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
+   
 ?>
 
 <!DOCTYPE html>
