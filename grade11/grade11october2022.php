@@ -6,6 +6,11 @@
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 
+   function addAttendance($studentLrn,$classDaysNo) {
+      echo  "Student LRN : $studentLrn | Class Day : $classDaysNo";
+   }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -191,7 +196,7 @@
             <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
-            <td class="studentInfo">EDIT</td>
+            <td class="studentInfo">UPDATE</td>
          </tr>
          <?php } while($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))?>
 
