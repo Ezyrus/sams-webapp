@@ -4,15 +4,109 @@
   margin: 0;
 }
 
+/* NAVIGATION BAR */
+section.nav {
+  font-family: "Tomorrow", sans-serif;
+  height: 5vh;
+  top: 10vh;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  background-color: rgb(63, 186, 135,0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section.nav div.back-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+section.nav div.back-container h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav div.back-container h1 a{
+  text-decoration: none;
+  color: black;
+}
+
+section.nav .title {
+  width: 40%;
+  gap: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+}
+
+section.nav .title div h3 {
+  font-size: 23px;
+  letter-spacing: 5px;
+}
+
+section.nav .title div h6 {
+  padding-top: -10px;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+
+section.nav div.admin-container {
+  width: 30%;
+  display: flex;
+  height: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+section.nav div.admin-container h6.adminLogged {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+
+section.nav div.admin-container h6.adminLogged span {
+  text-transform: none;
+  color: green;
+  letter-spacing: 2px;
+  font-style: italic;
+  cursor: pointer;
+  text-shadow: -1px 1px 1px white;
+} 
+
+section.nav div.admin-container h2.logout a {
+  text-decoration: none;
+  color: rgb(160, 0, 0);
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 1px white;
+}
+/* NAVIGATION BAR */
 
 div.studentProfile {
   font-family: "Tomorrow", sans-serif;
   width: 100%;
   height: 100vh;
-  background-image: url("../assets/loginBg02.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,87 +119,54 @@ div.studentProfile div.profileContainer {
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  width: 95%;
-  height: 70%;
-  background-color: rgb(26, 156, 139, 0.5);
-  border-radius: 20px;
-}
-
-div.studentProfile div h3.title {
-  margin-top: 2%;
-  text-transform: uppercase;
-  font-size: 40px;
-  text-shadow: -2px 1px 1px rgb(148, 252, 171);
-  color: black;
-  letter-spacing: 5px;
-}
-
-div.studentProfile div div form {
-  gap: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-}
-
-div.studentProfile div div.navigate {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
   width: 100%;
+  margin-top: 7vh;
+  height: 75%;
 }
 
-div.studentProfile div div.navigate h3 {
-  font-family: "Tomorrow", sans-serif;
-  font-size: 20px;
-  width: 33.3%;
-  text-shadow: -1px 0px 1px white;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+div.studentProfile div div.search-container {
+  display: flex;
+  align-items: center;
+  justify-content:end;
+  flex-direction: row;
+  gap: 10px;
+  width: 90%;
 }
 
-div.studentProfile div div.navigate a {
-  color: black;
-  text-decoration: none;
-}
-
-div.studentProfile div div.navigate h3:hover {
-  text-shadow: -1px 0px 1px rgb(148, 252, 171);
-}
-
-div.studentProfile div div form input {
+div.studentProfile div div.search-container form input {
   text-align: center;
   font-family: "Tomorrow", sans-serif;
   font-size: 23px;
   border-radius: 10px;
   align-self: center;
   background-color: white;
-  border: 0px solid black;
+  color: black;
+  border: 2px solid black;
 }
 
-div.studentProfile div div form button {
+div.studentProfile div div.search-container form button {
+  padding: 10px;
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 2px;
-  padding: 5px;
-  border-radius: 7px;
-  border: 1px solid black;
-  background-color: rgb(0, 77, 66);
+  letter-spacing: 5px;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  font-weight: bolder;
+  border-style: none;
   color: white;
+  background-color: black;
+  margin-top: 10px;
 }
 
-div.studentProfile div div form button:hover {
-  transition: 0.5s;
+div.studentProfile div div.search-container form button:hover {
   cursor: pointer;
-  border: none;
+  color: white;
   background-color: green;
 }
 
 div.studentProfile div table {
-  width: 97%;
+  width: 100%;
 }
 
 div.studentProfile div table tr th {
@@ -113,20 +174,20 @@ div.studentProfile div table tr th {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background-color: rgb(168, 255, 118);
+  background-color: rgb(63, 186, 135);
+  text-shadow: -1px 1px 1px white;
 }
 
 div.studentProfile div table tr td {
   padding: 3px 0px;
   text-transform: lowercase;
-  text-shadow: -1px 1px 1px black;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 div.studentProfile div table tr:hover {
   cursor: pointer;
-  background-color: rgb(168, 255, 118, 0.3);
+  background-color: rgb(63, 186, 135,0.5);
 }
 
 div.studentProfile div table tr td.name,
@@ -141,7 +202,7 @@ div.studentProfile div table tr td.function {
 
 div.studentProfile div table tr a {
   text-decoration: none;
-  color: rgb(255, 153, 139);
+  color: red;
   cursor: pointer;
 }
 
@@ -158,7 +219,7 @@ div.studentProfile div table tr a {
     padding: 3px 0px;
     font-size: 14px;
   }
-  div.studentProfile div div.navigate h3 {
+  div.studentProfile div div div.admin-container h3 {
     font-family: "Tomorrow", sans-serif;
     font-size: 15px;
     letter-spacing: 3px;

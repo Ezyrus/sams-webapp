@@ -1,15 +1,15 @@
-<?php 
-   session_start(); 
-   require_once "databaseConnection.php";
+<?php
+session_start();
+require_once "databaseConnection.php";
 
-   $selectStudentSql = "SELECT * FROM students";
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
-   $studentRow = mysqli_fetch_assoc($initiateSelectSql);
+$selectStudentSql = "SELECT * FROM students";
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+$studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
 
     <head>
 
@@ -24,10 +24,10 @@
 
         <title>Student Attendance Monitoring System</title>
 
-    </head> 
+    </head>
 
     <body>
-        
+
         <header>
             <div class="calLogo">
                 <div>
@@ -47,23 +47,48 @@
             </div>
         </header>
 
+        <section class="nav">
+
+            <div class="back-container">
+
+                <h1 onclick="history.go(-1);">
+                    < BACK</h1>
+
+                        <h1><a href="registerStudents.php">Register Students</a></h1>
+
+            </div>
+
+            <div class="title">
+                <div>
+                    <h3>Student Profile</h3>
+                    <h6>4p's Students of Caloocan High School</h6>
+                </div>
+
+            </div>
+
+            <div class="admin-container">
+
+                <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
+
+                <h2 class="logout">
+                    <a href="logout.php">logout</a>
+                </h2>
+
+            </div>
+        </section>
+
+
         <div class="studentProfile">
             <div class="profileContainer">
-                <h3 class="title">Student Profile</h3>
-
-                <div class="navigate">
-
-                    <h3><a href="gradeLevel.php">Grade Level</a></h3>
+                <div class="search-container">
 
                     <form action="searchStudent.php" method="get">
                         <input type="text" name="search">
                         <button type="submit">Search</button>
                     </form>
 
-                    <h3><a href="registerStudents.php">Register Students</a></h3>
-
                 </div>
-                
+
                 <table>
                     <tr>
                         <th class="lrn">LRN</th>
@@ -76,7 +101,7 @@
                         <th class="function">Function</th>
                     </tr>
 
-                    <?php do{ ?>
+                    <?php do { ?>
                         <tr>
                             <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
                             <td class="name"><?php echo $studentRow['name']; ?></td>
@@ -86,10 +111,11 @@
                             <td class="email"><?php echo $studentRow['email']; ?></td>
                             <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                             <td class="function">
-                                    <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
-                                    <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></td>
+                                <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
+                                <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a>
+                            </td>
                         </tr>
-                    <?php } while($studentRow = mysqli_fetch_assoc($initiateSelectSql))?>
+                    <?php } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
                 </table>
             </div>
@@ -97,33 +123,33 @@
 
         <footer>
             <div class="fdswdLogo">
-            <div>
-                <img src="assets/dswd.png" alt="DWSD LOGO">
-            </div>
+                <div>
+                    <img src="assets/dswd.png" alt="DWSD LOGO">
+                </div>
             </div>
 
             <div class="fdepEdLogo">
-            <div>
-                <img src="assets/depEdSeal.png" alt="DEPED SEAL">
-            </div>
+                <div>
+                    <img src="assets/depEdSeal.png" alt="DEPED SEAL">
+                </div>
             </div>
 
             <div class="fcalCityLogo">
-            <div>
-                <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
-            </div>
+                <div>
+                    <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
+                </div>
             </div>
 
             <div class="fCalHighLogo">
-            <div>
-                <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-            </div>
+                <div>
+                    <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+                </div>
             </div>
 
             <div class="fFourPs">
-            <div>
-                <img src="assets/fourPs.png" alt="4P'S LOGO">
-            </div>
+                <div>
+                    <img src="assets/fourPs.png" alt="4P'S LOGO">
+                </div>
             </div>
         </footer>
 

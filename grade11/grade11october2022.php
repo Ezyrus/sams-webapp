@@ -6,7 +6,7 @@
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 
-   
+
 ?>
 
 <!DOCTYPE html>
@@ -192,7 +192,7 @@
             <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
-            <td class="studentInfo">UPDATE</td>
+            <td class="studentInfo"><a href="">UPDATE</a></td>
          </tr>
          <?php } while($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))?>
 

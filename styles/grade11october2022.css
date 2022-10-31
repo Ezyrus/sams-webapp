@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+/* NAVIGATION BAR */
 section.nav {
   font-family: "Tomorrow", sans-serif;
   height: 10vh;
@@ -166,25 +167,10 @@ section.nav .navigate div a {
   text-shadow: -1px 1px 1px white;
 }
 
-/* section.nav .navigate div h2.studentProfile a {
-  color: black;
-  text-shadow: -1px 1px 1px white;
-}
-
-section.nav .navigate div h2.addStudents a {
-  color: black;
-  text-shadow: -1px 1px 1px white;
-}
-
-section.nav .navigate div h2.gradeLevel a {
-  color: black;
-  text-shadow: -1px 1px 1px white;
-}
-*/
-
 section.nav .navigate div h2.logout a {
   color: rgb(160, 0, 0);
 }
+/* NAVIGATION BAR */
 
 section.main {
   font-family: "Tomorrow", sans-serif;
