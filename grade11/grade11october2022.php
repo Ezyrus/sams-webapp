@@ -156,41 +156,41 @@
             <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['student_name']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>
-            <td class="classDays classDay01"  onclick="addAttendance(<?php echo "12345"; ?>)"></td>
-            <td class="classDays classDay02"></td>
-            <td class="classDays classDay03"></td>
-            <td class="classDays classDay04"></td>
-            <td class="classDays classDay05"></td>
-            <td class="classDays classDay06"></td>
-            <td class="classDays classDay07"></td>
-            <td class="classDays classDay08"></td>
-            <td class="classDays classDay09"></td>
-            <td class="classDays classDay10"></td>
-            <td class="classDays classDay11"></td>
-            <td class="classDays classDay12"></td>
-            <td class="classDays classDay13"></td>
-            <td class="classDays classDay14"></td>
-            <td class="classDays classDay15"></td>
-            <td class="classDays classDay16"></td>
-            <td class="classDays classDay17"></td>
-            <td class="classDays classDay18"></td>
-            <td class="classDays classDay19"></td>
-            <td class="classDays classDay20"></td>
-            <td class="classDays classDay21"></td>
-            <td class="classDays classDay22"></td>
-            <td class="classDays classDay23"></td>
-            <td class="classDays classDay24"></td>
-            <td class="classDays classDay25"></td>
-            <td class="classDays classDay26"></td>
-            <td class="classDays classDay27"></td>
-            <td class="classDays classDay28"></td>
-            <td class="classDays classDay29"></td>
-            <td class="classDays classDay30"></td>
-            <td class="classDays classDay31"></td>
-            <td class="studentInfo">21</td>
-            <td class="studentInfo">21</td>
-            <td class="studentInfo">0</td>
-            <td class="studentInfo">100%</td>
+            <td class="classDays classDay01" id="classDay1" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 1; ?>)"><?php echo $monthYearRow['1']; ?></td>
+            <td class="classDays classDay02" id="classDay2" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 2; ?>)"><?php echo $monthYearRow['2']; ?></td>
+            <td class="classDays classDay03" id="classDay3" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 3; ?>)"><?php echo $monthYearRow['3']; ?></td>
+            <td class="classDays classDay04" id="classDay4" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 4; ?>)"><?php echo $monthYearRow['4']; ?></td>
+            <td class="classDays classDay05" id="classDay5" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 5; ?>)"><?php echo $monthYearRow['5']; ?></td>
+            <td class="classDays classDay06" id="classDay6" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 6; ?>)"><?php echo $monthYearRow['6']; ?></td>
+            <td class="classDays classDay07" id="classDay7" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 7; ?>)"><?php echo $monthYearRow['7']; ?></td>
+            <td class="classDays classDay08" id="classDay8" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 8; ?>)"><?php echo $monthYearRow['8']; ?></td>
+            <td class="classDays classDay09" id="classDay9" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 9; ?>)"><?php echo $monthYearRow['9']; ?></td>
+            <td class="classDays classDay10" id="classDay10" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 10; ?>)"><?php echo $monthYearRow['10']; ?></td>
+            <td class="classDays classDay11" id="classDay11" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 11; ?>)"><?php echo $monthYearRow['11']; ?></td>
+            <td class="classDays classDay12" id="classDay12" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 12; ?>)"><?php echo $monthYearRow['12']; ?></td>
+            <td class="classDays classDay13" id="classDay13" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 13; ?>)"><?php echo $monthYearRow['13']; ?></td>
+            <td class="classDays classDay14" id="classDay14" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 14; ?>)"><?php echo $monthYearRow['14']; ?></td>
+            <td class="classDays classDay15" id="classDay15" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 15; ?>)"><?php echo $monthYearRow['15']; ?></td>
+            <td class="classDays classDay16" id="classDay16" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 16; ?>)"><?php echo $monthYearRow['16']; ?></td>
+            <td class="classDays classDay17" id="classDay17" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 17; ?>)"><?php echo $monthYearRow['17']; ?></td>
+            <td class="classDays classDay18" id="classDay18" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 18; ?>)"><?php echo $monthYearRow['18']; ?></td>
+            <td class="classDays classDay19" id="classDay19" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 19; ?>)"><?php echo $monthYearRow['19']; ?></td>
+            <td class="classDays classDay20" id="classDay20" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 20; ?>)"><?php echo $monthYearRow['20']; ?></td>
+            <td class="classDays classDay21" id="classDay21" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 21; ?>)"><?php echo $monthYearRow['21']; ?></td>
+            <td class="classDays classDay22" id="classDay22" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 22; ?>)"><?php echo $monthYearRow['22']; ?></td>
+            <td class="classDays classDay23" id="classDay23" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 23; ?>)"><?php echo $monthYearRow['23']; ?></td>
+            <td class="classDays classDay24" id="classDay24" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 24; ?>)"><?php echo $monthYearRow['24']; ?></td>
+            <td class="classDays classDay25" id="classDay25" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 25; ?>)"><?php echo $monthYearRow['25']; ?></td>
+            <td class="classDays classDay26" id="classDay26" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 26; ?>)"><?php echo $monthYearRow['26']; ?></td>
+            <td class="classDays classDay27" id="classDay27" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 27; ?>)"><?php echo $monthYearRow['27']; ?></td>
+            <td class="classDays classDay28" id="classDay28" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 27; ?>)"><?php echo $monthYearRow['28']; ?></td>
+            <td class="classDays classDay29" id="classDay29" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 29; ?>)"><?php echo $monthYearRow['29']; ?></td>
+            <td class="classDays classDay30" id="classDay30" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 30; ?>)"><?php echo $monthYearRow['30']; ?></td>
+            <td class="classDays classDay31" id="classDay31" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 31; ?>)"><?php echo $monthYearRow['31']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['school_days']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
             <td class="studentInfo">EDIT</td>
          </tr>
          <?php } while($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))?>
