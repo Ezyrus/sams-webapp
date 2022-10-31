@@ -5,12 +5,6 @@
    $selectMonthYearSql = "SELECT * FROM october2022";
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-
-   function addAttendance($studentLrn,$classDaysNo) {
-      echo  "Student LRN : $studentLrn | Class Day : $classDaysNo";
-   }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -160,7 +154,7 @@
          <tr>
             <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['student_name']; ?></td>
-            <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>                       
             <td class="classDays classDay01" id="classDay1" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 1; ?>)"><?php echo $monthYearRow['1']; ?></td>
             <td class="classDays classDay02" id="classDay2" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 2; ?>)"><?php echo $monthYearRow['2']; ?></td>
             <td class="classDays classDay03" id="classDay3" onclick="addAttendance(<?php echo $monthYearRow['lrn']; ?>, <?php echo 3; ?>)"><?php echo $monthYearRow['3']; ?></td>
