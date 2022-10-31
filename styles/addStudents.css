@@ -72,6 +72,7 @@ div.studentProfile div div.navigate a {
 
 div.studentProfile div div.navigate h3:hover {
   text-shadow: -1px 0px 1px rgb(148, 252, 171);
+  cursor: pointer;
 }
 
 div.studentProfile div div form input {

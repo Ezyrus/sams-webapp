@@ -55,7 +55,8 @@
 
             <div class="navigate">
 
-                <h3><a href="gradeLevel.php">Grade Level</a></h3>
+                <h3 onclick="history.go(-1);">
+            < BACK</h3>
 
                 <!-- <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
