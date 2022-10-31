@@ -192,7 +192,7 @@
             <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
             <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
-            <td class="studentInfo"><a href="">UPDATE</a></td>
+            <td class="studentInfo"><a href="#">UPDATE</a></td>
          </tr>
          <?php } while($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))?>
 
