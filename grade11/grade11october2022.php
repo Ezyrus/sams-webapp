@@ -1,5 +1,11 @@
 <?php
-session_start();
+   session_start();
+   require_once "../databaseConnection.php";
+
+   $selectMonthYearSql = "SELECT * FROM october2022";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
 ?>
 
 <!DOCTYPE html>
@@ -145,7 +151,52 @@ session_start();
             <th class="otherInfo">FUNCTION</th>
          </tr>
 
+         <?php do{ ?>
          <tr>
+            <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['student_name']; ?></td>
+            <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>
+            <td class="classDays classDay01"  onclick="addAttendance(<?php echo "12345"; ?>)"></td>
+            <td class="classDays classDay02"></td>
+            <td class="classDays classDay03"></td>
+            <td class="classDays classDay04"></td>
+            <td class="classDays classDay05"></td>
+            <td class="classDays classDay06"></td>
+            <td class="classDays classDay07"></td>
+            <td class="classDays classDay08"></td>
+            <td class="classDays classDay09"></td>
+            <td class="classDays classDay10"></td>
+            <td class="classDays classDay11"></td>
+            <td class="classDays classDay12"></td>
+            <td class="classDays classDay13"></td>
+            <td class="classDays classDay14"></td>
+            <td class="classDays classDay15"></td>
+            <td class="classDays classDay16"></td>
+            <td class="classDays classDay17"></td>
+            <td class="classDays classDay18"></td>
+            <td class="classDays classDay19"></td>
+            <td class="classDays classDay20"></td>
+            <td class="classDays classDay21"></td>
+            <td class="classDays classDay22"></td>
+            <td class="classDays classDay23"></td>
+            <td class="classDays classDay24"></td>
+            <td class="classDays classDay25"></td>
+            <td class="classDays classDay26"></td>
+            <td class="classDays classDay27"></td>
+            <td class="classDays classDay28"></td>
+            <td class="classDays classDay29"></td>
+            <td class="classDays classDay30"></td>
+            <td class="classDays classDay31"></td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">21</td>
+            <td class="studentInfo">0</td>
+            <td class="studentInfo">100%</td>
+            <td class="studentInfo">EDIT</td>
+         </tr>
+         <?php } while($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))?>
+
+      
+         <!-- <tr>
             <td class="studentInfo">136618123456</td>
             <td class="studentInfo">cyrus c. cantero</td>
             <td class="studentInfo">STEM 11-1</td>
@@ -353,7 +404,7 @@ session_start();
             <td class="studentInfo">0</td>
             <td class="studentInfo">100%</td>
             <td class="studentInfo">EDIT</td>
-         </tr>
+         </tr> -->
 
 
       </table>

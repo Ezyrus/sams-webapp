@@ -225,7 +225,7 @@ section.main table tr:hover {
 }
 
 
-.classDay01,
+/* .classDay01,
 .classDay02,
 .classDay03,
 .classDay04,
@@ -262,7 +262,7 @@ section.main table tr:hover {
 .classDay21,
 .classDay31 {
   background-color: yellow;
-}
+} */
 
 section.main table tr td.studentInfo {
   height: 5vh;

@@ -89,7 +89,7 @@
                                     <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
                                     <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></td>
                         </tr>
-                    <?php } while($studentRow = $initiateSelectSql->fetch_assoc())?>
+                    <?php } while($studentRow = mysqli_fetch_assoc($initiateSelectSql))?>
 
                 </table>
             </div>
