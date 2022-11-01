@@ -13,7 +13,7 @@ section.nav {
   left: 0;
   z-index: 1;
   position: absolute;
-  background-color: rgb(63, 186, 135,0.8);
+  background-color: rgb(63, 186, 135, 0.8);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -38,7 +38,7 @@ section.nav div.back-container h1 {
   text-shadow: -1px 1px 1px white;
 }
 
-section.nav div.back-container h1 a{
+section.nav div.back-container h1 a {
   text-decoration: none;
   color: black;
 }
@@ -67,7 +67,6 @@ section.nav .title div h6 {
   letter-spacing: 3px;
 }
 
-
 section.nav div.admin-container {
   width: 30%;
   display: flex;
@@ -92,7 +91,7 @@ section.nav div.admin-container h6.adminLogged span {
   font-style: italic;
   cursor: pointer;
   text-shadow: 0px 0px 10px rgb(148, 252, 171);
-} 
+}
 
 section.nav div.admin-container h2.logout a {
   text-decoration: none;
@@ -120,7 +119,7 @@ div.registerContainer form {
   height: 65%;
   margin-top: 10vh;
   width: 70%;
-  background-color: rgb(63, 186, 135,0.3);
+  background-color: rgb(63, 186, 135, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,7 +132,6 @@ div.registerContainer form:hover {
   border-top: 2px solid rgb(26, 156, 139);
   border-bottom: 2px solid rgb(26, 156, 139);
 }
-
 
 div.registerContainer div.studentInfo {
   height: 70%;
@@ -156,6 +154,7 @@ div.registerContainer div.studentInfo div {
 
 div.registerContainer div.studentInfo div.otherInfo textarea {
   width: 100%;
+  padding: 3px;
   letter-spacing: 2px;
   border-radius: 3px;
   border: 1px solid black;
@@ -173,6 +172,7 @@ div.registerContainer form div label {
 }
 
 div.registerContainer form div input {
+  padding: 3px;
   text-align: center;
   font-family: "Tomorrow", sans-serif;
   font-size: 18px;
@@ -211,27 +211,74 @@ div.registerContainer form button:hover {
   background-color: green;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
-  div.registerContainer form {
-    gap: 15px;
+  section.nav div.admin-container h6.adminLogged {
+    font-size: 15px;
+    letter-spacing: 3px;
   }
-  div.registerContainer form h3 {
-    font-size: 30px;
-  }
-  div.registerContainer form div label {
+
+  section.nav div.admin-container h2.logout a {
     font-size: 15px;
   }
+
+  section.nav .title {
+    gap: 2px;
+    padding: 2px;
+  }
+
+  section.nav .title div h3 {
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+
+  section.nav .title div h6 {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.back-container {
+    gap: 30px;
+  }
+
+  section.nav div.back-container h1 {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  div.registerContainer form {
+    gap: 0px;
+  }
+
+  div.registerContainer div.studentInfo {
+    height: 80%;
+    width: 80%;
+  }
+
+  div.registerContainer div.studentInfo div {
+    gap: 10px;
+  }
+
+  div.registerContainer div.studentInfo div.otherInfo textarea {
+    font-size: 15px;
+    padding: 3px;
+  }
+
+  div.registerContainer form div label {
+    font-size: 20px;
+  }
+
   div.registerContainer form div input {
-    font-size: 13px;
+    font-size: 15px;
+    width: 100%;
+    padding: 3px;
+    letter-spacing: 1px;
   }
-  div.registerContainer form div.navigate h3 {
-    font-size: 13px;
-    letter-spacing: 2px;
-  }
-  div.registerContainer form div.navigate button {
-    font-size: 13px;
+
+  div.registerContainer form button {
+    font-size: 15px;
+    letter-spacing: 5px;
+    padding: 8px;
   }
 }
 /* RESPONSIVE DESIGN */

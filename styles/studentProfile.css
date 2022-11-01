@@ -101,7 +101,6 @@ section.nav div.admin-container h2.logout a {
   letter-spacing: 5px;
   text-shadow: -1px 1px 1px white;
 }
-
 /* NAVIGATION BAR */
 
 div.studentProfile {
@@ -209,9 +208,49 @@ div.studentProfile div table tr a {
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
-  div.studentProfile div h3.title {
-    font-size: 35px;
+  section.nav div.admin-container h6.adminLogged {
+    font-size: 15px;
+    letter-spacing: 3px;
   }
+
+  section.nav div.admin-container h2.logout a {
+    font-size: 15px;
+  }
+
+  section.nav .title {
+    gap: 2px;
+   padding: 2px;
+  }
+
+  section.nav .title div h3 {
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+
+  section.nav .title div h6 {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.back-container {
+    gap: 30px;
+  }
+
+  section.nav div.back-container h1 {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  div.studentProfile div div.search-container form input {
+    font-size: 15px;
+  }
+  
+  div.studentProfile div div.search-container form button {
+    font-size: 17px;
+    letter-spacing: 3px;
+    padding: 8px;
+  }
+  
   div.studentProfile div table tr th {
     font-size: 15px;
     letter-spacing: 2px;
@@ -219,19 +258,6 @@ div.studentProfile div table tr a {
   div.studentProfile div table tr td {
     padding: 3px 0px;
     font-size: 14px;
-  }
-  div.studentProfile div div div.admin-container h3 {
-    font-family: "Tomorrow", sans-serif;
-    font-size: 15px;
-    letter-spacing: 3px;
-  }
-  div.studentProfile div div form button {
-    font-size: 15px;
-    letter-spacing: 2px;
-  }
-  div.studentProfile div div form input {
-    font-size: 18px;
-    letter-spacing: 2px;
   }
 }
 /* RESPONSIVE DESIGN */
