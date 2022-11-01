@@ -1,11 +1,11 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM october2022";
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-   
+$selectMonthYearSql = "SELECT * FROM october2022";
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
 ?>
 
 <!DOCTYPE html>
@@ -191,11 +191,12 @@
                <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
                <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
                <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
-               <td class="studentInfo"><a href="../viewStudentRecord.php?ID=<?php echo $monthYearRow['lrn'];?>">VIEW</a></td>
+               <td class="studentInfo"><a href="../viewStudentRecord.php?ID=<?php echo $monthYearRow['lrn']; ?>">EDIT</a></td>
             </tr>
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
- 
+
       </table>
+
    </section>
 
    <footer>
