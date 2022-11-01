@@ -5,9 +5,6 @@
     $studentSelectSql = "SELECT * FROM students";
     $initiateSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
     $studentRow = mysqli_fetch_assoc($initiateSelectSql);
-
-    $monthYear = $_SESSION['monthYear'];
-
 ?>
 
 <!DOCTYPE html>

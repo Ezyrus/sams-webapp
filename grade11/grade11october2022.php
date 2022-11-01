@@ -5,6 +5,7 @@
    $selectMonthYearSql = "SELECT * FROM october2022";
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+   
 ?>
 
 <!DOCTYPE html>
@@ -199,7 +200,7 @@
             <td class="studentInfo">136618123456</td>
             <td class="studentInfo">cyrus c. cantero</td>
             <td class="studentInfo">STEM 11-1</td>
-            <td class="classDays classDay01"  onclick="addAttendance(<?php echo "12345"; ?>)"></td>
+            <td class="classDays classDay01"></td>
             <td class="classDays classDay02"></td>
             <td class="classDays classDay03"></td>
             <td class="classDays classDay04"></td>
