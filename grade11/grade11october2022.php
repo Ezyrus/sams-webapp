@@ -1,11 +1,10 @@
 <?php
-session_start();
-require_once "../databaseConnection.php";
+   session_start();
+   require_once "../databaseConnection.php";
 
-$selectMonthYearSql = "SELECT * FROM october2022";
-$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-
+   $selectMonthYearSql = "SELECT * FROM october2022";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 ?>
 
 <!DOCTYPE html>
