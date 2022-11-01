@@ -1,10 +1,11 @@
 <?php
-session_start();
-require_once "../databaseConnection.php";
+   session_start();
+   require_once "../databaseConnection.php";
 
-$selectMonthYearSql = "SELECT * FROM october2022";
-$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+   $selectMonthYearSql = "SELECT * FROM october2022";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
 
 ?>
 
@@ -21,7 +22,7 @@ $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 
    <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-
+   <script src="../js/studentAttendanceColor.js"></script>
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -152,47 +153,372 @@ $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
          </tr>
 
          <?php do { ?>
-            <tr>
-               <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['student_name']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>
-               <td class="classDays classDay01"><?php echo $monthYearRow['1']; ?></td>
-               <td class="classDays classDay02"><?php echo $monthYearRow['2']; ?></td>
-               <td class="classDays classDay03"><?php echo $monthYearRow['3']; ?></td>
-               <td class="classDays classDay04"><?php echo $monthYearRow['4']; ?></td>
-               <td class="classDays classDay05"><?php echo $monthYearRow['5']; ?></td>
-               <td class="classDays classDay06"><?php echo $monthYearRow['6']; ?></td>
-               <td class="classDays classDay07"><?php echo $monthYearRow['7']; ?></td>
-               <td class="classDays classDay08"><?php echo $monthYearRow['8']; ?></td>
-               <td class="classDays classDay09"><?php echo $monthYearRow['9']; ?></td>
-               <td class="classDays classDay10"><?php echo $monthYearRow['10']; ?></td>
-               <td class="classDays classDay11"><?php echo $monthYearRow['11']; ?></td>
-               <td class="classDays classDay12"><?php echo $monthYearRow['12']; ?></td>
-               <td class="classDays classDay13"><?php echo $monthYearRow['13']; ?></td>
-               <td class="classDays classDay14"><?php echo $monthYearRow['14']; ?></td>
-               <td class="classDays classDay15"><?php echo $monthYearRow['15']; ?></td>
-               <td class="classDays classDay16"><?php echo $monthYearRow['16']; ?></td>
-               <td class="classDays classDay17"><?php echo $monthYearRow['17']; ?></td>
-               <td class="classDays classDay18"><?php echo $monthYearRow['18']; ?></td>
-               <td class="classDays classDay19"><?php echo $monthYearRow['19']; ?></td>
-               <td class="classDays classDay20"><?php echo $monthYearRow['20']; ?></td>
-               <td class="classDays classDay21"><?php echo $monthYearRow['21']; ?></td>
-               <td class="classDays classDay22"><?php echo $monthYearRow['22']; ?></td>
-               <td class="classDays classDay23"><?php echo $monthYearRow['23']; ?></td>
-               <td class="classDays classDay24"><?php echo $monthYearRow['24']; ?></td>
-               <td class="classDays classDay25"><?php echo $monthYearRow['25']; ?></td>
-               <td class="classDays classDay26"><?php echo $monthYearRow['26']; ?></td>
-               <td class="classDays classDay27"><?php echo $monthYearRow['27']; ?></td>
-               <td class="classDays classDay28"><?php echo $monthYearRow['28']; ?></td>
-               <td class="classDays classDay29"><?php echo $monthYearRow['29']; ?></td>
-               <td class="classDays classDay30"><?php echo $monthYearRow['30']; ?></td>
-               <td class="classDays classDay31"><?php echo $monthYearRow['31']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['school_days']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
-               <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
-               <td class="studentInfo"><a href="../viewStudentRecord.php?ID=<?php echo $monthYearRow['lrn']; ?>">EDIT</a></td>
-            </tr>
+
+            <form action="../saveStudentAttendance.php?ID=<?php echo  $monthYearRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
+
+               <tr>
+
+                  <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
+                  <td class="studentInfo"><?php echo $monthYearRow['student_name']; ?></td>
+                  <td class="studentInfo"><?php echo $monthYearRow['section']; ?></td>
+
+                  <td class="classDays classDay01">
+                     <select name="classDay01" class="classDays classDay01" id="classDays classDay01">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['1']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                   <td class="classDays classDay2">
+                     <select name="classDay02" class="classDays classDay02" id="classDays classDay02">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['2']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay3">
+                     <select name="classDay03" class="classDays classDay03" id="classDays classDay03">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['3']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay4">
+                     <select name="classDay04" class="classDays classDay04" id="classDays classDay04">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['4']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                   <td class="classDays classDay5">
+                     <select name="classDay05" class="classDays classDay05" id="classDays classDay05">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['5']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                   <td class="classDays classDay6">
+                     <select name="classDay06" class="classDays classDay06" id="classDays classDay06">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['6']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay7">
+                     <select name="classDay07" class="classDays classDay07" id="classDays classDay07">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['7']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay8">
+                     <select name="classDay08" class="classDays classDay08" id="classDays classDay08">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['8']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                   <td class="classDays classDay9">
+                     <select name="classDay09" class="classDays classDay09" id="classDays classDay09">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['9']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay10">
+                     <select name="classDay10" class="classDays classDay10" id="classDays classDay10">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['10']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                   <td class="classDays classDay11">
+                     <select name="classDay11" class="classDays classDay11" id="classDays classDay11">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['11']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay12">
+                     <select name="classDay12" class="classDays classDay12" id="classDays classDay12">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['12']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay13">
+                     <select name="classDay03" class="classDays classDay13" id="classDays classDay13">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['13']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay14">
+                     <select name="classDay03" class="classDays classDay14" id="classDays classDay14">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['14']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay15">
+                     <select name="classDay15" class="classDays classDay15" id="classDays classDay15">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['15']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay16">
+                     <select name="classDay16" class="classDays classDay16" id="classDays classDay16">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['16']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay17">
+                     <select name="classDay17" class="classDays classDay17" id="classDays classDay17">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['17']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay18">
+                     <select name="classDay18" class="classDays classDay18" id="classDays classDay18">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['19']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay19">
+                     <select name="classDay19" class="classDays classDay19" id="classDays classDay19">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['19']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay20">
+                     <select name="classDay20" class="classDays classDay20" id="classDays classDay20">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['20']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay21">
+                     <select name="classDay21" class="classDays classDay21" id="classDays classDay21">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['21']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay22">
+                     <select name="classDay22" class="classDays classDay22" id="classDays classDay22">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['22']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay23">
+                     <select name="classDay23" class="classDays classDay23" id="classDays classDay23">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['23']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay24">
+                     <select name="classDay24" class="classDays classDay24" id="classDays classDay24">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['24']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay25">
+                     <select name="classDay25" class="classDays classDay25" id="classDays classDay25">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['25']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay26">
+                     <select name="classDay26" class="classDays classDay26" id="classDays classDay26">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['26']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay27">
+                     <select name="classDay27" class="classDays classDay27" id="classDays classDay27">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['27']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay28">
+                     <select name="classDay28" class="classDays classDay28" id="classDays classDay28">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['28']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay29">
+                     <select name="classDay29" class="classDays classDay29" id="classDays classDay29">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['29']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay30">
+                     <select name="classDay30" class="classDays classDay30" id="classDays classDay30">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['30']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="classDays classDay31">
+                     <select name="classDay31" class="classDays classDay31" id="classDays classDay31">
+                        <option disabled selected>
+                           <?php echo $monthYearRow['31']; ?>
+                        </option>
+                        <option class="present" value="present">Present</option>
+                        <option class="absent" value="absent">Absent</option>
+                        <option class="noclass" value="noclass">NoClass</option>
+                     </select>
+                  </td>
+
+                  <td class="studentInfo"><?php echo $monthYearRow['school_days']; ?></td>
+
+                  <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
+
+                  <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
+
+                  <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
+
+                  <td class="studentInfo">
+                     <button type="submit" name="saveAttendance"><?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
+                  </td>
+
+               </tr>
+
+            </form>
+
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
       </table>

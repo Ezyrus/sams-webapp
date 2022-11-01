@@ -196,20 +196,20 @@ section.main table tr.tableHeader {
 }
 
 section.main table tr.tableHeader th.otherInfo {
-  width: 5%;
+  width: 2%;
   padding: 5px;
+  font-size: 15px;
   background-color: rgb(63, 186, 135);
 }
 
 section.main table tr.tableHeader th.monthDays {
-  width: 1.8%;
+  width: 1.5%;
   background-color: rgb(63, 186, 135);
 }
 
 section.main table tr:hover {
   background-color: rgb(63, 186, 135, 0.3);
 }
-
 
 .classDay01,
 .classDay02,
@@ -251,7 +251,7 @@ section.main table tr:hover {
 }
 
 section.main table tr td.studentInfo {
-  height: 5vh;
+  height: 7vh;
   padding: 2px;
   text-align: center;
   font-size: 13px;
@@ -259,17 +259,65 @@ section.main table tr td.studentInfo {
 }
 
 section.main table tr td.classDays:hover {
-  background-color:  rgb(63, 186, 135, 0.3);
+  background-color: rgb(63, 186, 135, 0.3);
 }
 
-section.main table tr td.classDays {
+section.main table tr td select.classDays {
+  border: 1px solid white;
+  width: 100%;
+  height: 7vh;
   cursor: pointer;
+  letter-spacing: 1px;
+  padding: 1px;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: "Tomorrow", sans-serif;
+}
+
+section.main table tr td select.classDays:hover {
+  background-color: rgb(63, 186, 135, 0.3);
+}
+
+section.main table tr td select.classDays option {
+  background-color: rgb(63, 186, 135, 0.3);
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+section.main table tr td select.classDays option.present {
+  color: green;
+  background-color: green;
+}
+
+section.main table tr td select.classDays option.absent {
+  color: red;
+
+  background-color: red;
+}
+
+section.main table tr td select.classDays option.noclass {
+  color: yellow;
+  background-color: yellow;
 }
 
 section.main table tr td a {
   letter-spacing: 2px;
   color: blue;
   text-decoration: none;
+}
+
+section.main tr td button {
+  color: blue;
+  height: 100%;
+  width: 100%;
+  font-family: "Tomorrow", sans-serif;
+  border: 0px solid black;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 4px;
+  font-size: 15px;
 }
 
 /* RESPONSIVE DESIGN */
@@ -346,6 +394,5 @@ section.main table tr td a {
     padding: 2px;
     font-size: 11px;
   }
-
 }
 /* RESPONSIVE DESIGN */
