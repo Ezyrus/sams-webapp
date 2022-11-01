@@ -211,7 +211,7 @@ section.main table tr:hover {
 }
 
 
-/* .classDay01,
+.classDay01,
 .classDay02,
 .classDay03,
 .classDay04,
@@ -248,7 +248,7 @@ section.main table tr:hover {
 .classDay21,
 .classDay31 {
   background-color: yellow;
-} */
+}
 
 section.main table tr td.studentInfo {
   height: 5vh;
@@ -264,6 +264,13 @@ section.main table tr td.classDays:hover {
 
 section.main table tr td.classDays {
   cursor: pointer;
+}
+
+section.main table tr td a {
+  letter-spacing: 2px;
+  color: blue;
+  text-decoration: none;
+
 }
 
 /* RESPONSIVE DESIGN */

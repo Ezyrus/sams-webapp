@@ -55,10 +55,9 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         <div class="back-container">
 
-            <h1 onclick="history.go(-1);">
-                < BACK</h1>
+            <h1><a href="gradeLevel.php">Grade Level</a></h1>
 
-                    <h1><a href="registerStudents.php">Register Students</a></h1>
+            <h1><a href="registerStudents.php">Register Students</a></h1>
 
         </div>
 
