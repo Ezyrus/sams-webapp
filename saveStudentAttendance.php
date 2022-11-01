@@ -68,20 +68,20 @@ if (isset($_POST['saveAttendance'])) {
 
     foreach ($classDays as $key => $value) {
 
-                echo " || $key => $value";
+        echo " || $key => $value";
 
-                if ($value == "") {
-                    echo "EMPTY";
-                } else {
-                    $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
-    
-                    mysqli_query(databaseConnection(), $updateAttendanceSQL);
-            }
+        if ($value == "") {
+            echo "EMPTY";
+        } else {
+            $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
+
+            mysqli_query(databaseConnection(), $updateAttendanceSQL);
+        }
 
         // if ($key < 1) {
-            
+
         //     } else {
-                
+
         // }
     }
 
