@@ -1,5 +1,2 @@
+document.getElementById('classDay27').style.backgroundColor = "red";
 
-
-var classDay01 = document.getElementById('classDays').textContent;
-
-console.log(classDay01);

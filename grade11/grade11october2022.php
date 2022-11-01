@@ -1,11 +1,10 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM october2022";
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-
+$selectMonthYearSql = "SELECT * FROM october2022";
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 
 ?>
 
@@ -173,7 +172,7 @@
                      </select>
                   </td>
 
-                   <td class="classDays classDay2">
+                  <td class="classDays classDay2">
                      <select name="classDay02" class="classDays classDay02" id="classDays classDay02">
                         <option disabled selected>
                            <?php echo $monthYearRow['2']; ?>
@@ -206,7 +205,7 @@
                      </select>
                   </td>
 
-                   <td class="classDays classDay5">
+                  <td class="classDays classDay5">
                      <select name="classDay05" class="classDays classDay05" id="classDays classDay05">
                         <option disabled selected>
                            <?php echo $monthYearRow['5']; ?>
@@ -217,7 +216,7 @@
                      </select>
                   </td>
 
-                   <td class="classDays classDay6">
+                  <td class="classDays classDay6">
                      <select name="classDay06" class="classDays classDay06" id="classDays classDay06">
                         <option disabled selected>
                            <?php echo $monthYearRow['6']; ?>
@@ -250,7 +249,7 @@
                      </select>
                   </td>
 
-                   <td class="classDays classDay9">
+                  <td class="classDays classDay9">
                      <select name="classDay09" class="classDays classDay09" id="classDays classDay09">
                         <option disabled selected>
                            <?php echo $monthYearRow['9']; ?>
@@ -272,7 +271,7 @@
                      </select>
                   </td>
 
-                   <td class="classDays classDay11">
+                  <td class="classDays classDay11">
                      <select name="classDay11" class="classDays classDay11" id="classDays classDay11">
                         <option disabled selected>
                            <?php echo $monthYearRow['11']; ?>
@@ -295,7 +294,7 @@
                   </td>
 
                   <td class="classDays classDay13">
-                     <select name="classDay03" class="classDays classDay13" id="classDays classDay13">
+                     <select name="classDay13" class="classDays classDay13" id="classDays classDay13">
                         <option disabled selected>
                            <?php echo $monthYearRow['13']; ?>
                         </option>
@@ -306,7 +305,7 @@
                   </td>
 
                   <td class="classDays classDay14">
-                     <select name="classDay03" class="classDays classDay14" id="classDays classDay14">
+                     <select name="classDay14" class="classDays classDay14" id="classDays classDay14">
                         <option disabled selected>
                            <?php echo $monthYearRow['14']; ?>
                         </option>
