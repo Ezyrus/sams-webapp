@@ -1,11 +1,12 @@
 <?php
-session_start();
-require_once "databaseConnection.php";
+    session_start();
+    error_reporting(0);  //hide errors
+    ini_set('display_errors', 0); //hide errors
+    require_once "databaseConnection.php";
 
-$studentLrn = $_GET['ID'];
-$monthYear = $_SESSION['monthYear'];
+    $studentLrn = $_GET['ID'];
+    $monthYear = $_SESSION['monthYear'];
 
-if (isset($_POST['saveAttendance'])) {
     $classDay01 = $_POST['classDay01'];
     $classDay02 = $_POST['classDay02'];
     $classDay03 = $_POST['classDay03'];
@@ -38,58 +39,29 @@ if (isset($_POST['saveAttendance'])) {
     $classDay30 = $_POST['classDay30'];
     $classDay31 = $_POST['classDay31'];
 
-    // if ($classDay01 == "" || $classDay02 == '"' || 
-    // $classDay03 == "" || $classDay04 == "" || 
-    // $classDay05 == "" || $classDay06 == "" || 
-    // $classDay07 == "" || $classDay08 == "" || 
-    // $classDay09 == "" || $classDay10 == "" || 
-    // $classDay11 == "" || $classDay12 == "" || 
-    // $classDay13 == "" || $classDay14 == "" || 
-    // $classDay15 == "" || $classDay16 == "" || 
-    // $classDay17 == "" || $classDay18 == "" || 
-    // $classDay19 == "" || $classDay20 == "" || 
-    // $classDay21 == "" || $classDay22 == "" || 
-    // $classDay23 == "" || $classDay24 == "" || 
-    // $classDay25 == "" || $classDay26 == "" || 
-    // $classDay27 == "" || $classDay28 == "" || 
-    // $classDay29 == "" || $classDay30 == "" || 
-    // $classDay31 == "") {
-    //     echo "empty";
-    // } else {
-    //     echo "not empty";
-    // }
+    $classDays = array(0, $classDay01, $classDay02, $classDay03, $classDay04, $classDay05, $classDay06, $classDay07, $classDay08, $classDay09, $classDay10, $classDay11, $classDay12, $classDay13, $classDay14, $classDay15, $classDay16, $classDay17, $classDay18, $classDay19, $classDay20, $classDay21, $classDay22, $classDay23, $classDay24, $classDay25, $classDay26, $classDay27, $classDay28, $classDay29, $classDay30, $classDay31); // ignore index 0 with a value of 0
 
-    $classDays = array($classDay01, $classDay02, $classDay03, $classDay04, $classDay05, $classDay06, $classDay07, $classDay08, $classDay09, $classDay10, $classDay11, $classDay12, $classDay13, $classDay14, $classDay15, $classDay16, $classDay17, $classDay18, $classDay19, $classDay20, $classDay21, $classDay22, $classDay23, $classDay24, $classDay25, $classDay26, $classDay27, $classDay28, $classDay29, $classDay30, $classDay31);
+    $schoolDays = 0;
+    $totalPresent = 0;
+    $totalAbsent = 0;
+    $attendanceRate = 0;
 
-    $classDaysCount = count($classDays);
-    echo $classDaysCount;
+    if (isset($_POST['saveAttendance'])) {
 
-    //TODO: Make $key starts at 1 and  fix Month-Year Logic for fuck sake...
-
-    foreach ($classDays as $key => $value) {
-
-        echo " || $key => $value";
-
-        if ($value == "") {
-            echo "EMPTY";
-        } else {
-            $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
-
-            mysqli_query(databaseConnection(), $updateAttendanceSQL);
+        foreach ($classDays as $key => $value) {
+            if ($key >= 1) {
+                // do nothing
+                if ($value == "") {
+                    // do nothing
+                } else {
+                    $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
+                    mysqli_query(databaseConnection(), $updateAttendanceSQL);
+                }
+            }
         }
+    echo '<script>window.history.back();</script>';
+    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
 
-        // if ($key < 1) {
-
-        //     } else {
-
-        // }
     }
 
-    // $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$classDay01',`2`='$classDay02',`3`='$classDay03',`4`='$classDay04',`5`='$classDay05',`6`='$classDay06',`7`='$classDay07',`8`='$classDay08',`9`='$classDay09',`10`='$classDay10',`11`='$classDay11',`12`='$classDay12',`13`='$classDay13',`14`='$classDay14',`15`='$classDay15',`16`='$classDay16',`17`='$classDay17',`18`='$classDay18',`19`='$classDay19',`20`='$classDay20',`21`='$classDay21',`22`='$classDay22',`23`='$classDay23',`24`='$classDay24',`25`='$classDay25',`26`='$classDay26',`27`='$classDay27',`28`='$classDay28',`29`='$classDay29',`30`='$classDay30',`31`='$classDay31' WHERE `lrn` = '$studentLrn' ";
-
-    // mysqli_query(databaseConnection(), $updateAttendanceSQL);
-
-
-    // echo '<script>window.history.back();</script>';
-    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
-}
+?>  
