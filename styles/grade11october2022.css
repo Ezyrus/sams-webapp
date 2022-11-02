@@ -263,6 +263,7 @@ section.main table tr td.classDays:hover {
 }
 
 section.main table tr td select.classDays {
+
   border: 1px solid white;
   width: 100%;
   height: 7vh;
@@ -282,7 +283,6 @@ section.main table tr td select.classDays:hover {
 section.main table tr td select.classDays option {
   background-color: rgb(63, 186, 135, 0.3);
   font-size: 20px;
-  border-radius: 5px;
 }
 
 section.main table tr td select.classDays option.present {
@@ -309,8 +309,8 @@ section.main table tr td a {
 
 section.main tr td button {
   color: blue;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   font-family: "Tomorrow", sans-serif;
   border: 0px solid black;
   background-color: white;

@@ -21,7 +21,7 @@
 
    <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-   <script src="../js/studentAttendanceColor.js"></script>
+ 
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -170,6 +170,7 @@
                         <option class="absent" value="absent">Absent</option>
                         <option class="noclass" value="noclass">NoClass</option>
                      </select>
+                     
                   </td>
 
                   <td class="classDays classDay2">
@@ -522,8 +523,11 @@
 
       </table>
 
+      <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
+
    </section>
 
+  
    <footer>
       <div class="fdswdLogo">
          <div>

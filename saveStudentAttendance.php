@@ -56,6 +56,8 @@
                 } else {
                     $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
                     mysqli_query(databaseConnection(), $updateAttendanceSQL);
+
+                    
                 }
             }
         }
