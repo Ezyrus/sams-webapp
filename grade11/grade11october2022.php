@@ -532,14 +532,14 @@ $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
 
       
       <script>
-         var classDays05 = document.querySelectorAll("tr td select.classDay05");
+         var classDays = document.querySelectorAll("tr td select.classDays"); //Element container
 
-         for (var i = 0; i < classDays05.length; i++) {
+         for (var i = 0; i < classDays.length; i++) {
             
-            if ('<?php echo $studentAttendanceRow[5]; ?>' == "present") {
-               classDays05[i].style.backgroundColor = "green";
+            if ('<?php echo $studentAttendanceRow[1]; ?>' == "present") {
+               classDays[i].style.backgroundColor = "green";
             }
-         
+
          }
       </script>
 
