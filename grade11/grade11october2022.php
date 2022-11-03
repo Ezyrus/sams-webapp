@@ -1,16 +1,15 @@
 <?php
-session_start();
-require_once "../databaseConnection.php";
+   session_start();
+   require_once "../databaseConnection.php";
 
+   $selectMonthYearSql = "SELECT * FROM october2022";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+   $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
 
-$selectMonthYearSql = "SELECT * FROM october2022";
-$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+   // $classDaysAttendance = array($monthYearRow[1],$monthYearRow[2],$monthYearRow[3],$monthYearRow[4],$monthYearRow[5],$monthYearRow[6],$monthYearRow[7],$monthYearRow[8],$monthYearRow[9],$monthYearRow[10],$monthYearRow[11],$monthYearRow[12],$monthYearRow[13],$monthYearRow[14],$monthYearRow[15],$monthYearRow[16],$monthYearRow[17],$monthYearRow[18],$monthYearRow[19],$monthYearRow[20],$monthYearRow[21],$monthYearRow[23],$monthYearRow[24],$monthYearRow[25],$monthYearRow[26],$monthYearRow[27],$monthYearRow[28],$monthYearRow[29],$monthYearRow[30],$monthYearRow[31]);
 
-$selectTableNumRows= mysqli_num_rows($initiateSelectSql);
-
-
-
+   
 ?>
 
 <!DOCTYPE html>
@@ -531,11 +530,10 @@ $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
 
 
-      <script>
+      <?php 
+         
+      ?>
 
-         var classDays = document.querySelectorAll("tr td select.classDays"); //Element container
-   
-      </script>
 
    </section>
 
