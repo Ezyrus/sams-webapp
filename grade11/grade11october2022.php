@@ -530,6 +530,7 @@ $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
 
+      
       <script>
          var classDays05 = document.querySelectorAll("tr td select.classDay05");
 
