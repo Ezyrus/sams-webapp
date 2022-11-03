@@ -1,10 +1,15 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM october2022";
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
+$selectMonthYearSql = "SELECT * FROM october2022";
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+
+$selectAttendanceSql = "SELECT * FROM october2022";
+$initiateSelectAttendanceSql = mysqli_query(databaseConnection(), $selectAttendanceSql);
+$studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
 
 ?>
 
@@ -21,7 +26,7 @@
 
    <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
- 
+
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -170,7 +175,7 @@
                         <option class="absent" value="absent">Absent</option>
                         <option class="noclass" value="noclass">NoClass</option>
                      </select>
-                     
+
                   </td>
 
                   <td class="classDays classDay2">
@@ -525,9 +530,21 @@
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
 
+      <script>
+         var classDays05 = document.querySelectorAll("tr td select.classDay05");
+
+         for (var i = 0; i < classDays05.length; i++) {
+            
+            if ('<?php echo $studentAttendanceRow[5]; ?>' == "present") {
+               classDays05[i].style.backgroundColor = "green";
+            }
+         
+         }
+      </script>
+
    </section>
 
-  
+
    <footer>
       <div class="fdswdLogo">
          <div>

@@ -1,7 +1,7 @@
 <?php
     session_start();
-    error_reporting(0);  //hide errors
-    ini_set('display_errors', 0); //hide errors
+    // error_reporting(0);  //hide errors
+    // ini_set('display_errors', 0); //hide errors
     require_once "databaseConnection.php";
 
     $studentLrn = $_GET['ID'];
@@ -56,14 +56,21 @@
                 } else {
                     $updateAttendanceSQL = "UPDATE `$monthYear` SET `$key`='$value' WHERE `lrn` = '$studentLrn' ";
                     mysqli_query(databaseConnection(), $updateAttendanceSQL);
-
-                    
                 }
             }
         }
-    echo '<script>window.history.back();</script>';
-    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
-
     }
 
+    // $selectAttendanceSql = "SELECT * FROM `$monthYear`";
+    // $initiateSelectAttendanceSql = mysqli_query(databaseConnection(), $selectAttendanceSql);
+    // $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
+    // do {
+    //     if ($studentAttendanceRow[1] == "present") {
+    //         echo "<script>
+    //         </script>";
+    //     }
+    // }   while ( $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql));
+
+    // echo '<script>window.history.back();</script>';
+    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
 ?>  

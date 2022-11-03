@@ -250,6 +250,7 @@ section.main table tr:hover {
   background-color: yellow;
 } */
 
+
 section.main table tr td.studentInfo {
   height: 7vh;
   padding: 2px;
@@ -257,6 +258,7 @@ section.main table tr td.studentInfo {
   font-size: 13px;
   text-transform: capitalize;
 }
+
 
 section.main table tr td.classDays:hover {
   background-color: rgb(63, 186, 135, 0.3);
