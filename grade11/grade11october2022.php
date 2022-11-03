@@ -535,15 +535,21 @@ $studentTableNumrows = mysqli_num_rows($initiateSelectAttendanceSql);
 
 
       <script>
-         var classDays = document.querySelectorAll("tr td select.classDays"); //Element container
 
-         for (var index = 0; index < classDays.length; index++) {
+         var classDay01 = document.querySelectorAll("tr td select.classDay01"); //Element container
+
+         for (var index = 0; index < classDay01.length; index++) {
 
             if ('<?php echo $studentAttendanceRow[1] ?>' == "present") {
-               classDays[index].style.backgroundColor = "green";
+               classDay01[index].style.backgroundColor = "green";
+            } else if ('<?php echo $studentAttendanceRow[1] ?>' == "absent") {
+               classDay01[index].style.backgroundColor = "red";
+            } else {
+               classDay01[index].style.backgroundColor = "yellow";
             }
 
          }
+            
       </script>
 
    </section>
