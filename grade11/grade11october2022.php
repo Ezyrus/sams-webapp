@@ -10,6 +10,9 @@ $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 $selectAttendanceSql = "SELECT * FROM october2022";
 $initiateSelectAttendanceSql = mysqli_query(databaseConnection(), $selectAttendanceSql);
 $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
+$studentTableNumrows = mysqli_num_rows($initiateSelectAttendanceSql);
+
+
 
 ?>
 
@@ -530,14 +533,14 @@ $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
 
-      
+
       <script>
          var classDays = document.querySelectorAll("tr td select.classDays"); //Element container
 
-         for (var i = 0; i < classDays.length; i++) {
-            
-            if ('<?php echo $studentAttendanceRow[1]; ?>' == "present") {
-               classDays[i].style.backgroundColor = "green";
+         for (var index = 0; index < classDays.length; index++) {
+
+            if ('<?php echo $studentAttendanceRow[1] ?>' == "present") {
+               classDays[index].style.backgroundColor = "green";
             }
 
          }
