@@ -537,9 +537,7 @@
 
                       document.write('| Present |'); 
                       </script>";
-                  }
-
-                   if ($monthYearRow[1] == "absent") {
+                  } else if ($monthYearRow[1] == "absent") {
                       echo "<script> 
                       var classDay01 = document.querySelectorAll('tr td.classDay01');
           
@@ -547,21 +545,21 @@
                          classDay01[i].style.background = 'red';
                      }
 
-                      document.write('| Absent |');
-                      </script>";
+                     document.write('| Absent |');
+                    </script>";
                   }  
 
-                  if ($monthYearRow[1] == "noclass") {
-                      echo "<script>                       
-                      var classDay01 = document.querySelectorAll('tr td.classDay01');
+                  // if ($monthYearRow[1] == "noclass") {
+                  //     echo "<script>                       
+                  //     var classDay01 = document.querySelectorAll('tr td.classDay01');
           
-                      for (var i = 0; i < classDay01.length; i++) {
-                          classDay01[i].style.background = 'yellow';
-                      }
+                  //     for (var i = 0; i < classDay01.length; i++) {
+                  //         classDay01[i].style.background = 'yellow';
+                  //     }
 
-                      document.write('| No Class |');
-                      </script>";
-                  }   
+                  //     document.write('| No Class |');
+                  //     </script>";
+                  // }   
             ?>
 
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
