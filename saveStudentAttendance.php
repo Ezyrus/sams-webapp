@@ -65,25 +65,7 @@
     $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
     $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
-    // do {
-    //     if ($monthYearRow[1] == "present") {
-    //         echo "<script> 
-    //         var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-    //      for (var i = 0; i < classDay01.length; i++) {
-    //            classDay01[i].style.background = 'green';
-    //      }
-
-    //         document.write('| Present |'); 
-    //         </script>";
-    //     } else if ($monthYearRow[1] == "absent") {
-    //         echo "<script> document.write('| Absent |');
-    //         </script>";
-    //     }   else if ($monthYearRow[1] == "noclass") {
-    //         echo "<script> document.write('| No Class |');
-    //         </script>";
-    //     }   
-    // }   while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql));
 
     // echo '<script>window.history.back();</script>';
     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
