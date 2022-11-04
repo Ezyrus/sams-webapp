@@ -543,9 +543,7 @@
 
                   //    document.write('| Absent |');
                   //   </script>";
-                  // }  
-
-                  // if ($monthYearRow[1] == "noclass") {
+                  // } else if ($monthYearRow[1] == "noclass") {
                   //     echo "<script>                       
                   //     var classDay01 = document.querySelectorAll('tr td.classDay01');
           
