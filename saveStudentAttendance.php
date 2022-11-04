@@ -13,7 +13,6 @@
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
     $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
 
-
     function schoolDays() {
         $classDay01 = $_POST['classDay01'];
         $classDay02 = $_POST['classDay02'];
@@ -56,7 +55,6 @@
 
         foreach (schoolDays() as $key => $value) {
             if ($key >= 1) {
-                // do nothing
                 if ($value == "") {
                     // do nothing
                 } else {
@@ -67,18 +65,48 @@
         }
     }
 
-    $schoolDays = 0;
+    $schoolDays = count(schoolDays()) - 1;
     $totalPresent = 0;
     $totalAbsent = 0;
-    $attendanceRate = 1
+    $attendanceRate = 100;
+  
 
-    $test = array();
-    // do {
+    $studentLrn = array(0); //stores all recorded lrn's from database
+    $studentAttendanceTotalPresent = 0;
+    do {
+        array_push($studentLrn, $monthYearRow['lrn']);
+    } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql));
+  
+    foreach ($studentLrn as $key => $value) {
+        
+        if ($key >= 1) {
 
+            $attCount = 0;
 
+            while ($attCount < $schoolDays) { // 0 < 31
 
-    // }   while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))
+                $attCount++;
+             
+                $selectStudentAttendanceSql = "SELECT * FROM `$monthYear` WHERE `lrn` = '$value' AND `$attCount` = 'present'";
+                $initiateSelectAttendanceSql = mysqli_query(databaseConnection(), $selectStudentAttendanceSql);
+                $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
+                $studentAttendanceTableNumRows = mysqli_num_rows($initiateSelectAttendanceSql);
 
+                $studentAttendanceTotalPresent += $studentAttendanceTableNumRows;
+
+                // echo "$value = $attCount | $studentAttendanceTotalPresent "; print_r($studentAttendanceRow); echo "<br/>"; // debug 
+
+                $updateStudentTotalPresentSql =  "UPDATE `$monthYear` SET `present_total`='$studentAttendanceTotalPresent' WHERE `lrn` = '$value' ";
+                mysqli_query(databaseConnection(), $updateStudentTotalPresentSql);
+             }
+
+            if ($key++) {
+                $studentAttendanceTotalPresent = 0; //resets 
+            }
+                
+         }
+
+    }
+    
     // echo '<script>window.history.back();</script>';
     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
-?>  
