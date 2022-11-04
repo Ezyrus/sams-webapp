@@ -10,6 +10,9 @@
    // $classDaysAttendance = array($monthYearRow[1],$monthYearRow[2],$monthYearRow[3],$monthYearRow[4],$monthYearRow[5],$monthYearRow[6],$monthYearRow[7],$monthYearRow[8],$monthYearRow[9],$monthYearRow[10],$monthYearRow[11],$monthYearRow[12],$monthYearRow[13],$monthYearRow[14],$monthYearRow[15],$monthYearRow[16],$monthYearRow[17],$monthYearRow[18],$monthYearRow[19],$monthYearRow[20],$monthYearRow[21],$monthYearRow[23],$monthYearRow[24],$monthYearRow[25],$monthYearRow[26],$monthYearRow[27],$monthYearRow[28],$monthYearRow[29],$monthYearRow[30],$monthYearRow[31]);
 
    
+
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -523,18 +526,51 @@
 
             </form>
 
+            <?php 
+                  if ($monthYearRow[1] == "present") {
+                      echo "<script> 
+                      var classDay01 = document.querySelectorAll('tr td.classDay01');
+          
+                     for (var i = 0; i < classDay01.length; i++) {
+                         classDay01[i].style.background = 'green';
+                     }
+
+                      document.write('| Present |'); 
+                      </script>";
+                  }
+
+                   if ($monthYearRow[1] == "absent") {
+                      echo "<script> 
+
+                      var classDay01 = document.querySelectorAll('tr td.classDay01');
+          
+                     for (var i = 0; i < classDay01.length; i++) {
+                         classDay01[i].style.background = 'red';
+                     }
+
+                      document.write('| Absent |');
+                      </script>";
+                  }  
+
+                  if ($monthYearRow[1] == "noclass") {
+                      echo "<script> 
+                      
+                      var classDay01 = document.querySelectorAll('tr td.classDay01');
+          
+                      for (var i = 0; i < classDay01.length; i++) {
+                          classDay01[i].style.background = 'yellow';
+                      }
+
+                      document.write('| No Class |');
+                      </script>";
+                  }   
+            ?>
+
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
-
-
-      <?php 
-         
-      ?>
-
-
    </section>
 
 
