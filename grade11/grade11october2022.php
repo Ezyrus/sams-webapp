@@ -541,7 +541,6 @@
 
                    if ($monthYearRow[1] == "absent") {
                       echo "<script> 
-
                       var classDay01 = document.querySelectorAll('tr td.classDay01');
           
                      for (var i = 0; i < classDay01.length; i++) {
@@ -553,8 +552,7 @@
                   }  
 
                   if ($monthYearRow[1] == "noclass") {
-                      echo "<script> 
-                      
+                      echo "<script>                       
                       var classDay01 = document.querySelectorAll('tr td.classDay01');
           
                       for (var i = 0; i < classDay01.length; i++) {
