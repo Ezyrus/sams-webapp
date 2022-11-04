@@ -1,7 +1,7 @@
 <?php
     session_start();
     // error_reporting(0);  //hide errors
-    // ini_set('display_errors', 0); //hide errors
+    // ('display_errors', 0); //hide errors
     require_once "databaseConnection.php";
 
     $studentLrn = $_GET['ID'];
@@ -11,7 +11,7 @@
     $selectMonthYearSql = "SELECT * FROM october2022";
     $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-    $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
+    $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
     function schoolDays() {
         $classDay01 = $_POST['classDay01'];
@@ -45,12 +45,12 @@
         $classDay29 = $_POST['classDay29'];
         $classDay30 = $_POST['classDay30'];
         $classDay31 = $_POST['classDay31'];
-    
+
         $classDays = array(0, $classDay01, $classDay02, $classDay03, $classDay04, $classDay05, $classDay06, $classDay07, $classDay08, $classDay09, $classDay10, $classDay11, $classDay12, $classDay13, $classDay14, $classDay15, $classDay16, $classDay17, $classDay18, $classDay19, $classDay20, $classDay21, $classDay22, $classDay23, $classDay24, $classDay25, $classDay26, $classDay27, $classDay28, $classDay29, $classDay30, $classDay31); // ignore index 0 with a value of 0
 
         return $classDays;
     }
-   
+
     if (isset($_POST['saveAttendance'])) {
 
         foreach (schoolDays() as $key => $value) {
@@ -66,47 +66,54 @@
     }
 
     $schoolDays = count(schoolDays()) - 1;
-    $totalPresent = 0;
-    $totalAbsent = 0;
-    $attendanceRate = 100;
-  
+    $studentTotalPresent = 0;
+    $studentTotalAbsent = 0;
+    $studentSchoolDays = 0;
+    $attCount = 0;
 
-    $studentLrn = array(0); //stores all recorded lrn's from database
-    $studentAttendanceTotalPresent = 0;
-    do {
-        array_push($studentLrn, $monthYearRow['lrn']);
-    } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql));
-  
-    foreach ($studentLrn as $key => $value) {
-        
-        if ($key >= 1) {
+    while ($attCount < $schoolDays) { // 0 < 31
 
-            $attCount = 0;
+        $attCount++;
+        // Total Present Algorithm
+        $selectStudentPresentSql = "SELECT * FROM `$monthYear` WHERE `lrn` = '$studentLrn' AND `$attCount` = 'present'";
+        $initiateSelectPresentSql = mysqli_query(databaseConnection(), $selectStudentPresentSql);
+        $studentPresentRow = mysqli_fetch_assoc($initiateSelectPresentSql);
+        $studentPresentTableNumRows = mysqli_num_rows($initiateSelectPresentSql);
+        $studentTotalPresent += $studentPresentTableNumRows;
 
-            while ($attCount < $schoolDays) { // 0 < 31
+        echo "Present = $attCount | $studentTotalPresent ";
+        print_r($studentPresentRow);
+        echo "<br/>"; // debug 
 
-                $attCount++;
-             
-                $selectStudentAttendanceSql = "SELECT * FROM `$monthYear` WHERE `lrn` = '$value' AND `$attCount` = 'present'";
-                $initiateSelectAttendanceSql = mysqli_query(databaseConnection(), $selectStudentAttendanceSql);
-                $studentAttendanceRow = mysqli_fetch_assoc($initiateSelectAttendanceSql);
-                $studentAttendanceTableNumRows = mysqli_num_rows($initiateSelectAttendanceSql);
+        $updateTotalPresentSql =  "UPDATE `$monthYear` SET `present_total`='$studentTotalPresent' WHERE `lrn` = '$studentLrn' ";
+        mysqli_query(databaseConnection(), $updateTotalPresentSql);
 
-                $studentAttendanceTotalPresent += $studentAttendanceTableNumRows;
+        // //Total Absent Algorithm
+        $selectStudentAbsentSql =  "SELECT * FROM `$monthYear` WHERE `lrn` = '$studentLrn' AND `$attCount` = 'absent'";
+        $initiateSelectAbsentSql = mysqli_query(databaseConnection(), $selectStudentAbsentSql);
+        $studentAbsentRow = mysqli_fetch_assoc($initiateSelectAbsentSql);
+        $studentAbsentTableNumRows = mysqli_num_rows($initiateSelectAbsentSql);
+        $studentTotalAbsent += $studentAbsentTableNumRows;
 
-                // echo "$value = $attCount | $studentAttendanceTotalPresent "; print_r($studentAttendanceRow); echo "<br/>"; // debug 
+        //  //echo "Absent = $attCount | $studentTotalAbsent "; print_r($studentAbsentRow); echo "<br/>"; // debug
 
-                $updateStudentTotalPresentSql =  "UPDATE `$monthYear` SET `present_total`='$studentAttendanceTotalPresent' WHERE `lrn` = '$value' ";
-                mysqli_query(databaseConnection(), $updateStudentTotalPresentSql);
-             }
+        $updateTotalAbsentSql =  "UPDATE `$monthYear` SET `absent_total`='$studentTotalAbsent' WHERE `lrn` = '$studentLrn' ";
+        mysqli_query(databaseConnection(),$updateTotalAbsentSql);
 
-            if ($key++) {
-                $studentAttendanceTotalPresent = 0; //resets 
-            }
-                
-         }
+        $studentSchoolDays = $studentTotalPresent + $studentTotalAbsent;
+
+        $updateSchoolDaysSql =  "UPDATE `$monthYear` SET `school_days`='$studentSchoolDays' WHERE `lrn` = '$studentLrn' ";
+        mysqli_query(databaseConnection(), $updateSchoolDaysSql);
 
     }
-    
-    // echo '<script>window.history.back();</script>';
-    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
+    $studentTotalPresent = 0;
+    $studentTotalAbsent = 0;
+
+    function getStudentTotalPresent()
+    {
+    }
+
+        
+        //echo '<script>window.history.back();</script>';
+        // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
+?>
