@@ -13,8 +13,7 @@
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
     $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-    function schoolDays()
-    {
+    function schoolDays() {
         $classDay01 = $_POST['classDay01'];
         $classDay02 = $_POST['classDay02'];
         $classDay03 = $_POST['classDay03'];
@@ -113,7 +112,6 @@
     $studentSchoolDays = 0;
     $studentAttendanceRate = 0;
 
-    
-        echo '<script>window.history.back();</script>';
-        // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
+    echo '<script>window.history.back();</script>';
+     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
 ?>
