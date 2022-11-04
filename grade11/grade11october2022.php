@@ -512,7 +512,7 @@
 
                   <td class="studentInfo"><?php echo $monthYearRow['absent_total']; ?></td>
 
-                  <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?></td>
+                  <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?>%</td>
 
                   <td class="studentInfo">
                      <button type="submit" name="saveAttendance"><?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
