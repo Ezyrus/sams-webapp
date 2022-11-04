@@ -52,11 +52,6 @@
         return $classDays;
     }
    
-    $schoolDays = 0;
-    $totalPresent = 0;
-    $totalAbsent = 0;
-    $attendanceRate = 100;
-
     if (isset($_POST['saveAttendance'])) {
 
         foreach (schoolDays() as $key => $value) {
@@ -69,10 +64,20 @@
                     mysqli_query(databaseConnection(), $updateAttendanceSQL);
                 }
             }
-
         }
- 
     }
+
+    $schoolDays = 0;
+    $totalPresent = 0;
+    $totalAbsent = 0;
+    $attendanceRate = 1
+
+    $test = array();
+    // do {
+
+
+
+    // }   while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql))
 
     // echo '<script>window.history.back();</script>';
     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
