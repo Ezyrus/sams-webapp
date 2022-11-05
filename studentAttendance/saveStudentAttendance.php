@@ -5,6 +5,7 @@
 
     $studentLrn = $_GET['ID'];
     $monthYear = $_SESSION['monthYear'];
+     $_SESSION['toSessionStudentLrn'] = $studentLrn;
 
     //Whole month table
     $selectMonthYearSql = "SELECT * FROM october2022";
@@ -12,8 +13,7 @@
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
     $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-    function schoolDays()
-    {
+    function schoolDays() {
         $classDay01 = $_POST['classDay01'];
         $classDay02 = $_POST['classDay02'];
         $classDay03 = $_POST['classDay03'];
@@ -63,15 +63,15 @@
                 }
             }
         }
+    
     }
-
     $schoolDays = count(schoolDays()) - 1;
+
     $studentTotalPresent = 0;
     $studentTotalAbsent = 0;
     $studentSchoolDays = 0;
     $studentAttendanceRate = 0;
     $attCount = 0;
-
     while ($attCount < $schoolDays) { // 0 < 31
         $attCount++;
 
@@ -105,8 +105,6 @@
     $studentAttendanceRate = $studentTotalPresent / $studentSchoolDays * 100;
     $updateAttendanceRateSql = "UPDATE `$monthYear` SET `attendance_rate`='$studentAttendanceRate' WHERE `lrn` = '$studentLrn' ";
     mysqli_query(databaseConnection(), $updateAttendanceRateSql);
-
-
     //To reset everything after initiation of Sql queries
     $studentTotalPresent = 0;
     $studentTotalAbsent = 0;
@@ -114,7 +112,8 @@
     $studentAttendanceRate = 0;
 
     echo '<script>window.history.back();</script>';
+
+    
     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
 
 ?>
-

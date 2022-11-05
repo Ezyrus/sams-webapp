@@ -188,19 +188,14 @@ section.main {
 }
 
 section.main::-webkit-scrollbar {
-  width: 1.5vh;
+  width: 1.7vh;
 }
 
 section.main::-webkit-scrollbar-track {
   background-color: rgb(63, 186, 135, 0.6);
-  
 }
 
-section.main::-webkit-scrollbar-track:hover {
-  background-color: rgb(63, 186, 135, 0.8);
-}
-
-section.main::-webkit-scrollbar-thumb {
+section.main::-webkit-scrollbar-thumb:hover {
   background-color: rgb(63, 186, 135);
   border-radius: 5px;
 }
@@ -441,4 +436,5 @@ section.main tr td.function h3 a:hover {
   }
 }
 /* RESPONSIVE DESIGN */
+
 
