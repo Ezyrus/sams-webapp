@@ -1,11 +1,11 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM october2022";
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-   $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
+$selectMonthYearSql = "SELECT * FROM october2022";
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+$selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
 ?>
 
@@ -22,7 +22,7 @@
 
    <link rel="stylesheet" href="../styles/grade11october2022.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-
+   <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -512,49 +512,49 @@
 
                   <td class="studentInfo function">
                      <button type="submit" name="saveAttendance">
-                  <?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
+                        <?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
                      <h3 class="removeStudent">
                         <a href="../studentAttendance/removeStudents.php?ID=<?php echo $monthYearRow['lrn']; ?>">REMOVE</a>
                      </h3>
-                     
+
                   </td>
 
                </tr>
 
             </form>
 
-            <?php 
-                  // if ($monthYearRow[1] == "present") {
-                  //     echo "<script> 
-                  //     var classDay01 = document.querySelectorAll('tr td.classDay01');
-          
-                  //    for (var i = 0; i < classDay01.length; i++) {
-                  //        classDay01[i].style.background = 'green';
-                  //    }
+            <?php
+            // if ($monthYearRow[1] == "present") {
+            //     echo "<script> 
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-                  //     document.write('| Present |'); 
-                  //     </script>";
-                  // } else if ($monthYearRow[1] == "absent") {
-                  //     echo "<script> 
-                  //     var classDay01 = document.querySelectorAll('tr td.classDay01');
-          
-                  //    for (var i = 0; i < classDay01.length; i++) {
-                  //        classDay01[i].style.background = 'red';
-                  //    }
+            //    for (var i = 0; i < classDay01.length; i++) {
+            //        classDay01[i].style.background = 'green';
+            //    }
 
-                  //    document.write('| Absent |');
-                  //   </script>";
-                  // } else if ($monthYearRow[1] == "noclass") {
-                  //     echo "<script>                       
-                  //     var classDay01 = document.querySelectorAll('tr td.classDay01');
-          
-                  //     for (var i = 0; i < classDay01.length; i++) {
-                  //         classDay01[i].style.background = 'yellow';
-                  //     }
+            //     document.write('| Present |'); 
+            //     </script>";
+            // } else if ($monthYearRow[1] == "absent") {
+            //     echo "<script> 
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-                  //     document.write('| No Class |');
-                  //     </script>";
-                  // }   
+            //    for (var i = 0; i < classDay01.length; i++) {
+            //        classDay01[i].style.background = 'red';
+            //    }
+
+            //    document.write('| Absent |');
+            //   </script>";
+            // } else if ($monthYearRow[1] == "noclass") {
+            //     echo "<script>                       
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+
+            //     for (var i = 0; i < classDay01.length; i++) {
+            //         classDay01[i].style.background = 'yellow';
+            //     }
+
+            //     document.write('| No Class |');
+            //     </script>";
+            // }   
             ?>
 
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
@@ -563,6 +563,8 @@
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
+
+
 
    <footer>
       <div class="fdswdLogo">
@@ -595,8 +597,6 @@
          </div>
       </div>
    </footer>
-
-
 </body>
 
 </html>

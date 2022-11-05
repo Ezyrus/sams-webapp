@@ -12,7 +12,8 @@
     $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
     $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-    function schoolDays() {
+    function schoolDays()
+    {
         $classDay01 = $_POST['classDay01'];
         $classDay02 = $_POST['classDay02'];
         $classDay03 = $_POST['classDay03'];
@@ -93,7 +94,6 @@
         //  //echo "Absent = $attCount | $studentTotalAbsent "; print_r($studentAbsentRow); echo "<br/>"; // debug
         $updateTotalAbsentSql =  "UPDATE `$monthYear` SET `absent_total`='$studentTotalAbsent' WHERE `lrn` = '$studentLrn' ";
         mysqli_query(databaseConnection(), $updateTotalAbsentSql);
-
     }
 
     //Total School Days
@@ -114,6 +114,7 @@
     $studentAttendanceRate = 0;
 
     echo '<script>window.history.back();</script>';
-     // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
-     
+    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
+
 ?>
+
