@@ -173,7 +173,6 @@
                         <option class="absent" value="absent">Absent</option>
                         <option class="noclass" value="noclass">NoClass</option>
                      </select>
-
                   </td>
 
                   <td class="classDays classDay2">
@@ -505,6 +504,8 @@
                         <option class="noclass" value="noclass">NoClass</option>
                      </select>
                   </td>
+
+                 
 
                   <td class="studentInfo"><?php echo $monthYearRow['school_days']; ?></td>
 
