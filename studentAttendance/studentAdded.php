@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "databaseConnection.php";
+require_once "../databaseConnection.php";
 
 $selectLrn = $_GET['ID'];
 $monthYear = $_SESSION['monthYear'];
@@ -20,13 +20,13 @@ $monthRow = mysqli_fetch_assoc($initiateMonthSelectSql);
 $monthTableNumRows = mysqli_num_rows($initiateMonthSelectSql);
 
 if ($monthTableNumRows) {
-    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in October 2022 Record.")
-        document.location = "addStudents.php"</script>';
+    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in October 2022 Record.");
+    window.history.back();</script>';
 } else {
     $insertStudentSql = "INSERT INTO `$monthYear`(`lrn`, `student_name`, `section`) VALUES ('$studentLrn','$studentName','$studentSection')";
-    echo $insertStudentSql;
     mysqli_query(databaseConnection(), $insertStudentSql);
 
-    echo '<script>alert("Student LRN :  ' . $selectLrn . ' has been successfully added")
-        document.location = "./grade11/grade11'.$monthYear.'.php"</script>';
+    echo '<script>
+    window.history.back();
+    </script>';
 }

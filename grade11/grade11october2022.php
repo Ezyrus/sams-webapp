@@ -7,8 +7,6 @@
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
    $selectTableNumRows= mysqli_num_rows($initiateSelectSql);
 
-   
-
 ?>
 
 <!DOCTYPE html>
@@ -89,16 +87,15 @@
 
          <div>
             <h2 class="studentProfile">
-               <a href="../studentProfile.php">Student Profile</a>
+               <a href="../studentProfile/studentProfile.php">Student Profile</a>
             </h2>
             <h2 class="gradeLevel">
                <a href="../gradeLevel.php">Grade Level</a>
             </h2>
-
          </div>
 
          <div>
-            <h2 class="addStudents"><a href="../addStudents.php">
+            <h2 class="addStudents"><a href="../studentAttendance/addStudents.php">
                   <?php $_SESSION['monthYear'] = "october2022"; ?>Add students</a>
             </h2>
             <h2 class="logout">
@@ -156,7 +153,7 @@
 
          <?php do { ?>
 
-            <form action="../saveStudentAttendance.php?ID=<?php echo  $monthYearRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
+            <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $monthYearRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
 
                <tr>
 
@@ -505,8 +502,6 @@
                      </select>
                   </td>
 
-                 
-
                   <td class="studentInfo"><?php echo $monthYearRow['school_days']; ?></td>
 
                   <td class="studentInfo"><?php echo $monthYearRow['present_total']; ?></td>
@@ -515,8 +510,13 @@
 
                   <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?>%</td>
 
-                  <td class="studentInfo">
-                     <button type="submit" name="saveAttendance"><?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
+                  <td class="studentInfo function">
+                     <button type="submit" name="saveAttendance">
+                  <?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
+                     <h3 class="removeStudent">
+                        <a href="../studentAttendance/removeStudents.php?ID=<?php echo $monthYearRow['lrn']; ?>">REMOVE</a>
+                     </h3>
+                     
                   </td>
 
                </tr>
@@ -563,7 +563,6 @@
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
-
 
    <footer>
       <div class="fdswdLogo">

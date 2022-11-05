@@ -1,8 +1,7 @@
 <?php
     session_start();
     error_reporting(0);  //hide errors
- 
-    require_once "databaseConnection.php";
+    require_once "../databaseConnection.php";
 
     $studentLrn = $_GET['ID'];
     $monthYear = $_SESSION['monthYear'];
@@ -73,8 +72,8 @@
     $attCount = 0;
 
     while ($attCount < $schoolDays) { // 0 < 31
-
         $attCount++;
+
         // Total Present Algorithm
         $selectStudentPresentSql = "SELECT * FROM `$monthYear` WHERE `lrn` = '$studentLrn' AND `$attCount` = 'present'";
         $initiateSelectPresentSql = mysqli_query(databaseConnection(), $selectStudentPresentSql);
@@ -95,16 +94,18 @@
         $updateTotalAbsentSql =  "UPDATE `$monthYear` SET `absent_total`='$studentTotalAbsent' WHERE `lrn` = '$studentLrn' ";
         mysqli_query(databaseConnection(), $updateTotalAbsentSql);
 
-        //Total School Days
-        $studentSchoolDays = $studentTotalPresent + $studentTotalAbsent;
-        $updateSchoolDaysSql =  "UPDATE `$monthYear` SET `school_days`='$studentSchoolDays' WHERE `lrn` = '$studentLrn' ";
-        mysqli_query(databaseConnection(), $updateSchoolDaysSql);
-
-        //Student Attendance Rate
-        $studentAttendanceRate = $studentTotalPresent / $studentSchoolDays * 100;
-        $updateAttendanceRateSql = "UPDATE `$monthYear` SET `attendance_rate`='$studentAttendanceRate' WHERE `lrn` = '$studentLrn' ";
-        mysqli_query(databaseConnection(), $updateAttendanceRateSql);
     }
+
+    //Total School Days
+    $studentSchoolDays = $studentTotalPresent + $studentTotalAbsent;
+    $updateSchoolDaysSql =  "UPDATE `$monthYear` SET `school_days`='$studentSchoolDays' WHERE `lrn` = '$studentLrn' ";
+    mysqli_query(databaseConnection(), $updateSchoolDaysSql);
+
+    //Student Attendance Rate
+    $studentAttendanceRate = $studentTotalPresent / $studentSchoolDays * 100;
+    $updateAttendanceRateSql = "UPDATE `$monthYear` SET `attendance_rate`='$studentAttendanceRate' WHERE `lrn` = '$studentLrn' ";
+    mysqli_query(databaseConnection(), $updateAttendanceRateSql);
+
 
     //To reset everything after initiation of Sql queries
     $studentTotalPresent = 0;

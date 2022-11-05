@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "databaseConnection.php";
+require_once "../databaseConnection.php";
 
 $selectStudentSql = "SELECT * FROM students";
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
@@ -19,8 +19,8 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/studentProfile.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="styles/header-footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/studentProfile.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
 
@@ -31,7 +31,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <header>
         <div class="calLogo">
             <div>
-                <img src="assets/calHigh.png" alt="Caloocan Highschool Logo">
+                <img src="../assets/calHigh.png" alt="Caloocan Highschool Logo">
             </div>
         </div>
 
@@ -42,7 +42,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         <div class="depEdLogo">
             <div>
-                <img src="assets/depEd.png" alt="DepEd Logo">
+                <img src="../assets/depEd.png" alt="DepEd Logo">
             </div>
         </div>
     </header>
@@ -54,7 +54,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <h1 onclick="history.go(-1);">
                 < BACK</h1>
 
-                    <h1><a href="registerStudents.php">Register Students</a></h1>
+                <h1><a href="../gradeLevel.php">Grade Level </a></h1>
 
         </div>
 
@@ -71,7 +71,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
 
             <h2 class="logout">
-                <a href="logout.php">logout</a>
+                <a href="../logout.php">logout</a>
             </h2>
 
         </div>
@@ -81,6 +81,8 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <div class="studentProfile">
         <div class="profileContainer">
             <div class="search-container">
+
+                <h1><a href="registerStudents.php">Register Students</a></h1>
 
                 <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
@@ -111,7 +113,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                         <td class="email"><?php echo $studentRow['email']; ?></td>
                         <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                         <td class="function">
-                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a>
+                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE | </a>
                             <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a>
                         </td>
                     </tr>
@@ -124,31 +126,31 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <footer>
         <div class="fdswdLogo">
             <div>
-                <img src="assets/dswd.png" alt="DWSD LOGO">
+                <img src="../assets/dswd.png" alt="DWSD LOGO">
             </div>
         </div>
 
         <div class="fdepEdLogo">
             <div>
-                <img src="assets/depEdSeal.png" alt="DEPED SEAL">
+                <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
             </div>
         </div>
 
         <div class="fcalCityLogo">
             <div>
-                <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
+                <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
             </div>
         </div>
 
         <div class="fCalHighLogo">
             <div>
-                <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+                <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
             </div>
         </div>
 
         <div class="fFourPs">
             <div>
-                <img src="assets/fourPs.png" alt="4P'S LOGO">
+                <img src="../assets/fourPs.png" alt="4P'S LOGO">
             </div>
         </div>
     </footer>
