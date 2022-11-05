@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
 $selectMonthYearSql = "SELECT * FROM october2022";
@@ -511,7 +512,7 @@ $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
                   <td class="studentInfo"><?php echo $monthYearRow['attendance_rate']; ?>%</td>
 
                   <td class="studentInfo function">
-                     <button type="submit" name="saveAttendance">
+                     <button type="submit" name="saveAttendance" id="loadLoader">
                         <?php $_SESSION['monthYear'] = "october2022"; ?>SAVE</button>
                      <h3 class="removeStudent">
                         <a href="../studentAttendance/removeStudents.php?ID=<?php echo $monthYearRow['lrn']; ?>">REMOVE</a>

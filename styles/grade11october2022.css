@@ -271,7 +271,6 @@ section.main table tr td.function {
 }
 
 section.main table tr td select.classDays {
-opacity: 0.5;
   border: 1px solid white;
   width: 100%;
   height: 8vh;
