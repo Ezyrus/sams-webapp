@@ -5,7 +5,7 @@
 
     $studentLrn = $_GET['ID'];
     $monthYear = $_SESSION['monthYear'];
-     $_SESSION['toSessionStudentLrn'] = "$studentLrn has been saved";
+    $_SESSION['messageUpdate'] = "$studentLrn has been saved";
 
     //Whole month table
     $selectMonthYearSql = "SELECT * FROM october2022";
@@ -54,7 +54,7 @@
     if (isset($_POST['saveAttendance'])) {
 
         foreach (schoolDays() as $key => $value) {
-            if ($key >= 1) {
+            if ($key >= 1) { //index starts with 0 but the schoolDays aren't 
                 if ($value == "") {
                     // do nothing
                 } else {

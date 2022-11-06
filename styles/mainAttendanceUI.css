@@ -191,7 +191,6 @@ section.log h3 {
   font-style: italic;
   letter-spacing: 3px;
   font-size: 14px;
-  cursor: pointer;
 }
 
 section.log h3 a{
@@ -234,7 +233,6 @@ section.log form input {
   padding: 4px 10px;
   letter-spacing: 3px;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 section.log form button {

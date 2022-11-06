@@ -1,6 +1,7 @@
 <?php 
    session_start(); 
-   $_SESSION['toSessionStudentLrn'] = "";
+   $_SESSION['messageUpdate'] = "";
+   $_SESSION['monthYear'] = "";
 ?>
 
 <!DOCTYPE html>

@@ -5,7 +5,7 @@ require_once "../databaseConnection.php";
 
 $searchResult = $_GET['search'];
 
-$selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'";
+$selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ";
 
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 

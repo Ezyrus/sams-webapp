@@ -9,7 +9,7 @@ $searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%
 $initiateSearchStudentSql = mysqli_query(databaseConnection(), $searchStudentSql);
 $searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
 
-$studentLrn = $_SESSION['toSessionStudentLrn'];
+$messageUpdate = $_SESSION['messageUpdate'];
 $_SESSION['monthYear'] = "october2022";
 
 ?>
@@ -124,14 +124,14 @@ $_SESSION['monthYear'] = "october2022";
          <button type="submit">Search</button>
       </form>
 
-      <h3 id="log">Log: <span><?php
-                              if ($studentLrn == "") {
-                                 echo "...";
-                              } else {
-                                 echo "$studentLrn";
-                              }
-                              ?></span>
-      </h3>
+      <h3 id="log">Log: <span><?php 
+            if ($messageUpdate == "" ) {
+               echo "...";
+            } else {
+               echo "$messageUpdate" ;
+            }
+         ?></span>
+    </h3>
    </section>
 
    <section class="main">

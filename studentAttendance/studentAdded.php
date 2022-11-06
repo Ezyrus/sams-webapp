@@ -4,7 +4,7 @@ require_once "../databaseConnection.php";
 
 $selectLrn = $_GET['ID'];
 $monthYear = $_SESSION['monthYear'];
-$_SESSION['toSessionStudentLrn'] = "$selectLrn has been added";
+$_SESSION['messageUpdate'] = "$selectLrn has been added";
 
 //Student Table
 $studentSelectSql = "SELECT * FROM students WHERE lrn = '$selectLrn'";
@@ -21,7 +21,7 @@ $monthRow = mysqli_fetch_assoc($initiateMonthSelectSql);
 $monthTableNumRows = mysqli_num_rows($initiateMonthSelectSql);
 
 if ($monthTableNumRows) {
-    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in October 2022 Record.");
+    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in  ' . $monthYear . '  Record.");
     window.history.back();</script>';
 } else {
     $insertStudentSql = "INSERT INTO `$monthYear`(`lrn`, `student_name`, `section`) VALUES ('$studentLrn','$studentName','$studentSection')";

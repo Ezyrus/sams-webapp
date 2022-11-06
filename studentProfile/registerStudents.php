@@ -2,6 +2,9 @@
    session_start();
    require_once "../databaseConnection.php";
 
+   $_SESSION['messageUpdate'] = "";
+   $_SESSION['monthYear'] = "";
+
    if (isset($_POST['registerStudent'])) {
       $studentLrn = $_POST['lrn'];
       $studentName = $_POST['name'];

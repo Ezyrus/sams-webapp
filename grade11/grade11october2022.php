@@ -8,7 +8,7 @@ $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
 $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-$studentLrn = $_SESSION['toSessionStudentLrn'];
+$messageUpdate = $_SESSION['messageUpdate'];
 $_SESSION['monthYear'] = "october2022";
 
 ?>
@@ -18,16 +18,16 @@ $_SESSION['monthYear'] = "october2022";
 
    <head>
 
-   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
-   
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
+      
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
-   <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-   <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
-   <title>Student Attendance Monitoring System</title>
+      <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
+      <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+      <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
+      <title>Student Attendance Monitoring System</title>
 
    </head>
 
@@ -127,10 +127,10 @@ $_SESSION['monthYear'] = "october2022";
       </form>
 
       <h3 id="log">Log: <span><?php 
-            if ($studentLrn == "" ) {
+            if ($messageUpdate == "" ) {
                echo "...";
             } else {
-               echo "$studentLrn" ;
+               echo "$messageUpdate" ;
             }
          ?></span>
     </h3>

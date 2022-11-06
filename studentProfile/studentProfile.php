@@ -2,6 +2,8 @@
 session_start();
 require_once "../databaseConnection.php";
 
+$_SESSION['messageUpdate'] = "";
+$_SESSION['monthYear'] = "";
 $selectStudentSql = "SELECT * FROM students";
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 $studentRow = mysqli_fetch_assoc($initiateSelectSql);
