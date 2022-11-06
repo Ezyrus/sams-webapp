@@ -1,38 +1,38 @@
 <?php
-    session_start();
-    error_reporting(0);  //hide errors
-    require_once "../databaseConnection.php";
+session_start();
+error_reporting(0);  //hide errors
+require_once "../databaseConnection.php";
 
-    $userSearch = $_GET['userSearch'];
+$userSearch = $_GET['userSearch'];
 
-    $searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%' || student_name LIKE '%$userSearch%' || lrn LIKE '%$userSearch%' ";
-    $initiateSearchStudentSql = mysqli_query(databaseConnection(), $searchStudentSql);
-    $searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
+$searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%' || student_name LIKE '%$userSearch%' || lrn LIKE '%$userSearch%' ";
+$initiateSearchStudentSql = mysqli_query(databaseConnection(), $searchStudentSql);
+$searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
 
-    $studentLrn = $_SESSION['toSessionStudentLrn'];
-    $_SESSION['monthYear'] = "october2022";
+$studentLrn = $_SESSION['toSessionStudentLrn'];
+$_SESSION['monthYear'] = "october2022";
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
+<head>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
-    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-    <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
-    <title>Student Attendance Monitoring System</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   </head>
+   <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+   <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
+   <title>Student Attendance Monitoring System</title>
 
-   <body>
+</head>
+
+<body>
 
    <header>
       <div class="calLogo">
@@ -76,6 +76,8 @@
 
          <h1><span class="green">︾ L</span>e<span class="red">ge</span>n<span class="yellow">ds</span></h1>
 
+
+
       </div>
 
       <div class="title">
@@ -113,21 +115,23 @@
    </section>
 
    <section class="log">
-      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a></h3>
+      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
+      </h3>
 
-      <form action="grade11october2022_searchStudent.php">
+
+      <form action="grade11october2022_searchStudent.php" method="GET">
          <input name="userSearch" type="text">
-         <button type="submit" name="searchStudents">Search</button>
+         <button type="submit">Search</button>
       </form>
 
-      <h3 id="log">Log: <span><?php 
-            if ($studentLrn == "" ) {
-               echo "...";
-            } else {
-               echo "$studentLrn" ;
-            }
-         ?></span>
-    </h3>
+      <h3 id="log">Log: <span><?php
+                              if ($studentLrn == "") {
+                                 echo "...";
+                              } else {
+                                 echo "$studentLrn";
+                              }
+                              ?></span>
+      </h3>
    </section>
 
    <section class="main">
@@ -551,6 +555,6 @@
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
 
-   </body>  
+</body>
 
 </html>

@@ -209,8 +209,15 @@ section.log h3 span {
   color: blue;
 }
 
+section.log form h3.downloadExcel a{
+  color: blue;
+  text-decoration: none;
+  font-size: 15px;
+  font-style: normal;
+}
+
+
 section.log form {
-  
   width: 40%;
   display: flex;
   flex-direction: row;

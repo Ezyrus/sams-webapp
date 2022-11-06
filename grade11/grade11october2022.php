@@ -75,6 +75,8 @@ $_SESSION['monthYear'] = "october2022";
 
          <h1><span class="green">︾ L</span>e<span class="red">ge</span>n<span class="yellow">ds</span></h1>
 
+    
+
       </div>
 
       <div class="title">
@@ -112,9 +114,14 @@ $_SESSION['monthYear'] = "october2022";
    </section>
 
    <section class="log">
-      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a></h3>
+      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
+      </h3>
+
 
       <form action="grade11october2022_searchStudent.php" method="GET">
+      <h3 class="downloadExcel" id="downloadExcel">
+         <a href="../download.php">Download Record</a>
+      </h3>
          <input name="userSearch" type="text">
          <button type="submit">Search</button>
       </form>
@@ -130,7 +137,7 @@ $_SESSION['monthYear'] = "october2022";
    </section>
 
    <section class="main">
-      <table>
+      <table id="studentRecords">
          <tr class="tableHeader">
             <th class="otherInfo">LRN</th>
             <th class="otherInfo">Student Name</th>
@@ -584,7 +591,8 @@ $_SESSION['monthYear'] = "october2022";
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
-
+                  
+      
    </body>  
 
 </html>
