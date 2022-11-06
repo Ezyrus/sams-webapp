@@ -9,7 +9,7 @@ $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
 $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
 $studentLrn = $_SESSION['toSessionStudentLrn'];
-$monthYear = $_SESSION['monthYear'] = "october2022";
+$_SESSION['monthYear'] = "october2022";
 
 ?>
 
@@ -109,6 +109,30 @@ $monthYear = $_SESSION['monthYear'] = "october2022";
 
       </div>
 
+   </section>
+
+   <section class="log">
+      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a></h3>
+
+      <!-- <form action="">
+         <label for="">Search Students</label>
+         <select name="searchBy" id="">
+            <option value="sectionSection">Section</option>
+            <option value="searchLrn">LRN</option>
+            <option value="searchName">Name</option>
+
+         </select>
+         <input type="text">
+      </form> -->
+
+      <h3 id="log">Log: <span><?php 
+            if ($studentLrn == "" ) {
+               echo "...";
+            } else {
+               echo "$studentLrn" ;
+            }
+         ?></span>
+    </h3>
    </section>
 
    <section class="main">
@@ -567,37 +591,6 @@ $monthYear = $_SESSION['monthYear'] = "october2022";
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
 
-   <footer>
-      <div class="fdswdLogo">
-         <div>
-            <img src="../assets/dswd.png" alt="DWSD LOGO">
-         </div>
-      </div>
-
-      <div class="fdepEdLogo">
-         <div>
-            <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
-         </div>
-      </div>
-
-      <div class="fcalCityLogo">
-         <div>
-            <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
-         </div>
-      </div>
-
-      <div class="fCalHighLogo">
-         <div>
-            <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-         </div>
-      </div>
-
-      <div class="fFourPs">
-         <div>
-            <img src="../assets/fourPs.png" alt="4P'S LOGO">
-         </div>
-      </div>
-   </footer>
    </body>  
 
 </html>

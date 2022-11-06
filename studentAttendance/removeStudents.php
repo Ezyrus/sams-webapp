@@ -4,6 +4,7 @@
 
     $deleteLrn = $_GET['ID'];
     $monthYear = $_SESSION['monthYear'];
+    $_SESSION['toSessionStudentLrn'] = "$deleteLrn has been removed" ;
 
     $deleteStudentSql = "DELETE FROM $monthYear WHERE lrn = '$deleteLrn' ";
 

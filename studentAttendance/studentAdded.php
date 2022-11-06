@@ -4,6 +4,7 @@ require_once "../databaseConnection.php";
 
 $selectLrn = $_GET['ID'];
 $monthYear = $_SESSION['monthYear'];
+$_SESSION['toSessionStudentLrn'] = "$selectLrn has been added";
 
 //Student Table
 $studentSelectSql = "SELECT * FROM students WHERE lrn = '$selectLrn'";
