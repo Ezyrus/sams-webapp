@@ -4,6 +4,19 @@
   margin: 0;
 }
 
+html::-webkit-scrollbar {
+  width: 0;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: rgb(63, 186, 135);
+}
+
+html.main::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(47, 140, 101);
+  border-radius: 5px;
+}
+
 /* NAVIGATION BAR */
 section.nav {
   font-family: "Tomorrow", sans-serif;
@@ -305,6 +318,7 @@ section.main table tr.tableHeader th.monthDays {
 section.main table tr:hover {
   background-color: rgb(63, 186, 135, 0.3);
 }
+
 /* 
 .classDay01,
 .classDay02,
@@ -344,7 +358,6 @@ section.main table tr:hover {
 .classDay31 {
   background-color: yellow;
 } */
-
 
 section.main table tr td.studentInfo {
   height: 8vh;
@@ -437,6 +450,26 @@ section.main tr td.function h3 a:hover {
   font-size: 15px;
   transition: 0.2s;
 }
+
+section.dataVisualization {
+  width: 100%;
+  position: absolute;
+  height: 100vh;
+  margin-top: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.dataVisualization div.chartContainer {
+  height: 60%;
+  width: 60%;
+  background-color: antiquewhite;
+  padding: 40px;
+}
+
+
+
 
 
 

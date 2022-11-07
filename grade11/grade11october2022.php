@@ -16,22 +16,24 @@ $_SESSION['monthYear'] = "october2022";
 <!DOCTYPE html>
 <html lang="en">
 
-   <head>
+<head>
 
-      <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
-      
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
 
-      <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
-      <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
-      <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
-      <title>Student Attendance Monitoring System</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   </head>
+   <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+   <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-   <body>
+   <title>Student Attendance Monitoring System</title>
+
+</head>
+
+<body>
 
    <header>
       <div class="calLogo">
@@ -75,7 +77,7 @@ $_SESSION['monthYear'] = "october2022";
 
          <h1><span class="green">︾ L</span>e<span class="red">ge</span>n<span class="yellow">ds</span></h1>
 
-    
+
 
       </div>
 
@@ -119,21 +121,21 @@ $_SESSION['monthYear'] = "october2022";
 
 
       <form action="grade11october2022_searchStudent.php" method="GET">
-      <h3 class="downloadExcel" id="downloadExcel">
-         <a href="../download.php">Download Record</a>
-      </h3>
+         <h3 class="downloadExcel" id="downloadExcel">
+            <a href="../download.php">Download Record</a>
+         </h3>
          <input name="userSearch" type="text">
          <button type="submit">Search</button>
       </form>
 
-      <h3 id="log">Log: <span><?php 
-            if ($messageUpdate == "" ) {
-               echo "...";
-            } else {
-               echo "$messageUpdate" ;
-            }
-         ?></span>
-    </h3>
+      <h3 id="log">Log: <span><?php
+                              if ($messageUpdate == "") {
+                                 echo "...";
+                              } else {
+                                 echo "$messageUpdate";
+                              }
+                              ?></span>
+      </h3>
    </section>
 
    <section class="main">
@@ -552,37 +554,37 @@ $_SESSION['monthYear'] = "october2022";
             </form>
 
             <?php
-               // if ($monthYearRow[1] == "present") {
-               //     echo "<script> 
-               //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+            // if ($monthYearRow[1] == "present") {
+            //     echo "<script> 
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-               //    for (var i = 0; i < classDay01.length; i++) {
-               //        classDay01[i].style.background = 'green';
-               //    }
+            //    for (var i = 0; i < classDay01.length; i++) {
+            //        classDay01[i].style.background = 'green';
+            //    }
 
-               //     document.write('| Present |'); 
-               //     </script>";
-               // } else if ($monthYearRow[1] == "absent") {
-               //     echo "<script> 
-               //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+            //     document.write('| Present |'); 
+            //     </script>";
+            // } else if ($monthYearRow[1] == "absent") {
+            //     echo "<script> 
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-               //    for (var i = 0; i < classDay01.length; i++) {
-               //        classDay01[i].style.background = 'red';
-               //    }
+            //    for (var i = 0; i < classDay01.length; i++) {
+            //        classDay01[i].style.background = 'red';
+            //    }
 
-               //    document.write('| Absent |');
-               //   </script>";
-               // } else if ($monthYearRow[1] == "noclass") {
-               //     echo "<script>                       
-               //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+            //    document.write('| Absent |');
+            //   </script>";
+            // } else if ($monthYearRow[1] == "noclass") {
+            //     echo "<script>                       
+            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
 
-               //     for (var i = 0; i < classDay01.length; i++) {
-               //         classDay01[i].style.background = 'yellow';
-               //     }
+            //     for (var i = 0; i < classDay01.length; i++) {
+            //         classDay01[i].style.background = 'yellow';
+            //     }
 
-               //     document.write('| No Class |');
-               //     </script>";
-               // }   
+            //     document.write('| No Class |');
+            //     </script>";
+            // }   
             ?>
 
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
@@ -591,8 +593,61 @@ $_SESSION['monthYear'] = "october2022";
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
-                  
-      
-   </body>  
+
+   <section class="dataVisualization">
+      <div class="chartContainer">
+         <canvas id="myChart"></canvas>
+      </div>
+   </section>
+
+   <script>
+      const labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']; 
+      const data = {
+         labels: labels,
+         datasets: [{
+            label: 'October 2022 - Student Attendance Visualization',
+            data: [0, 10,20,30,40,50,60,70,80,90,100], //table rows data for present.
+            backgroundColor: [
+               'rgba(255, 99, 132, 0.2)',
+               'rgba(255, 159, 64, 0.2)',
+               'rgba(255, 205, 86, 0.2)',
+               'rgba(75, 192, 192, 0.2)',
+               'rgba(54, 162, 235, 0.2)',
+               'rgba(153, 102, 255, 0.2)',
+               'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+               'rgb(255, 99, 132)',
+               'rgb(255, 159, 64)',
+               'rgb(255, 205, 86)',
+               'rgb(75, 192, 192)',
+               'rgb(54, 162, 235)',
+               'rgb(153, 102, 255)',
+               'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+         }]
+      };
+
+      const config = {
+         type: 'bar',
+         data: data,
+         options: {
+            scales: {
+               y: {
+                  beginAtZero: true
+               }
+            }
+         },
+      };
+
+      const myChart = new Chart(
+         document.getElementById('myChart'),
+         config
+      );
+   </script>
+
+
+</body>
 
 </html>
