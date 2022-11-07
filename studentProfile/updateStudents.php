@@ -3,6 +3,7 @@
    require_once "../databaseConnection.php";
 
    $updateLrn = $_GET['ID'];
+   $_SESSION['messageUpdate'] = "$updateLrn has been updated" ;
    $selectStudentSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
 
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);

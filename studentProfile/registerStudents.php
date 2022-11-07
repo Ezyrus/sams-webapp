@@ -2,8 +2,6 @@
    session_start();
    require_once "../databaseConnection.php";
 
-   $_SESSION['messageUpdate'] = "";
-   $_SESSION['monthYear'] = "";
 
    if (isset($_POST['registerStudent'])) {
       $studentLrn = $_POST['lrn'];
@@ -29,6 +27,9 @@
             $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
             $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
+
+            $_SESSION['messageUpdate'] = "$studentLrn has been registered";
+            
             echo '<script>alert("Student Added")</script>';
             echo header("Location: studentProfile.php");
          }

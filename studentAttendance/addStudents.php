@@ -1,11 +1,13 @@
 <?php
-    session_start();
-    require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
-    $studentSelectSql = "SELECT * FROM students";
-    $initiateSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
-    $studentRow = mysqli_fetch_assoc($initiateSelectSql);
-    
+$studentSelectSql = "SELECT * FROM students";
+$initiateSelectSql = mysqli_query(databaseConnection(), $studentSelectSql);
+$studentRow = mysqli_fetch_assoc($initiateSelectSql);
+
+$messageUpdate = $_SESSION['messageUpdate'];
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../styles/addStudents.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/studentProfile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
@@ -28,45 +30,80 @@
 
 <body>
 
-    <!-- <header>
-            <div class="calLogo">
-                <div>
-                    <img src="assets/calHigh.png" alt="Caloocan Highschool Logo">
-                </div>
+    <header>
+        <div class="calLogo">
+            <div>
+                <img src="../assets/calHigh.png" alt="Caloocan Highschool Logo">
+            </div>
+        </div>
+
+        <div class="title">
+            <h2>Student Attendance Monitoring System</h2>
+            <h5>4P's Student Members Monitoring System</h5>
+        </div>
+
+        <div class="depEdLogo">
+            <div>
+                <img src="../assets/depEd.png" alt="DepEd Logo">
+            </div>
+        </div>
+    </header>
+
+    <section class="nav">
+
+        <div class="back-container">
+
+            <h1 onclick="history.go(-1);">
+                < BACK</h1>
+
+                    <h1><a href="../gradeLevel.php">Grade Level </a></h1>
+
+        </div>
+
+        <div class="title">
+            <div>
+                <h3>Add Students</h3>
+                <h6>4p's Students of Caloocan High School</h6>
             </div>
 
-            <div class="title">
-                <h2>Student Attendance Monitoring System</h2>
-                <h5>4P's Student Members Monitoring System</h5>
-            </div>
+        </div>
 
-            <div class="depEdLogo">
-                <div>
-                    <img src="assets/depEd.png" alt="DepEd Logo">
-                </div>
-            </div>
-        </header> -->
+        <div class="admin-container">
+
+            <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
+
+            <h2 class="logout">
+                <a href="../logout.php">logout</a>
+            </h2>
+
+        </div>
+    </section>
 
     <div class="studentProfile">
         <div class="profileContainer">
-            <h3 class="title">Add Students</h3>
 
-            <div class="navigate">
+            <div class="search-container">
 
-                <h3 onclick="history.go(-1);">
-            < BACK</h3>
+                 <h3><a onclick="history.go(-1);      return false;"><?php echo $_SESSION['monthYear'];?> > </a><a href="addStudents.php">Add Students</a>
+                </h3>
 
-                <!-- <form action="searchStudent.php" method="get">
+                <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit">Search</button>
-                </form> -->
+                </form>
 
-
-                <h3><a href="../studentProfile/registerStudents.php">Register Students</a></h3>
-
+                <h3 id="log">Log: <span><?php 
+                      if ($messageUpdate == "" ) {
+                           echo "...";
+                    } else {
+                            echo "$messageUpdate" ;
+                        }
+                     ?></span>
+                </h3>
             </div>
 
-            <table>
+            <div class = "studentRecords">
+                <table>
                 <tr>
                     <th class="lrn">LRN</th>
                     <th class="name">Full Name</th>
@@ -92,41 +129,11 @@
                     </tr>
                 <?php } while ($studentRow = $initiateSelectSql->fetch_assoc()) ?>
 
-            </table>
+                </table>
+            </div>
+
         </div>
     </div>
-
-    <!-- <footer>
-            <div class="fdswdLogo">
-            <div>
-                <img src="assets/dswd.png" alt="DWSD LOGO">
-            </div>
-            </div>
-
-            <div class="fdepEdLogo">
-            <div>
-                <img src="assets/depEdSeal.png" alt="DEPED SEAL">
-            </div>
-            </div>
-
-            <div class="fcalCityLogo">
-            <div>
-                <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
-            </div>
-            </div>
-
-            <div class="fCalHighLogo">
-            <div>
-                <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-            </div>
-            </div>
-
-            <div class="fFourPs">
-            <div>
-                <img src="assets/fourPs.png" alt="4P'S LOGO">
-            </div>
-            </div>
-        </footer> -->
 
 </body>
 

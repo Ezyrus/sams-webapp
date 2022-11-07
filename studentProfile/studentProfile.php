@@ -2,8 +2,8 @@
 session_start();
 require_once "../databaseConnection.php";
 
-$_SESSION['messageUpdate'] = "";
-$_SESSION['monthYear'] = "";
+$messageUpdate = $_SESSION['messageUpdate'];
+
 $selectStudentSql = "SELECT * FROM students";
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 $studentRow = mysqli_fetch_assoc($initiateSelectSql);
@@ -56,7 +56,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <h1 onclick="history.go(-1);">
                 < BACK</h1>
 
-                <h1><a href="../gradeLevel.php">Grade Level </a></h1>
+                    <h1><a href="../gradeLevel.php">Grade Level </a></h1>
 
         </div>
 
@@ -79,21 +79,32 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
         </div>
     </section>
 
-
     <div class="studentProfile">
+
         <div class="profileContainer">
+
             <div class="search-container">
 
-                <h1><a href="registerStudents.php">Register Students</a></h1>
+                <h3><a href="registerStudents.php">Register Students here !</a>
+                </h3>
 
                 <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit">Search</button>
                 </form>
 
+                <h3 id="log">Log: <span><?php
+                                        if ($messageUpdate == "") {
+                                            echo "...";
+                                        } else {
+                                            echo "$messageUpdate";
+                                        }
+                                        ?></span>
+                </h3>
             </div>
 
-            <table>
+            <div class = "studentRecords">
+                <table>
                 <tr>
                     <th class="lrn">LRN</th>
                     <th class="name">Full Name</th>
@@ -121,41 +132,10 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                     </tr>
                 <?php } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
-
-    <footer>
-        <div class="fdswdLogo">
-            <div>
-                <img src="../assets/dswd.png" alt="DWSD LOGO">
-            </div>
-        </div>
-
-        <div class="fdepEdLogo">
-            <div>
-                <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
-            </div>
-        </div>
-
-        <div class="fcalCityLogo">
-            <div>
-                <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
-            </div>
-        </div>
-
-        <div class="fCalHighLogo">
-            <div>
-                <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-            </div>
-        </div>
-
-        <div class="fFourPs">
-            <div>
-                <img src="../assets/fourPs.png" alt="4P'S LOGO">
-            </div>
-        </div>
-    </footer>
 
 </body>
 

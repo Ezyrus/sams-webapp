@@ -21,8 +21,11 @@ $monthRow = mysqli_fetch_assoc($initiateMonthSelectSql);
 $monthTableNumRows = mysqli_num_rows($initiateMonthSelectSql);
 
 if ($monthTableNumRows) {
-    echo '<script>alert("Student LRN :  ' . $selectLrn . ' already exist in  ' . $monthYear . '  Record.");
-    window.history.back();</script>';
+    $_SESSION['messageUpdate'] = "$selectLrn is already exist";
+
+    echo '<script>
+    window.history.back();
+    </script>';
 } else {
     $insertStudentSql = "INSERT INTO `$monthYear`(`lrn`, `student_name`, `section`) VALUES ('$studentLrn','$studentName','$studentSection')";
     mysqli_query(databaseConnection(), $insertStudentSql);
