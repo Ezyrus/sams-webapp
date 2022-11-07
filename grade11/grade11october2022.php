@@ -1,15 +1,15 @@
 <?php
-session_start();
-error_reporting(0);  //hide errors
-require_once "../databaseConnection.php";
+   session_start();
+   error_reporting(0);  //hide errors
+   require_once "../databaseConnection.php";
 
-$selectMonthYearSql = "SELECT * FROM october2022";
-$initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-$monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-$selectTableNumRows = mysqli_num_rows($initiateSelectSql);
+   $selectMonthYearSql = "SELECT * FROM october2022";
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
+   $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
+   $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-$messageUpdate = $_SESSION['messageUpdate'];
-$_SESSION['monthYear'] = "october2022";
+   $messageUpdate = $_SESSION['messageUpdate'];
+   $_SESSION['monthYear'] = "october2022";
 
 ?>
 
@@ -552,45 +552,55 @@ $_SESSION['monthYear'] = "october2022";
             </form>
 
             <?php
-            // if ($monthYearRow[1] == "present") {
-            //     echo "<script> 
-            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+               // if ($monthYearRow[1] == "present") {
+               //     echo "<script> 
 
-            //    for (var i = 0; i < classDay01.length; i++) {
-            //        classDay01[i].style.background = 'green';
-            //    }
+               //     //Total number html element in Select with classDay01 
+               //     //Only with 'present' is better
 
-            //     document.write('| Present |'); 
-            //     </script>";
-            // } else if ($monthYearRow[1] == "absent") {
-            //     echo "<script> 
-            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+               //     var classDay01 = document.querySelectorAll('tr td select.classDay01')
 
-            //    for (var i = 0; i < classDay01.length; i++) {
-            //        classDay01[i].style.background = 'red';
-            //    }
+               //    var classDay01Length = classDay01.length;
 
-            //    document.write('| Absent |');
-            //   </script>";
-            // } else if ($monthYearRow[1] == "noclass") {
-            //     echo "<script>                       
-            //     var classDay01 = document.querySelectorAll('tr td.classDay01');
+               //    for (var i = 0; i < classDay01Length; i++){
+                     
+               //       classDay01[i].style.background = 'green';
+               //    }
+ 
+               //    document.write(classDay01Length + '<br />' );
+               //      </script>";
+               // } 
 
-            //     for (var i = 0; i < classDay01.length; i++) {
-            //         classDay01[i].style.background = 'yellow';
-            //     }
+               // else if ($monthYearRow[1] == "absent") {
+               //     echo "<script> 
+               //     var classDay01 = document.querySelectorAll('tr td select.classDay01');
 
-            //     document.write('| No Class |');
-            //     </script>";
-            // }   
+               //    for (var i = 0; i < classDay01.length; i++) {
+               //        classDay01[i].style.background = 'red';
+               //    }
+
+               //       document.write('| Absent |');
+               //    </script>";
+
+               // } else if ($monthYearRow[1] == "noclass") {
+               //     echo "<script>                       
+               //     var classDay01 = document.querySelectorAll('tr td select.classDay01');
+
+               //     for (var i = 0; i < classDay01.length; i++) {
+               //         classDay01[i].style.background = 'yellow';
+               //     }
+
+               //     document.write('| No Class |');
+               //     </script>";
+               // }   
             ?>
                
-         <?php
-      } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+         <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
+
    </section>
 
 </body>
