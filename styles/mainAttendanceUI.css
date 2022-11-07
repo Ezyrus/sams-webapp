@@ -451,28 +451,6 @@ section.main tr td.function h3 a:hover {
   transition: 0.2s;
 }
 
-section.dataVisualization {
-  width: 100%;
-  position: absolute;
-  height: 100vh;
-  margin-top: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-section.dataVisualization div.chartContainer {
-  height: 60%;
-  width: 60%;
-  background-color: antiquewhite;
-  padding: 40px;
-}
-
-
-
-
-
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   section.nav div.title h6.adminLogged {

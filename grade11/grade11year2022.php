@@ -15,7 +15,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/grade11year2022.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/mainCalendarUI.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
    <script src="../js/gradeLevel.js"></script>
    

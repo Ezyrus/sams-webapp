@@ -113,8 +113,4 @@
     $studentAttendanceRate = 0;
 
     echo '<script>window.history.back();</script>';
-
-    
-    // alert("Student : '. $studentLrn . ' has been sucessfully saved ")
-
 ?>

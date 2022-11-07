@@ -27,8 +27,6 @@ $_SESSION['monthYear'] = "october2022";
    <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
    <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -586,67 +584,14 @@ $_SESSION['monthYear'] = "october2022";
             //     </script>";
             // }   
             ?>
-
-         <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+               
+         <?php
+      } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
    </section>
-
-   <section class="dataVisualization">
-      <div class="chartContainer">
-         <canvas id="myChart"></canvas>
-      </div>
-   </section>
-
-   <script>
-      const labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']; 
-      const data = {
-         labels: labels,
-         datasets: [{
-            label: 'October 2022 - Student Attendance Visualization',
-            data: [0, 10,20,30,40,50,60,70,80,90,100], //table rows data for present.
-            backgroundColor: [
-               'rgba(255, 99, 132, 0.2)',
-               'rgba(255, 159, 64, 0.2)',
-               'rgba(255, 205, 86, 0.2)',
-               'rgba(75, 192, 192, 0.2)',
-               'rgba(54, 162, 235, 0.2)',
-               'rgba(153, 102, 255, 0.2)',
-               'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-               'rgb(255, 99, 132)',
-               'rgb(255, 159, 64)',
-               'rgb(255, 205, 86)',
-               'rgb(75, 192, 192)',
-               'rgb(54, 162, 235)',
-               'rgb(153, 102, 255)',
-               'rgb(201, 203, 207)'
-            ],
-            borderWidth: 1
-         }]
-      };
-
-      const config = {
-         type: 'bar',
-         data: data,
-         options: {
-            scales: {
-               y: {
-                  beginAtZero: true
-               }
-            }
-         },
-      };
-
-      const myChart = new Chart(
-         document.getElementById('myChart'),
-         config
-      );
-   </script>
-
 
 </body>
 
