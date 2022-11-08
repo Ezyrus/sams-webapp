@@ -11,6 +11,7 @@ $searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
 
 $messageUpdate = $_SESSION['messageUpdate'];
 $_SESSION['monthYear'] = "october2022";
+$classDays = array();
 
 ?>
 
@@ -549,7 +550,73 @@ $_SESSION['monthYear'] = "october2022";
 
             </form>
 
+            <?php
+               array_push($classDays, $searchStudentRow['1']);
+               array_push($classDays, $searchStudentRow['2']);
+               array_push($classDays, $searchStudentRow['3']);
+               array_push($classDays, $searchStudentRow['4']);
+               array_push($classDays, $searchStudentRow['5']);
+               array_push($classDays, $searchStudentRow['6']);
+               array_push($classDays, $searchStudentRow['7']);
+               array_push($classDays, $searchStudentRow['8']);
+               array_push($classDays, $searchStudentRow['9']);
+               array_push($classDays, $searchStudentRow['10']);
+               array_push($classDays, $searchStudentRow['11']);
+               array_push($classDays, $searchStudentRow['12']);
+               array_push($classDays, $searchStudentRow['13']);
+               array_push($classDays, $searchStudentRow['14']);
+               array_push($classDays, $searchStudentRow['15']);
+               array_push($classDays, $searchStudentRow['16']);
+               array_push($classDays, $searchStudentRow['17']);
+               array_push($classDays, $searchStudentRow['18']);
+               array_push($classDays, $searchStudentRow['19']);
+               array_push($classDays, $searchStudentRow['20']);
+               array_push($classDays, $searchStudentRow['21']);
+               array_push($classDays, $searchStudentRow['22']);
+               array_push($classDays, $searchStudentRow['23']);
+               array_push($classDays, $searchStudentRow['24']);
+               array_push($classDays, $searchStudentRow['25']);
+               array_push($classDays, $searchStudentRow['26']);
+               array_push($classDays, $searchStudentRow['27']);
+               array_push($classDays, $searchStudentRow['28']);
+               array_push($classDays, $searchStudentRow['29']);
+               array_push($classDays, $searchStudentRow['30']);
+               array_push($classDays, $searchStudentRow['31']);
+
+            ?>
+
          <?php } while ($searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql)) ?>
+
+         <?php           
+             foreach ($classDays as $key => $value) {
+                  if ($value == "present") {
+                     echo "<script>
+                     var classDays = document.querySelectorAll('tr td.classDays');
+                     var classDaysLength = classDays.length;
+                     for (var i = 0; i < classDaysLength; i++) {
+                        classDays[". $key . "].style.background = 'green';
+                     }
+                     </script>";
+                     } else if ($value == "absent") {
+                        echo "<script>
+                        var classDays = document.querySelectorAll('tr td.classDays');
+                        var classDaysLength = classDays.length;
+                        for (var i = 0; i < classDaysLength; i++) {
+                           classDays[". $key . "].style.background = 'red';
+                        }
+                        </script>";
+                        } else {
+                           echo "<script>
+                           var classDays = document.querySelectorAll('tr td.classDays');
+                           var classDaysLength = classDays.length;
+                           for (var i = 0; i < classDaysLength; i++) {
+                              classDays[". $key . "].style.background = 'yellow';
+                           }
+                           </script>";
+                        }
+                  }
+         ?>
+
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>

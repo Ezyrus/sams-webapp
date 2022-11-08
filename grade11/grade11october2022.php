@@ -10,6 +10,7 @@
 
    $messageUpdate = $_SESSION['messageUpdate'];
    $_SESSION['monthYear'] = "october2022";
+   $classDays = array();
 
 ?>
 
@@ -552,51 +553,72 @@
             </form>
 
             <?php
-               // if ($monthYearRow[1] == "present") {
-               //     echo "<script> 
+               array_push($classDays, $monthYearRow['1']);
+               array_push($classDays, $monthYearRow['2']);
+               array_push($classDays, $monthYearRow['3']);
+               array_push($classDays, $monthYearRow['4']);
+               array_push($classDays, $monthYearRow['5']);
+               array_push($classDays, $monthYearRow['6']);
+               array_push($classDays, $monthYearRow['7']);
+               array_push($classDays, $monthYearRow['8']);
+               array_push($classDays, $monthYearRow['9']);
+               array_push($classDays, $monthYearRow['10']);
+               array_push($classDays, $monthYearRow['11']);
+               array_push($classDays, $monthYearRow['12']);
+               array_push($classDays, $monthYearRow['13']);
+               array_push($classDays, $monthYearRow['14']);
+               array_push($classDays, $monthYearRow['15']);
+               array_push($classDays, $monthYearRow['16']);
+               array_push($classDays, $monthYearRow['17']);
+               array_push($classDays, $monthYearRow['18']);
+               array_push($classDays, $monthYearRow['19']);
+               array_push($classDays, $monthYearRow['20']);
+               array_push($classDays, $monthYearRow['21']);
+               array_push($classDays, $monthYearRow['22']);
+               array_push($classDays, $monthYearRow['23']);
+               array_push($classDays, $monthYearRow['24']);
+               array_push($classDays, $monthYearRow['25']);
+               array_push($classDays, $monthYearRow['26']);
+               array_push($classDays, $monthYearRow['27']);
+               array_push($classDays, $monthYearRow['28']);
+               array_push($classDays, $monthYearRow['29']);
+               array_push($classDays, $monthYearRow['30']);
+               array_push($classDays, $monthYearRow['31']);
 
-               //     //Total number html element in Select with classDay01 
-               //     //Only with 'present' is better
-
-               //     var classDay01 = document.querySelectorAll('tr td select.classDay01')
-
-               //    var classDay01Length = classDay01.length;
-
-               //    for (var i = 0; i < classDay01Length; i++){
-                     
-               //       classDay01[i].style.background = 'green';
-               //    }
- 
-               //    document.write(classDay01Length + '<br />' );
-               //      </script>";
-               // } 
-
-               // else if ($monthYearRow[1] == "absent") {
-               //     echo "<script> 
-               //     var classDay01 = document.querySelectorAll('tr td select.classDay01');
-
-               //    for (var i = 0; i < classDay01.length; i++) {
-               //        classDay01[i].style.background = 'red';
-               //    }
-
-               //       document.write('| Absent |');
-               //    </script>";
-
-               // } else if ($monthYearRow[1] == "noclass") {
-               //     echo "<script>                       
-               //     var classDay01 = document.querySelectorAll('tr td select.classDay01');
-
-               //     for (var i = 0; i < classDay01.length; i++) {
-               //         classDay01[i].style.background = 'yellow';
-               //     }
-
-               //     document.write('| No Class |');
-               //     </script>";
-               // }   
             ?>
                
          <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
+         <?php           
+             foreach ($classDays as $key => $value) {
+                  if ($value == "present") {
+                     echo "<script>
+                     var classDays = document.querySelectorAll('tr td.classDays');
+                     var classDaysLength = classDays.length;
+                     for (var i = 0; i < classDaysLength; i++) {
+                        classDays[". $key . "].style.background = 'green';
+                     }
+                     </script>";
+                     } else if ($value == "absent") {
+                        echo "<script>
+                        var classDays = document.querySelectorAll('tr td.classDays');
+                        var classDaysLength = classDays.length;
+                        for (var i = 0; i < classDaysLength; i++) {
+                           classDays[". $key . "].style.background = 'red';
+                        }
+                        </script>";
+                        } else {
+                           echo "<script>
+                           var classDays = document.querySelectorAll('tr td.classDays');
+                           var classDaysLength = classDays.length;
+                           for (var i = 0; i < classDaysLength; i++) {
+                              classDays[". $key . "].style.background = 'yellow';
+                           }
+                           </script>";
+                        }
+                  }
+         ?>
+         
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
