@@ -1,11 +1,3 @@
-// var loader = document.getElementById("preloader");
-
-// window.addEventListener("load", function() { 
-//     loader.style.display = "none";
-// })
-
-      
- 
 //       <div id="preloader">
 //    </div>
 // #preloader {
