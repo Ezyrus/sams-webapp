@@ -3,7 +3,7 @@
     error_reporting(0);  //hide errors
     require_once "../databaseConnection.php";
 
-    $studentLrn = $_GET['ID'];
+    $studentLrn = htmlentities($_GET['ID']);
     $monthYear = $_SESSION['monthYear'];
     $_SESSION['messageUpdate'] = "$studentLrn has been saved";
 

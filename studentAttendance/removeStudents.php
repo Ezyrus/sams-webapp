@@ -2,7 +2,7 @@
     session_start(); 
     require_once "../databaseConnection.php";
 
-    $deleteLrn = $_GET['ID'];
+    $deleteLrn = htmlentities($_GET['ID']);
     $monthYear = $_SESSION['monthYear'];
     $_SESSION['messageUpdate'] = "$deleteLrn has been removed" ;
 

@@ -3,14 +3,14 @@ session_start();
 error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
-$userSearch = $_GET['userSearch'];
+$userSearch = htmlentities($_GET['userSearch']);
+$messageUpdate = $_SESSION['messageUpdate'];
+$_SESSION['monthYear'] = "october2022";
 
 $searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%' || student_name LIKE '%$userSearch%' || lrn LIKE '%$userSearch%' ";
 $initiateSearchStudentSql = mysqli_query(databaseConnection(), $searchStudentSql);
 $searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
 
-$messageUpdate = $_SESSION['messageUpdate'];
-$_SESSION['monthYear'] = "october2022";
 $classDays = array();
 
 ?>
@@ -179,11 +179,16 @@ $classDays = array();
             <th class="otherInfo">FUNCTION</th>
          </tr>
 
-         <?php do { ?>
+            <?php do { 
+               if ($searchStudentRow == 0) {
+                    echo "   <td class='noData' colspan = '39'>
+                 Your search key '$userSearch' does not exist ...
+                 </td>";
+               } else {
+            ?>
 
-            <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $searchStudentRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
-
-               <tr>
+               <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $searchStudentRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
+                  <tr>
 
                   <td class="studentInfo"><?php echo $searchStudentRow['lrn']; ?></td>
                   <td class="studentInfo"><?php echo $searchStudentRow['student_name']; ?></td>
@@ -546,9 +551,8 @@ $classDays = array();
 
                   </td>
 
-               </tr>
-
-            </form>
+                </tr>
+               </form>
 
             <?php
                array_push($classDays, $searchStudentRow['1']);
@@ -585,9 +589,11 @@ $classDays = array();
 
             ?>
 
-         <?php } while ($searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql)) ?>
+            <?php 
+               }
+            } while ($searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql)) ?>
 
-         <?php           
+            <?php           
              foreach ($classDays as $key => $value) {
                   if ($value == "present") {
                      echo "<script>
@@ -615,7 +621,7 @@ $classDays = array();
                            </script>";
                         }
                   }
-         ?>
+            ?>
 
       </table>
 

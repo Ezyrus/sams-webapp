@@ -2,7 +2,7 @@
    session_start();
    require_once "../databaseConnection.php";
 
-   $updateLrn = $_GET['ID'];
+   $updateLrn = htmlentities($_GET['ID']);
    $_SESSION['messageUpdate'] = "$updateLrn has been updated" ;
    $selectStudentSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
 

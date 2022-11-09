@@ -184,7 +184,6 @@
          <?php do { ?>
 
             <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $monthYearRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
-
                <tr>
 
                   <td class="studentInfo"><?php echo $monthYearRow['lrn']; ?></td>
@@ -549,7 +548,6 @@
                   </td>
 
                </tr>
-
             </form>
 
             <?php

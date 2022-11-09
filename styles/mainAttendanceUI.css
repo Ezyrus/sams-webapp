@@ -319,52 +319,21 @@ section.main table tr:hover {
   background-color: rgb(63, 186, 135, 0.3);
 }
 
-/* 
-.classDay01,
-.classDay02,
-.classDay03,
-.classDay04,
-.classDay05,
-.classDay06,
-.classDay07,
-.classDay08,
-.classDay09,
-.classDay10,
-.classDay11,
-.classDay12,
-.classDay13,
-.classDay14,
-.classDay15,
-.classDay16,
-.classDay22,
-.classDay23,
-.classDay24,
-.classDay25,
-.classDay26,
-.classDay27,
-.classDay28 {
-  background-color: green;
-}
-
-.classDay08,
-.classDay09,
-.classDay17,
-.classDay18,
-.classDay29,
-.classDay30,
-.classDay19,
-.classDay20,
-.classDay21,
-.classDay31 {
-  background-color: yellow;
-} */
-
 section.main table tr td.studentInfo {
   height: 8vh;
   padding: 2px;
   text-align: center;
   font-size: 13px;
   text-transform: capitalize;
+}
+
+section.main table tr td.noData {
+  font-family: "Tomorrow", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: red;
+  height: 10vh;
 }
 
 section.main table tr td.function {

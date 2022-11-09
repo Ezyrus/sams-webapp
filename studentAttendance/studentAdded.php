@@ -2,7 +2,7 @@
 session_start();
 require_once "../databaseConnection.php";
 
-$selectLrn = $_GET['ID'];
+$selectLrn = htmlentities($_GET['ID']);
 $monthYear = $_SESSION['monthYear'];
 $_SESSION['messageUpdate'] = "$selectLrn has been added";
 

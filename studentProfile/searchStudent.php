@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
-$searchResult = $_GET['search'];
+$searchResult = htmlentities($_GET['search']);
 $messageUpdate = $_SESSION['messageUpdate'];
 
 $selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ";
