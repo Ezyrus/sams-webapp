@@ -116,7 +116,13 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                     <th class="function">Function</th>
                 </tr>
 
-                <?php do { ?>
+                <?php do { 
+                     if ($studentRow == 0) {
+                    echo "   <td class='noData' colspan = '8'>
+                     No data to display here, please register students ...
+                     </td>";
+                     } else {
+                ?>
                     <tr>
                         <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
                         <td class="name"><?php echo $studentRow['name']; ?></td>
@@ -130,7 +136,9 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                             <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a>
                         </td>
                     </tr>
-                <?php } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+                <?php
+                     }
+                } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
                 </table>
             </div>

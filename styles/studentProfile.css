@@ -237,6 +237,15 @@ div.studentProfile div table tr td {
   font-size: 15px;
 }
 
+div.studentProfile div table tr td.noData {
+  font-family: "Tomorrow", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: red;
+  height: 10vh;
+}
+
 div.studentProfile div table tr:hover {
   cursor: pointer;
   background-color: rgb(63, 186, 135,0.5);

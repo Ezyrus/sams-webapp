@@ -181,7 +181,13 @@
             <th class="otherInfo">FUNCTION</th>
          </tr>
 
-         <?php do { ?>
+         <?php do { 
+               if ($monthYearRow == 0) {
+                    echo "   <td class='noData' colspan = '39'>
+                 No data to display here, please add students ...
+                 </td>";
+               } else {
+            ?>
 
             <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $monthYearRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
                <tr>
@@ -585,7 +591,9 @@
 
             ?>
                
-         <?php } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+            <?php 
+               }
+            } while ($monthYearRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
          <?php           
              foreach ($classDays as $key => $value) {
