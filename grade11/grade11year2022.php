@@ -1,7 +1,7 @@
-<?php 
-   session_start(); 
-   $_SESSION['messageUpdate'] = "";
-   $_SESSION['monthYear'] = "";
+<?php
+session_start();
+$_SESSION['messageUpdate'] = "";
+$_SESSION['monthYear'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
 <head>
 
    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Tomorrow&display=swap" rel="stylesheet">
-   
+
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
    <link rel="stylesheet" href="../styles/mainCalendarUI.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
    <script src="../js/gradeLevel.js"></script>
-   
+
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -44,11 +44,41 @@
       </div>
    </header>
 
+   <section class="nav">
+
+      <div class="back-container">
+
+         <h1 onclick="history.go(-1);">
+            < BACK</h1>
+
+               <h1><a href="../gradeLevel.php">Grade Level </a></h1>
+
+      </div>
+
+      <div class="title">
+         <div>
+            <h3>Grade 11 Records</h3>
+            <h6>4p's Students of Caloocan High School</h6>
+         </div>
+
+      </div>
+
+      <div class="admin-container">
+
+         <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
+
+         <h2 class="logout">
+            <a href="../logout.php">logout</a>
+         </h2>
+
+      </div>
+   </section>
+
    <div class="schoolYearContainer">
       <div class="year">
-         <h5 onclick="noData()"><</h5>
-         <h6 id="recentYear"><a href="../gradeLevel.php">Grade 11</a> - Year 2022</h6>
-         <h5><a href="grade11year2023.php">></a></h5>
+               <h5 onclick="noData()"> < </h5>
+               <h6 id="recentYear">Year 2022</h6>
+               <h5><a href="grade11year2023.php"> > </a></h5>
       </div>
 
       <div class="month">
@@ -109,7 +139,7 @@
 
    </footer>
 
-   
+
 </body>
 
 </html>
