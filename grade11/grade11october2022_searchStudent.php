@@ -7,7 +7,7 @@ $userSearch = htmlentities($_GET['userSearch']);
 $messageUpdate = $_SESSION['messageUpdate'];
 $_SESSION['monthYear'] = "october2022";
 
-$searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%' || student_name LIKE '%$userSearch%' || lrn LIKE '%$userSearch%' ";
+$searchStudentSql = "SELECT * FROM october2022 WHERE section LIKE '%$userSearch%' || student_name LIKE '%$userSearch%' || lrn LIKE '%$userSearch%' ORDER BY section";
 $initiateSearchStudentSql = mysqli_query(databaseConnection(), $searchStudentSql);
 $searchStudentRow = mysqli_fetch_assoc($initiateSearchStudentSql);
 

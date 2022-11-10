@@ -1,16 +1,16 @@
 <?php
 session_start();
-error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
 $searchResult = htmlentities($_GET['search']);
-$messageUpdate = $_SESSION['messageUpdate'];
 
-$selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ORDER BY section ";
+$selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ORDER BY section";
 
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
-
 $studentRow = mysqli_fetch_assoc($initiateSelectSql);
+
+
+$messageUpdate = $_SESSION['messageUpdate'];
 
 ?>
 
@@ -66,7 +66,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         <div class="title">
             <div>
-                <h3>Student Profile</h3>
+                <h3>Add Students</h3>
                 <h6>4p's Students of Caloocan High School</h6>
             </div>
 
@@ -84,26 +84,25 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     </section>
 
     <div class="studentProfile">
-
         <div class="profileContainer">
 
             <div class="search-container">
 
-                <h3><a href="registerStudents.php">Register Students here !</a>
+                 <h3><a onclick="history.go(-1);      return false;"><?php echo $_SESSION['monthYear'];?> > </a><a href="addStudents.php">Add Students</a>
                 </h3>
 
-                <form action="searchStudent.php" method="get">
+                <form action="addStudent_searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit">Search</button>
                 </form>
 
-                <h3 id="log">Log: <span><?php
-                                        if ($messageUpdate == "") {
-                                            echo "...";
-                                        } else {
-                                            echo "$messageUpdate";
-                                        }
-                                        ?></span>
+                <h3 id="log">Log: <span><?php 
+                      if ($messageUpdate == "" ) {
+                           echo "...";
+                    } else {
+                            echo "$messageUpdate" ;
+                        }
+                     ?></span>
                 </h3>
             </div>
 
@@ -120,13 +119,12 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                     <th class="function">Function</th>
                 </tr>
 
-                <?php do { 
-                    if ($studentRow == 0) {
-                    echo "   <td class='noData' colspan = '8'>
-                     Your search key '$searchResult' does not exist ... </td>";
-                    } else {
-                ?>
-
+                    <?php do { 
+                        if ($studentRow == 0) {
+                        echo "   <td class='noData' colspan = '8'>
+                         Your search key '$searchResult' does not exist ... </td>";
+                        } else {    
+                    ?>
                     <tr>
                         <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
                         <td class="name"><?php echo $studentRow['name']; ?></td>
@@ -136,17 +134,15 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                         <td class="email"><?php echo $studentRow['email']; ?></td>
                         <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                         <td class="function">
-                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE | </a>
-                            <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a>
-                        </td>
+                            <a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>">Add</a>
                     </tr>
-
                 <?php 
-                    }
-                } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+                        }
+                } while ($studentRow = $initiateSelectSql->fetch_assoc()) ?>
 
                 </table>
             </div>
+
         </div>
     </div>
 

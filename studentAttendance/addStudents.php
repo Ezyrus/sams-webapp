@@ -87,7 +87,7 @@ $messageUpdate = $_SESSION['messageUpdate'];
                  <h3><a onclick="history.go(-1);      return false;"><?php echo $_SESSION['monthYear'];?> > </a><a href="addStudents.php">Add Students</a>
                 </h3>
 
-                <form action="searchStudent.php" method="get">
+                <form action="addStudent_searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit">Search</button>
                 </form>
