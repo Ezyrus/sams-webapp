@@ -602,7 +602,7 @@
                      var classDays = document.querySelectorAll('tr td.classDays');
                      var classDaysLength = classDays.length;
                      for (var i = 0; i < classDaysLength; i++) {
-                        classDays[". $key . "].style.background = 'green';
+                        classDays[". $key . "].style.background = 'green';  
                      }
                      </script>";
                      } else if ($value == "absent") {
@@ -628,7 +628,6 @@
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
-
    </section>
 
 </body>

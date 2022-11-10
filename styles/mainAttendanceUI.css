@@ -347,7 +347,6 @@ section.main table tr td.classDays:hover {
   transition: 0.2s ease-in-out;
   border: 2px solid black;
   box-shadow: 0px 0px 30px lime;
-  z-index: 100000;
 }
 
 section.main table tr td select.classDays {
