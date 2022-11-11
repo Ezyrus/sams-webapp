@@ -101,16 +101,19 @@
     $updateSchoolDaysSql =  "UPDATE `$monthYear` SET `school_days`='$studentSchoolDays' WHERE `lrn` = '$studentLrn' ";
     mysqli_query(databaseConnection(), $updateSchoolDaysSql);
 
-    //Student Attendance Rate
-    $studentAttendanceRate = $studentTotalPresent / $studentSchoolDays * 100;
-    $updateAttendanceRateSql = "UPDATE `$monthYear` SET `attendance_rate`='$studentAttendanceRate' WHERE `lrn` = '$studentLrn' ";
-    mysqli_query(databaseConnection(), $updateAttendanceRateSql);
+    if ($studentSchoolDays == 0) {
+        echo '<script>window.history.back();</script>';
+    } else {
+        //Student Attendance Rate
+        $studentAttendanceRate = $studentTotalPresent / $studentSchoolDays * 100;
+        $updateAttendanceRateSql = "UPDATE `$monthYear` SET `attendance_rate`='$studentAttendanceRate' WHERE `lrn` = '$studentLrn' ";
+        mysqli_query(databaseConnection(), $updateAttendanceRateSql);
 
-    //To reset everything after initiation of Sql queries
-    $studentTotalPresent = 0;
-    $studentTotalAbsent = 0;
-    $studentSchoolDays = 0;
-    $studentAttendanceRate = 0;
-
+        //To reset everything after initiation of Sql queries
+        $studentTotalPresent = 0;
+        $studentTotalAbsent = 0;
+        $studentSchoolDays = 0;
+        $studentAttendanceRate = 0;
+    }
     echo '<script>window.history.back();</script>';
 ?>

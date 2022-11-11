@@ -118,10 +118,9 @@
       <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
       </h3>
 
-
       <form action="grade11october2022_searchStudent.php" method="GET">
          <h3 class="downloadExcel" id="downloadExcel">
-            <a href="../download.php">Download Record</a>
+            <a href="../downloadRecord.php">Download Record</a>
          </h3>
          <input name="userSearch" type="text">
          <button type="submit">Search</button>
@@ -628,6 +627,8 @@
       </table>
 
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
+
+      
    </section>
 
 </body>
