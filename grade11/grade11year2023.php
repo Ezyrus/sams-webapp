@@ -106,41 +106,6 @@ $_SESSION['monthYear'] = "";
       </div>
    </div>
 
-   <footer>
-
-      <div class="fdswdLogo">
-         <div>
-            <img src="../assets/dswd.png" alt="DWSD LOGO">
-         </div>
-      </div>
-
-      <div class="fdepEdLogo">
-         <div>
-            <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
-         </div>
-      </div>
-
-      <div class="fcalCityLogo">
-         <div>
-            <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
-         </div>
-      </div>
-
-      <div class="fCalHighLogo">
-         <div>
-            <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-         </div>
-      </div>
-
-      <div class="fFourPs">
-         <div>
-            <img src="../assets/fourPs.png" alt="4P'S LOGO">
-         </div>
-      </div>
-
-   </footer>
-
-
 </body>
 
 </html>

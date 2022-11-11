@@ -127,9 +127,9 @@ div.schoolYearContainer div.year {
   margin-top: 10vh;
   width: 97%;
   height: 7vh;
-  background-color: black;
+  background-color: green;
   color: white;
-  box-shadow: 0px 1px 2px white;
+  box-shadow: 0px 2px 2px darkgreen;
   z-index: 100;
   display: flex;
   justify-content: space-around;
@@ -137,7 +137,7 @@ div.schoolYearContainer div.year {
   flex-direction: row;
   border-radius: 5px;
   text-transform: uppercase;
-  text-shadow: 0px 0px 10px white;
+  text-shadow:  -4px 4px 2px darkgreen;
 }
 
 div.year h5 {
@@ -160,19 +160,19 @@ div.year h6 {
 div.year a {
   text-decoration: none;
   color: white;
-  text-shadow: 0px 0px 10px rgba(0, 253, 148);
+  text-shadow:  -4px 4px 2px darkgreen;
 }
 
 div.schoolYearContainer div.month {
   font-size: 20px;
   width: 95%;
-  height: 60vh;
-  background-color: black;
+  height: 67vh;
+  background-color: green;
   display: flex;
   align-items: center;
   flex-direction: column;
   color: white;
-  box-shadow: 0px 2px 5px black;
+  box-shadow: 0px 4px 2px darkgreen;
   border-radius: 0px 0px 25px 25px;
 }
 
@@ -196,12 +196,13 @@ div.month div h3 {
   margin: 30px;
   font-size: 25px;
   letter-spacing: 7px;
-  box-shadow: 0px 1px 5px white;
+  text-shadow:  -4px 4px 2px darkgreen;
+  box-shadow: 0px 1px 5px darkgreen;
 }
 
 div.month div h3:hover {
   cursor: pointer;
-  box-shadow: 0px 1px 10px white;
+  box-shadow: 0px 1px 10px lime;
   font-size: xx-large;
   border-radius: 0px 0px 25px 25px;
   transition: 0.3s;
