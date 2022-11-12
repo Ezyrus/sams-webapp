@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* NAVIGATION BAR */
+section.nav {
+    font-family: "Tomorrow", sans-serif;
+    height: 5vh;
+    top: 10vh;
+    width: 100%;
+    position: absolute;
+    background-color:green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 2px 1px white;
+  }
+  
+  section.nav div.back-container {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section.nav div.back-container h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-shadow: -5px 5px 2px darkgreen;
+    color: white;
+    cursor: pointer;
+  }
+  
+  section.nav .title {
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    border-radius: 0px 0px 0px 0px;
+
+  }
+  
+  section.nav div.title h3 {
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-shadow: -1px 1px 2px green;
+  }
+  
+  section.nav div.admin-container {
+    width: 30%;
+    display: flex;
+    height: 100%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-transform: uppercase;
+  }
+  
+  section.nav div.admin-container h6.adminLogged {
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-shadow: -5px 5px 2px darkgreen;
+    color: white;
+  }
+  
+  section.nav div.admin-container h6.adminLogged span {
+    text-transform: none;
+    color: rgb(168, 255, 118);
+    letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: -5px 5px 2px darkgreen;
+  } 
+
+  section.nav div.admin-container h2.logout {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  section.nav div.admin-container h2.logout a {
+    color: darkred;
+    text-decoration: none;
+    text-shadow: -1px 1px 2px white;
+  }
+  /* NAVIGATION BAR */
+
+section.main {
+  font-family: "Tomorrow", sans-serif;
+  overflow-x: auto;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+section.main .grade11 {
+  width: 45%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgreen;
+}
+
+section.main .grade12 {
+  width: 45%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgreen;
+}
+
+section.main .grade11 h1 a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 35px;
+}
+
+section.main .grade12 h1 a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 35px;
+}

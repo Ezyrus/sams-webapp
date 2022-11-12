@@ -27,7 +27,10 @@ section.nav {
   left: 0;
   z-index: 1;
   position: absolute;
-  background-color: rgb(63, 186, 135, 0.6);
+  background-image: url("../assets/bg01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -63,7 +66,7 @@ section.nav div.legend h1 {
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 5px;
-  text-shadow: -1px 1px 1px white;
+  text-shadow: -1px 1px 1px rgba(171, 221, 183, 1);
 }
 
 section.nav div.legend div div {
@@ -79,21 +82,23 @@ section.nav div.legend div div h2 {
   text-transform: uppercase;
   font-size: 17px;
   letter-spacing: 2px;
+  color: darkblue;
+  text-shadow: -1px 1px 1px rgba(171, 221, 183, 1);
 }
 
 span.green {
   color: green;
-  text-shadow: -1px 1px 1px black;
+  text-shadow: -1px 1px 1px darkblue;
 }
 
 span.red {
   color: red;
-  text-shadow: -1px 1px 1px black;
+  text-shadow: -1px 1px 1px darkblue;
 }
 
 span.yellow {
   color: yellow;
-  text-shadow: -1px 1px 1px black;
+  text-shadow: -1px 1px 1px darkblue;
 }
 
 section.nav div.legend div div.present h3.present {
@@ -134,7 +139,7 @@ section.nav div.title h6.adminLogged {
 
 section.nav div.title h6.adminLogged span {
   text-transform: none;
-  color: green;
+  color: darkgreen;
   letter-spacing: 2px;
   font-style: italic;
   cursor: pointer;
@@ -176,8 +181,8 @@ section.nav .navigate div a {
   letter-spacing: 3px;
   text-decoration: none;
   font-size: 20px;
-  color: black;
-  text-shadow: -1px 1px 1px white;
+  color: darkblue;
+  text-shadow: -1px 1px 1px rgba(171, 221, 183, 1);
 }
 
 section.nav .navigate div h2.logout a {
@@ -285,12 +290,11 @@ section.main::-webkit-scrollbar {
 }
 
 section.main::-webkit-scrollbar-track {
-  background-color: rgb(63, 186, 135);
+ background-color: rgba(48, 140, 186, 1);
 }
 
 section.main::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(47, 140, 101);
-  border-radius: 5px;
+  background-color: rgba(150, 212, 187, 1);
 }
 
 section.main table {
@@ -307,12 +311,12 @@ section.main table tr.tableHeader th.otherInfo {
   width: 2%;
   padding: 5px;
   font-size: 15px;
-  background-color: rgb(63, 186, 135);
+  background-color: rgba(150, 212, 187, 1);
 }
 
 section.main table tr.tableHeader th.monthDays {
   width: 1.5%;
-  background-color: rgb(63, 186, 135);
+  background-color: rgba(150, 212, 187, 1);
 }
 
 section.main table tr:hover {

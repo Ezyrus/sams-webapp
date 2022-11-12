@@ -10,7 +10,7 @@ div.login-container {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url("../assets/loginBg02.png");
+  background-image: url("../assets/bg01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -37,34 +37,32 @@ section.loginFormContainer form {
   align-items: center;
   flex-direction: column;
   gap: 5px;
-  background-color: rgba(43, 255, 0, 0.35);
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174, 0.5);
   border-radius: 15px;
   height: 60%;
-  width: 25%;
+  width: 30%;
+}
+
+section.loginFormContainer form:hover {
+  box-shadow: -3px 3px 10px rgba(22, 110, 174, 0.5);
 }
 
 section.loginFormContainer form h3 {
   font-size: 40px;
-  color:black;
+  color: darkblue;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   text-align: center;
-  text-shadow: -1px 1px 1px white;
   align-self: center;
-}
-
-section.loginFormContainer form:hover {
-  border-top: 2px solid rgb(0, 226, 19);
-  border-bottom: 1px solid rgb(0, 226, 19);
 }
 
 section.loginFormContainer form label {
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 3px;
-  color:black;
+  color:darkblue;
   margin-top: 10px;
-  text-shadow: -1px 1px 1px white;
 }
 
 section.loginFormContainer form input {
@@ -73,14 +71,20 @@ section.loginFormContainer form input {
   font-size: 15px;
   letter-spacing: 1px;
   padding: 3px;
-  width: 70%;
+  width: 60%;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 0px solid darkblue;
+  box-shadow: -1px 1px 2px rgba(22, 110, 174);
+}
+
+section.loginFormContainer form input:hover {
+  box-shadow: -1px 1px 10px rgba(22, 110, 174);
 }
 
 section.loginFormContainer form h6 {
+  margin-top: 5px;
   letter-spacing: 1px;
-  text-shadow: 0px 0px 5px white;
+  text-shadow: -2px 2px 2px rgba(22, 110, 174, 0.5);
 }
 
 section.loginFormContainer form a {
@@ -89,12 +93,13 @@ section.loginFormContainer form a {
 }
 
 section.loginFormContainer form a:hover {
-  color: rgb(0, 226, 19);
+  color: green
 
 }
 
 .button-LogIn {
   padding: 8px;
+  width: 25%;
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
@@ -104,14 +109,13 @@ section.loginFormContainer form a:hover {
   font-weight: bolder;
   border-style: none;
   color: white;
-  background-color: black;
+  background-color: darkblue;
   margin-top: 10px;
 }
 
 .button-LogIn:hover {
+  transition: 0.5s;
   cursor: pointer;
-  color: white;
-  border: 1px solid black;
   background-color: green;
 }
 
