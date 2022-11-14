@@ -93,11 +93,8 @@
       <div class="navigate">
 
          <div>
-            <h2 class="studentProfile">
-               <a href="../studentProfile/studentProfile.php">Student Profile</a>
-            </h2>
-            <h2 class="gradeLevel">
-               <a href="../gradeLevel.php">Grade Level</a>
+            <h2 class="dashboard">
+               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">dashboard</a>
             </h2>
          </div>
 
@@ -115,7 +112,7 @@
    </section>
 
    <section class="log">
-      <h3><a href="../gradeLevel.php">Grade 11 > </a><a href="grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
+      <h3><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Grade 11 > </a><a href="../adminDashboard/admin_dashboard-grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
       </h3>
 
       <form action="grade11october2022_searchStudent.php" method="GET">

@@ -1,40 +1,40 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
+require_once "../databaseConnection.php";
 
 
-   if (isset($_POST['registerStudent'])) {
-      $studentLrn = $_POST['lrn'];
-      $studentName = $_POST['name'];
-      $studentSection = $_POST['section'];
-      $studentAge = $_POST['age'];
-      $studentAddress = $_POST['address'];
-      $studentEmail = $_POST['email'];
-      $studentNumber = $_POST['number'];
+if (isset($_POST['registerStudent'])) {
+   $studentLrn = $_POST['lrn'];
+   $studentName = $_POST['name'];
+   $studentSection = $_POST['section'];
+   $studentAge = $_POST['age'];
+   $studentAddress = $_POST['address'];
+   $studentEmail = $_POST['email'];
+   $studentNumber = $_POST['number'];
 
-      $selectStudentSql = "SELECT * FROM students WHERE lrn = '$studentLrn'";
+   $selectStudentSql = "SELECT * FROM students WHERE lrn = '$studentLrn'";
 
-      $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+   $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 
-      $studentTableNumRows = mysqli_num_rows($initiateSelectSql);
+   $studentTableNumRows = mysqli_num_rows($initiateSelectSql);
 
-      if ($studentTableNumRows) {
-         echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
+   if ($studentTableNumRows) {
+      echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
+   } else {
+      if (empty($studentLrn)) {
+         echo '<script>alert("Student LRN field is required")</script>';
       } else {
-         if (empty($studentLrn)) {
-            echo '<script>alert("Student LRN field is required")</script>';
-         } else {
-            $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+         $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
-            $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
+         $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
 
-            $_SESSION['messageUpdate'] = "$studentLrn has been registered";
-            
-            echo '<script>alert("Student Added")</script>';
-            echo header("Location: studentProfile.php");
-         }
+         $_SESSION['messageUpdate'] = "$studentLrn has been registered";
+
+         echo '<script>alert("Student Added")</script>';
+         echo header("Location: studentProfile.php");
       }
    }
+}
 
 ?>
 
@@ -49,7 +49,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/registerStudents.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/registerUpdateStudents.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
@@ -80,20 +80,12 @@
    <section class="nav">
 
       <div class="back-container">
-
-         <h1 onclick="history.go(-1);">
+      <h1 onclick="history.go(-1);">
             < BACK</h1>
-               <h1><a href="studentProfile.php">Student Profile</a></h1>
-       
-
       </div>
 
       <div class="title">
-         <div>
-            <h3>Register Students</h3>
-            <h6>4p's Students of Caloocan High School</h6>
-         </div>
-
+         <h3><a href="registerStudents.php">Register Students</a></h3>
       </div>
 
       <div class="admin-container">

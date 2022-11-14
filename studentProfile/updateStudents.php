@@ -40,7 +40,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <link rel="stylesheet" href="../styles/registerStudents.css?v=<?php echo time(); ?>">
+   <link rel="stylesheet" href="../styles/registerUpdateStudents.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
 
    <title>Student Attendance Monitoring System</title>
@@ -71,18 +71,12 @@
    <section class="nav">
 
       <div class="back-container">
-
-         <h1 onclick="history.go(-1);">
+      <h1 onclick="history.go(-1);">
             < BACK</h1>
-             
       </div>
 
       <div class="title">
-         <div>
-            <h3>Update Student</h3>
-            <h6>4p's Students of Caloocan High School</h6>
-         </div>
-
+         <h3><a href="#">Update Student</a></h3>
       </div>
 
       <div class="admin-container">

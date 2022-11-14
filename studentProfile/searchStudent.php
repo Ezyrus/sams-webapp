@@ -25,7 +25,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../styles/studentProfile.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/viewAddSearchStudentProfile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
@@ -56,20 +56,11 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <section class="nav">
 
         <div class="back-container">
-
-            <h1 onclick="history.go(-1);">
-                < BACK</h1>
-
-                    <h1><a href="../gradeLevel.php">Grade Level </a></h1>
-
+            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Dashboard</a></h1>
         </div>
 
         <div class="title">
-            <div>
-                <h3>Student Profile</h3>
-                <h6>4p's Students of Caloocan High School</h6>
-            </div>
-
+            <h3><a href="studentProfile.php">Student Profile</a></h3>
         </div>
 
         <div class="admin-container">
@@ -136,9 +127,9 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                         <td class="email"><?php echo $studentRow['email']; ?></td>
                         <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                         <td class="function">
-                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE | </a>
-                            <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a>
-                        </td>
+                                    <span class="update"><a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a></span>
+                                    <span class="delete"><a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></span>
+                                </td>
                     </tr>
 
                 <?php 

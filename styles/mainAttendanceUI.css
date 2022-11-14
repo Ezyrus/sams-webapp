@@ -177,16 +177,32 @@ section.nav .navigate div {
   align-items: center;
 }
 
-section.nav .navigate div a {
+section.nav .navigate div h2.dashboard a {
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  text-shadow: -2px 2px 1px darkblue;
+}
+
+section.nav .navigate div h2.logout a {
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: 20px;
+  color: darkred;
+  text-shadow: -1px 1px 1px palevioletred;
+}
+
+section.nav .navigate div h2.addStudents a {
   letter-spacing: 3px;
   text-decoration: none;
   font-size: 20px;
   color: darkblue;
-  text-shadow: -1px 1px 1px rgba(171, 221, 183, 1);
+  text-shadow: -1px 1px 1px cyan;
 }
 
-section.nav .navigate div h2.logout a {
-  color: rgb(160, 0, 0);
+section.nav .navigate div h2 a:hover{
+  font-size: 21px;
 }
 /* NAVIGATION BAR */
 
@@ -217,8 +233,9 @@ section.log h3 a{
 }
 
 section.log a:hover {
-  transition: 0.5s;
-  color: blue;
+  transition: 0.1s;
+  color: white;
+  text-shadow: -1px 1px 1px darkblue;
 }
 
 section.log h3 span {
@@ -232,7 +249,6 @@ section.log form h3.downloadExcel a{
   font-size: 15px;
   font-style: normal;
 }
-
 
 section.log form {
   width: 40%;
@@ -253,9 +269,14 @@ section.log form input {
   border-radius: 5px;
 }
 
+section.log form input:hover {
+  box-shadow: -1px 1px 10px rgba(22, 110, 174);
+
+}
+
 section.log form button {
   border: 0px solid black;
-  background-color: black;
+  background-color: darkblue;
   color: white;
   font-size: 15px;
   font-family: "Tomorrow", sans-serif;
@@ -268,7 +289,6 @@ section.log form button {
 
 section.log form button:hover {
   background-color: green;
-  transition: 0.5s;
 }
 
 section.main {

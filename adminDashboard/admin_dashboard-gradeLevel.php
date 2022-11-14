@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION['messageUpdate'] = "";
+$_SESSION['monthYear'] = "";
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +16,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link rel="stylesheet" href="styles/mainAdministratorUI.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/mainDashboardUI.css?v=<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="styles/header-footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
     <script src="../js/gradeLevel.js"></script>
 
     <title>Student Attendance Monitoring System</title>
@@ -28,7 +30,7 @@ session_start();
     <header>
         <div class="calLogo">
             <div>
-                <img src="assets/calHigh.png" alt="Caloocan Highschool Logo">
+                <img src="../assets/calHigh.png" alt="Caloocan Highschool Logo">
             </div>
         </div>
 
@@ -39,7 +41,7 @@ session_start();
 
         <div class="depEdLogo">
             <div>
-                <img src="assets/depEd.png" alt="DepEd Logo">
+                <img src="../assets/depEd.png" alt="DepEd Logo">
             </div>
         </div>
     </header>
@@ -47,12 +49,12 @@ session_start();
     <section class="nav">
 
         <div class="back-container">
-            <h1 onclick="history.go(-1);">
-                < BACK</h1>
+            <h1><a href="../studentProfile/studentProfile.php">
+                Student Profile</a></h1>
         </div>
 
         <div class="title">
-                <h3>dashboard</h3>
+            <h3><a href="admin_dashboard-gradeLevel.php">dashboard</a></h3>
         </div>
 
         <div class="admin-container">
@@ -68,12 +70,14 @@ session_start();
 
     <section class="main">
 
-        <div class="grade11">
-            <h1><a href="grade11/grade11year2022.php">GRADE 11</a></h1>
-        </div>
+        <div class="gradeLevel-container">
+            <div class="grade11">
+                <h1><a href="admin_dashboard-grade11year2022.php">GRADE 11</a></h1>
+            </div>
 
-        <div class="grade12">
-            <h1><a href="#">GRADE 12</a></h1>
+            <div class="grade12">
+                <h1><a href="#">GRADE 12</a></h1>
+            </div>
         </div>
 
     </section>
@@ -82,35 +86,36 @@ session_start();
 
         <div class="fdswdLogo">
             <div>
-                <img src="assets/dswd.png" alt="DWSD LOGO">
+                <img src="../assets/dswd.png" alt="DWSD LOGO">
             </div>
         </div>
 
         <div class="fdepEdLogo">
             <div>
-                <img src="assets/depEdSeal.png" alt="DEPED SEAL">
+                <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
             </div>
         </div>
 
         <div class="fcalCityLogo">
             <div>
-                <img src="assets/calCity.png" alt="CALOOCAN CITY LOGO">
+                <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
             </div>
         </div>
 
         <div class="fCalHighLogo">
             <div>
-                <img src="assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+                <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
             </div>
         </div>
 
         <div class="fFourPs">
             <div>
-                <img src="assets/fourPs.png" alt="4P'S LOGO">
+                <img src="../assets/fourPs.png" alt="4P'S LOGO">
             </div>
         </div>
 
     </footer>
+
 </body>
 
 </html>

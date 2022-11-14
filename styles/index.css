@@ -74,7 +74,6 @@ section.loginFormContainer form input {
   width: 60%;
   border-radius: 8px;
   border: 0px solid darkblue;
-  box-shadow: -1px 1px 2px rgba(22, 110, 174);
 }
 
 section.loginFormContainer form input:hover {

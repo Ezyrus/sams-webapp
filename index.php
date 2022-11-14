@@ -17,7 +17,7 @@
 
          $_SESSION['username'] = $adminTableRows['username'];
 
-         header('Location:/Sams/gradeLevel.php');
+         header('Location:/Sams/adminDashboard/admin_dashboard-gradeLevel.php');
       } else {
          echo '<script>alert("Invalid Username or Password!")</script>';
       }
