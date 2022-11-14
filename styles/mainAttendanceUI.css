@@ -162,7 +162,7 @@ section.nav .navigate {
   display: flex;
   height: 60%;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;

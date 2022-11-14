@@ -94,11 +94,8 @@ $classDays = array();
       <div class="navigate">
 
          <div>
-            <h2 class="studentProfile">
-               <a href="../studentProfile/studentProfile.php">Student Profile</a>
-            </h2>
-            <h2 class="gradeLevel">
-               <a href="../gradeLevel.php">Grade Level</a>
+            <h2 class="dashboard">
+               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">dashboard</a>
             </h2>
          </div>
 

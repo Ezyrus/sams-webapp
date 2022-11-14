@@ -50,7 +50,7 @@ $_SESSION['monthYear'] = "";
 
         <div class="back-container">
             <h1><a href="../studentProfile/studentProfile.php">
-                Student Profile</a></h1>
+                    Student Profile</a></h1>
         </div>
 
         <div class="title">

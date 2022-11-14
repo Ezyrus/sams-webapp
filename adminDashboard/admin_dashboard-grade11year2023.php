@@ -66,7 +66,7 @@ $_SESSION['monthYear'] = "";
       </div>
    </section>
 
-   <section class="main">
+   <section class="schoolRecord">
 
       <div class="grade11-records" id="grade11-records">
 
