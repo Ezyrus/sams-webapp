@@ -98,8 +98,8 @@ $_SESSION['monthYear'] = "";
                <div class="SepDec">
                   <h3 onclick="noData()"><a href="#">September</a></h3>
                   <h3><a href="../grade11/grade11october2022.php">October</a></h3>
-                  <h3 onclick="noData()"><a href="#">November</a></h3>
-                  <h3 onclick="noData()"><a href="#">December</a></h3>
+                  <h3><a href="../grade11/grade11november2022.php">November</a></h3>
+                  <h3><a href="../grade11/grade11december2022.php">December</a></h3>
                </div>
             </div>
 

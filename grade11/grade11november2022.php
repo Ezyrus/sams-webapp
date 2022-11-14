@@ -3,13 +3,13 @@
    error_reporting(0);  //hide errors
    require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM october2022";
+   $selectMonthYearSql = "SELECT * FROM november2022";
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
    $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
    $messageUpdate = $_SESSION['messageUpdate'];
-   $_SESSION['monthYear'] = "october2022";
+   $_SESSION['monthYear'] = "november2022";
    $classDays = array();
 
 ?>
@@ -84,7 +84,7 @@
          <h6 class="adminLogged">Admin : <span><?php echo $_SESSION['username']; ?></span></h6>
 
          <div>
-            <h3>October 2022</h3>
+            <h3>November 2022</h3>
             <h6>4p's Grade 11 Student Records</h6>
          </div>
 
@@ -112,10 +112,10 @@
    </section>
 
    <section class="log">
-      <h3><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Grade 11 > </a><a href="../adminDashboard/admin_dashboard-grade11year2022.php">Year 2022 ></a><a href="grade11october2022.php"> October </a>
+      <h3><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Grade 11 > </a><a href="../adminDashboard/admin_dashboard-grade11year2022.php">Year 2022 ></a><a href="grade11november2022.php"> November </a>
       </h3>
 
-      <form action="grade11october2022_searchStudent.php" method="GET">
+      <form action="grade11november2022_searchStudent.php" method="GET">
          <h3 class="downloadExcel" id="downloadExcel">
             <a href="../downloadRecord.php">Download Record</a>
          </h3>
