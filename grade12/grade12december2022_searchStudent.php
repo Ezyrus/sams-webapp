@@ -113,23 +113,25 @@ $classDays = array();
    </section>
 
    <section class="log">
-      <h3><a href="../gradeLevel.php">Grade 12 > </a><a href="grade12year2022.php">Year 2022 ></a><a href="grade12december2022.php"> december </a>
+      <h3><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Grade 12 > </a><a href="../adminDashboard/admin_dashboard-grade12year2022.php">Year 2022 ></a><a href="grade12december2022.php"> december </a>
       </h3>
 
-
       <form action="grade12december2022_searchStudent.php" method="GET">
+         <h3 class="downloadExcel" id="downloadExcel">
+            <a href="../downloadRecord.php">Download Record</a>
+         </h3>
          <input name="userSearch" type="text">
          <button type="submit">Search</button>
       </form>
 
-      <h3 id="log">Log: <span><?php 
-            if ($messageUpdate == "" ) {
-               echo "...";
-            } else {
-               echo "$messageUpdate" ;
-            }
-         ?></span>
-    </h3>
+      <h3 id="log">Log: <span><?php
+                              if ($messageUpdate == "") {
+                                 echo "...";
+                              } else {
+                                 echo "$messageUpdate";
+                              }
+                              ?></span>
+      </h3>
    </section>
 
    <section class="main">
