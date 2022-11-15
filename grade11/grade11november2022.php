@@ -3,13 +3,13 @@
    error_reporting(0);  //hide errors
    require_once "../databaseConnection.php";
 
-   $selectMonthYearSql = "SELECT * FROM november2022";
+   $selectMonthYearSql = "SELECT * FROM grade11_november2022";
    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
    $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
 
    $messageUpdate = $_SESSION['messageUpdate'];
-   $_SESSION['monthYear'] = "november2022";
+   $_SESSION['monthYear'] = "grade11_november2022";
    $classDays = array();
 
 ?>

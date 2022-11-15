@@ -76,7 +76,7 @@ $_SESSION['monthYear'] = "";
             </div>
 
             <div class="grade12">
-                <h1><a href="#">GRADE 12</a></h1>
+                <h1><a href="admin_dashboard-grade12year2022.php">GRADE 12</a></h1>
             </div>
         </div>
 

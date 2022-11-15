@@ -7,12 +7,6 @@
     $monthYear = $_SESSION['monthYear'];
     $_SESSION['messageUpdate'] = "$studentLrn has been saved";
 
-    //Whole month table
-    $selectMonthYearSql = "SELECT * FROM october2022";
-    $initiateSelectSql = mysqli_query(databaseConnection(), $selectMonthYearSql);
-    $monthYearRow = mysqli_fetch_assoc($initiateSelectSql);
-    $selectTableNumRows = mysqli_num_rows($initiateSelectSql);
-
     function schoolDays() {
         $classDay01 = $_POST['classDay01'];
         $classDay02 = $_POST['classDay02'];

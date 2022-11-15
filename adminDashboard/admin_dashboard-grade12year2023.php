@@ -72,12 +72,12 @@ $_SESSION['monthYear'] = "";
 
          <div class="records">
 
-            <h1 class="title">Grade 11 Records</h1>
+            <h1 class="title">Grade 12 Records</h1>
 
             <div class="year">
-               <h5><a href="admin_dashboard-grade11year2022.php"> < </a></h5>
-                     <h6 id="recentYear">Year 2023</h6>
-                     <h5 onclick="noData()"> > </h5>
+               <h5><a href="admin_dashboard-grade12year2022.php"> < </a></h5>
+               <h6 id="recentYear">Year 2023</h6>
+               <h5 onclick="noData()"> > </h5>
             </div>
 
             <div class="month">
