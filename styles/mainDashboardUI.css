@@ -2,10 +2,23 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 html::-webkit-scrollbar {
   width: 0;
+  
 }
 
 /* NAVIGATION BAR */
@@ -16,12 +29,11 @@ section.nav {
   width: 100%;
   position: fixed;
   background-image: url("../assets/bg01.jpg");
- background-size: cover;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
 }
 
 section.nav div.back-container {
@@ -65,10 +77,9 @@ section.nav div.title h3 {
 section.nav div.title h3:hover {
   font-size: 31px;
   transition: 0.2s;
-  
 }
 
-section.nav div.title h3  a {
+section.nav div.title h3 a {
   text-decoration: none;
   color: white;
 }
@@ -97,7 +108,7 @@ section.nav div.admin-container h6.adminLogged span {
   letter-spacing: 2px;
   font-style: italic;
   text-shadow: -2px 2px 1px darkgreen;
-} 
+}
 
 section.nav div.admin-container h2.logout {
   font-size: 20px;
@@ -122,8 +133,8 @@ body {
 }
 
 section.main {
-font-family: "Tomorrow", sans-serif;
-overflow-x: auto;
+  font-family: "Tomorrow", sans-serif;
+  overflow-x: auto;
   height: 100%;
   width: 100%;
   display: flex;
@@ -133,191 +144,428 @@ overflow-x: auto;
 }
 
 section.main .gradeLevel-container {
-height: 100vh;
-width: 100%;
-gap: 100px;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+  height: 100vh;
+  width: 100%;
+  gap: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 section.main .gradeLevel-container .grade11 {
-width: 42%;
-height: 62%;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: rgba(171, 221, 183, 0.3);
-box-shadow: -3px 3px 2px rgba(22, 110, 174);
-margin-top: 10vh;
-border-radius: 15px;
+  width: 42%;
+  height: 62%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 2px rgba(22, 110, 174);
+  margin-top: 10vh;
+  border-radius: 15px;
 }
 
 section.main .gradeLevel-container .grade11:hover {
-background-color: rgba(171, 221, 183, 0.5);
-box-shadow: -3px 3px 10px rgba(22, 110, 174);
+  background-color: rgba(171, 221, 183, 0.5);
+  box-shadow: -3px 3px 10px rgba(22, 110, 174);
 }
 
 section.main .gradeLevel-container .grade12 {
-margin-top: 10vh;
-width: 42%;
-height: 62%;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: rgba(171, 221, 183, 0.3);
-box-shadow: -3px 3px 2px rgba(22, 110, 174);
-border-radius: 15px;
+  margin-top: 10vh;
+  width: 42%;
+  height: 62%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 2px rgba(22, 110, 174);
+  border-radius: 15px;
 }
 
 section.main .gradeLevel-container .grade12:hover {
-background-color: rgba(171, 221, 183, 0.5);
-box-shadow: -3px 3px 10px rgba(22, 110, 174);
+  background-color: rgba(171, 221, 183, 0.5);
+  box-shadow: -3px 3px 10px rgba(22, 110, 174);
 }
 
 section.main .gradeLevel-container .grade11 h1 a {
-color: darkblue;
-text-decoration: none;
-text-transform: uppercase;
-letter-spacing: 15px;
-font-size: 40px;
-text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
-
+  color: darkblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-size: 40px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
 }
 
 section.main .gradeLevel-container .grade12 h1 a {
-color: darkblue;
-text-decoration: none;
-text-transform: uppercase;
-letter-spacing: 15px;
-font-size: 40px;
-text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
+  color: darkblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-size: 40px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
 }
 
 section.schoolRecord .grade-records {
-width: 100%;
-height: 100vh;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 section.schoolRecord .grade-records .records {
-width: 90%;
-height: 70%;
-display: flex;
-flex-direction: column;
-justify-content: start;
-align-items: center;
-background-color: rgba(171, 221, 183, 0.3);
-box-shadow: -3px 3px 2px rgba(22, 110, 174);
-margin-top: 10vh;
-border-radius: 15px;
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 2px rgba(22, 110, 174);
+  margin-top: 10vh;
+  border-radius: 15px;
 }
 
 section.schoolRecord .grade-records .records .title {
-font-size: 30px;
-align-self: flex-start;
-width: 100%;
-margin-top: 20px;
-color: darkblue;
-text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
+  font-size: 30px;
+  align-self: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  color: darkblue;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
 }
 
 section.schoolRecord .grade-records div.year {
-margin-top: 10px;
-width: 90%;
-height: 5vh;
-background-color: rgba(22, 110, 174,0.7);
-color: white;
-z-index: 100;
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-direction: row;
-border-radius: 5px;
-text-transform: uppercase;
-text-shadow:  -2px 2px 1px darkblue;
+  margin-top: 10px;
+  width: 90%;
+  height: 5vh;
+  background-color: rgba(22, 110, 174, 0.7);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-shadow: -2px 2px 1px darkblue;
 }
 
 section.schoolRecord .grade-records .year h5 {
-width: 5%;
-text-align: center;
-font-size: 50px;
+  width: 5%;
+  text-align: center;
+  font-size: 50px;
 }
 
 section.schoolRecord .grade-records .year h5:hover {
-cursor: pointer;
+  cursor: pointer;
 }
 
 section.schoolRecord .grade-records .year h6 {
-width: 60%;
-text-align: center;
-font-size: 25px;
-letter-spacing: 10px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 10px;
+}
+
+section.schoolRecord .grade-records .year h6 span {
+  font-size: 30px;
 }
 
 section.schoolRecord .grade-records .year a {
-text-decoration: none;
-color: white;
-text-shadow:  -2px 2px 1px darkblue;
+  text-decoration: none;
+  color: white;
+  text-shadow: -2px 2px 1px darkblue;
 }
 
 section.schoolRecord .grade-records .year a:hover {
-font-size: 60px;
-transition: 0.2s;
-text-shadow:  -1px 1px 10px cyan;
+  font-size: 60px;
+  transition: 0.2s;
+  text-shadow: -1px 1px 10px cyan;
 }
 
 section.schoolRecord .grade-records div.month {
-font-size: 20px;
-width: 88%;
-height: 78%;
-background-color: rgba(22, 110, 174,0.3);
-display: flex;
-align-items: center;
-justify-content: space-around;
-flex-direction: column;
-color: white;
-border-radius: 0px 0px 20px 20px;
+  font-size: 20px;
+  width: 88%;
+  height: 78%;
+  background-color: rgba(22, 110, 174, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: white;
+  border-radius: 0px 0px 20px 20px;
 }
 
 section.schoolRecord .grade-records .month div {
-height: 50%;
-width: 95%;
-display: flex;
-gap: 50px;
-justify-content: space-around;
-align-items: center;
-flex-direction: row;
+  height: 50%;
+  width: 95%;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }
 
 section.schoolRecord .grade-records .month div h3 {
-height: 80%;
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: center;
-align-items: center;
-text-transform: uppercase;
-font-size: 20px;
-letter-spacing: 7px;
-text-shadow:  -4px 4px 2px rgba(22, 110, 174);
-box-shadow: 0px 1px 5px rgba(22, 110, 174);
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 7px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  box-shadow: 0px 1px 5px rgba(22, 110, 174);
 }
 
 section.schoolRecord .grade-records .month div h3:hover {
-cursor: pointer;
-box-shadow: 0px 1px 10px cyan;
-font-size: x-large;
-border-radius: 0px 0px 25px 25px;
-transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0px 1px 10px cyan;
+  font-size: x-large;
+  border-radius: 0px 0px 25px 25px;
+  transition: 0.3s;
 }
 
 section.schoolRecord .grade-records .month div h3 a {
-text-decoration: none;
-color: white;
+  text-decoration: none;
+  color: white;
+}
+
+section.graphicJanuaryContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicJanuaryContainer .january {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicJanuaryContainer .january .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicJanuaryContainer .january .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+section.graphicFebruaryContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicFebruaryContainer .february {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicFebruaryContainer .february .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicFebruaryContainer .february .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+section.graphicMarchContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicMarchContainer .march {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicMarchContainer .march .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicMarchContainer .march .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+
+
+
+
+section.graphicOctoberContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicOctoberContainer .october {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicOctoberContainer .october .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicOctoberContainer .october .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+section.graphicNovemberContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicNovemberContainer .november {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicNovemberContainer .november .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicNovemberContainer .november .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+}
+
+section.graphicDecemberContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.graphicDecemberContainer .december {
+  width: 90%;
+  height: 75%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174);
+  border-radius: 15px;
+}
+
+section.graphicDecemberContainer .december .title {
+  width: 100%;
+  font-size: 30px;
+  letter-spacing: 15px;
+  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  color: white;
+}
+
+section.graphicDecemberContainer .december .canvasContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
 }

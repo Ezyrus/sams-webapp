@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once "../databaseConnection.php";
+require_once "getMonthRecords.php";
 $_SESSION['messageUpdate'] = "";
 $_SESSION['monthYear'] = "";
 ?>
@@ -17,6 +19,7 @@ $_SESSION['monthYear'] = "";
 
    <link rel="stylesheet" href="../styles/mainDashboardUI.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script src="../js/gradeLevel.js"></script>
 
    <title>Student Attendance Monitoring System</title>
@@ -76,8 +79,8 @@ $_SESSION['monthYear'] = "";
 
             <div class="year">
                <h5 onclick="noData()"><a href="#"> < </a></h5>
-                     <h6 id="recentYear">Year 2022</h6>
-                     <h5><a href="admin_dashboard-grade12year2023.php"> > </a></h5>
+               <h6 id="recentYear">Year 202<span>2</span></h6>
+               <h5><a href="admin_dashboard-grade12year2023.php"> > </a></h5>
             </div>
 
             <div class="month">
@@ -109,6 +112,171 @@ $_SESSION['monthYear'] = "";
       </div>
 
    </section>
+
+   <section class="graphicOctoberContainer">
+      
+      <div class="october">
+         <h1 class="title">October</h1>
+
+         <div class="canvasContainer">
+            <canvas id="octChart">
+            </canvas>
+         </div>
+      </div>
+
+   </section>
+
+   <section class="graphicNovemberContainer">
+      
+      <div class="november">
+         <h1 class="title">November</h1>
+
+         <div class="canvasContainer">
+            <canvas id="novChart">
+            </canvas>
+         </div>
+      </div>
+
+   </section>
+
+   <section class="graphicDecemberContainer">
+      
+      <div class="december">
+         <h1 class="title">December</h1>
+
+         <div class="canvasContainer">
+            <canvas id="decChart">
+            </canvas>
+         </div>
+      </div>
+
+   </section>
+   
+   <?php 
+      $oct2022 = new gr12October2022();
+      $initiateSelectOct2022 = $oct2022->monthRecord();
+      $oct2022Lrn = $oct2022->studentLrn;
+      $oct2022Name = $oct2022->studentName;
+      $oct2022Present = $oct2022->studentTotalPresent;
+      $oct2022Absent = $oct2022->studentTotalAbsent;
+      $oct2022SchoolDays = $oct2022->studentTotalSchoolDays;
+
+      $nov2022 = new gr12November2022();
+      $initiateSelectNov2022 = $nov2022->monthRecord();
+      $nov2022Lrn = $nov2022->studentLrn;
+      $nov2022Name = $nov2022->studentName;
+      $nov2022Present = $nov2022->studentTotalPresent;
+      $nov2022Absent = $nov2022->studentTotalAbsent;
+      $nov2022SchoolDays = $nov2022->studentTotalSchoolDays;
+
+      $dec2022 = new gr12December2022();
+      $initiateSelectDec2022 = $dec2022->monthRecord();
+      $dec2022Lrn = $dec2022->studentLrn;
+      $dec2022Name = $dec2022->studentName;
+      $dec2022Present = $dec2022->studentTotalPresent;
+      $dec2022Absent = $dec2022->studentTotalAbsent;
+      $dec2022SchoolDays = $dec2022->studentTotalSchoolDays;
+   ?>
+
+   <script>
+      const octChart = document.getElementById('octChart');
+      const novChart = document.getElementById('novChart');
+      const decChart = document.getElementById('decChart');
+
+      Chart.defaults.font.size = 15;
+      new Chart(octChart, {
+         type: 'bar',
+       
+         data: {
+            labels: [<?php echo ' " '.implode(' ", "  ', $oct2022Name).' " ' ?>],
+               datasets: [{
+               label: 'Total Present',
+               backgroundColor: ['green'],
+               data: [<?php echo ' " '.implode(' ", "  ', $oct2022Present).' " ' ?>],
+               borderWidth: 0,
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022Absent).' " ' ?>],
+                   borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022SchoolDays).' " ' ?>],
+                   borderWidth: 0
+               }]
+         }, 
+         options: {
+            scales: {
+            y: {
+               beginAtZero: true
+            }
+            }
+         }
+      });
+
+      new Chart(novChart, {
+         type: 'bar',
+       
+         data: {
+            labels: [<?php echo ' " '.implode(' ", "  ', $nov2022Name).' " ' ?>],
+               datasets: [{
+               label: 'Total Present',
+               backgroundColor: ['green'],
+               data: [<?php echo ' " '.implode(' ", "  ', $nov2022Present).' " ' ?>],
+               borderWidth: 0,
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022Absent).' " ' ?>],
+                   borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022SchoolDays).' " ' ?>],
+                   borderWidth: 0
+               }]
+         }, 
+         options: {
+            scales: {
+            y: {
+               beginAtZero: true
+            }
+            }
+         }
+      });
+
+      new Chart(decChart, {
+         type: 'bar',
+       
+         data: {
+            labels: [<?php echo ' " '.implode(' ", "  ', $dec2022Name).' " ' ?>],
+               datasets: [{
+               label: 'Total Present',
+               backgroundColor: ['green'],
+               data: [<?php echo ' " '.implode(' ", "  ', $dec2022Present).' " ' ?>],
+               borderWidth: 0,
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022Absent).' " ' ?>],
+                   borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022SchoolDays).' " ' ?>],
+                   borderWidth: 0
+               }]
+         }, 
+         options: {
+            scales: {
+            y: {
+               beginAtZero: true
+            }
+            }
+         }
+      });
+   </script>
 
    <footer>
 

@@ -1,6 +1,6 @@
 <?php
    session_start();
-   // error_reporting(0);  //hide errors
+   error_reporting(0);  //hide errors
    require_once "../databaseConnection.php";
 
    $selectMonthYearSql = "SELECT * FROM grade11_october2022";
