@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 require_once "getMonthRecords.php";
 $_SESSION['messageUpdate'] = "";
@@ -160,6 +161,7 @@ $_SESSION['monthYear'] = "";
       $oct2022Present = $oct2022->studentTotalPresent;
       $oct2022Absent = $oct2022->studentTotalAbsent;
       $oct2022SchoolDays = $oct2022->studentTotalSchoolDays;
+      $oct2022NumRows = $oct2022->studentTableNumRows;
 
       $nov2022 = new gr11November2022();
       $initiateSelectNov2022 = $nov2022->monthRecord();
@@ -168,6 +170,7 @@ $_SESSION['monthYear'] = "";
       $nov2022Present = $nov2022->studentTotalPresent;
       $nov2022Absent = $nov2022->studentTotalAbsent;
       $nov2022SchoolDays = $nov2022->studentTotalSchoolDays;
+      $nov2022NumRows = $nov2022->studentTableNumRows;
 
       $dec2022 = new gr11December2022();
       $initiateSelectDec2022 = $dec2022->monthRecord();
@@ -176,6 +179,7 @@ $_SESSION['monthYear'] = "";
       $dec2022Present = $dec2022->studentTotalPresent;
       $dec2022Absent = $dec2022->studentTotalAbsent;
       $dec2022SchoolDays = $dec2022->studentTotalSchoolDays;
+      $dec2022NumRows = $dec2022->studentTableNumRows;
    ?>
 
    <script>
@@ -184,98 +188,118 @@ $_SESSION['monthYear'] = "";
       const decChart = document.getElementById('decChart');
 
       Chart.defaults.font.size = 15;
-      new Chart(octChart, {
-         type: 'bar',
-       
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $oct2022Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $oct2022Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
-                  label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
-            }
-            }
-         }
-      });
 
-      new Chart(novChart, {
-         type: 'bar',
+      if ('<?php echo $oct2022NumRows; ?>' > 0) {
+         new Chart(octChart, {
+          type: 'bar',
        
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $nov2022Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $nov2022Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $oct2022Name).' " ' ?>],
+                  datasets: [{
                   label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $oct2022Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $oct2022SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
-            }
-         }
-      });
+         });
+      } else {
+         var octChartContainer = octChart.parentElement;
+         octChartContainer.style.height = '50%';
+         octChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }
 
-      new Chart(decChart, {
-         type: 'bar',
-       
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $dec2022Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $dec2022Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
+      if ('<?php echo $nov2022NumRows; ?>' > 0) {
+         new Chart(novChart, {
+            type: 'bar',
+         
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $nov2022Name).' " ' ?>],
+                  datasets: [{
                   label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $nov2022Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $nov2022SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
+         });
+      } else {
+         var novChartContainer = novChart.parentElement;
+         novChartContainer.style.height = '50%';
+         novChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }   
+
+      if ('<?php echo $dec2022NumRows; ?>' > 0) {
+         new Chart(decChart, {
+            type: 'bar',
+         
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $dec2022Name).' " ' ?>],
+                  datasets: [{
+                  label: 'Total Present',
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $dec2022Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $dec2022SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
-         }
-      });
+         });
+      } else {
+         var decChartContainer = decChart.parentElement;
+         decChartContainer.style.height = '50%';
+         decChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }      
+
    </script>
 
    <footer>

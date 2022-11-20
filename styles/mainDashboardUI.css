@@ -2,23 +2,15 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-}
-
-body {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
-
-html::-webkit-scrollbar {
-  width: 0;
-  
 }
 
 /* NAVIGATION BAR */
@@ -367,6 +359,14 @@ section.graphicJanuaryContainer .january .title {
   color: white;
 }
 
+section.graphicJanuaryContainer .january h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
+}
+
 section.graphicJanuaryContainer .january .canvasContainer {
   display: flex;
   flex-direction: column;
@@ -405,6 +405,14 @@ section.graphicFebruaryContainer .february .title {
   color: white;
 }
 
+section.graphicFebruaryContainer .february h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
+}
+
 section.graphicFebruaryContainer .february .canvasContainer {
   display: flex;
   flex-direction: column;
@@ -441,6 +449,14 @@ section.graphicMarchContainer .march .title {
   letter-spacing: 15px;
   text-shadow: -4px 4px 2px rgba(22, 110, 174);
   color: white;
+}
+
+section.graphicMarchContainer .march h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
 }
 
 section.graphicMarchContainer .march .canvasContainer {
@@ -485,6 +501,14 @@ section.graphicOctoberContainer .october .title {
   color: white;
 }
 
+section.graphicOctoberContainer .october h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
+}
+
 section.graphicOctoberContainer .october .canvasContainer {
   display: flex;
   flex-direction: column;
@@ -523,6 +547,14 @@ section.graphicNovemberContainer .november .title {
   color: white;
 }
 
+section.graphicNovemberContainer .november h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
+}
+
 section.graphicNovemberContainer .november .canvasContainer {
   display: flex;
   flex-direction: column;
@@ -559,6 +591,14 @@ section.graphicDecemberContainer .december .title {
   letter-spacing: 15px;
   text-shadow: -4px 4px 2px rgba(22, 110, 174);
   color: white;
+}
+
+section.graphicDecemberContainer .december h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-shadow: -1px 1px 1px darkblue;
+  color: red;
 }
 
 section.graphicDecemberContainer .december .canvasContainer {

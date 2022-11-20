@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 require_once "getMonthRecords.php";
 $_SESSION['messageUpdate'] = "";
@@ -160,6 +161,7 @@ $_SESSION['monthYear'] = "";
       $jan2023Present = $jan2023->studentTotalPresent;
       $jan2023Absent = $jan2023->studentTotalAbsent;
       $jan2023SchoolDays = $jan2023->studentTotalSchoolDays;
+      $jan2023NumRows = $jan2023->studentTableNumRows;
 
       $feb2023= new gr12February2023();
       $initiateSelectFeb2023 = $feb2023->monthRecord();
@@ -168,6 +170,7 @@ $_SESSION['monthYear'] = "";
       $feb2023Present = $feb2023->studentTotalPresent;
       $feb2023Absent = $feb2023->studentTotalAbsent;
       $feb2023SchoolDays = $feb2023->studentTotalSchoolDays;
+      $feb2023NumRows = $feb2023->studentTableNumRows;
 
       $march2023 = new gr12March2023();
       $initiateSelectMarch2023 = $march2023->monthRecord();
@@ -176,106 +179,126 @@ $_SESSION['monthYear'] = "";
       $march2023Present = $march2023->studentTotalPresent;
       $march2023Absent = $march2023->studentTotalAbsent;
       $march2023SchoolDays = $march2023->studentTotalSchoolDays;
+      $march2023NumRows = $march2023->studentTableNumRows;
    ?>
 
    <script>
-      const octChart = document.getElementById('janChart');
-      const novChart = document.getElementById('febChart');
-      const decChart = document.getElementById('marchChart');
+      const janChart = document.getElementById('janChart');
+      const febChart = document.getElementById('febChart');
+      const marchChart = document.getElementById('marchChart');
 
       Chart.defaults.font.size = 15;
-      new Chart(janChart, {
-         type: 'bar',
-       
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $jan2023Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $jan2023Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
-                  label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $jan2023Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $jan2023SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
-            }
-            }
-         }
-      });
 
-      new Chart(febChart, {
-         type: 'bar',
-       
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $feb2023Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $feb2023Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
+      if ('<?php echo $jan2023NumRows; ?>' > 0) {
+         new Chart(janChart, {
+            type: 'bar',
+         
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $jan2023Name).' " ' ?>],
+                  datasets: [{
                   label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $feb2023Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $feb2023SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $jan2023Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $jan2023Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $jan2023SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
-            }
-         }
-      });
+         });
+      } else {
+         var janChartContainer = janChart.parentElement;
+         janChartContainer.style.height = '50%';
+         janChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }
 
-      new Chart(marchChart, {
-         type: 'bar',
-       
-         data: {
-            labels: [<?php echo ' " '.implode(' ", "  ', $march2023Name).' " ' ?>],
-               datasets: [{
-               label: 'Total Present',
-               backgroundColor: ['green'],
-               data: [<?php echo ' " '.implode(' ", "  ', $march2023Present).' " ' ?>],
-               borderWidth: 0,
-               }, {
+      if ('<?php echo $feb2023NumRows; ?>' > 0) {
+         new Chart(febChart, {
+            type: 'bar',
+         
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $feb2023Name).' " ' ?>],
+                  datasets: [{
                   label: 'Total Present',
-                  backgroundColor: ['red'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $march2023Absent).' " ' ?>],
-                   borderWidth: 0
-               }, {
-                  label: 'Total School Days',
-                  backgroundColor: ['yellow'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $march2023SchoolDays).' " ' ?>],
-                   borderWidth: 0
-               }]
-         }, 
-         options: {
-            scales: {
-            y: {
-               beginAtZero: true
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $feb2023Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $feb2023Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $feb2023SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
+         });
+      } else {
+         var febChartContainer = febChart.parentElement;
+         febChartContainer.style.height = '50%';
+         febChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }
+
+      if ('<?php echo $march2023NumRows; ?>' > 0) {
+         new Chart(marchChart, {
+            type: 'bar',
+         
+            data: {
+               labels: [<?php echo ' " '.implode(' ", "  ', $march2023Name).' " ' ?>],
+                  datasets: [{
+                  label: 'Total Present',
+                  backgroundColor: ['green'],
+                  data: [<?php echo ' " '.implode(' ", "  ', $march2023Present).' " ' ?>],
+                  borderWidth: 0,
+                  }, {
+                     label: 'Total Present',
+                     backgroundColor: ['red'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $march2023Absent).' " ' ?>],
+                     borderWidth: 0
+                  }, {
+                     label: 'Total School Days',
+                     backgroundColor: ['yellow'],
+                     data: [<?php echo ' " '.implode(' ", "  ', $march2023SchoolDays).' " ' ?>],
+                     borderWidth: 0
+                  }]
+            }, 
+            options: {
+               scales: {
+               y: {
+                  beginAtZero: true
+               }
+               }
             }
-         }
-      });
+         });
+      } else {
+         var marchChartContainer = marchChart.parentElement;
+         marchChartContainer.style.height = '50%';
+         marchChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
+      }
    </script>
 
 
