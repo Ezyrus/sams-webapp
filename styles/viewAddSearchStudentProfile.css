@@ -4,111 +4,109 @@
   margin: 0;
 }
 
-  /* NAVIGATION BAR */
-  section.nav {
-    font-family: "Tomorrow", sans-serif;
-    height: 5vh;
-    top: 10vh;
-    width: 100%;
-    position: fixed;
-    background-image: url("../assets/bg01.jpg");
-   background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+/* NAVIGATION BAR */
+section.nav {
+  font-family: "Tomorrow", sans-serif;
+  height: 5vh;
+  top: 10vh;
+  width: 100%;
+  position: fixed;
+  background-image: url("../assets/bg01.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  }
-  
-  section.nav div.back-container {
-    height: 100%;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  section.nav div.back-container h1 {
-    text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: 7px;
-    text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
-    cursor: pointer;
-    color: white;
-  }
+section.nav div.back-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  section.nav div.back-container h1:hover {
-    font-size: 22px;
-    transition: 0.2s;
-  }
+section.nav div.back-container h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 7px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
+  cursor: pointer;
+  color: white;
+}
 
-  section.nav div.back-container a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  section.nav div.title {
-    width: 40%;
-    background-color: white;
-    height: 100%;
-  }
-  
-  section.nav div.title h3 {
-    font-size: 30px;
-    letter-spacing: 10px;
-  }
+section.nav div.back-container h1:hover {
+  font-size: 22px;
+  transition: 0.2s;
+}
 
-  section.nav div.title h3:hover {
-    font-size: 31px;
-  }
+section.nav div.back-container a {
+  text-decoration: none;
+  color: white;
+}
 
+section.nav div.title {
+  width: 40%;
+  background-color: white;
+  height: 100%;
+}
 
-  section.nav div.title h3  a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  
-  section.nav div.admin-container {
-    width: 30%;
-    display: flex;
-    height: 100%;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-transform: uppercase;
-  }
-  
-  section.nav div.admin-container h6.adminLogged {
-    font-size: 20px;
-    letter-spacing: 5px;
-    text-shadow: -2px 2px 1px darkgreen;
-    color: white;
-  }
-  
-  section.nav div.admin-container h6.adminLogged span {
-    text-transform: none;
-    color: rgb(168, 255, 118);
-    letter-spacing: 2px;
-    font-style: italic;
-    text-shadow: -2px 2px 1px darkgreen;
-  } 
+section.nav div.title h3 {
+  font-size: 30px;
+  letter-spacing: 10px;
+}
 
-  section.nav div.admin-container h2.logout {
-    font-size: 20px;
-    letter-spacing: 5px;
-  }
+section.nav div.title h3:hover {
+  font-size: 32px;
+  transition: 0.2s;
+}
 
-  section.nav div.admin-container h2.logout:hover {
-    font-size: 22px;
-  }
+section.nav div.title h3 a {
+  text-decoration: none;
+  color: black;
+}
 
-  section.nav div.admin-container h2.logout a {
-    color: darkred;
-    text-decoration: none;
-  }
-  /* NAVIGATION BAR */
+section.nav div.admin-container {
+  width: 30%;
+  display: flex;
+  height: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+section.nav div.admin-container h6.adminLogged {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -2px 2px 1px darkgreen;
+  color: white;
+}
+
+section.nav div.admin-container h6.adminLogged span {
+  text-transform: none;
+  color: rgb(168, 255, 118);
+  letter-spacing: 2px;
+  font-style: italic;
+  text-shadow: -2px 2px 1px darkgreen;
+}
+
+section.nav div.admin-container h2.logout {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+section.nav div.admin-container h2.logout:hover {
+  font-size: 22px;
+}
+
+section.nav div.admin-container h2.logout a {
+  color: darkred;
+  text-decoration: none;
+}
+/* NAVIGATION BAR */
 
 div.studentProfile {
   font-family: "Tomorrow", sans-serif;
@@ -125,19 +123,17 @@ div.studentProfile div.profileContainer {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height:100%;
-
+  height: 100%;
 }
 
 div.studentProfile div div.search-container {
   margin-top: 15vh;
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-direction: row;
   width: 100%;
   height: 5vh;
-
 }
 
 div.studentProfile div.profileContainer div.search-container h3 {
@@ -150,7 +146,7 @@ div.studentProfile div.profileContainer div.search-container h3 {
   cursor: pointer;
 }
 
-div.studentProfile div.profileContainer div.search-container h3 a{
+div.studentProfile div.profileContainer div.search-container h3 a {
   color: darkblue;
   text-decoration: none;
 }
@@ -225,7 +221,7 @@ div.studentProfile div.studentRecords::-webkit-scrollbar {
 }
 
 div.studentProfile div.studentRecords::-webkit-scrollbar-track {
-  background-color:rgb(87, 166, 223);
+  background-color: rgb(87, 166, 223);
 }
 
 div.studentProfile div.studentRecords::-webkit-scrollbar-thumb:hover {
@@ -237,14 +233,13 @@ div.studentProfile div table {
   width: 100%;
 }
 
-
 div.studentProfile div table tr th {
   font-family: "Tomorrow", sans-serif;
-  padding: 5px;
+  padding: 8px;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background-color:rgb(87, 166, 223);
+  background-color: rgb(87, 166, 223);
   color: white;
   text-shadow: -1px 1px 1px darkblue;
   width: 8%;
@@ -258,7 +253,7 @@ div.studentProfile div table tr th.address {
   width: 15%;
 }
 
-div.studentProfile div table tr th.email{
+div.studentProfile div table tr th.email {
   width: 15%;
 }
 
@@ -285,7 +280,7 @@ div.studentProfile div table tr td.noData {
 
 div.studentProfile div table tr:hover {
   cursor: pointer;
-  background-color:rgb(87, 166, 223, 0.3);
+  background-color: rgb(87, 166, 223, 0.3);
 }
 
 div.studentProfile div table tr td.name,
@@ -293,12 +288,12 @@ div.studentProfile div table tr td.address {
   text-transform: capitalize;
 }
 
-div.studentProfile div table tr td.section{
+div.studentProfile div table tr td.section {
   text-transform: uppercase;
 }
 
 div.studentProfile div table tr td.function {
-  background-color:rgb(87, 166, 223);
+  background-color: rgb(87, 166, 223);
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
@@ -344,64 +339,123 @@ div.studentProfile div table tr td.function .add a {
   text-shadow: -1px 1px 1px darkblue;
 }
 
-div.studentProfile div table tr td.function .add   a:hover {
+div.studentProfile div table tr td.function .add a:hover {
   text-shadow: -1px 1px 5px darkblue;
   font-size: 18px;
 }
 
-
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
-  section.nav div.admin-container h6.adminLogged {
-    font-size: 15px;
-    letter-spacing: 3px;
-  }
-
-  section.nav div.admin-container h2.logout a {
-    font-size: 15px;
-  }
-
-  section.nav .title {
-    gap: 2px;
-   padding: 2px;
-  }
-
-  section.nav .title div h3 {
-    font-size: 18px;
-    letter-spacing: 5px;
-  }
-
-  section.nav .title div h6 {
-    font-size: 9px;
-    letter-spacing: 3px;
-  }
-
-  section.nav div.back-container {
-    gap: 30px;
-  }
-
   section.nav div.back-container h1 {
-    font-size: 15px;
-    letter-spacing: 3px;
+    font-size: 17px;
+    letter-spacing: 7px;
   }
 
-  div.studentProfile div div.search-container form input {
-    font-size: 15px;
+  section.nav div.back-container h1:hover {
+    font-size: 19px;
   }
-  
-  div.studentProfile div div.search-container form button {
+
+  section.nav div.title h3 {
+    font-size: 20px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.title h3:hover {
+    font-size: 22px;
+  }
+
+  section.nav div.admin-container {
+    gap: 25px;
+  }
+
+  section.nav div.admin-container h6.adminLogged {
     font-size: 17px;
     letter-spacing: 3px;
-    padding: 8px;
   }
-  
-  div.studentProfile div table tr th {
-    font-size: 15px;
-    letter-spacing: 2px;
+
+  section.nav div.admin-container h6.adminLogged span {
+    letter-spacing: 1px;
   }
-  div.studentProfile div table tr td {
-    padding: 3px 0px;
-    font-size: 14px;
+
+  section.nav div.admin-container h2.logout {
+    font-size: 17px;
+    letter-spacing: 3px;
   }
+
+  section.nav div.admin-container h2.logout:hover {
+    font-size: 19px;
+    transition: 0.2s;
+  }
+
+  div.studentProfile div.profileContainer div.search-container h3 {
+    letter-spacing: 5px;
+    font-size: 12px;
+  }
+
+  div.studentProfile div.profileContainer div.search-container form {
+    gap: 10px;
+  }
+
+  div.studentProfile div.profileContainer div.search-container form input {
+    font-size: 10px;
+    padding: 5px 10px;
+    letter-spacing: 3px;
+  }
+
+  div.studentProfile div div.search-container form button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+div.studentProfile div table tr th {
+  font-size: 15px;
+}
+
+div.studentProfile div table tr td {
+  padding: 2px;
+  font-size: 12px;
+}
+
+div.studentProfile div table tr td.noData {
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+
+div.studentProfile div table tr th.age {
+  width: 2%;
+}
+
+div.studentProfile div table tr th.function {
+  width: 12.5%;
+}
+
+div.studentProfile div table tr td.function .update a {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+div.studentProfile div table tr td.function .update a:hover{
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+div.studentProfile div table tr td.function .delete a {
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+div.studentProfile div table tr td.function .delete a:hover{
+  font-size: 17px;
+}
+
+div.studentProfile div table tr td.function .add a {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+div.studentProfile div table tr td.function .add a:hover {
+  font-size: 17px;
+  transition: 0.2s;
+}
 }
 /* RESPONSIVE DESIGN */

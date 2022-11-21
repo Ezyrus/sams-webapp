@@ -609,3 +609,9 @@ section.graphicDecemberContainer .december .canvasContainer {
   height: 90%;
   width: 100%;
 }
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1366px) {
+ 
+}
+/* RESPONSIVE DESIGN */

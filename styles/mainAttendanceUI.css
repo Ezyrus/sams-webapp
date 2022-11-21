@@ -227,7 +227,7 @@ section.log h3 {
   font-size: 14px;
 }
 
-section.log h3 a{
+section.log a{
   color: black;
   text-decoration: none;
 }
@@ -377,9 +377,9 @@ section.main table tr td select.classDays {
   border: 1px solid white;
   opacity: 0;
   width: 100%;
-  height: 8vh;
+  height: 100%;
+  padding: 2px;
   cursor: pointer;
-  letter-spacing: 1px;
   padding: 1px;
   text-align: center;
   font-size: 11px;
@@ -451,8 +451,7 @@ section.main tr td.function h3 a:hover {
   }
 
   section.nav .title {
-    gap: 2px;
-    padding-bottom: 2px;
+    gap: 5px;
   }
 
   section.nav .title div h3 {
@@ -466,7 +465,7 @@ section.main tr td.function h3 a:hover {
   }
 
   section.nav .navigate {
-    gap: 0px;
+    gap: 5px;
   }
 
   section.nav .navigate div {
@@ -475,15 +474,41 @@ section.main tr td.function h3 a:hover {
   }
 
   section.nav .navigate div:last-child {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
 
-  section.nav .navigate div a {
+  section.nav .navigate div h2.dashboard a {
+    letter-spacing: 3px;
+    font-size: 17px;
+  }
+  
+  section.nav .navigate div h2.logout a {
+    letter-spacing: 3px;
+    font-size: 17px;
+  }
+  
+  section.nav .navigate div h2.addStudents a {
+    letter-spacing: 3px;
     font-size: 17px;
   }
 
+  section.nav .navigate div h2.dashboard a:hover {
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+  
+  section.nav .navigate div h2.logout a:hover  {
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+  
+  section.nav .navigate div h2.addStudents a:hover  {
+    letter-spacing: 3px;
+    font-size: 18px;
+  }
+  
   section.nav div.legend {
-    gap: 5px;
+    gap: 12px;
   }
 
   section.nav div.legend h1 {
@@ -502,20 +527,60 @@ section.main tr td.function h3 a:hover {
     font-size: 12px;
   }
 
+  section.log form h3.downloadExcel a{
+    font-size: 12px;
+  }
+
+  section.log h3 {
+    font-size: 12px;
+  }
+
+  section.log form input{
+    font-size: 10px;
+  }
+
+  section.log form button{
+    font-size: 12px;
+  }
+  
   section.main table tr.tableHeader th.otherInfo {
     font-size: 12px;
-    width: 2%;
-    padding: 2px;
+    width: 1%;
+    font-size: 12px;
   }
-
+  
   section.main table tr.tableHeader th.monthDays {
     font-size: 12px;
-    width: 1%;
+    width: 1.5%;
+    padding: 1px;
+  }
+  
+  section.main table tr td.studentInfo {
+    font-size: 10px;
   }
 
-  section.main table tr td.studentInfo {
-    padding: 2px;
+  section.main table tr td.function button {
+    font-size: 18px;
+    letter-spacing:2px;
+  }
+  
+  section.main table tr td.function button:hover {
+    font-size: 19px;
+  }
+
+  section.main table tr td.function h3 a {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 0;
+  }
+
+  section.main table tr td.function h3 a:hover {
     font-size: 11px;
+  }
+  
+  section.main table tr td.noData {
+    font-size: 15px;
+    letter-spacing: 3px;
   }
 }
 /* RESPONSIVE DESIGN */
