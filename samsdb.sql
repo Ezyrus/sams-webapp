@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2022 at 06:05 AM
+-- Generation Time: Nov 21, 2022 at 03:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -639,7 +639,7 @@ CREATE TABLE `grade12_october2022` (
 --
 
 CREATE TABLE `students` (
-  `lrn` varchar(30) NOT NULL,
+  `lrn` varchar(50) NOT NULL,
   `name` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   `age` int(5) NOT NULL,
@@ -654,7 +654,6 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`, `timestamp`) VALUES
-('129380757819', 'John Loyd Conag', 'ICT 11-B', 21, 'Caloocan City', 'conag@gmail.com', '092178367', '2022-11-07 02:15:29'),
 ('136606090102', 'Monica E. Paredes', 'ICT 11-A', 20, '103 Francisco St. Brgy. 71 Caloocan City', 'nicaembateparedes@gmail.com', '09451323281', '2022-10-25 11:06:58'),
 ('136612070392', 'John Edrich Viray', 'STEM 11-A', 20, '#75 Dau St., 6th Ave., Caloocan City', 'Virayjohnedrich@gmail.com', '09760500860', '2022-10-25 11:06:58'),
 ('136618070392', 'Paolo Rafael S. Tampico', 'ICT 11-A', 20, '791B P. Galauran St. 8th Ave. Caloocan City', 'paolorafaeltampico@gmail.com', '09219098950', '2022-10-25 11:06:58'),
@@ -681,73 +680,86 @@ ALTER TABLE `admin`
 -- Indexes for table `grade11_december2022`
 --
 ALTER TABLE `grade11_december2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`),
+  ADD KEY `lrn_2` (`lrn`);
 
 --
 -- Indexes for table `grade11_february2023`
 --
 ALTER TABLE `grade11_february2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade11_january2023`
 --
 ALTER TABLE `grade11_january2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade11_march2023`
 --
 ALTER TABLE `grade11_march2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade11_november2022`
 --
 ALTER TABLE `grade11_november2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade11_october2022`
 --
 ALTER TABLE `grade11_october2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_december2022`
 --
 ALTER TABLE `grade12_december2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_february2023`
 --
 ALTER TABLE `grade12_february2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_january2023`
 --
 ALTER TABLE `grade12_january2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_march2023`
 --
 ALTER TABLE `grade12_march2023`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_november2022`
 --
 ALTER TABLE `grade12_november2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `grade12_october2022`
 --
 ALTER TABLE `grade12_october2022`
-  ADD PRIMARY KEY (`month_id`);
+  ADD PRIMARY KEY (`month_id`),
+  ADD KEY `lrn` (`lrn`);
 
 --
 -- Indexes for table `students`
@@ -836,6 +848,82 @@ ALTER TABLE `grade12_november2022`
 --
 ALTER TABLE `grade12_october2022`
   MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `grade11_december2022`
+--
+ALTER TABLE `grade11_december2022`
+  ADD CONSTRAINT `grade11_december2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade11_february2023`
+--
+ALTER TABLE `grade11_february2023`
+  ADD CONSTRAINT `grade11_february2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade11_january2023`
+--
+ALTER TABLE `grade11_january2023`
+  ADD CONSTRAINT `grade11_january2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade11_march2023`
+--
+ALTER TABLE `grade11_march2023`
+  ADD CONSTRAINT `grade11_march2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade11_november2022`
+--
+ALTER TABLE `grade11_november2022`
+  ADD CONSTRAINT `grade11_november2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade11_october2022`
+--
+ALTER TABLE `grade11_october2022`
+  ADD CONSTRAINT `grade11_october2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_december2022`
+--
+ALTER TABLE `grade12_december2022`
+  ADD CONSTRAINT `grade12_december2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_february2023`
+--
+ALTER TABLE `grade12_february2023`
+  ADD CONSTRAINT `grade12_february2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_january2023`
+--
+ALTER TABLE `grade12_january2023`
+  ADD CONSTRAINT `grade12_january2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_march2023`
+--
+ALTER TABLE `grade12_march2023`
+  ADD CONSTRAINT `grade12_march2023_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_november2022`
+--
+ALTER TABLE `grade12_november2022`
+  ADD CONSTRAINT `grade12_november2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `grade12_october2022`
+--
+ALTER TABLE `grade12_october2022`
+  ADD CONSTRAINT `grade12_october2022_ibfk_1` FOREIGN KEY (`lrn`) REFERENCES `students` (`lrn`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
