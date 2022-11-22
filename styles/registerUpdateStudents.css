@@ -233,44 +233,43 @@ div.registerContainer form button:hover {
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   section.nav div.back-container h1 {
+    font-size: 15px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.back-container h1:hover {
     font-size: 17px;
   }
-  
-  section.nav div.back-container h1:hover {
-    font-size: 19px;
-  }
-  
+
   section.nav div.title h3 {
     font-size: 20px;
-
+    letter-spacing: 7px;
   }
-  
+
   section.nav div.title h3:hover {
     font-size: 22px;
   }
-  
+
   section.nav div.admin-container {
-    gap: 25px;
+    gap: 30px;
   }
-  
+
   section.nav div.admin-container h6.adminLogged {
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 3px;
   }
-  
+
   section.nav div.admin-container h6.adminLogged span {
     letter-spacing: 1px;
-  } 
-  
+  }
 
   section.nav div.admin-container h2.logout {
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 3px;
   }
 
   section.nav div.admin-container h2.logout:hover {
-    font-size: 19px;
-    transition: 0.2s;
+    font-size: 17px;
   }
  
   div.registerContainer form {
@@ -279,6 +278,7 @@ div.registerContainer form button:hover {
  
   div.registerContainer div.studentInfo div.otherInfo textarea {
     font-size: 15px;
+    letter-spacing: 1px;
   }
   
 

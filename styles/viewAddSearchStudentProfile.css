@@ -361,12 +361,12 @@ div.studentProfile div table tr td.function .add a:hover {
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
   section.nav div.back-container h1 {
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 7px;
   }
 
   section.nav div.back-container h1:hover {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   section.nav div.title h3 {
@@ -379,11 +379,11 @@ div.studentProfile div table tr td.function .add a:hover {
   }
 
   section.nav div.admin-container {
-    gap: 25px;
+    gap: 30px;
   }
 
   section.nav div.admin-container h6.adminLogged {
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 3px;
   }
 
@@ -392,18 +392,17 @@ div.studentProfile div table tr td.function .add a:hover {
   }
 
   section.nav div.admin-container h2.logout {
-    font-size: 17px;
+    font-size: 15px;
     letter-spacing: 3px;
   }
 
   section.nav div.admin-container h2.logout:hover {
-    font-size: 19px;
-    transition: 0.2s;
+    font-size: 17px;
   }
 
   div.studentProfile div.profileContainer div.search-container h3 {
-    letter-spacing: 5px;
-    font-size: 12px;
+    letter-spacing: 3px;
+    font-size: 11px;
   }
 
   div.studentProfile div.profileContainer div.search-container form {
@@ -417,7 +416,7 @@ div.studentProfile div table tr td.function .add a:hover {
   }
 
   div.studentProfile div div.search-container form button {
-    font-size: 12px;
+    font-size: 11px;
     padding: 6px 10px;
   }
 

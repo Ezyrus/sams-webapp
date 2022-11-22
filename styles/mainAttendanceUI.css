@@ -469,46 +469,36 @@ section.main tr td.function h3 a:hover {
   }
 
   section.nav .navigate {
-    gap: 5px;
+    gap: 3px;
   }
 
   section.nav .navigate div {
     padding-bottom: 0px;
-    gap: 30px;
+    gap: 40px;
   }
 
   section.nav .navigate div:last-child {
-    padding-bottom: 5px;
+    padding-bottom: 7px;
   }
 
   section.nav .navigate div h2.dashboard a {
     letter-spacing: 3px;
-    font-size: 17px;
+    font-size: 15px;
   }
   
   section.nav .navigate div h2.logout a {
     letter-spacing: 3px;
-    font-size: 17px;
-  }
-  
-  section.nav .navigate div h2.addStudents a {
-    letter-spacing: 3px;
-    font-size: 17px;
+    font-size: 15px;
   }
 
-  section.nav .navigate div h2.dashboard a:hover {
+  section.nav .navigate div h2.addStudents a {
     letter-spacing: 3px;
-    font-size: 18px;
+    font-size: 15px;
   }
-  
-  section.nav .navigate div h2.logout a:hover  {
+
+  section.nav .navigate div h2 a:hover {
     letter-spacing: 3px;
-    font-size: 18px;
-  }
-  
-  section.nav .navigate div h2.addStudents a:hover  {
-    letter-spacing: 3px;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   section.nav div.legend {
@@ -536,7 +526,7 @@ section.main tr td.function h3 a:hover {
   }
 
   section.log h3 {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   section.log form input{
