@@ -103,8 +103,11 @@ section.nav div.admin-container h6.adminLogged span {
 }
 
 section.nav div.admin-container h2.logout {
-  font-size: 20px;
   letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: darkred;
+  text-shadow: -1px 1px 1px palevioletred;
 }
 
 section.nav div.admin-container h2.logout:hover {

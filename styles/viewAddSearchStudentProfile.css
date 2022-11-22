@@ -48,23 +48,23 @@ section.nav div.back-container a {
 
 section.nav div.title {
   width: 40%;
-  background-color: white;
   height: 100%;
 }
 
 section.nav div.title h3 {
   font-size: 30px;
   letter-spacing: 10px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
 }
 
 section.nav div.title h3:hover {
-  font-size: 32px;
+  font-size: 31px;
   transition: 0.2s;
 }
 
 section.nav div.title h3 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 section.nav div.admin-container {
@@ -94,12 +94,16 @@ section.nav div.admin-container h6.adminLogged span {
 }
 
 section.nav div.admin-container h2.logout {
-  font-size: 20px;
   letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: darkred;
+  text-shadow: -1px 1px 1px palevioletred;
 }
 
 section.nav div.admin-container h2.logout:hover {
   font-size: 22px;
+  transition: 0.2s;
 }
 
 section.nav div.admin-container h2.logout a {
@@ -107,6 +111,14 @@ section.nav div.admin-container h2.logout a {
   text-decoration: none;
 }
 /* NAVIGATION BAR */
+
+body {
+  background-image: url("../assets/bg01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 
 div.studentProfile {
   font-family: "Tomorrow", sans-serif;
@@ -239,7 +251,7 @@ div.studentProfile div table tr th {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background-color: rgb(87, 166, 223);
+  background-color: rgba(70, 167, 202);
   color: white;
   text-shadow: -1px 1px 1px darkblue;
   width: 8%;
@@ -267,6 +279,8 @@ div.studentProfile div table tr td {
   padding: 2px;
   text-align: center;
   font-size: 15px;
+  color: black;
+  text-shadow: -1px 1px 1px rgba(70, 167, 202, 1);
 }
 
 div.studentProfile div table tr td.noData {
@@ -293,7 +307,7 @@ div.studentProfile div table tr td.section {
 }
 
 div.studentProfile div table tr td.function {
-  background-color: rgb(87, 166, 223);
+  background-color: rgba(70, 167, 202);
   text-transform: uppercase;
   display: flex;
   flex-direction: row;

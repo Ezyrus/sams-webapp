@@ -72,7 +72,7 @@ section.nav div.legend h1 {
 section.nav div.legend div div {
   width: 33.33%;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 }
@@ -81,7 +81,7 @@ section.nav div.legend div div h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 17px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: darkblue;
   text-shadow: -1px 1px 1px rgba(171, 221, 183, 1);
 }
@@ -102,16 +102,19 @@ span.yellow {
 }
 
 section.nav div.legend div div.present h3.present {
+  border-radius: 3px;
   background-color: green;
   color: green;
 }
 
 section.nav div.legend div div.absent h3.absent {
+  border-radius: 3px;
   background-color: red;
   color: red;
 }
 
 section.nav div.legend div div.schoolDays h3.schoolDays {
+  border-radius: 3px;
   background-color: yellow;
   color: yellow;
 }
@@ -172,7 +175,7 @@ section.nav .navigate div {
   padding-bottom: 5px;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 100px;
   justify-content: space-around;
   align-items: center;
 }
@@ -203,6 +206,7 @@ section.nav .navigate div h2.addStudents a {
 
 section.nav .navigate div h2 a:hover{
   font-size: 21px;
+  transition: 0.2s;
 }
 /* NAVIGATION BAR */
 

@@ -12,12 +12,11 @@ section.nav {
   width: 100%;
   position: fixed;
   background-image: url("../assets/bg01.jpg");
- background-size: cover;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
 }
 
 section.nav div.back-container {
@@ -59,16 +58,14 @@ section.nav div.title h3 {
 }
 
 section.nav div.title h3:hover {
-  font-size: 32px;
+  font-size: 31px;
   transition: 0.2s;
 }
 
-
-section.nav div.title h3  a {
+section.nav div.title h3 a {
   text-decoration: none;
   color: white;
 }
-
 
 section.nav div.admin-container {
   width: 30%;
@@ -94,11 +91,14 @@ section.nav div.admin-container h6.adminLogged span {
   letter-spacing: 2px;
   font-style: italic;
   text-shadow: -2px 2px 1px darkgreen;
-} 
+}
 
 section.nav div.admin-container h2.logout {
-  font-size: 20px;
   letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: darkred;
+  text-shadow: -1px 1px 1px palevioletred;
 }
 
 section.nav div.admin-container h2.logout:hover {
