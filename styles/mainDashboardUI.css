@@ -616,6 +616,61 @@ section.graphicDecemberContainer .december .canvasContainer {
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1366px) {
- 
+  section.nav div.back-container h1 {
+    font-size: 15px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.back-container h1:hover {
+    font-size: 17px;
+  }
+
+  section.nav div.title h3 {
+    font-size: 20px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.title h3:hover {
+    font-size: 22px;
+  }
+
+  section.nav div.admin-container {
+    gap: 30px;
+  }
+
+  section.nav div.admin-container h6.adminLogged {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.admin-container h6.adminLogged span {
+    letter-spacing: 1px;
+  }
+
+  section.nav div.admin-container h2.logout {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.admin-container h2.logout:hover {
+    font-size: 17px;
+  }
+
+  
+section.main .gradeLevel-container .grade11 h1 a {
+  font-size: 30px;
+}
+
+section.main .gradeLevel-container .grade12 h1 a {
+  font-size: 30px;
+}
+
+section.schoolRecord .grade-records .month div h3 {
+  font-size: 15px;
+}
+section.schoolRecord .grade-records .month div h3:hover {
+  font-size: 20px;
+}
+
 }
 /* RESPONSIVE DESIGN */
