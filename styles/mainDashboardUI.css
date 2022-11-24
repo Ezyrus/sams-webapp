@@ -233,6 +233,7 @@ section.schoolRecord .grade-records .records .title {
 }
 
 section.schoolRecord .grade-records div.year {
+  font-family: "Tomorrow", sans-serif;  
   margin-top: 10px;
   width: 90%;
   height: 5vh;
@@ -284,6 +285,7 @@ section.schoolRecord .grade-records .year a:hover {
 }
 
 section.schoolRecord .grade-records div.month {
+  font-family: "Tomorrow", sans-serif;
   font-size: 20px;
   width: 88%;
   height: 78%;
