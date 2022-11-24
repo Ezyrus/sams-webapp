@@ -337,6 +337,7 @@ section.schoolRecord .grade-records .month div h3 a {
 }
 
 section.graphicJanuaryContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -383,6 +384,7 @@ section.graphicJanuaryContainer .january .canvasContainer {
 }
 
 section.graphicFebruaryContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -429,6 +431,7 @@ section.graphicFebruaryContainer .february .canvasContainer {
 }
 
 section.graphicMarchContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -479,6 +482,7 @@ section.graphicMarchContainer .march .canvasContainer {
 
 
 section.graphicOctoberContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -525,6 +529,7 @@ section.graphicOctoberContainer .october .canvasContainer {
 }
 
 section.graphicNovemberContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -571,6 +576,7 @@ section.graphicNovemberContainer .november .canvasContainer {
 }
 
 section.graphicDecemberContainer {
+  font-family: "Tomorrow", sans-serif;
   height: 100vh;
   width: 100%;
   display: flex;
