@@ -13,6 +13,7 @@ section.nav {
   position: fixed;
   background-image: url("../assets/bg01.jpg");
   background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

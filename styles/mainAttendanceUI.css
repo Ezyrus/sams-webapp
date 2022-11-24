@@ -381,7 +381,7 @@ section.main table tr td select.classDays {
   border: 1px solid white;
   opacity: 0;
   width: 100%;
-  height: 100%;
+  height: 8vh;
   padding: 2px;
   cursor: pointer;
   padding: 1px;

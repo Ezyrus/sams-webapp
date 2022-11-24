@@ -1,23 +1,28 @@
 <?php
-   session_start();
    require_once "databaseConnection.php";
 
    if (isset($_POST['goLog'])) {
       $adminUsername = $_POST['username'];
       $adminPassword = $_POST['password'];
 
-      $selectAdminSql = "SELECT * FROM admin WHERE username = '$adminUsername' AND PASSWORD = '$adminPassword'";
-
+      $selectAdminSql = "SELECT * FROM admin WHERE username = '$adminUsername' AND password = '$adminPassword' ";
       $initiateSelectSql = mysqli_query(databaseConnection(), $selectAdminSql);
-
       $adminTableNumRows = mysqli_num_rows($initiateSelectSql);
+      $adminTableRows = mysqli_fetch_assoc($initiateSelectSql);
 
       if ($adminTableNumRows > 0) {
-         $adminTableRows= mysqli_fetch_assoc($initiateSelectSql);
 
-         $_SESSION['username'] = $adminTableRows['username'];
+         // while ($adminTableRows = mysqli_fetch_assoc($initiateSelectSql)) {
 
-         header('Location:/Sams/adminDashboard/admin_dashboard-gradeLevel.php');
+         //    if (password_verify($adminPassword, $adminTableRows['password'])) {
+            session_start();
+            $_SESSION['username'] = $adminTableRows['username'];
+            header('Location:/Sams/adminDashboard/admin_dashboard-gradeLevel.php');
+         //    } else {
+         //       echo "<h1>Invalid Password</h1>";
+         //    }
+         // }   
+
       } else {
          echo '<script>alert("Invalid Username or Password!")</script>';
       }
