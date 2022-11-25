@@ -52,7 +52,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <section class="nav">
 
         <div class="back-container">
-            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Dashboard</a></h1>
+            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a></h1>
         </div>
 
         <div class="title">
@@ -123,8 +123,9 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                                 <td class="email"><?php echo $studentRow['email']; ?></td>
                                 <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                                 <td class="function">
-                                    <span class="update"><a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a></span>
-                                    <span class="delete"><a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></span>
+                                    <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
+                                    <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
+                                   <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE" srcset=""></a>
                                 </td>
                             </tr>
                     <?php

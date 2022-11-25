@@ -193,7 +193,7 @@ div.studentProfile div.profileContainer div.search-container form {
 div.studentProfile div.profileContainer div.search-container form input {
   width: 35%;
   font-size: 13px;
-  border: 1px solid black;
+  border: 0px solid black;
   text-align: center;
   font-family: "Tomorrow", sans-serif;
   padding: 4px 10px;
@@ -227,6 +227,7 @@ div.studentProfile div.studentRecords {
   height: 80vh;
   top: 20vh;
   overflow-x: auto;
+  box-shadow: 0px -1px 5px  rgba(70, 167, 202, 1);
   background-color: rgba(22, 110, 174, 0.2);
 }
 
@@ -250,10 +251,9 @@ div.studentProfile div table {
 div.studentProfile div table tr th {
   font-family: "Tomorrow", sans-serif;
   padding: 8px;
-  font-size: 20px;
+  font-size: 25px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  background-color: rgba(70, 167, 202);
+  letter-spacing: 5px;
   color: white;
   text-shadow: -1px 1px 1px darkblue;
   width: 8%;
@@ -272,7 +272,7 @@ div.studentProfile div table tr th.email {
 }
 
 div.studentProfile div table tr th.function {
-  width: 10%;
+  width: 5%;
 }
 
 div.studentProfile div table tr td {
@@ -296,7 +296,7 @@ div.studentProfile div table tr td.noData {
 
 div.studentProfile div table tr:hover {
   cursor: pointer;
-  background-color: rgba(70, 167, 202);
+  background-color: rgba(70, 167, 202,0.5);
 }
 
 div.studentProfile div table tr td.name,
@@ -309,42 +309,38 @@ div.studentProfile div table tr td.section {
 }
 
 div.studentProfile div table tr td.function {
-  background-color: rgba(70, 167, 202);
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
   justify-content: center;
 }
 
-div.studentProfile div table tr td.function .update a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: white;
-  font-size: 17px;
-  letter-spacing: 3px;
-  text-shadow: -1px 1px 1px darkblue;
+div.studentProfile div table tr td.function img {
+  height: 25px;
+  width: 25px;
 }
 
-div.studentProfile div table tr td.function .update a:hover {
-  text-shadow: -1px 1px 5px darkblue;
-  font-size: 18px;
+div.studentProfile div table tr td.function a.update img:hover {
+transform: scale(1.3);
+transition: 0.3s;
 }
 
-div.studentProfile div table tr td.function .delete a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: white;
-  font-size: 17px;
-  letter-spacing: 3px;
-  text-shadow: -1px 1px 1px darkred;
-}
+div.studentProfile div table tr td.function a.update img:active {
+  transform: scale(2);
+  transition: 0.2s;
+  }
 
-div.studentProfile div table tr td.function .delete a:hover {
-  text-shadow: -1px 1px 5px darkred;
-  font-size: 18px;
-}
+  div.studentProfile div table tr td.function a.delete img:hover {
+    transform: scale(1.3);
+    transition: 0.3s;
+    }
+    
+    div.studentProfile div table tr td.function a.delete img:active {
+      transform: scale(2);
+      transition: 0.2s;
+      }
 
 div.studentProfile div table tr td.function .add a {
   text-transform: uppercase;

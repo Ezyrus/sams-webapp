@@ -118,7 +118,7 @@ if (isset($_POST['registerStudent'])) {
 
             <div class="otherInfo">
                <label for="age">Age</label>
-               <input type="" name="age">
+               <input type="number" name="age">
 
                <label for="address">Address</label>
                <textarea name="address"></textarea>
@@ -127,13 +127,13 @@ if (isset($_POST['registerStudent'])) {
                <textarea name="email"></textarea>
 
                <label for="number">Number</label>
-               <input type="text" name="number">
+               <input type="number" name="number">
             </div>
 
          </div>
 
-
-         <button type="submit" name="registerStudent">Register</button>
+         <button type="submit" name="registerStudent">   <img src="../assets/done.png" alt="done">Done
+         </button>
 
       </form>
 

@@ -54,7 +54,7 @@ $_SESSION['monthYear'] = "";
         </div>
 
         <div class="title">
-            <h3><a href="admin_dashboard-gradeLevel.php">dashboard</a></h3>
+            <h3><a href="admin_dashboard-gradeLevel.php">portal</a></h3>
         </div>
 
         <div class="admin-container">

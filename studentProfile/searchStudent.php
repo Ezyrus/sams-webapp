@@ -80,7 +80,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
             <div class="search-container">
 
-                <h3><a href="registerStudents.php">Register Students here !</a>
+                <h3><a href="registerStudents.php">Register Students here</a>
                 </h3>
 
                 <form action="searchStudent.php" method="get">
@@ -127,9 +127,10 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                         <td class="email"><?php echo $studentRow['email']; ?></td>
                         <td class="number"><?php echo $studentRow['contact_number']; ?></td>
                         <td class="function">
-                                    <span class="update"><a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>">UPDATE</a></span>
-                                    <span class="delete"><a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>">DELETE</a></span>
-                                </td>
+                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
+                            <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
+                            <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE" srcset=""></a>
+                        </td>
                     </tr>
 
                 <?php 

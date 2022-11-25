@@ -123,7 +123,8 @@
 
          </div>
 
-         <button type="submit" name="registerStudent">Update</button>
+         <button type="submit" name="registerStudent">   <img src="../assets/done.png" alt="done">Done
+         </button>
 
       </form>
 
