@@ -132,7 +132,7 @@ if (isset($_POST['registerStudent'])) {
 
          </div>
 
-         <button type="submit" name="registerStudent">   <img src="../assets/done.png" alt="done">Done
+         <button type="submit" name="registerStudent">   <img src="../assets/doneee.png" alt="done">Done
          </button>
 
       </form>

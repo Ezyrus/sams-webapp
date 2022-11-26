@@ -83,8 +83,8 @@ $messageUpdate = $_SESSION['messageUpdate'];
                 </h3>
 
                 <form action="addStudent_searchStudent.php" method="get">
-                    <input type="text" name="search">
-                    <button type="submit">Search</button>
+                <input type="text" name="search">
+                    <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
                 </form>
 
                 <h3 id="log">Log: <span><?php
@@ -99,6 +99,7 @@ $messageUpdate = $_SESSION['messageUpdate'];
 
             <div class="studentRecords">
                 <table>
+
                     <tr>
                         <th class="lrn">LRN</th>
                         <th class="name">Full Name</th>
@@ -107,7 +108,6 @@ $messageUpdate = $_SESSION['messageUpdate'];
                         <th class="address">Address</th>
                         <th class="email">Email</th>
                         <th class="number">Number</th>
-                        <th class="function">Function</th>
                     </tr>
 
                     <?php do {
@@ -117,17 +117,16 @@ $messageUpdate = $_SESSION['messageUpdate'];
                         } else {
                     ?>
                             <tr>
-                                <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
+                                <td class="lrn"><a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>" class="add">
+                                        <img src="../assets/add.png" alt="add"></a><?php echo $studentRow['lrn']; ?></td>
                                 <td class="name"><?php echo $studentRow['name']; ?></td>
                                 <td class="section"><?php echo $studentRow['section']; ?></td>
                                 <td class="age"><?php echo $studentRow['age']; ?></td>
                                 <td class="address"><?php echo $studentRow['address']; ?></td>
                                 <td class="email"><?php echo $studentRow['email']; ?></td>
                                 <td class="number"><?php echo $studentRow['contact_number']; ?></td>
-                                <td class="function">
-                                <span class="add"><a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>">add student</a></span>
-                            </td>
                             </tr>
+
                     <?php
                         }
                     } while ($studentRow = $initiateSelectSql->fetch_assoc()) ?>

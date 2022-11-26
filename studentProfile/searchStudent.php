@@ -85,7 +85,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                 <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
-                    <button type="submit">Search</button>
+                    <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
                 </form>
 
                 <h3 id="log">Log: <span><?php
@@ -98,44 +98,42 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                 </h3>
             </div>
 
-            <div class = "studentRecords">
+            <div class="studentRecords">
                 <table>
-                <tr>
-                    <th class="lrn">LRN</th>
-                    <th class="name">Full Name</th>
-                    <th class="section">Section</th>
-                    <th class="age">Age</th>
-                    <th class="address">Address</th>
-                    <th class="email">Email</th>
-                    <th class="number">Number</th>
-                    <th class="function">Function</th>
-                </tr>
-
-                <?php do { 
-                    if ($studentRow == 0) {
-                    echo "   <td class='noData' colspan = '8'>
-                     Your search key '$searchResult' does not exist ... </td>";
-                    } else {
-                ?>
-
                     <tr>
-                        <td class="lrn"><?php echo $studentRow['lrn']; ?></td>
-                        <td class="name"><?php echo $studentRow['name']; ?></td>
-                        <td class="section"><?php echo $studentRow['section']; ?></td>
-                        <td class="age"><?php echo $studentRow['age']; ?></td>
-                        <td class="address"><?php echo $studentRow['address']; ?></td>
-                        <td class="email"><?php echo $studentRow['email']; ?></td>
-                        <td class="number"><?php echo $studentRow['contact_number']; ?></td>
-                        <td class="function">
-                            <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
-                            <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
-                            <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE" srcset=""></a>
-                        </td>
+                        <th class="lrn">LRN</th>
+                        <th class="name">Full Name</th>
+                        <th class="section">Section</th>
+                        <th class="age">Age</th>
+                        <th class="address">Address</th>
+                        <th class="email">Email</th>
+                        <th class="number">Number</th>
                     </tr>
 
-                <?php 
-                    }
-                } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
+                    <?php do {
+                        if ($studentRow == 0) {
+                            echo "   <td class='noData' colspan = '7'>
+                     Your search key '$searchResult' does not exist ... </td>";
+                        } else {
+                    ?>
+
+                            <tr>
+                                <td class="lrn">
+                                    <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
+                                        <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
+                                    <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE"></a><?php echo $studentRow['lrn']; ?>
+                                </td>
+                                <td class="name"><?php echo $studentRow['name']; ?></td>
+                                <td class="section"><?php echo $studentRow['section']; ?></td>
+                                <td class="age"><?php echo $studentRow['age']; ?></td>
+                                <td class="address"><?php echo $studentRow['address']; ?></td>
+                                <td class="email"><?php echo $studentRow['email']; ?></td>
+                                <td class="number"><?php echo $studentRow['contact_number']; ?></td>
+                            </tr>
+
+                    <?php
+                        }
+                    } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>
 
                 </table>
             </div>
