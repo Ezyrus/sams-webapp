@@ -23,6 +23,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
     <link rel="stylesheet" href="../styles/viewAddSearchStudentProfile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/popups.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
 
@@ -118,8 +119,14 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                             <tr>
                                 <td class="lrn">
                                     <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
-                                        <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
-                                    <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE"></a><?php echo $studentRow['lrn']; ?>
+                                        <img src="../assets/editt.png" alt="UPDATE" srcset="">
+                                    </a>
+                                    <a class="delete" onclick="openDeletePopup(<?php echo $studentRow['lrn'];  ?>)">
+                                        <img src="../assets/delete.png" alt="UPDATE">
+                                    </a>
+                                    <?php
+                                    echo $studentRow['lrn'];
+                                    ?>
                                 </td>
                                 <td class="name"><?php echo $studentRow['name']; ?></td>
                                 <td class="section"><?php echo $studentRow['section']; ?></td>
@@ -138,6 +145,26 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         </div>
     </div>
+
+    <div class="deletePopup" id="deletePopup">
+
+        <div class="deleteStud">
+            <img class="delete" src="../assets/godelete.png" alt="delete">
+            <h1>Delete Student</h1>
+        </div>
+
+        <div class="studInfo">
+            <h3>Deleting a student will permanently remove its information and record throughout the system.</h3>
+            <h6>Are you sure?</h6>
+
+            <div class="btn">
+                <button class="no" id="no" type="button" onclick="falseDeletePopup()">No, Keep Student</button>
+                <button class="yes" id="yes" type="button">Yes, Delete Student</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/popups.js"></script>
 
 </body>
 

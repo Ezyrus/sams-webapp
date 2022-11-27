@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+div.deletePopup {
+  font-family: "Tomorrow", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 45%;
+  width: 40%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(171, 221, 183,0.5);
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: ease-in-out 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.deletePopup .deleteStud {
+  gap: 10px;
+  height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.deletePopup .deleteStud img.delete {
+  height: 100px;
+  width: 100px;
+}
+
+div.deletePopup .deleteStud h1 {
+  font-size: 28px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+div.deletePopup .studInfo {
+  width: 100%;
+  height: 55%;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgba(22, 110, 174,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  color: white;
+}
+
+div.deletePopup .studInfo h3 {
+  text-align: start;
+  font-size: 17px;
+  padding: 0px 80px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+div.deletePopup .studInfo h6 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: black;
+
+}
+
+div.deletePopup .studInfo .btn {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+div.deletePopup .studInfo .btn button {
+  font-family: "Tomorrow", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid black;
+  color: white;
+  width: 40%;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+div.deletePopup .studInfo .btn button.yes {
+  background-color: red;
+}
+
+div.deletePopup .studInfo .btn button.no {
+  background-color: rgb(22, 110, 174);
+}
+
+div.deletePopup .studInfo .btn button:hover {
+  background-color: rgba(171, 221, 183,0.5);
+  transition: 0.2s;
+  color: black;
+}
+
+
+div.openDeletePopup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
