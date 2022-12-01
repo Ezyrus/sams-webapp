@@ -77,6 +77,7 @@
 
       <div class="title">
          <h3><a href="#">Update Student</a></h3>
+         <img src="../assets/edit.png" alt="edit">
       </div>
 
       <div class="admin-container">
@@ -97,28 +98,38 @@
          <div class="studentInfo">
 
             <div class="mainInfo">
-               <label for="lrn">LRN</label>
+               <label for="lrn">LRN:</label>
+               <h6 class="required">Required (Ex. : 136612345678, Max. 12)</h6>
                <input type="text" name="lrn" value="<?php echo $studentRow['lrn']; ?>">
 
-               <label for="name">Name</label>
+               <label for="name">Name:</label>
+               <h6 class="required">Required (Format: Lastname, Firstname, Middle Name)</h6>
                <input type="text" name="name" value="<?php echo $studentRow['name']; ?>">
 
-               <label for="section">Section</label>
+               <label for="section">Section:</label>
+               <h6 class="required">Required (Ex. : ABM 11-A, HUMMS 12-A)</h6>
                <input type="text" name="section" value="<?php echo $studentRow['section']; ?>">
+
+               <div>
+                  <label for="age">Age:</label>
+                  <input type="number" name="age" value="<?php echo $studentRow['age']; ?>">
+
+                  <label for="number">Number:</label>
+                  <input type="number" name="number" value="<?php echo $studentRow['contact_number']; ?>">
+               </div>
+               
             </div>
 
             <div class="otherInfo">
-               <label for="age">Age</label>
-               <input type="" name="age" value="<?php echo $studentRow['age']; ?>">
 
-               <label for="address">Address</label>
-               <textarea type="text" name="address"><?php echo $studentRow['address']; ?></textarea>
-
-               <label for="email">Email</label>
+               <label for="Email">Email Address:</label>
+               <h6 class="required">Required (Ex. : student@yahoo.com, student@gmail.com)</h6>
                <textarea type="text" name="email"><?php echo $studentRow['email']; ?></textarea>
 
-               <label for="number">Number</label>
-               <input type="text" name="number" value="<?php echo $studentRow['contact_number']; ?>">
+               <label for="address">Full Address:</label>
+               <h6 class="required">Required (Format : Street Number/Name, Barangay, City/Municipality)</h6>
+               <textarea type="text" name="address"><?php echo $studentRow['address']; ?></textarea>
+
             </div>
 
          </div>

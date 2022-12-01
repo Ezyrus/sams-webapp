@@ -50,6 +50,15 @@ section.nav div.back-container a {
 section.nav div.title {
   width: 40%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+}
+
+section.nav div.title img {
+  height: 35px;
 }
 
 section.nav div.title h3 {
@@ -130,15 +139,15 @@ div.registerContainer form {
   font-family: "Tomorrow", sans-serif;
   display: flex;
   justify-content: center;
+  gap: 10px;
   align-items: center;
   flex-direction: column;
-
   background-color: rgba(171, 221, 183, 0.3);
   box-shadow: -3px 3px 1px rgba(22, 110, 174, 0.5);
   border-radius: 15px;
   margin-top: 10vh;
-  height: 65%;
-  width: 50%;
+  height: 55%;
+  width: 70%;
 }
 
 div.registerContainer form:hover {
@@ -152,6 +161,7 @@ div.registerContainer div.studentInfo {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
+
 }
 
 div.registerContainer div.studentInfo div {
@@ -161,11 +171,20 @@ div.registerContainer div.studentInfo div {
   gap: 15px;
   align-items: flex-start;
   height: 100%;
-  width: 35%;
+  width: 45%;
+}
+
+div.registerContainer div.studentInfo h6.required {
+  font-size: 10px;
+  letter-spacing: 2px; 
+  color: red;
+  font-style: italic;
+  margin-top: -15px;
 }
 
 div.registerContainer div.studentInfo div.otherInfo textarea {
   width: 100%;
+  height: 35%;
   padding: 3px;
   letter-spacing: 2px;
   border-radius: 3px;
@@ -173,6 +192,15 @@ div.registerContainer div.studentInfo div.otherInfo textarea {
   resize: none;
   font-size: 18px;
   text-align: center;
+}
+
+div.registerContainer div.studentInfo div.mainInfo div {
+  height: max-content;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
 div.registerContainer form div textarea:hover {
@@ -184,7 +212,7 @@ div.registerContainer form div label {
   text-transform: uppercase;
   font-size: 25px;
   letter-spacing: 5px;
-  text-shadow: -1px 1px 1px rgba(22, 110, 174);
+  text-shadow: -1px 1px 2px rgba(22, 110, 174);
 }
 
 div.registerContainer form div input {
@@ -198,9 +226,15 @@ div.registerContainer form div input {
   border: 0px solid black;
 }
 
+
 div.registerContainer form div input:hover {
   box-shadow: -1px 1px 10px rgba(22, 110, 174);
 }
+
+div.registerContainer form div input:active {
+  box-shadow: -1px 1px 10px rgba(22, 110, 174);
+}
+
 
 div.registerContainer form div.navigate {
   display: flex;
@@ -214,14 +248,14 @@ div.registerContainer form button {
   padding: 10px;
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 15px;
   letter-spacing: 5px;
   transition-duration: 0.5s;
   border-radius: 10px;
   font-weight: bolder;
   border-style: none;
   color: white;
-  background-color: darkblue;
+  background-color: rgba(22, 110, 174,0.5);
   margin-top: 10px;
   display: flex;
 gap: 5px;
@@ -243,7 +277,7 @@ div.registerContainer form button:active {
 }
 
 div.registerContainer form button img{
-  height: 30px;
+  height: 20px;
 }
 
 /* RESPONSIVE DESIGN */

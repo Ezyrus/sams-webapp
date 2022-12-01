@@ -61,7 +61,8 @@ header div {
 /* FOOTER */
 footer {
   color: white;
-  background-color: rgba(70, 167, 202, 0.5);
+  box-shadow: 0px -1px 2px rgba(70, 167, 202, 1);
+  background-color: rgba(70, 167, 202, 0.3);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -71,15 +72,6 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0.5;
-  filter: blur(1px);
-}
-
-footer:hover {
-  opacity: 1;
-  filter: blur(0px);
-  transition: 0.5s;
-  height: 10vh;
 }
 
 footer div {
@@ -93,10 +85,6 @@ footer div div img {
   padding: 5%;
 }
 
-footer div div img:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
 /* FOOTER */
 
 @media screen and (max-width: 1366px) {

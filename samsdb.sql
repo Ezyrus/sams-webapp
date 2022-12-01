@@ -53,7 +53,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `grade11_december2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `grade11_december2022` (
 
 CREATE TABLE `grade11_february2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -161,7 +161,7 @@ INSERT INTO `grade11_february2023` (`month_id`, `lrn`, `student_name`, `section`
 
 CREATE TABLE `grade11_january2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -221,7 +221,7 @@ INSERT INTO `grade11_january2023` (`month_id`, `lrn`, `student_name`, `section`,
 
 CREATE TABLE `grade11_march2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -270,7 +270,7 @@ CREATE TABLE `grade11_march2023` (
 
 CREATE TABLE `grade11_november2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -330,7 +330,7 @@ INSERT INTO `grade11_november2022` (`month_id`, `lrn`, `student_name`, `section`
 
 CREATE TABLE `grade11_october2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -396,7 +396,7 @@ INSERT INTO `grade11_october2022` (`month_id`, `lrn`, `student_name`, `section`,
 
 CREATE TABLE `grade12_december2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -454,7 +454,7 @@ INSERT INTO `grade12_december2022` (`month_id`, `lrn`, `student_name`, `section`
 
 CREATE TABLE `grade12_february2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -510,7 +510,7 @@ INSERT INTO `grade12_february2023` (`month_id`, `lrn`, `student_name`, `section`
 
 CREATE TABLE `grade12_january2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -566,7 +566,7 @@ INSERT INTO `grade12_january2023` (`month_id`, `lrn`, `student_name`, `section`,
 
 CREATE TABLE `grade12_march2023` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -615,7 +615,7 @@ CREATE TABLE `grade12_march2023` (
 
 CREATE TABLE `grade12_november2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -664,7 +664,7 @@ CREATE TABLE `grade12_november2022` (
 
 CREATE TABLE `grade12_october2022` (
   `month_id` int(20) NOT NULL,
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `student_name` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `1` varchar(20) NOT NULL,
@@ -720,7 +720,7 @@ INSERT INTO `grade12_october2022` (`month_id`, `lrn`, `student_name`, `section`,
 --
 
 CREATE TABLE `students` (
-  `lrn` varchar(50) NOT NULL,
+  `lrn` varchar(12) NOT NULL,
   `name` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   `age` int(5) NOT NULL,

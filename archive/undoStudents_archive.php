@@ -2,10 +2,9 @@
     session_start(); 
     require_once "../databaseConnection.php";
 
-    $deleteLrn = htmlentities( $_GET['ID']);
-    $_SESSION['messageUpdate'] = "$deleteLrn has been deleted" ;
+    $undoLrn = htmlentities($_GET['ID']);
 
-    $selectDeletedSql = "SELECT * FROM `students` WHERE `lrn` = '$deleteLrn'";
+    $selectDeletedSql = "SELECT * FROM `students_archive` WHERE `lrn` = '$undoLrn'";
     $initiateSelectDeleted = mysqli_query(databaseConnection(), $selectDeletedSql);
     $selectDeletedRow = mysqli_fetch_assoc($initiateSelectDeleted);
 
@@ -21,12 +20,12 @@
 
     } while ($selectDeletedRow = mysqli_fetch_assoc($initiateSelectDeleted));
 
-    $toArchiveSql = "INSERT INTO `students_archive` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
-   mysqli_query(databaseConnection(), $toArchiveSql);
+    $toProfileSql = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+   mysqli_query(databaseConnection(), $toProfileSql);
 
-    $deleteStudentSql = "DELETE FROM students WHERE lrn =  '$deleteLrn'";
+    $deleteStudentSql = "DELETE FROM students_archive WHERE lrn =  '$undoLrn'";
     mysqli_query(databaseConnection(), $deleteStudentSql);
 
-    echo header("Location: studentProfile.php");
+    echo header("Location: studentArchives.php");
 ?>
 

@@ -2,7 +2,6 @@
 session_start();
 require_once "../databaseConnection.php";
 
-
 if (isset($_POST['registerStudent'])) {
    $studentLrn = $_POST['lrn'];
    $studentName = $_POST['name'];
@@ -21,16 +20,15 @@ if (isset($_POST['registerStudent'])) {
    if ($studentTableNumRows) {
       echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
    } else {
-      if (empty($studentLrn)) {
-         echo '<script>alert("Student LRN field is required")</script>';
+      if (empty($studentLrn) || empty($studentName) || empty($studentSection) || empty($studentAddress) || empty($studentEmail)) {
+         echo '<script>alert("Please fill all required fields")</script>';
       } else {
          $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
          $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
 
          $_SESSION['messageUpdate'] = "$studentLrn has been registered";
-
-         echo '<script>alert("Student Added")</script>';
+         
          echo header("Location: studentProfile.php");
       }
    }
@@ -86,6 +84,7 @@ if (isset($_POST['registerStudent'])) {
 
       <div class="title">
          <h3><a href="registerStudents.php">Register Students</a></h3>
+         <img src="../assets/registerr.png" alt="register" class="register">
       </div>
 
       <div class="admin-container">
@@ -101,33 +100,43 @@ if (isset($_POST['registerStudent'])) {
 
    <div class="registerContainer">
 
-      <form action="" method="POST">
+      <form method="POST">
 
          <div class="studentInfo">
 
             <div class="mainInfo">
-               <label for="lrn">LRN</label>
+
+               <label for="lrn">LRN:</label>
+               <h6 class="required">Required (Ex. : 136612345678, Max. 12)</h6>
                <input type="text" name="lrn">
 
-               <label for="name">Name</label>
+               <label for="name">Name:</label>
+               <h6 class="required">Required (Format: Lastname, Firstname, Middle Name)</h6>
                <input type="text" name="name">
 
-               <label for="section">Section</label>
+               <label for="section">Section:</label>
+               <h6 class="required">Required (Ex. : ABM 11-A, HUMMS 12-A)</h6>
                <input type="text" name="section">
+
+               <div>
+                  <label for="age">Age:</label>
+                  <input type="number" name="age">
+
+                  <label for="number">Number:</label>
+                  <input type="number" name="number">
+               </div>
             </div>
 
             <div class="otherInfo">
-               <label for="age">Age</label>
-               <input type="number" name="age">
-
-               <label for="address">Address</label>
-               <textarea name="address"></textarea>
-
-               <label for="email">Email</label>
+            
+               <label for="Email">Email Address:</label>
+               <h6 class="required">Required (Ex. : student@yahoo.com, student@gmail.com)</h6>
                <textarea name="email"></textarea>
 
-               <label for="number">Number</label>
-               <input type="number" name="number">
+               <label for="address">Full Address:</label>
+               <h6 class="required">Required (Format : Street Number/Name, Barangay, City/Municipality)</h6>
+               <textarea name="address"></textarea>
+
             </div>
 
          </div>

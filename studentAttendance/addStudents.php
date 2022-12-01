@@ -75,22 +75,21 @@ $messageUpdate = $_SESSION['messageUpdate'];
 
             <div class="search-container">
 
-                <h3><a onclick="history.go(-1);      return false;"><?php echo $_SESSION['monthYear']; ?> > </a><a href="addStudents.php">Add Students</a>
-                </h3>
+                <div>
+                    <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
+                    </h3>
+                    <img class="register" src="../assets/registerr.png" alt="register">
+                </div>
 
                 <form action="addStudent_searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
                 </form>
 
-                <h3 id="log">Log: <span><?php
-                                        if ($messageUpdate == "") {
-                                            echo "...";
-                                        } else {
-                                            echo "$messageUpdate";
-                                        }
-                                        ?></span>
-                </h3>
+                <div>
+                    <h3><a href="archive/studentArchives.php">Archive</a></h3>
+                    <img class="archive " src="../assets/archive.png" alt="archive">
+                </div>
             </div>
 
             <div class="studentRecords">
@@ -112,16 +111,16 @@ $messageUpdate = $_SESSION['messageUpdate'];
                      </td>";
                         } else {
                     ?>
-                        <tr>
-                            <td class="lrn"><a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>" class="add">
-                                <img src="../assets/add.png" alt="add"></a><?php echo $studentRow['lrn']; ?></td>
-                            <td class="name"><?php echo $studentRow['name']; ?></td>
-                            <td class="section"><?php echo $studentRow['section']; ?></td>
-                            <td class="age"><?php echo $studentRow['age']; ?></td>
-                            <td class="address"><?php echo $studentRow['address']; ?></td>
-                            <td class="email"><?php echo $studentRow['email']; ?></td>
-                            <td class="number"><?php echo $studentRow['contact_number']; ?></td>
-                        </tr>
+                            <tr>
+                                <td class="lrn"><a href="studentAdded.php?ID=<?php echo $studentRow['lrn']; ?>" class="add">
+                                        <img src="../assets/add.png" alt="add"></a><?php echo $studentRow['lrn']; ?></td>
+                                <td class="name"><?php echo $studentRow['name']; ?></td>
+                                <td class="section"><?php echo $studentRow['section']; ?></td>
+                                <td class="age"><?php echo $studentRow['age']; ?></td>
+                                <td class="address"><?php echo $studentRow['address']; ?></td>
+                                <td class="email"><?php echo $studentRow['email']; ?></td>
+                                <td class="number"><?php echo $studentRow['contact_number']; ?></td>
+                            </tr>
                     <?php
                         }
                     } while ($studentRow = mysqli_fetch_assoc($initiateSelectSql)) ?>

@@ -58,6 +58,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         <div class="title">
             <h3><a href="studentProfile.php">Student Profile</a></h3>
+            <img src="../assets/users.png" alt="users" class="users">
         </div>
 
         <div class="admin-container">
@@ -77,22 +78,21 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
             <div class="search-container">
 
-                <h3><a href="registerStudents.php">Register Students here</a>
-                </h3>
+                <div>
+                    <h3><a href="registerStudents.php">Register Student</a>
+                    </h3>
+                    <img class="register" src="../assets/registerr.png" alt="register">
+                </div>
 
                 <form action="searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
                 </form>
 
-                <h3 id="log">Log: <span><?php
-                                        if ($messageUpdate == "") {
-                                            echo "...";
-                                        } else {
-                                            echo "$messageUpdate";
-                                        }
-                                        ?></span>
-                </h3>
+                <div>
+                    <h3><a href="../archive/studentArchives.php">Archive</a></h3>
+                    <img class="archive "src="../assets/archive.png" alt="archive">
+                </div>
             </div>
 
             <div class="studentRecords">
@@ -119,9 +119,9 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                             <tr>
                                 <td class="lrn">
                                     <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
-                                        <img src="../assets/editt.png" alt="UPDATE" srcset="">
+                                        <img src="../assets/edit.png" alt="UPDATE" srcset="">
                                     </a>
-                                    <a class="delete" onclick="openDeletePopup(<?php echo $studentRow['lrn'];  ?>)">
+                                    <a class="delete" onclick="openProfileDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
                                         <img src="../assets/delete.png" alt="UPDATE">
                                     </a>
                                     <?php
@@ -154,17 +154,18 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
         </div>
 
         <div class="studInfo">
-            <h3>Deleting a student will permanently remove its information and record throughout the system.</h3>
-            <h6>Are you sure?</h6>
+            <h3>Are you sure you want to delete this student's registration? All it's information will be moved to archived.</h3>
+            <h6>Continue?</h6>
 
             <div class="btn">
-                <button class="no" id="no" type="button" onclick="falseDeletePopup()">No, Keep Student</button>
-                <button class="yes" id="yes" type="button">Yes, Delete Student</button>
+                <button class="no" id="no" type="button">No</button>
+                <button class="yes" id="yes" type="button">Yes</button>
             </div>
         </div>
     </div>
 
-    <script src="../js/popups.js"></script>
+    
+    <script src="../js/popups.js?v=<?php echo time(); ?>"></script>
 
 </body>
 

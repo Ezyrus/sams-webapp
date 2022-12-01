@@ -50,6 +50,10 @@ section.nav div.back-container a {
 section.nav div.title {
   width: 40%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 section.nav div.title h3 {
@@ -66,6 +70,10 @@ section.nav div.title h3:hover {
 section.nav div.title h3 a {
   text-decoration: none;
   color: white;
+}
+
+section.nav div.title img {
+  height: 35px;
 }
 
 section.nav div.admin-container {
@@ -148,8 +156,28 @@ div.studentProfile div div.search-container {
   height: 5vh;
 }
 
-div.studentProfile div.profileContainer div.search-container h3 {
+div.studentProfile div div.search-container div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
   width: 30%;
+}
+
+div.studentProfile div div.search-container div img.register {
+  height: 30px;
+}
+
+div.studentProfile div div.search-container div img.archive {
+  height: 30px;
+}
+
+div.studentProfile div div.search-container div img.users {
+  height: 30px;
+}
+
+
+div.studentProfile div.profileContainer div.search-container h3 {
   text-align: center;
   font-style: italic;
   letter-spacing: 5px;
@@ -285,6 +313,10 @@ div.studentProfile div table tr th.email {
 
 div.studentProfile div table tr th.function {
   width: 3%;
+}
+
+div.studentProfile div table tr th.time-deleted {
+  width: 12%;
 }
 
 div.studentProfile div table tr td {

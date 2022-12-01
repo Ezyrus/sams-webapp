@@ -1,12 +1,11 @@
 <?php
 session_start();
-error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
 $searchResult = htmlentities($_GET['search']);
 $messageUpdate = $_SESSION['messageUpdate'];
 
-$selectStudentSql = "SELECT * FROM students WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ORDER BY section ";
+$selectStudentSql = "SELECT * FROM students_archive WHERE lrn LIKE  '%$searchResult%' || name LIKE  '%$searchResult%'  || section LIKE  '%$searchResult%' ORDER BY time_deleted DESC ";
 
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 
@@ -27,6 +26,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
     <link rel="stylesheet" href="../styles/viewAddSearchStudentProfile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/popups.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
 
@@ -56,12 +56,12 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <section class="nav">
 
         <div class="back-container">
-            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Portal</a></h1>
+            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a></h1>
         </div>
 
         <div class="title">
-            <h3><a href="studentProfile.php">Student Profile</a></h3>
-            <img src="../assets/users.png" alt="users" class="users">
+            <h3><a href="studentArchives.php">Archive</a></h3>
+            <img src="../assets/archive.png" alt="users" class="users">
         </div>
 
         <div class="admin-container">
@@ -82,24 +82,26 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <div class="search-container">
 
                 <div>
-                    <h3><a href="registerStudents.php">Register Student</a>
+                    <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
                     </h3>
                     <img class="register" src="../assets/registerr.png" alt="register">
                 </div>
 
-                <form action="searchStudent.php" method="get">
+                <form action="studentArchives_searchStudent.php" method="get">
                     <input type="text" name="search">
                     <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
                 </form>
 
                 <div>
-                    <h3><a href="../archive/studentArchives.php">Archive</a></h3>
-                    <img class="archive " src="../assets/archive.png" alt="archive">
+                    <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
+                    <img class="users "src="../assets/users.png" alt="archive">
                 </div>
+
             </div>
 
             <div class="studentRecords">
                 <table>
+
                     <tr>
                         <th class="lrn">LRN</th>
                         <th class="name">Full Name</th>
@@ -108,20 +110,28 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                         <th class="address">Address</th>
                         <th class="email">Email</th>
                         <th class="number">Number</th>
+                        <th class="time-deleted">Time Deleted</th>
                     </tr>
 
                     <?php do {
                         if ($studentRow == 0) {
-                            echo "   <td class='noData' colspan = '7'>
-                     Your search key '$searchResult' does not exist ... </td>";
+                            echo "   <td class='noData' colspan = '8'>
+                     No data to display here ...
+                     </td>";
                         } else {
                     ?>
 
                             <tr>
                                 <td class="lrn">
-                                    <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
-                                        <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
-                                    <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE"></a><?php echo $studentRow['lrn']; ?>
+                                    <a href="undoStudents_archive.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
+                                        <img src="../assets/undo.png" alt="undo">
+                                    </a>
+                                    <a class="delete" onclick="openArchiveDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
+                                        <img src="../assets/delete.png" alt="delete">
+                                    </a>
+                                    <?php
+                                    echo $studentRow['lrn'];
+                                    ?>
                                 </td>
                                 <td class="name"><?php echo $studentRow['name']; ?></td>
                                 <td class="section"><?php echo $studentRow['section']; ?></td>
@@ -129,6 +139,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                                 <td class="address"><?php echo $studentRow['address']; ?></td>
                                 <td class="email"><?php echo $studentRow['email']; ?></td>
                                 <td class="number"><?php echo $studentRow['contact_number']; ?></td>
+                                <td class="number"><?php echo $studentRow['time_deleted']; ?></td>
                             </tr>
 
                     <?php
@@ -137,8 +148,30 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                 </table>
             </div>
+
         </div>
     </div>
+
+    <div class="deletePopup" id="deletePopup">
+
+        <div class="deleteStud">
+            <img class="delete" src="../assets/godelete.png" alt="delete">
+            <h1>Delete Student</h1>
+        </div>
+
+        <div class="studInfo">
+            <h3>Are you sure you want to permanently delete this student's registration information? There is no coming back when the action is done.</h3>
+            <h6>Continue?</h6>
+
+            <div class="btn">
+                <button class="no" id="no" type="button">No</button>
+                <button class="yes" id="yes" type="button">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="../js/popups.js?v=<?php echo time(); ?>"></script>
 
 </body>
 
