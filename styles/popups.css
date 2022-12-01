@@ -70,7 +70,6 @@ div.deletePopup .studInfo h6 {
   font-size: 18px;
   letter-spacing: 2px;
   color: white;
-
 }
 
 div.deletePopup .studInfo .btn {
@@ -106,9 +105,15 @@ div.deletePopup .studInfo .btn button:hover {
   color: black;
 }
 
-
 div.openDeletePopup {
   visibility: visible;
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
+}
+
+@media screen and (max-width: 1366px) {
+div.deletePopup {
+  height: 50%;
+  width: 50%;
+}
 }

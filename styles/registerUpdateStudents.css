@@ -291,6 +291,10 @@ div.registerContainer form button img{
     font-size: 17px;
   }
 
+  section.nav div.title img {
+    height: 30px;
+  }
+  
   section.nav div.title h3 {
     font-size: 20px;
     letter-spacing: 7px;
@@ -321,9 +325,15 @@ div.registerContainer form button img{
   section.nav div.admin-container h2.logout:hover {
     font-size: 17px;
   }
+
+  div.registerContainer div.studentInfo {
+
+  gap: 0px;
+  }
+
  
   div.registerContainer form {
-    width: 55%;
+    width: 70%;
   }
  
   div.registerContainer div.studentInfo div.otherInfo textarea {
@@ -331,7 +341,6 @@ div.registerContainer form button img{
     letter-spacing: 1px;
   }
   
-
   div.registerContainer form div label {
     font-size: 20px;
   }
@@ -344,5 +353,10 @@ div.registerContainer form button img{
     font-size: 15px;
   }
 
+  div.registerContainer div.studentInfo h6.required {
+    font-size: 8px;
+    letter-spacing: 1px; 
+    margin-top: -15px;
+  }
 }
 /* RESPONSIVE DESIGN */
