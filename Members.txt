@@ -3,15 +3,3 @@ John Edrich Viray
 Paolo Rafael Tampico
 Cyrus Cantero
 Arabella Belardo
-
-
-Ideas : 
-	Student Profile & Update Student
-				: Confirm button before deleting Student
-
-	Student Attendance Monitoring Page 
-				: Confirm button before deleting Student
-
-Notes :
-Student Profile > Update Student
-				: Can change every info except LRN

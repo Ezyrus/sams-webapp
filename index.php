@@ -29,6 +29,15 @@
    }
 ?>
 
+<!--TODO: 
+         Changes System Logs
+			Admin Logged in Logs
+			Overall UI of Monitoring Page
+      
+      NOTES: 
+         Student Profile > Update Student
+				: Can change every info except LRN-->
+
 <!DOCTYPE html>
    <html lang="en">
 
