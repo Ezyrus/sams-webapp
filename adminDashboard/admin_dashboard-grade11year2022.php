@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+    header('Location:/Sams/index.php');
+}
+
 error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 require_once "getMonthRecords.php";

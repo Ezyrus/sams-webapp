@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+   header('Location:/Sams/index.php');
+}
+
 require_once "../databaseConnection.php";
 
 if (isset($_POST['registerStudent'])) {
@@ -107,7 +113,7 @@ if (isset($_POST['registerStudent'])) {
             <div class="mainInfo">
 
                <label for="lrn">LRN:</label>
-               <h6 class="required">Required (Ex. : 136612345678, Max. 12)</h6>
+               <h6 class="required">Required (Ex. : 136612345678, Min/Max. 12)</h6>
                <input type="text" name="lrn">
 
                <label for="name">Name:</label>

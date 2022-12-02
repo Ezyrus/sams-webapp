@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-div.deletePopup {
+div.deletePopup, div.undoPopup {
   font-family: "Tomorrow", sans-serif;
   position: absolute;
   top: 50%;
@@ -23,7 +23,7 @@ div.deletePopup {
   justify-content: center;
 }
 
-div.deletePopup .deleteStud {
+div.deletePopup .deleteStud, div.undoPopup .undoStud {
   gap: 10px;
   height: 40%;
   width: 100%;
@@ -33,19 +33,19 @@ div.deletePopup .deleteStud {
   justify-content: center;
 }
 
-div.deletePopup .deleteStud img.delete {
+div.deletePopup .deleteStud img.delete, div.undoPopup .undoStud img.undo {
   height: 80px;
   width: 80px;
 }
 
-div.deletePopup .deleteStud h1 {
+div.deletePopup .deleteStud h1, div.undoPopup .undoStud h1 {
   font-size: 28px;
   letter-spacing: 5px;
   text-transform: uppercase;
   color:black;
 }
 
-div.deletePopup .studInfo {
+div.deletePopup .studInfo, div.undoPopup .studInfo {
   width: 100%;
   height: 60%;
   border-radius: 0px 0px 10px 10px;
@@ -58,7 +58,7 @@ div.deletePopup .studInfo {
   color: white;
 }
 
-div.deletePopup .studInfo h3 {
+div.deletePopup .studInfo h3, div.undoPopup .studInfo h3 {
   text-align: start;
   font-size: 17px;
   padding: 0px 80px;
@@ -66,19 +66,19 @@ div.deletePopup .studInfo h3 {
   color: white;
 }
 
-div.deletePopup .studInfo h6 {
+div.deletePopup .studInfo h6, div.undoPopup .studInfo h6 {
   font-size: 18px;
   letter-spacing: 2px;
   color: white;
 }
 
-div.deletePopup .studInfo .btn {
+div.deletePopup .studInfo .btn, div.undoPopup .studInfo .btn {
   width: 80%;
   display: flex;
   justify-content: space-around;
 }
 
-div.deletePopup .studInfo .btn button {
+div.deletePopup .studInfo .btn button, div.undoPopup .studInfo .btn button {
   font-family: "Tomorrow", sans-serif;
   padding: 10px;
   border-radius: 5px;
@@ -91,28 +91,28 @@ div.deletePopup .studInfo .btn button {
   letter-spacing: 1px;
 }
 
-div.deletePopup .studInfo .btn button.yes {
-  background-color: red;
+div.deletePopup .studInfo .btn button.yes, div.undoPopup .studInfo .btn button.yes {
+  background-color: green;
 }
 
-div.deletePopup .studInfo .btn button.no {
+div.deletePopup .studInfo .btn button.no, div.undoPopup .studInfo .btn button.no {
   background-color: rgb(22, 110, 174);
 }
 
-div.deletePopup .studInfo .btn button:hover {
+div.deletePopup .studInfo .btn button:hover, div.UndoPopup .studInfo .btn button:hover {
   background-color: rgba(171, 221, 183,0.5);
   transition: 0.2s;
   color: black;
 }
 
-div.openDeletePopup {
+div.openDeletePopup, div.openUndoPopup {
   visibility: visible;
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
 }
 
 @media screen and (max-width: 1366px) {
-div.deletePopup {
+div.deletePopup, div.UndoPopup {
   height: 50%;
   width: 50%;
 }

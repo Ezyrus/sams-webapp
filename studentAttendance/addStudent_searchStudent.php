@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+   header('Location:/Sams/index.php');
+}
+
 require_once "../databaseConnection.php";
 
 $searchResult = htmlentities($_GET['search']);

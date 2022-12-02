@@ -120,7 +120,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                             <tr>
                                 <td class="lrn">
-                                    <a href="undoStudents_archive.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
+                                    <a class="update" onclick="openArchiveUndoPopup('<?php echo $studentRow['lrn'];  ?>')">
                                         <img src="../assets/undo.png" alt="undo">
                                     </a>
                                     <a class="delete" onclick="openArchiveDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
@@ -161,8 +161,26 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <h6>Continue?</h6>
 
             <div class="btn">
-                <button class="no" id="no" type="button">No</button>
-                <button class="yes" id="yes" type="button">Yes</button>
+                <button class="no" id="noDel" type="button">No</button>
+                <button class="yes" id="yesDel" type="button">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="undoPopup" id="undoPopup">
+
+        <div class="undoStud">
+            <img class="undo" src="../assets/godelete.png" alt="undo">
+            <h1>Undo Student</h1>
+        </div>
+
+        <div class="studInfo">
+            <h3>Are you sure you want to Undo this student and add it's information in Student Profile?</h3>
+            <h6>Continue?</h6>
+
+            <div class="btn">
+                <button class="no" id="noUndo" type="button">No</button>
+                <button class="yes" id="yesUndo" type="button">Yes</button>
             </div>
         </div>
     </div>

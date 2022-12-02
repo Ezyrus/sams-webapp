@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+   header('Location:/Sams/index.php');
+}
+
 require_once "../databaseConnection.php";
 
 $messageUpdate = $_SESSION['messageUpdate'];
@@ -158,13 +164,12 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             <h6>Continue?</h6>
 
             <div class="btn">
-                <button class="no" id="no" type="button">No</button>
-                <button class="yes" id="yes" type="button">Yes</button>
+                <button class="no" id="noDel" type="button">No</button>
+                <button class="yes" id="yesDel" type="button">Yes</button>
             </div>
         </div>
     </div>
 
-    
     <script src="../js/popups.js?v=<?php echo time(); ?>"></script>
 
 </body>

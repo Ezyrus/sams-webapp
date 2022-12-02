@@ -1,31 +1,37 @@
 <?php
-   session_start();
-   require_once "../databaseConnection.php";
+session_start();
 
-   $updateLrn = htmlentities($_GET['ID']);
-   $_SESSION['messageUpdate'] = "$updateLrn has been updated" ;
-   $selectStudentSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+   header('Location:/Sams/index.php');
+}
 
-   $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+require_once "../databaseConnection.php";
 
-   $studentRow = mysqli_fetch_assoc($initiateSelectSql);
+$updateLrn = htmlentities($_GET['ID']);
+$_SESSION['messageUpdate'] = "$updateLrn has been updated";
+$selectStudentSql = "SELECT * FROM students WHERE lrn = '$updateLrn'";
+
+$initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
+
+$studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
 
-   if (isset($_POST['registerStudent'])) {
-      $studentLrn = $_POST['lrn'];
-      $studentName = $_POST['name'];
-      $studentSection = $_POST['section'];
-      $studentAge = $_POST['age'];
-      $studentAddress = $_POST['address'];
-      $studentEmail = $_POST['email'];
-      $studentNumber = $_POST['number'];
+if (isset($_POST['registerStudent'])) {
+   $studentLrn = $_POST['lrn'];
+   $studentName = $_POST['name'];
+   $studentSection = $_POST['section'];
+   $studentAge = $_POST['age'];
+   $studentAddress = $_POST['address'];
+   $studentEmail = $_POST['email'];
+   $studentNumber = $_POST['number'];
 
-      $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
+   $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
 
-      mysqli_query(databaseConnection(), $updateStudentSql);
+   mysqli_query(databaseConnection(), $updateStudentSql);
 
-      echo header("Location: studentProfile.php?ID=" . $studentLrn);
-   }
+   echo header("Location: studentProfile.php?ID=" . $studentLrn);
+}
 
 ?>
 
@@ -71,7 +77,7 @@
    <section class="nav">
 
       <div class="back-container">
-      <h1 onclick="history.go(-1);">
+         <h1 onclick="history.go(-1);">
             < BACK</h1>
       </div>
 
@@ -117,7 +123,7 @@
                   <label for="number">Number:</label>
                   <input type="number" name="number" value="<?php echo $studentRow['contact_number']; ?>">
                </div>
-               
+
             </div>
 
             <div class="otherInfo">
@@ -134,7 +140,7 @@
 
          </div>
 
-         <button type="submit" name="registerStudent">   <img src="../assets/doneee.png" alt="done">Done
+         <button type="submit" name="registerStudent"> <img src="../assets/doneee.png" alt="done">Done
          </button>
 
       </form>

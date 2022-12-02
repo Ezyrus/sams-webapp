@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+   header('Location:/Sams/index.php');
+}
+
 error_reporting(0);  //hide errors
 require_once "../databaseConnection.php";
 
@@ -27,6 +33,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
     <link rel="stylesheet" href="../styles/viewAddSearchStudentProfile.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/popups.css?v=<?php echo time(); ?>">
 
     <title>Student Attendance Monitoring System</title>
 
@@ -56,7 +63,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <section class="nav">
 
         <div class="back-container">
-            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">Portal</a></h1>
+            <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a></h1>
         </div>
 
         <div class="title">
@@ -94,12 +101,13 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                 <div>
                     <h3><a href="../archive/studentArchives.php">Archive</a></h3>
-                    <img class="archive " src="../assets/archive.png" alt="archive">
+                    <img class="archive "src="../assets/archive.png" alt="archive">
                 </div>
             </div>
 
             <div class="studentRecords">
                 <table>
+
                     <tr>
                         <th class="lrn">LRN</th>
                         <th class="name">Full Name</th>
@@ -113,15 +121,22 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                     <?php do {
                         if ($studentRow == 0) {
                             echo "   <td class='noData' colspan = '7'>
-                     Your search key '$searchResult' does not exist ... </td>";
+                     No data to display here, please register students ...
+                     </td>";
                         } else {
                     ?>
 
                             <tr>
                                 <td class="lrn">
                                     <a href="updateStudents.php?ID=<?php echo $studentRow['lrn']; ?>" class="update">
-                                        <img src="../assets/editt.png" alt="UPDATE" srcset=""></a>
-                                    <a href="deleteStudent.php?ID=<?php echo $studentRow['lrn']; ?>" class="delete"> <img src="../assets/delete.png" alt="UPDATE"></a><?php echo $studentRow['lrn']; ?>
+                                        <img src="../assets/edit.png" alt="UPDATE" srcset="">
+                                    </a>
+                                    <a class="delete" onclick="openProfileDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
+                                        <img src="../assets/delete.png" alt="UPDATE">
+                                    </a>
+                                    <?php
+                                    echo $studentRow['lrn'];
+                                    ?>
                                 </td>
                                 <td class="name"><?php echo $studentRow['name']; ?></td>
                                 <td class="section"><?php echo $studentRow['section']; ?></td>
@@ -137,8 +152,29 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                 </table>
             </div>
+
         </div>
     </div>
+
+    <div class="deletePopup" id="deletePopup">
+
+        <div class="deleteStud">
+            <img class="delete" src="../assets/godelete.png" alt="delete">
+            <h1>Delete Student</h1>
+        </div>
+
+        <div class="studInfo">
+            <h3>Are you sure you want to delete this student's registration? All it's information will be moved to archived.</h3>
+            <h6>Continue?</h6>
+
+            <div class="btn">
+                <button class="no" id="noDel" type="button">No</button>
+                <button class="yes" id="yesDel" type="button">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/popups.js?v=<?php echo time(); ?>"></script>
 
 </body>
 
