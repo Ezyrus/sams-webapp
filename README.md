@@ -5,12 +5,13 @@ SAMS Source code is only available for each members only please don't share this
 
 How to install?
 
-1. Download XAMPP
+1. Download XAMPP 
    1.1 : Include Apache and MySQL module
    1.2 : After installation Open Xampp
    1.3 : Start Apache and MySQL
    1.4 : In MySQL module click ADMIN
    1.5 : You should now have the "http://localhost/phpmyadmin/" window open.
+   
    ![image](https://user-images.githubusercontent.com/83266402/205267849-716dc954-f92d-47c1-b41b-845d2174911f.png)
    
 2. Download Source code of SAMS
