@@ -30,7 +30,8 @@ How to install?
    2.4 : Now copy the SAMS folder inside the "htdocs" folder
 
    2.5 : Rename the SAMS folder into "Sams"
-
+   
+   ![image](https://user-images.githubusercontent.com/83266402/205270389-b47f5073-a2d0-4237-be70-6ec81633dcfd.png)
    ![image](https://user-images.githubusercontent.com/83266402/205268976-466d40bb-c482-4faf-89e1-d83eb574f274.png)
 
 3. In Sams Folder
