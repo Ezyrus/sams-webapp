@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$adminLogged = $_SESSION['username'];
+if ($adminLogged == "") {
+    header('Location:/Sams/index.php');
+}
+
 require_once "../databaseConnection.php";
 
 $messageUpdate = $_SESSION['messageUpdate'];
@@ -58,7 +64,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
         <div class="title">
             <h3><a href="studentArchives.php">Archive</a></h3>
-            <img src="../assets/archive.png" alt="users" class="users">
+            <img src="../assets/archive.png">
         </div>
 
         <div class="admin-container">
@@ -72,7 +78,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
         </div>
     </section>
 
-    <div class="studentProfile">
+    <section class="studentProfile">
 
         <div class="profileContainer">
 
@@ -81,17 +87,17 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
                 <div>
                     <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
                     </h3>
-                    <img class="register" src="../assets/registerr.png" alt="register">
+                    <img src="../assets/registerr.png">
                 </div>
 
                 <form action="studentArchives_searchStudent.php" method="get">
                     <input type="text" name="search">
-                    <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
+                    <button type="submit"><img src="../assets/search.png"></button>
                 </form>
 
                 <div>
                     <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
-                    <img class="users "src="../assets/users.png" alt="archive">
+                    <img src="../assets/users.png">
                 </div>
 
             </div>
@@ -101,7 +107,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                     <tr>
                         <th class="lrn">LRN</th>
-                        <th class="name">Full Name</th>
+                        <th class="name">Name</th>
                         <th class="section">Section</th>
                         <th class="age">Age</th>
                         <th class="address">Address</th>
@@ -120,11 +126,11 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 
                             <tr>
                                 <td class="lrn">
-                                    <a class="update" onclick="openArchiveUndoPopup('<?php echo $studentRow['lrn'];  ?>')">
-                                        <img src="../assets/undo.png" alt="undo">
+                                    <a onclick="openArchiveUndoPopup('<?php echo $studentRow['lrn'];  ?>')">
+                                        <img src="../assets/undo.png">
                                     </a>
-                                    <a class="delete" onclick="openArchiveDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
-                                        <img src="../assets/delete.png" alt="delete">
+                                    <a onclick="openArchiveDeletePopup('<?php echo $studentRow['lrn'];  ?>')">
+                                        <img src="../assets/delete.png">
                                     </a>
                                     <?php
                                     echo $studentRow['lrn'];
@@ -147,7 +153,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
             </div>
 
         </div>
-    </div>
+    </section>
 
     <div class="deletePopup" id="deletePopup">
 

@@ -58,11 +58,12 @@ $messageUpdate = $_SESSION['messageUpdate'];
     <section class="nav">
 
         <div class="back-container">
-            <h1><a href="../studentProfile/studentProfile.php">student profile</a></h1>
+            <h1 onclick="history.go(-1)">< Back</h1>
         </div>
 
         <div class="title">
             <h3><a href="addStudents.php">add student</a></h3>
+            <img src="../assets/add.png">
         </div>
 
         <div class="admin-container">
@@ -76,7 +77,7 @@ $messageUpdate = $_SESSION['messageUpdate'];
         </div>
     </section>
 
-    <div class="studentProfile">
+    <section class="studentProfile">
         <div class="profileContainer">
 
             <div class="search-container">
@@ -84,25 +85,26 @@ $messageUpdate = $_SESSION['messageUpdate'];
                 <div>
                     <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
                     </h3>
-                    <img class="register" src="../assets/registerr.png" alt="register">
+                    <img src="../assets/registerr.png">
                 </div>
 
                 <form action="addStudent_searchStudent.php" method="get">
                     <input type="text" name="search">
-                    <button type="submit" class="search"><img src="../assets/search.png" alt="search"></button>
+                    <button type="submit"><img src="../assets/search.png"></button>
                 </form>
 
                 <div>
-                    <h3><a href="archive/studentArchives.php">Archive</a></h3>
-                    <img class="archive " src="../assets/archive.png" alt="archive">
+                    <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
+                    <img src="../assets/users.png">
                 </div>
+
             </div>
 
             <div class="studentRecords">
                 <table>
                     <tr>
                         <th class="lrn">LRN</th>
-                        <th class="name">Full Name</th>
+                        <th class="name">Name</th>
                         <th class="section">Section</th>
                         <th class="age">Age</th>
                         <th class="address">Address</th>
@@ -135,7 +137,7 @@ $messageUpdate = $_SESSION['messageUpdate'];
             </div>
 
         </div>
-    </div>
+    </section>
 
 </body>
 

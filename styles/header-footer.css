@@ -32,18 +32,20 @@ header div {
 .title {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 10px;
   width: 60%;
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .title h2 {
   font-size: 25px;
+  letter-spacing: 10px;
 }
 .title h5 {
   font-size: 13px;
+  letter-spacing: 10px;
   padding-top: 7px;
 }
 .depEdLogo {
@@ -87,13 +89,23 @@ footer div div img {
 
 /* FOOTER */
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1520px) {
   .title h2 {
     font-size: 20px;
   }
-
   .title h5 {
     font-size: 10px;
     padding-top: 7px;
   }
 }
+
+@media screen and (max-width: 1335px){
+  .title h2 {
+    letter-spacing: 9px;
+  }
+  .title h5 {
+    letter-spacing: 8px;
+  }
+}
+
+
