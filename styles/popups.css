@@ -111,9 +111,120 @@ div.openDeletePopup, div.openUndoPopup {
   transform: translate(-50%, -50%) scale(1);
 }
 
+div.deleteAttendancePopup {
+  font-family: "Tomorrow", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 45%;
+  width: 40%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(171, 221, 183,0.9);
+  transition: ease-in-out 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+}
+
+div.deleteAttendancePopup .deleteStud {
+  gap: 10px;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+div.deleteAttendancePopup .deleteStud img.delete {
+  height: 80px;
+  width: 80px;
+}
+
+div.deleteAttendancePopup .deleteStud h1{
+  font-size: 28px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color:black;
+}
+
+div.deleteAttendancePopup .studInfo {
+  width: 100%;
+  height: 60%;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgba(22, 110, 174,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  color: white;
+}
+
+div.deleteAttendancePopup .studInfo h3 {
+  text-align: start;
+  font-size: 17px;
+  padding: 0px 80px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+div.deleteAttendancePopup .studInfo h6 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+div.deleteAttendancePopup .studInfo .btn {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+div.deleteAttendancePopup .studInfo .btn button {
+  font-family: "Tomorrow", sans-serif;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px solid black;
+  color: white;
+  width: 40%;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+div.deleteAttendancePopup .studInfo .btn button.yes {
+  background-color: green;
+}
+
+div.deleteAttendancePopup .studInfo .btn button.no{
+  background-color: rgb(22, 110, 174);
+}
+
+div.deleteAttendancePopup .studInfo .btn button:hover {
+  background-color: rgba(171, 221, 183,0.5);
+  transition: 0.2s;
+  color: black;
+}
+
+div.openDeleteAttendancePopup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 @media screen and (max-width: 1366px) {
-div.deletePopup, div.UndoPopup {
+div.deletePopup, div.UndoPopup, div.deleteAttendancePopup {
   height: 50%;
   width: 50%;
 }
+
+
+
 }

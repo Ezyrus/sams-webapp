@@ -15,7 +15,7 @@ function filterData(&$str){
 $fileName = "student_attendance-$monthYear.xls"; 
  
 // Column names 
-$fields = array('lrn', 'student_name', 'section', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17','18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'school_days', 'present_total', 'absent_total', 'attendance_rate'); 
+$fields = array('lrn', 'student_name', 'section','school_days', 'present_total', 'absent_total', 'attendance_rate'); 
  
 // Display column names as first row 
 $excelData = implode("\t", array_values($fields)) . "\n"; 
@@ -28,7 +28,7 @@ if($initiateSelectMonthSql->num_rows > 0){
     // Output each row of the data 
     while($row = $initiateSelectMonthSql->fetch_assoc()){ 
        
-        $lineData = array($row['lrn'], $row['student_name'], $row['section'], $row['1'], $row['2'], $row['3'], $row['4'], $row['5'], $row['6'], $row['7'], $row['8'], $row['9'], $row['10'], $row['11'], $row['12'], $row['13'], $row['14'], $row['15'], $row['16'], $row['17'],$row['18'], $row['19'], $row['20'], $row['21'], $row['22'], $row['23'], $row['24'], $row['25'], $row['26'], $row['27'], $row['28'], $row['29'], $row['30'], $row['31'], $row['school_days'], $row['present_total'], $row['absent_total'], $row['attendance_rate']); 
+        $lineData = array($row['lrn'], $row['student_name'], $row['section'], $row['school_days'], $row['present_total'], $row['absent_total'], $row['attendance_rate']); 
         array_walk($lineData, 'filterData'); 
         $excelData .= implode("\t", array_values($lineData)) . "\n"; 
     } 

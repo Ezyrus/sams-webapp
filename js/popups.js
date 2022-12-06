@@ -56,3 +56,25 @@ function openArchiveUndoPopup(toUndoLrn) {
     },500)
   });
 }
+
+const deletePopupAttendance = document.getElementById("deletePopupAttendance");
+const noDelAttendance = document.getElementById("noDelAttendance");
+const yesDelAttendance = document.getElementById("yesDelAttendance");
+
+function openAttendanceDeletePopup(toDeleteLrn) { 
+
+  deletePopupAttendance.classList.add("openDeleteAttendancePopup");
+
+  yesDelAttendance.addEventListener("click", function () {
+    deletePopupAttendance.classList.remove("openDeleteAttendancePopup");
+    window.location.href = "../studentAttendance/removeStudents.php?ID=" + toDeleteLrn;
+  });
+
+  noDelAttendance.addEventListener("click", function () {
+    deletePopupAttendance.classList.remove("openDeleteAttendancePopup");
+    setTimeout(function () {
+      window.location.reload();
+    },500)
+  });
+
+}

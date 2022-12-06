@@ -250,6 +250,7 @@ section.studentProfile .profileContainer div.studentRecords {
   height: 80vh;
   top: 20vh;
   overflow-x: auto;
+  overflow-y: auto;
   box-shadow: 0px -1px 5px rgba(70, 167, 202, 1);
   background-color: rgba(22, 110, 174, 0.2);
 }
@@ -284,6 +285,11 @@ section.studentProfile div table tr th {
 
 section.studentProfile div table tr:nth-child(even){
   background-color: rgba(22, 110, 174, 0.2);
+}
+
+section.studentProfile div table tr:hover {
+  cursor: pointer;
+  background-color: rgba(70, 167, 202, 0.5);
 }
 
 /* 
@@ -330,12 +336,8 @@ section.studentProfile div table tr td {
   letter-spacing: 1px;
   font-size: 18px;
   color: white;
+  white-space: nowrap;
   text-shadow: -1px 1px 1px rgba(70, 167, 202, 1);
-}
-
-section.studentProfile div table tr:hover {
-  cursor: pointer;
-  background-color: rgba(70, 167, 202, 0.5);
 }
 
 section.studentProfile div table tr td.name,
@@ -349,7 +351,6 @@ section.studentProfile div table tr td.section {
 
 section.studentProfile div table tr td.lrn {
   display: flex;
-  flex-basis: content;
   flex-direction: row;
   align-items: center;
   gap: 5px;
@@ -366,7 +367,7 @@ section.studentProfile div table tr td.lrn > *{
 
 section.studentProfile div table tr td.lrn img, section.studentProfile div table tr td.lrn a {
   height: 30px;
-  width: 30px;;
+  width: 30px;
 }
 
 section.studentProfile div table tr td.lrn a img:hover {

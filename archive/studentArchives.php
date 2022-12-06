@@ -176,7 +176,7 @@ $studentRow = mysqli_fetch_assoc($initiateSelectSql);
     <div class="undoPopup" id="undoPopup">
 
         <div class="undoStud">
-            <img class="undo" src="../assets/godelete.png" alt="undo">
+            <img class="undo" src="../assets/undo.png" alt="undo">
             <h1>Undo Student</h1>
         </div>
 

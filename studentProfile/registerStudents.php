@@ -26,8 +26,10 @@ if (isset($_POST['registerStudent'])) {
    if ($studentTableNumRows) {
       echo '<script>alert("Student LRN :  ' . $studentLrn . ' already exist")</script>';
    } else {
-      if (empty($studentLrn) || empty($studentName) || empty($studentSection) || empty($studentAddress) || empty($studentEmail)) {
-      
+      if (empty($studentLrn) || empty($studentName) || empty($studentSection) || empty($studentAddress) || empty($studentEmail) || strlen($studentLrn) != 12) {
+         echo '<script>alert("Please fix all errors to continue..."); 
+         window.location.href ="registerStudents.php";
+         </script>';
       } else {
          $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
 
@@ -35,13 +37,13 @@ if (isset($_POST['registerStudent'])) {
 
          $_SESSION['messageUpdate'] = "$studentLrn has been registered";
 
-         echo '<script>alert("Student has been registered")</script>';
-         header("Location: studentProfile.php");
+         echo '<script>alert("Student has been registered")
+            window.location.href ="studentProfile.php";
+         </script>';
+      
       }
    }
-  
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -86,8 +88,8 @@ if (isset($_POST['registerStudent'])) {
    <section class="nav">
 
       <div class="back-container">
-      <h1><a href="../studentProfile/studentProfile.php">
-                    Student Profile</a></h1>
+         <h1><a href="../studentProfile/studentProfile.php">
+               Student Profile</a></h1>
       </div>
 
       <div class="title">
@@ -115,7 +117,7 @@ if (isset($_POST['registerStudent'])) {
             <div class="mainInfo">
 
                <label for="lrn" id="nameLabel">LRN:
-                  <div class="error-container" >
+                  <div class="error-container">
                      <h6 class="required" id="lrn-error"></h6>
                      <span id="lrnErrorIcon"></span>
                   </div>
@@ -123,15 +125,15 @@ if (isset($_POST['registerStudent'])) {
                <input type="number" name="lrn" id="lrn" onkeyup="validateLrn()" required autofocus>
 
                <label for="name">Name:
-                  <div class="error-container" >
+                  <div class="error-container">
                      <h6 class="required" id="name-error"></h6>
                      <span id="nameErrorIcon"></span>
                   </div>
                </label>
                <input type="text" name="name" id="name" onkeyup="validateName()" required>
 
-               <label for="section">Section: 
-                  <div class="error-container" >
+               <label for="section">Section:
+                  <div class="error-container">
                      <h6 class="required" id="section-error"></h6>
                      <span id="sectionErrorIcon"></span>
                   </div>
@@ -143,7 +145,7 @@ if (isset($_POST['registerStudent'])) {
                      <label for="age">Age:</label>
                      <input type="number" name="age">
                   </div>
-                  
+
                   <div>
                      <label for="number">Number:</label>
                      <input type="number" name="number">
@@ -152,20 +154,21 @@ if (isset($_POST['registerStudent'])) {
             </div>
 
             <div class="otherInfo">
-            
+
                <label for="Email">Email Address:
-                  <div class="error-container" >
+                  <div class="error-container">
                      <h6 class="required" id="email-error"></h6>
                      <span id="emailErrorIcon"></span>
                   </div>
                </label>
                <textarea name="email" id="email" onkeyup="validateEmail()" required></textarea>
 
-               <label for="address">Full Address: 
-                  <div class="error-container" >
+               <label for="address">Full Address:
+                  <div class="error-container">
                      <h6 class="required" id="address-error"></h6>
                      <span id="addressErrorIcon"></span>
-               </div></label>
+                  </div>
+               </label>
                <textarea name="address" id="address" onkeyup="validateAddress()" required></textarea>
 
             </div>
@@ -180,7 +183,6 @@ if (isset($_POST['registerStudent'])) {
    </div>
 
    <script src="../js/registerUpdateValidation.js?v=<?php echo time(); ?>"></script>
-
    <footer>
 
       <div class="fdswdLogo">

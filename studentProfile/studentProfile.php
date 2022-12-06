@@ -8,8 +8,6 @@ if ($adminLogged == "") {
 
 require_once "../databaseConnection.php";
 
-$messageUpdate = $_SESSION['messageUpdate'];
-
 $selectStudentSql = "SELECT * FROM students";
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 $studentRow = mysqli_fetch_assoc($initiateSelectSql);
