@@ -4,19 +4,6 @@
   margin: 0;
 }
 
-html::-webkit-scrollbar {
-  width: 0;
-}
-
-html::-webkit-scrollbar-track {
-  background-color: rgb(63, 186, 135);
-}
-
-html.main::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(47, 140, 101);
-  border-radius: 5px;
-}
-
 /* NAVIGATION BAR */
 section.nav {
   font-family: "Tomorrow", sans-serif;
@@ -320,7 +307,7 @@ section.main::-webkit-scrollbar {
 }
 
 section.main::-webkit-scrollbar-track {
- background-color: rgba(48, 140, 186, 1);
+ background-color: white;
 }
 
 section.main::-webkit-scrollbar-thumb {
@@ -568,21 +555,25 @@ section.main table tr td.noData {
   }
   
   section.main table tr.tableHeader th.otherInfo {
-    font-size: 12px;
-    width: 1%;
-    font-size: 12px;
+    font-size: 18px;
   }
   
   section.main table tr.tableHeader th.monthDays {
-    font-size: 12px;
-    width: 1.5%;
+    font-size: 18px;
     padding: 1px;
   }
   
   section.main table tr td.studentInfo {
-    font-size: 10px;
+    padding: 0px 10px;
+    letter-spacing: 1px;
+    font-size: 13px;
   }
 
+  section.main table tr td select.classDays {
+    width: 50px;
+    padding: 2px;
+  }
+  
   section.main table tr td.function button {
     font-size: 18px;
     letter-spacing:2px;
