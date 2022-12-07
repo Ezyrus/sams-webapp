@@ -3,7 +3,7 @@ session_start();
 
 $adminLogged = $_SESSION['username'];
 if ($adminLogged == "") {
-   header('Location:/Sams/index.php');
+    header('Location:/Sams/index.php');
 }
 
 require_once "../databaseConnection.php";
@@ -58,7 +58,8 @@ $messageUpdate = $_SESSION['messageUpdate'];
     <section class="nav">
 
         <div class="back-container">
-            <h1 onclick="history.go(-1)">< Back</h1>
+            <h1 onclick="history.go(-1)">
+                < Back</h1>
         </div>
 
         <div class="title">
@@ -83,9 +84,8 @@ $messageUpdate = $_SESSION['messageUpdate'];
             <div class="search-container">
 
                 <div>
-                    <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
-                    </h3>
-                    <img src="../assets/registerr.png">
+                    <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
+                    <img src="../assets/users.png">
                 </div>
 
                 <form action="addStudent_searchStudent.php" method="get">
@@ -94,8 +94,14 @@ $messageUpdate = $_SESSION['messageUpdate'];
                 </form>
 
                 <div>
-                    <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
-                    <img src="../assets/users.png">
+                    <h3 id="log">Log: <span><?php
+                                            if ($messageUpdate == "") {
+                                                echo "...";
+                                            } else {
+                                                echo "$messageUpdate";
+                                            }
+                                            ?></span>
+                    </h3>
                 </div>
 
             </div>

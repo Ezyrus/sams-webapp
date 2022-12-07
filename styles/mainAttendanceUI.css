@@ -116,6 +116,7 @@ section.nav .title {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 section.nav div.title h6.adminLogged {
@@ -297,7 +298,7 @@ section.main {
   justify-content: start;
   align-items: center;
   background-image: url("../assets/bg01.jpg");
-  background-size: cover;
+  background-size: auto;
   background-position: center;
 }
 
@@ -326,6 +327,16 @@ section.main table {
   margin: 0 auto;
 }
 
+section.main table tr:nth-child(even){
+  cursor: pointer;
+  background-color: rgba(70, 167, 202, 0.5);
+}
+
+section.main table tr:hover {
+  cursor: pointer;
+  background-color: rgba(70, 167, 202, 0.5);
+}
+
 section.main table tr.tableHeader {
   font-family: "Tomorrow", sans-serif;
   text-transform: uppercase;
@@ -342,15 +353,7 @@ section.main table tr.tableHeader th.otherInfo {
 section.main table tr.tableHeader th.monthDays {
   letter-spacing: 0px;
   font-size: 18px;
-}
-
-section.main table tr:nth-child(even){
-  background-color: rgba(22, 110, 174, 0.2);
-}
-
-section.main table tr:hover {
-  cursor: pointer;
-  background-color: rgba(70, 167, 202, 0.5);
+  padding: 0px 3px;
 }
 
 section.main table tr td.studentInfo {
@@ -360,7 +363,8 @@ section.main table tr td.studentInfo {
   white-space: nowrap;
   letter-spacing: 2px;
   font-size: 17px;
-  color: black;
+  color: white;
+  text-shadow: -1px 1px 1px rgba(70, 167, 202, 1);
   text-transform: capitalize;
   height: 40px;
 }

@@ -217,8 +217,8 @@ section.schoolRecord .grade-records .records {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-color: rgba(171, 221, 183, 0.3);
-  box-shadow: -3px 3px 2px rgba(22, 110, 174);
+  background-color: rgba(171, 221, 183, 0.5);
+  box-shadow: -3px 3px 3px rgba(22, 110, 174);
   margin-top: 10vh;
   border-radius: 15px;
 }
@@ -238,7 +238,7 @@ section.schoolRecord .grade-records div.year {
   margin-top: 10px;
   width: 90%;
   height: 5vh;
-  background-color: rgba(22, 110, 174, 0.7);
+  background-color: rgba(22, 110, 174, 0.9);
   color: white;
   display: flex;
   justify-content: space-around;

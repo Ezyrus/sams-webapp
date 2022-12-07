@@ -292,43 +292,6 @@ section.studentProfile div table tr:hover {
   background-color: rgba(70, 167, 202, 0.5);
 }
 
-/* 
-section.studentProfile div table tr th.lrn {
-  width: 5%;
-}
-
-section.studentProfile div table tr th.section {
-  width: 5%;
-}
-
-section.studentProfile div table tr th.age {
-  width: 5%;
-}
-
-section.studentProfile div table tr th.name {
-  width: 10%;
-}
-
-section.studentProfile div table tr th.address {
-  width: 15%;
-}
-
-section.studentProfile div table tr th.email {
-  width: 10%;
-}
-
-section.studentProfile div table tr th.function {
-  width: 3%;
-}
-
-section.studentProfile div table tr th.number {
-  width: 10%;
-}
-
- section.studentProfile div table tr th.time-deleted {
-  width: 10%;
-} */
-
 section.studentProfile div table tr td {
   font-family: "Tomorrow", sans-serif;
   text-align: center;

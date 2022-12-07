@@ -87,9 +87,8 @@ $messageUpdate = $_SESSION['messageUpdate'];
             <div class="search-container">
 
                 <div>
-                    <h3><a href="../studentProfile/registerStudents.php">Register Student</a>
-                    </h3>
-                    <img src="../assets/registerr.png">
+                    <h3><a href="../studentProfile/studentProfile.php">Student Profile</a></h3>
+                    <img src="../assets/users.png">
                 </div>
 
                 <form action="addStudent_searchStudent.php" method="get">
@@ -98,9 +97,16 @@ $messageUpdate = $_SESSION['messageUpdate'];
                 </form>
 
                 <div>
-                    <h3><a href="../archive/studentArchives.php">Archive</a></h3>
-                    <img src="../assets/archive.png">
+                    <h3 id="log">Log: <span><?php
+                                            if ($messageUpdate == "") {
+                                                echo "...";
+                                            } else {
+                                                echo "$messageUpdate";
+                                            }
+                                            ?></span>
+                    </h3>
                 </div>
+
             </div>
 
             <div class="studentRecords">
