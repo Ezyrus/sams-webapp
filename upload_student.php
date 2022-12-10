@@ -5,25 +5,26 @@
       $filename = $_FILES['files']['tmp_name'];
       $file = fopen($filename, "r");
       $count = 0;
-      while($stud_data = fgetcsv($file,10000 , ",")){
+      while($studentData = fgetcsv($file,10000 , ",")){
         if($count > 0){
-            $lrn = $stud_data[0];
-            $name = $stud_data[1];
-            $section = $stud_data[2];
-            $age = $stud_data[3];
-            $number = $stud_data[4];
-            $email = $stud_data[5];
-            $address = $stud_data[6];
-            $query = "INSERT INTO students (lrn, name, age, email, address, section, contact_number) VALUES ('$lrn', '$name',   '$age','$email', '$address','$section', '$number'  )";
 
-            $result = mysqli_query($conn, $query);
+          echo "<pre>"; print_r($studentData);
+            // $lrn = $stud_data[0];
+            // $name = $stud_data[1];
+            // $section = $stud_data[2];
+            // $age = $stud_data[3];
+            // $number = $stud_data[4];
+            // $email = $stud_data[5];
+            // $address = $stud_data[6];
+            // $query = "INSERT INTO students (lrn, name, age, email, address, section, contact_number) VALUES ('$lrn', '$name',   '$age','$email', '$address','$section', '$number'  )";
+
+            // $result = mysqli_query($conn, $query);
         }
 
         $count++;
       }
     }
 
-    die;
 ?>
 
 <!DOCTYPE html>

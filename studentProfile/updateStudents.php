@@ -99,54 +99,82 @@ if (isset($_POST['registerStudent'])) {
 
    <div class="registerContainer">
 
-      <form action="" method="POST">
+      <div class="indivInput">
+         <form action="" method="POST">
 
-         <div class="studentInfo">
+            <div class="studentInfo">
 
-            <div class="mainInfo">
-               <label for="lrn">LRN:</label>
-               <h6 class="required">Required (Ex. : 136612345678, Max. 12)</h6>
-               <input type="text" name="lrn" value="<?php echo $studentRow['lrn']; ?>">
+               <div class="mainInfo">
 
-               <label for="name">Name:</label>
-               <h6 class="required">Required (Format: Lastname, Firstname, Middle Name)</h6>
-               <input type="text" name="name" value="<?php echo $studentRow['name']; ?>">
+                  <label for="lrn">LRN:
+                     <div class="error-container">
+                        <h6 class="required" id="lrn-error"></h6>
+                        <span id="lrnErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="number" name="lrn" id="lrn" onkeyup="validateLrn()" value="<?php echo $studentRow['lrn']; ?>" required autofocus>
 
-               <label for="section">Section:</label>
-               <h6 class="required">Required (Ex. : ABM 11-A, HUMMS 12-A)</h6>
-               <input type="text" name="section" value="<?php echo $studentRow['section']; ?>">
+                  <label for="name">Name:
+                     <div class="error-container">
+                        <h6 class="required" id="name-error"></h6>
+                        <span id="nameErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="text" name="name" id="name" onkeyup="validateName()" value="<?php echo $studentRow['name']; ?>" required>
 
-               <div>
-                  <label for="age">Age:</label>
-                  <input type="number" name="age" value="<?php echo $studentRow['age']; ?>">
+                  <label for="section">Section:
+                     <div class="error-container">
+                        <h6 class="required" id="section-error"></h6>
+                        <span id="sectionErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="text" name="section" id="section" onkeyup="validateSection()" value="<?php echo $studentRow['section']; ?>" required>
 
-                  <label for="number">Number:</label>
-                  <input type="number" name="number" value="<?php echo $studentRow['contact_number']; ?>">
+                  <div class="additionalInfo">
+                     <div>
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" value="<?php echo $studentRow['age']; ?>">
+                     </div>
+
+                     <div>
+                        <label for="number">Number:</label>
+                        <input type="number" name="number" value="<?php echo $studentRow['contact_number']; ?>">
+                     </div>
+                  </div>
+
+               </div>
+
+               <div class="otherInfo">
+
+                  <label for="Email">Email Address:
+                     <div class="error-container">
+                        <h6 class="required" id="email-error"></h6>
+                        <span id="emailErrorIcon"></span>
+                     </div>
+                  </label>
+                  <textarea name="email" id="email" onkeyup="validateEmail()" required><?php echo $studentRow['email']; ?></textarea>
+
+                  <label for="address">Full Address:
+                     <div class="error-container">
+                     <h6 class="required" id="address-error"></h6>
+                     <span id="addressErrorIcon"></span>
+                  </div>
+                  </label>
+                  <textarea name="address" id="address" onkeyup="validateAddress()" required><?php echo $studentRow['address']; ?></textarea>
+
                </div>
 
             </div>
 
-            <div class="otherInfo">
+            <button type="submit" name="registerStudent"> <img src="../assets/doneee.png" alt="done">Done
+            </button>
 
-               <label for="Email">Email Address:</label>
-               <h6 class="required">Required (Ex. : student@yahoo.com, student@gmail.com)</h6>
-               <textarea type="text" name="email"><?php echo $studentRow['email']; ?></textarea>
-
-               <label for="address">Full Address:</label>
-               <h6 class="required">Required (Format : Street Number/Name, Barangay, City/Municipality)</h6>
-               <textarea type="text" name="address"><?php echo $studentRow['address']; ?></textarea>
-
-            </div>
-
-         </div>
-
-         <button type="submit" name="registerStudent"> <img src="../assets/doneee.png" alt="done">Done
-         </button>
-
-      </form>
+         </form>
+      </div>
 
    </div>
 
+   <script src="../js/registerUpdateValidation.js?v=<?php echo time(); ?>"></script>
    <footer>
 
       <div class="fdswdLogo">

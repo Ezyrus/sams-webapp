@@ -18,7 +18,7 @@ function validateLrn() {
         lrnLabel.innerHTML = '<img src="../assets/badinput.png" alt="badinput"> ';
         return false;
     } else if (lrnInput.length > 12) {
-        lrnError.innerHTML = 'Lrn should be 12 characters';
+        lrnError.innerHTML = 'Lrn should only be 12 characters';
         lrnLabel.innerHTML = '<img src="../assets/badinput.png" alt="badinput"> ';
         return false;
     } else {

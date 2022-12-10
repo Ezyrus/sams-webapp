@@ -40,10 +40,11 @@ if (isset($_POST['registerStudent'])) {
          echo '<script>alert("Student has been registered")
             window.location.href ="studentProfile.php";
          </script>';
-      
       }
    }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -110,75 +111,89 @@ if (isset($_POST['registerStudent'])) {
 
    <div class="registerContainer">
 
-      <form method="POST">
+      <div class="indivInput">
 
-         <div class="studentInfo">
+         <form method="POST">
 
-            <div class="mainInfo">
+            <div class="studentInfo">
 
-               <label for="lrn" id="nameLabel">LRN:
-                  <div class="error-container">
-                     <h6 class="required" id="lrn-error"></h6>
-                     <span id="lrnErrorIcon"></span>
-                  </div>
-               </label>
-               <input type="number" name="lrn" id="lrn" onkeyup="validateLrn()" required autofocus>
+               <div class="mainInfo">
 
-               <label for="name">Name:
-                  <div class="error-container">
-                     <h6 class="required" id="name-error"></h6>
-                     <span id="nameErrorIcon"></span>
-                  </div>
-               </label>
-               <input type="text" name="name" id="name" onkeyup="validateName()" required>
+                  <label for="lrn" id="nameLabel">LRN:
+                     <div class="error-container">
+                        <h6 class="required" id="lrn-error"></h6>
+                        <span id="lrnErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="number" name="lrn" id="lrn" onkeyup="validateLrn()" required autofocus>
 
-               <label for="section">Section:
-                  <div class="error-container">
-                     <h6 class="required" id="section-error"></h6>
-                     <span id="sectionErrorIcon"></span>
-                  </div>
-               </label>
-               <input type="text" name="section" id="section" onkeyup="validateSection()" required>
+                  <label for="name">Name:
+                     <div class="error-container">
+                        <h6 class="required" id="name-error"></h6>
+                        <span id="nameErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="text" name="name" id="name" onkeyup="validateName()" required>
 
-               <div>
-                  <div>
-                     <label for="age">Age:</label>
-                     <input type="number" name="age">
-                  </div>
+                  <label for="section">Section:
+                     <div class="error-container">
+                        <h6 class="required" id="section-error"></h6>
+                        <span id="sectionErrorIcon"></span>
+                     </div>
+                  </label>
+                  <input type="text" name="section" id="section" onkeyup="validateSection()" required>
 
-                  <div>
-                     <label for="number">Number:</label>
-                     <input type="number" name="number">
+                  <div class="additionalInfo">
+                     <div>
+                        <label for="age">Age:</label>
+                        <input type="number" name="age">
+                     </div>
+
+                     <div>
+                        <label for="number">Number:</label>
+                        <input type="number" name="number">
+                     </div>
                   </div>
                </div>
+
+               <div class="otherInfo">
+                  <label for="Email">Email Address:
+                     <div class="error-container">
+                        <h6 class="required" id="email-error"></h6>
+                        <span id="emailErrorIcon"></span>
+                     </div>
+                  </label>
+                  <textarea name="email" id="email" onkeyup="validateEmail()" required></textarea>
+
+                  <label for="address">Full Address:
+                     <div class="error-container">
+                        <h6 class="required" id="address-error"></h6>
+                        <span id="addressErrorIcon"></span>
+                     </div>
+                  </label>
+                  <textarea name="address" id="address" onkeyup="validateAddress()" required></textarea>
+
+               </div>
+
             </div>
 
-            <div class="otherInfo">
+            <button type="submit" name="registerStudent"><img src="../assets/doneee.png" alt="done">Done
+            </button>
 
-               <label for="Email">Email Address:
-                  <div class="error-container">
-                     <h6 class="required" id="email-error"></h6>
-                     <span id="emailErrorIcon"></span>
-                  </div>
-               </label>
-               <textarea name="email" id="email" onkeyup="validateEmail()" required></textarea>
+         </form>
 
-               <label for="address">Full Address:
-                  <div class="error-container">
-                     <h6 class="required" id="address-error"></h6>
-                     <span id="addressErrorIcon"></span>
-                  </div>
-               </label>
-               <textarea name="address" id="address" onkeyup="validateAddress()" required></textarea>
+      </div>
 
-            </div>
+      <div class="batchInput">
+         <form action="importStudents.php" method="POST" enctype="multipart/form-data">
 
-         </div>
+            <label for="import-csv">Import CSV</label>
+            <input type="file" name="import-csv">
 
-         <button type="submit" name="registerStudent"><img src="../assets/doneee.png" alt="done">Done
-         </button>
+            <button type="submit"><img src="../assets/doneee.png" alt="done">Submit</button>
 
-      </form>
+         </form>
+      </div>
 
    </div>
 
