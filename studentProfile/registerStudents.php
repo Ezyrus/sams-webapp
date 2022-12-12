@@ -187,8 +187,8 @@ if (isset($_POST['registerStudent'])) {
       <div class="batchInput">
          <form action="importStudents.php" method="POST" enctype="multipart/form-data">
 
-            <label for="import-csv">Import CSV</label>
-            <input type="file" name="import-csv">
+            <label for="import-csv">Import batch students</label>
+            <input type="file" name="import-csv" required>
 
             <button type="submit"><img src="../assets/doneee.png" alt="done">Submit</button>
 

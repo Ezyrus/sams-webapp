@@ -35,6 +35,7 @@ $classDays = array();
    <link rel="stylesheet" href="../styles/mainAttendanceUI.css?v=<?php echo time(); ?>">
    <link rel="stylesheet" href="../styles/header-footer.css?v=<?php echo time(); ?>">
    <script src="../js/loader.js?v=<?php echo time(); ?>"></script>
+   <link rel="stylesheet" href="../styles/popups.css?v=<?php echo time(); ?>">
    <title>Student Attendance Monitoring System</title>
 
 </head>
@@ -101,7 +102,7 @@ $classDays = array();
 
          <div>
             <h2 class="dashboard">
-               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">dashboard</a>
+               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a>
             </h2>
          </div>
 
@@ -141,10 +142,10 @@ $classDays = array();
    </section>
 
    <section class="main">
-      <table>
+      <table id="studentRecords">
          <tr class="tableHeader">
             <th class="otherInfo">LRN</th>
-            <th class="otherInfo">Student Name</th>
+            <th class="otherInfo">Name</th>
             <th class="otherInfo">Section</th>
             <th class="monthDays">1</th>
             <th class="monthDays">2</th>
@@ -181,13 +182,12 @@ $classDays = array();
             <th class="otherInfo">Total Present</th>
             <th class="otherInfo">Total Absent</th>
             <th class="otherInfo">Attendance Rate (%)</th>
-            <th class="otherInfo">FUNCTION</th>
          </tr>
 
          <?php do {
             if ($searchStudentRow == 0) {
-               echo "   <td class='noData' colspan = '39'>
-                 Your search key '$userSearch' does not exist ...
+               echo "   <td class='noData' colspan = '38'>
+                 No data to display here, please add students ...
                  </td>";
             } else {
          ?>
@@ -195,7 +195,19 @@ $classDays = array();
                <form action="../studentAttendance/saveStudentAttendance.php?ID=<?php echo  $searchStudentRow['lrn']; ?>" method="post" name="studentAttendanceRecord">
                   <tr>
 
-                     <td class="studentInfo"><?php echo $searchStudentRow['lrn']; ?></td>
+                     <td class="studentInfo lrn">
+
+                        <button type="submit" name="saveAttendance">
+                           <img src="../assets/update.png">
+                        </button>
+
+                        <a onclick="openAttendanceDeletePopup('<?php echo $searchStudentRow['lrn'];  ?>')">
+                           <img src="../assets/delete.png">
+                        </a>
+
+                        <?php echo $searchStudentRow['lrn']; ?>
+
+                     </td>
                      <td class="studentInfo"><?php echo $searchStudentRow['student_name']; ?></td>
                      <td class="studentInfo"><?php echo $searchStudentRow['section']; ?></td>
 
@@ -547,15 +559,6 @@ $classDays = array();
                      <td class="studentInfo"><?php echo $searchStudentRow['absent_total']; ?></td>
 
                      <td class="studentInfo"><?php echo $searchStudentRow['attendance_rate']; ?>%</td>
-
-                     <td class="studentInfo function">
-                        <button type="submit" name="saveAttendance" id="loadLoader">SAVE</button>
-                        <h3 class="removeStudent">
-                           <a href="../studentAttendance/removeStudents.php?ID=<?php echo $searchStudentRow['lrn']; ?>">REMOVE</a>
-                        </h3>
-
-                     </td>
-
                   </tr>
                </form>
 
@@ -602,35 +605,57 @@ $classDays = array();
          foreach ($classDays as $key => $value) {
             if ($value == "present") {
                echo "<script>
-                     var classDays = document.querySelectorAll('tr td.classDays');
-                     var classDaysLength = classDays.length;
-                     for (var i = 0; i < classDaysLength; i++) {
-                        classDays[" . $key . "].style.background = 'green';
-                     }
-                     </script>";
-            } else if ($value == "absent") {
-               echo "<script>
                         var classDays = document.querySelectorAll('tr td.classDays');
                         var classDaysLength = classDays.length;
                         for (var i = 0; i < classDaysLength; i++) {
-                           classDays[" . $key . "].style.background = 'red';
+                           classDays[" . $key . "].style.background = 'green';  
                         }
                         </script>";
-            } else {
+            } else if ($value == "absent") {
                echo "<script>
                            var classDays = document.querySelectorAll('tr td.classDays');
                            var classDaysLength = classDays.length;
                            for (var i = 0; i < classDaysLength; i++) {
-                              classDays[" . $key . "].style.background = 'yellow';
+                              classDays[" . $key . "].style.background = 'red';
                            }
                            </script>";
+            } else {
+               echo "<script>
+                              var classDays = document.querySelectorAll('tr td.classDays');
+                              var classDaysLength = classDays.length;
+                              for (var i = 0; i < classDaysLength; i++) {
+                                 classDays[" . $key . "].style.background = 'yellow';
+                              }
+                              </script>";
             }
          }
          ?>
 
       </table>
 
+      <div class="deleteAttendancePopup" id="deletePopupAttendance">
+
+         <div class="deleteStud">
+            <img class="delete" src="../assets/godelete.png" alt="delete">
+            <h1>Delete Student</h1>
+         </div>
+
+         <div class="studInfo">
+            <h3>Are you sure you want to delete this student's Attendance? All it's information will be deleted permanently.</h3>
+            <h6>Continue?</h6>
+
+            <div class="btn">
+               <button class="no" id="noDelAttendance" type="button">No</button>
+               <button class="yes" id="yesDelAttendance" type="button">Yes</button>
+            </div>
+         </div>
+      </div>
+
+      <script src="../js/popups.js?v=<?php echo time(); ?>"></script>
+
       <script src="../js/studentAttendanceColor.js?v=<?php echo time(); ?>"></script>
+
+
    </section>
 
 </body>

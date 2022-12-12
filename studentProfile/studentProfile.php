@@ -8,7 +8,7 @@ if ($adminLogged == "") {
 
 require_once "../databaseConnection.php";
 
-$selectStudentSql = "SELECT * FROM students";
+$selectStudentSql = "SELECT * FROM students ORDER BY timestamp DESC";
 $initiateSelectSql = mysqli_query(databaseConnection(), $selectStudentSql);
 $studentRow = mysqli_fetch_assoc($initiateSelectSql);
 

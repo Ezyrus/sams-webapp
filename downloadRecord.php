@@ -4,6 +4,7 @@
 
     $monthYear = $_SESSION['monthYear'];
 
+    
     // Filter the excel data 
 function filterData(&$str){ 
     $str = preg_replace("/\t/", "\\t", $str); 

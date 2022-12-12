@@ -57,16 +57,19 @@ if ($adminLogged == "") {
             </div>
         </div>
     </header>
-    
+
     <section class="nav">
 
         <div class="back-container">
             <h1><a href="../studentProfile/studentProfile.php">
-                    Student Profile</a></h1>
+                    Student Profile</a>
+            </h1>
+            <img src="../assets/users.png">
         </div>
 
         <div class="title">
             <h3><a href="admin_dashboard-gradeLevel.php">portal</a></h3>
+            <img src="../assets/portals.png" alt="portal">
         </div>
 
         <div class="admin-container">

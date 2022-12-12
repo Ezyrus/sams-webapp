@@ -21,7 +21,9 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username','$password')";
+                $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+                $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username', '$password_hashed')";
 
                 $initiateSelectSql = mysqli_query(databaseConnection(), $insertAdminSql);
 

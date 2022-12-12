@@ -3,7 +3,7 @@ session_start();
 
 $adminLogged = $_SESSION['username'];
 if ($adminLogged == "") {
-    header('Location:/Sams/index.php');
+   header('Location:/Sams/index.php');
 }
 
 error_reporting(0);  //hide errors
@@ -14,7 +14,7 @@ $_SESSION['monthYear'] = "";
 
 $adminLogged = $_SESSION['username'];
 if ($adminLogged == "") {
-    header('Location:/Sams/index.php');
+   header('Location:/Sams/index.php');
 }
 
 ?>
@@ -63,13 +63,14 @@ if ($adminLogged == "") {
    <section class="nav">
 
       <div class="back-container">
-         <h1 onclick="history.go(-1);">
-            < BACK</h1>
+         <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a></h1>
+         <img src="../assets/portals.png" alt="portal">
       </div>
 
       <div class="title">
-            <h3><a href="admin_dashboard-gradeLevel.php">dashboard</a></h3>
-        </div>
+         <h3><a href="admin_dashboard-grade12year2023.php">dashboard</a></h3>
+         <img src="../assets/dashboard.png" alt="dashboard">
+      </div>
 
       <div class="admin-container">
 
@@ -91,7 +92,9 @@ if ($adminLogged == "") {
             <h1 class="title">Grade 12 Records</h1>
 
             <div class="year">
-               <h5><a href="admin_dashboard-grade12year2022.php"> < </a></h5>
+               <h5><a href="admin_dashboard-grade12year2022.php">
+                     < </a>
+               </h5>
                <h6 id="recentYear">Year 202<span>3</span></h6>
                <h5 onclick="noData()"> > </h5>
             </div>
@@ -100,8 +103,8 @@ if ($adminLogged == "") {
                <div class="JanApr">
                   <h3><a href="../grade12/grade12january2023.php">January</a></h3>
                   <h3><a href="../grade12/grade12february2023.php">February</a></h3onclick=>
-                  <h3><a href="../grade12/grade12march2023.php">March</a></h3lick=>
-                  <h3 onclick="noData()"><a href="#">April</a></h3>
+                     <h3><a href="../grade12/grade12march2023.php">March</a></h3lick=>
+                        <h3 onclick="noData()"><a href="#">April</a></h3>
                </div>
 
                <div class="MayAug">
@@ -113,7 +116,7 @@ if ($adminLogged == "") {
 
                <div class="SepDec">
                   <h3 onclick="noData()"><a href="#">September</a></h3>
-                  <h3  onclick="noData()"><a href="#">October</a></h3>
+                  <h3 onclick="noData()"><a href="#">October</a></h3>
                   <h3 onclick="noData()"><a href="#">November</a></h3>
                   <h3 onclick="noData()"><a href="#">December</a></h3>
                </div>
@@ -127,7 +130,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicJanuaryContainer">
-      
+
       <div class="january">
          <h1 class="title">January</h1>
 
@@ -140,7 +143,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicFebruaryContainer">
-      
+
       <div class="february">
          <h1 class="title">February</h1>
 
@@ -153,7 +156,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicMarchContainer">
-      
+
       <div class="march">
          <h1 class="title">March</h1>
 
@@ -165,33 +168,33 @@ if ($adminLogged == "") {
 
    </section>
 
-   <?php 
-      $jan2023 = new gr12January2023();
-      $initiateSelectJan2023 = $jan2023->monthRecord();
-      $jan2023Lrn = $jan2023->studentLrn;
-      $jan2023Name = $jan2023->studentName;
-      $jan2023Present = $jan2023->studentTotalPresent;
-      $jan2023Absent = $jan2023->studentTotalAbsent;
-      $jan2023SchoolDays = $jan2023->studentTotalSchoolDays;
-      $jan2023NumRows = $jan2023->studentTableNumRows;
+   <?php
+   $jan2023 = new gr12January2023();
+   $initiateSelectJan2023 = $jan2023->monthRecord();
+   $jan2023Lrn = $jan2023->studentLrn;
+   $jan2023Name = $jan2023->studentName;
+   $jan2023Present = $jan2023->studentTotalPresent;
+   $jan2023Absent = $jan2023->studentTotalAbsent;
+   $jan2023SchoolDays = $jan2023->studentTotalSchoolDays;
+   $jan2023NumRows = $jan2023->studentTableNumRows;
 
-      $feb2023= new gr12February2023();
-      $initiateSelectFeb2023 = $feb2023->monthRecord();
-      $feb2023Lrn = $feb2023->studentLrn;
-      $feb2023Name = $feb2023->studentName;
-      $feb2023Present = $feb2023->studentTotalPresent;
-      $feb2023Absent = $feb2023->studentTotalAbsent;
-      $feb2023SchoolDays = $feb2023->studentTotalSchoolDays;
-      $feb2023NumRows = $feb2023->studentTableNumRows;
+   $feb2023 = new gr12February2023();
+   $initiateSelectFeb2023 = $feb2023->monthRecord();
+   $feb2023Lrn = $feb2023->studentLrn;
+   $feb2023Name = $feb2023->studentName;
+   $feb2023Present = $feb2023->studentTotalPresent;
+   $feb2023Absent = $feb2023->studentTotalAbsent;
+   $feb2023SchoolDays = $feb2023->studentTotalSchoolDays;
+   $feb2023NumRows = $feb2023->studentTableNumRows;
 
-      $march2023 = new gr12March2023();
-      $initiateSelectMarch2023 = $march2023->monthRecord();
-      $march2023Lrn = $march2023->studentLrn;
-      $march2023Name = $march2023->studentName;
-      $march2023Present = $march2023->studentTotalPresent;
-      $march2023Absent = $march2023->studentTotalAbsent;
-      $march2023SchoolDays = $march2023->studentTotalSchoolDays;
-      $march2023NumRows = $march2023->studentTableNumRows;
+   $march2023 = new gr12March2023();
+   $initiateSelectMarch2023 = $march2023->monthRecord();
+   $march2023Lrn = $march2023->studentLrn;
+   $march2023Name = $march2023->studentName;
+   $march2023Present = $march2023->studentTotalPresent;
+   $march2023Absent = $march2023->studentTotalAbsent;
+   $march2023SchoolDays = $march2023->studentTotalSchoolDays;
+   $march2023NumRows = $march2023->studentTableNumRows;
    ?>
 
    <script>
@@ -204,31 +207,31 @@ if ($adminLogged == "") {
       if ('<?php echo $jan2023NumRows; ?>' > 0) {
          new Chart(janChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $jan2023Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $jan2023Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $jan2023Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $jan2023Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $jan2023Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $jan2023SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $jan2023Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $jan2023SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -241,31 +244,31 @@ if ($adminLogged == "") {
       if ('<?php echo $feb2023NumRows; ?>' > 0) {
          new Chart(febChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $feb2023Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $feb2023Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $feb2023Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $feb2023Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $feb2023Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $feb2023SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $feb2023Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $feb2023SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -278,31 +281,31 @@ if ($adminLogged == "") {
       if ('<?php echo $march2023NumRows; ?>' > 0) {
          new Chart(marchChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $march2023Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $march2023Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $march2023Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $march2023Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $march2023Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $march2023SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $march2023Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $march2023SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -316,35 +319,35 @@ if ($adminLogged == "") {
 
    <footer>
 
-        <div class="fdswdLogo">
-            <div>
-                <img src="../assets/dswd.png" alt="DWSD LOGO">
-            </div>
-        </div>
+      <div class="fdswdLogo">
+         <div>
+            <img src="../assets/dswd.png" alt="DWSD LOGO">
+         </div>
+      </div>
 
-        <div class="fdepEdLogo">
-            <div>
-                <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
-            </div>
-        </div>
+      <div class="fdepEdLogo">
+         <div>
+            <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
+         </div>
+      </div>
 
-        <div class="fcalCityLogo">
-            <div>
-                <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
-            </div>
-        </div>
+      <div class="fcalCityLogo">
+         <div>
+            <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
+         </div>
+      </div>
 
-        <div class="fCalHighLogo">
-            <div>
-                <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-            </div>
-        </div>
+      <div class="fCalHighLogo">
+         <div>
+            <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+         </div>
+      </div>
 
-        <div class="fFourPs">
-            <div>
-                <img src="../assets/fourPs.png" alt="4P'S LOGO">
-            </div>
-        </div>
+      <div class="fFourPs">
+         <div>
+            <img src="../assets/fourPs.png" alt="4P'S LOGO">
+         </div>
+      </div>
 
    </footer>
 

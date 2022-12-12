@@ -37,6 +37,10 @@ section.nav div.back-container {
   align-items: center;
 }
 
+section.nav div.back-container img{
+  height: 30px;
+}
+
 section.nav div.back-container h1 {
   text-transform: uppercase;
   font-size: 20px;
@@ -59,6 +63,14 @@ section.nav div.back-container a {
 section.nav div.title {
   width: 40%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+section.nav div.title img{
+  height: 35px;
 }
 
 section.nav div.title h3 {
@@ -125,7 +137,7 @@ body {
   background-image: url("../assets/bg01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 section.main {
@@ -217,8 +229,8 @@ section.schoolRecord .grade-records .records {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background-color: rgba(171, 221, 183, 0.5);
-  box-shadow: -3px 3px 3px rgba(22, 110, 174);
+  /* background-color: rgba(171, 221, 183, 0.5); */
+  /* box-shadow: -3px 3px 3px rgba(22, 110, 174); */
   margin-top: 10vh;
   border-radius: 15px;
 }
@@ -296,7 +308,7 @@ section.schoolRecord .grade-records div.month {
   justify-content: space-around;
   flex-direction: column;
   color: white;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 section.schoolRecord .grade-records .month div {
@@ -320,7 +332,7 @@ section.schoolRecord .grade-records .month div h3 {
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 7px;
-  text-shadow: -4px 4px 2px rgba(22, 110, 174);
+  text-shadow: -3px 3px 2px rgba(22, 110, 174);
   box-shadow: 0px 1px 5px rgba(22, 110, 174);
 }
 

@@ -3,7 +3,7 @@ session_start();
 
 $adminLogged = $_SESSION['username'];
 if ($adminLogged == "") {
-    header('Location:/Sams/index.php');
+   header('Location:/Sams/index.php');
 }
 
 error_reporting(0);  //hide errors
@@ -14,7 +14,7 @@ $_SESSION['monthYear'] = "";
 
 $adminLogged = $_SESSION['username'];
 if ($adminLogged == "") {
-    header('Location:/Sams/index.php');
+   header('Location:/Sams/index.php');
 }
 
 ?>
@@ -63,13 +63,14 @@ if ($adminLogged == "") {
    <section class="nav">
 
       <div class="back-container">
-         <h1 onclick="history.go(-1);">
-            < BACK</h1>
+         <h1><a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a></h1>
+         <img src="../assets/portals.png" alt="portal">
       </div>
 
       <div class="title">
-            <h3><a href="admin_dashboard-gradeLevel.php">dashboard</a></h3>
-        </div>
+         <h3><a href="admin_dashboard-gradeLevel.php">dashboard</a></h3>
+         <img src="../assets/dashboard.png" alt="dashboard">
+      </div>
 
       <div class="admin-container">
 
@@ -91,9 +92,11 @@ if ($adminLogged == "") {
             <h1 class="title">Grade 12 Records</h1>
 
             <div class="year">
-               <h5 onclick="noData()"><a href="#"> < </a></h5>
+               <h5 onclick="noData()"><a href="#">
+                     < </a>
+               </h5>
                <h6 id="recentYear">Year 202<span>2</span></h6>
-               <h5><a href="admin_dashboard-grade12year2023.php"> > </a></h5>
+               <h5><a href="admin_dashboard-grade12year2022.php"> > </a></h5>
             </div>
 
             <div class="month">
@@ -127,7 +130,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicOctoberContainer">
-      
+
       <div class="october">
          <h1 class="title">October</h1>
 
@@ -140,7 +143,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicNovemberContainer">
-      
+
       <div class="november">
          <h1 class="title">November</h1>
 
@@ -153,7 +156,7 @@ if ($adminLogged == "") {
    </section>
 
    <section class="graphicDecemberContainer">
-      
+
       <div class="december">
          <h1 class="title">December</h1>
 
@@ -164,34 +167,34 @@ if ($adminLogged == "") {
       </div>
 
    </section>
-   
-   <?php 
-      $oct2022 = new gr12October2022();
-      $initiateSelectOct2022 = $oct2022->monthRecord();
-      $oct2022Lrn = $oct2022->studentLrn;
-      $oct2022Name = $oct2022->studentName;
-      $oct2022Present = $oct2022->studentTotalPresent;
-      $oct2022Absent = $oct2022->studentTotalAbsent;
-      $oct2022SchoolDays = $oct2022->studentTotalSchoolDays;
-      $oct2022NumRows = $oct2022->studentTableNumRows;
 
-      $nov2022 = new gr12November2022();
-      $initiateSelectNov2022 = $nov2022->monthRecord();
-      $nov2022Lrn = $nov2022->studentLrn;
-      $nov2022Name = $nov2022->studentName;
-      $nov2022Present = $nov2022->studentTotalPresent;
-      $nov2022Absent = $nov2022->studentTotalAbsent;
-      $nov2022SchoolDays = $nov2022->studentTotalSchoolDays;
-      $nov2022NumRows = $nov2022->studentTableNumRows;
+   <?php
+   $oct2022 = new gr12October2022();
+   $initiateSelectOct2022 = $oct2022->monthRecord();
+   $oct2022Lrn = $oct2022->studentLrn;
+   $oct2022Name = $oct2022->studentName;
+   $oct2022Present = $oct2022->studentTotalPresent;
+   $oct2022Absent = $oct2022->studentTotalAbsent;
+   $oct2022SchoolDays = $oct2022->studentTotalSchoolDays;
+   $oct2022NumRows = $oct2022->studentTableNumRows;
 
-      $dec2022 = new gr12December2022();
-      $initiateSelectDec2022 = $dec2022->monthRecord();
-      $dec2022Lrn = $dec2022->studentLrn;
-      $dec2022Name = $dec2022->studentName;
-      $dec2022Present = $dec2022->studentTotalPresent;
-      $dec2022Absent = $dec2022->studentTotalAbsent;
-      $dec2022SchoolDays = $dec2022->studentTotalSchoolDays;
-      $dec2022NumRows = $dec2022->studentTableNumRows;
+   $nov2022 = new gr12November2022();
+   $initiateSelectNov2022 = $nov2022->monthRecord();
+   $nov2022Lrn = $nov2022->studentLrn;
+   $nov2022Name = $nov2022->studentName;
+   $nov2022Present = $nov2022->studentTotalPresent;
+   $nov2022Absent = $nov2022->studentTotalAbsent;
+   $nov2022SchoolDays = $nov2022->studentTotalSchoolDays;
+   $nov2022NumRows = $nov2022->studentTableNumRows;
+
+   $dec2022 = new gr12December2022();
+   $initiateSelectDec2022 = $dec2022->monthRecord();
+   $dec2022Lrn = $dec2022->studentLrn;
+   $dec2022Name = $dec2022->studentName;
+   $dec2022Present = $dec2022->studentTotalPresent;
+   $dec2022Absent = $dec2022->studentTotalAbsent;
+   $dec2022SchoolDays = $dec2022->studentTotalSchoolDays;
+   $dec2022NumRows = $dec2022->studentTableNumRows;
    ?>
 
    <script>
@@ -204,31 +207,31 @@ if ($adminLogged == "") {
       if ('<?php echo $oct2022NumRows; ?>' > 0) {
          new Chart(octChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $oct2022Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $oct2022Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $oct2022Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $oct2022Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $oct2022SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $oct2022SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -241,31 +244,31 @@ if ($adminLogged == "") {
       if ('<?php echo $nov2022NumRows; ?>' > 0) {
          new Chart(novChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $nov2022Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $nov2022Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $nov2022Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $nov2022Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $nov2022SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $nov2022SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -278,31 +281,31 @@ if ($adminLogged == "") {
       if ('<?php echo $dec2022NumRows; ?>' > 0) {
          new Chart(decChart, {
             type: 'bar',
-         
+
             data: {
-               labels: [<?php echo ' " '.implode(' ", "  ', $dec2022Name).' " ' ?>],
-                  datasets: [{
+               labels: [<?php echo ' " ' . implode(' ", "  ', $dec2022Name) . ' " ' ?>],
+               datasets: [{
                   label: 'Total Present',
                   backgroundColor: ['green'],
-                  data: [<?php echo ' " '.implode(' ", "  ', $dec2022Present).' " ' ?>],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Present) . ' " ' ?>],
                   borderWidth: 0,
-                  }, {
-                     label: 'Total Present',
-                     backgroundColor: ['red'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $dec2022Absent).' " ' ?>],
-                     borderWidth: 0
-                  }, {
-                     label: 'Total School Days',
-                     backgroundColor: ['yellow'],
-                     data: [<?php echo ' " '.implode(' ", "  ', $dec2022SchoolDays).' " ' ?>],
-                     borderWidth: 0
-                  }]
-            }, 
+               }, {
+                  label: 'Total Present',
+                  backgroundColor: ['red'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Absent) . ' " ' ?>],
+                  borderWidth: 0
+               }, {
+                  label: 'Total School Days',
+                  backgroundColor: ['yellow'],
+                  data: [<?php echo ' " ' . implode(' ", "  ', $dec2022SchoolDays) . ' " ' ?>],
+                  borderWidth: 0
+               }]
+            },
             options: {
                scales: {
-               y: {
-                  beginAtZero: true
-               }
+                  y: {
+                     beginAtZero: true
+                  }
                }
             }
          });
@@ -311,40 +314,39 @@ if ($adminLogged == "") {
          decChartContainer.style.height = '50%';
          decChartContainer.innerHTML = "<h3>No data to show here ...</h3>";
       }
-
    </script>
 
    <footer>
 
-        <div class="fdswdLogo">
-            <div>
-                <img src="../assets/dswd.png" alt="DWSD LOGO">
-            </div>
-        </div>
+      <div class="fdswdLogo">
+         <div>
+            <img src="../assets/dswd.png" alt="DWSD LOGO">
+         </div>
+      </div>
 
-        <div class="fdepEdLogo">
-            <div>
-                <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
-            </div>
-        </div>
+      <div class="fdepEdLogo">
+         <div>
+            <img src="../assets/depEdSeal.png" alt="DEPED SEAL">
+         </div>
+      </div>
 
-        <div class="fcalCityLogo">
-            <div>
-                <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
-            </div>
-        </div>
+      <div class="fcalCityLogo">
+         <div>
+            <img src="../assets/calCity.png" alt="CALOOCAN CITY LOGO">
+         </div>
+      </div>
 
-        <div class="fCalHighLogo">
-            <div>
-                <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
-            </div>
-        </div>
+      <div class="fCalHighLogo">
+         <div>
+            <img src="../assets/calHigh.png" alt="CALOOCAN HIGH SCHOOL">
+         </div>
+      </div>
 
-        <div class="fFourPs">
-            <div>
-                <img src="../assets/fourPs.png" alt="4P'S LOGO">
-            </div>
-        </div>
+      <div class="fFourPs">
+         <div>
+            <img src="../assets/fourPs.png" alt="4P'S LOGO">
+         </div>
+      </div>
 
    </footer>
 

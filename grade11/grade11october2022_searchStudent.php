@@ -102,7 +102,7 @@ $classDays = array();
 
          <div>
             <h2 class="dashboard">
-               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">dashboard</a>
+               <a href="../adminDashboard/admin_dashboard-gradeLevel.php">portal</a>
             </h2>
          </div>
 

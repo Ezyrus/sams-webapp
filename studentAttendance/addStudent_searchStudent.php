@@ -62,7 +62,8 @@ $messageUpdate = $_SESSION['messageUpdate'];
     <section class="nav">
 
         <div class="back-container">
-            <h1><a href="../studentProfile/studentProfile.php">student profile</a></h1>
+            <h1 onclick="history.go(-1)">
+                < Back</h1>
         </div>
 
         <div class="title">

@@ -15,12 +15,13 @@
          // while ($adminTableRows = mysqli_fetch_assoc($initiateSelectSql)) {
 
          //    if (password_verify($adminPassword, $adminTableRows['password'])) {
+         //       echo "<script>alert('Login Successfully!');</script>";
             session_start();
             $_SESSION['username'] = $adminTableRows['username'];
             header('Location:/Sams/adminDashboard/admin_dashboard-gradeLevel.php');
-         //    } else {
-         //       echo "<h1>Invalid Password</h1>";
-         //    }
+            // } else {
+            //    echo "<script>alert('LogIn Failed!');</script>";
+            // }
          // }   
 
       } else {
@@ -28,15 +29,6 @@
       }
    }
 ?>
-
-<!--TODO: 
-         Changes System Logs
-			Admin Logged in Logs
-			Overall UI of Monitoring Page
-      
-      NOTES: 
-         Student Profile > Update Student
-				: Can change every info except LRN-->
 
 <!DOCTYPE html>
    <html lang="en">
