@@ -96,7 +96,7 @@ if ($adminLogged == "") {
                      < </a>
                </h5>
                <h6 id="recentYear">Year 202<span>2</span></h6>
-               <h5><a href="admin_dashboard-grade12year2022.php"> > </a></h5>
+               <h5><a href="admin_dashboard-grade12year2023.php"> > </a></h5>
             </div>
 
             <div class="month">
@@ -216,7 +216,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -253,7 +253,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -290,7 +290,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Absent) . ' " ' ?>],
                   borderWidth: 0

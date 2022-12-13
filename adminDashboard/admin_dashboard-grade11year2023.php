@@ -216,7 +216,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $jan2023Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $jan2023Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -253,7 +253,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $feb2023Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $feb2023Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -290,7 +290,7 @@ if ($adminLogged == "") {
                   data: [<?php echo ' " ' . implode(' ", "  ', $march2023Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $march2023Absent) . ' " ' ?>],
                   borderWidth: 0

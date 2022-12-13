@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 08:29 AM
+-- Generation Time: Dec 13, 2022 at 06:06 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,20 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(10) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `time_created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'cyrusAdmin', 'p@ssword12345'),
-(3, 'paoloAdmin', 'p@ssword12345'),
-(4, 'virayAdmin', 'p@ssword12345'),
-(12, 'araAdmin', 'p@ssword12345'),
-(13, 'monicaAdmin', 'p@ssword12345'),
-(14, 'admin', 'admin');
+INSERT INTO `admin` (`id`, `username`, `password`, `time_created`) VALUES
+(15, 'admin', '$2y$10$PNFiEWCsKqBfOHQaYk/tgu5nECt4qGF9wlH70GMSQv8', '2022-12-12 03:57:39'),
+(18, 'admin2', 'admin', '2022-12-12 04:47:20');
 
 -- --------------------------------------------------------
 
@@ -93,6 +90,17 @@ CREATE TABLE `grade11_december2022` (
   `attendance_rate` float NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `grade11_december2022`
+--
+
+INSERT INTO `grade11_december2022` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
+(6, '136635789546', 'Villaluna, Ronalaine Nifras ', 'ABM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:21:29'),
+(7, '136632399676', 'Lauigan, Cris Joshua Arboleda', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:21:29'),
+(8, '136635789677', 'Tong, Elija Joshua Baniqued', 'STEM 12-A', 'absent', 'absent', 'absent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 0, 3, 0, '2022-12-12 16:21:31'),
+(9, '136652345678', 'Cabral, Arman Aquino', 'ABM 11-A', 'present', 'absent', 'present', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 2, 1, 66.6667, '2022-12-12 16:21:31'),
+(10, '136656190043', 'Viray, John Edrich Cortez', 'STEM 11-A', 'present', 'present', 'absent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 2, 1, 66.6667, '2022-12-12 16:21:32');
 
 -- --------------------------------------------------------
 
@@ -241,6 +249,17 @@ CREATE TABLE `grade11_march2023` (
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `grade11_march2023`
+--
+
+INSERT INTO `grade11_march2023` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
+(2, '136612345678', 'Cantero, Cyrus Cruza', 'STEM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:44:59'),
+(3, '136618070392', 'Tampico, Paolo Rafael Salazar', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 06:32:54'),
+(4, '136622345678', 'Paredes, Monica Embate', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 06:32:55'),
+(5, '136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 06:32:55'),
+(6, '136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 06:32:56');
+
 -- --------------------------------------------------------
 
 --
@@ -344,24 +363,23 @@ CREATE TABLE `grade11_october2022` (
 --
 
 INSERT INTO `grade11_october2022` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
-(27, '136656190043', 'Viray, John Edrich Cortes', 'STEM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-05 08:16:33'),
-(31, '136612345678', 'Cantero, Cyrus Cruza', 'STEM 11-A', 'present', 'present', 'absent', 'present', 'present', 'present', 'present', 'present', 'absent', 'present', 'absent', 'present', 'present', 'present', 'absent', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 31, 27, 4, 87.0968, '2022-12-06 02:33:13'),
-(32, '136618070392', 'Tampico, Paolo Rafael Salazar', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:14'),
-(33, '136622345678', 'Paredes, Monica Embate', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:15'),
-(34, '136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:15'),
-(35, '136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:15'),
-(36, '136632345677', 'Belardo, Arabella Bulawan', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:16'),
+(34, '136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', 'absent', 'absent', 'absent', 'present', 'present', 'present', 'present', 'present', 'absent', 'present', 'absent', 'present', 'present', 'present', 'absent', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 'present', 31, 25, 6, 80.6452, '2022-12-06 02:33:15'),
+(35, '136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', 'absent', 'absent', 'absent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 0, 3, 0, '2022-12-06 02:33:15'),
 (37, '136632345691', 'Carbungco, Darren Santos', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:16'),
 (38, '136632345758', 'Gonzalo, Kervin Clark Pelayo', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:17'),
-(39, '136632389677', 'Llenes, Harley Dave Venida', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:18'),
-(40, '136632399676', 'Lauigan, Cris Joshua Arboleda', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:19'),
+(39, '136632389677', 'Llenes, Harley Dave Venida', 'STEM 12-A', 'absent', 'present', 'present', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 2, 1, 66.6667, '2022-12-06 02:33:18'),
+(40, '136632399676', 'Lauigan, Cris Joshua Arboleda', 'STEM 12-A', 'present', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 1, 0, 100, '2022-12-06 02:33:19'),
 (41, '136635789546', 'Villaluna, Ronalaine Nifras ', 'ABM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:20'),
 (42, '136635789677', 'Tong, Elija Joshua Baniqued', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:20'),
 (43, '136699989677', 'Martinez, Laica Mae Tardio', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:22'),
 (44, '136652345678', 'Cabral, Arman Aquino', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:23'),
 (45, '136699989688', 'Taneza, James Reginald Gabriel', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:25'),
 (46, '136699912377', 'Pascual, Patricia Escota', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:28'),
-(47, '136688889677', 'Saturnino, Francis Bartolome', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:30');
+(47, '136688889677', 'Saturnino, Francis Bartolome', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-06 02:33:30'),
+(52, '136612345678', 'Cantero, Cyrus Cruza', 'STEM 11-A', 'present', 'absent', 'present', 'present', 'present', 'present', 'absent', 'absent', 'present', 'present', 'present', 'absent', 'present', 'present', 'absent', 'absent', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 16, 10, 6, 62.5, '2022-12-11 08:05:26'),
+(53, '136618070392', 'Tampico, Paolo Rafael Salazar', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-11 08:05:26'),
+(54, '136622345678', 'Paredes, Monica Embate', 'ICT 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-11 08:05:27'),
+(55, '136632345677', 'Belardo, Arabella Bulawan', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-11 08:05:32');
 
 -- --------------------------------------------------------
 
@@ -559,6 +577,19 @@ CREATE TABLE `grade12_march2023` (
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `grade12_march2023`
+--
+
+INSERT INTO `grade12_march2023` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
+(1, '136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:17'),
+(2, '136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:18'),
+(3, '136632345691', 'Carbungco, Darren Santos', 'ABM 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:19'),
+(4, '136632345677', 'Belardo, Arabella Bulawan', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:26'),
+(5, '136632345714', 'De Jesus, Mikaella Angela Cacho', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:27'),
+(6, '136632345758', 'Gonzalo, Kervin Clark Pelayo', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:27'),
+(7, '136699989688', 'Taneza, James Reginald Gabriel', 'HUMMS 11-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 16:26:28');
+
 -- --------------------------------------------------------
 
 --
@@ -607,6 +638,16 @@ CREATE TABLE `grade12_november2022` (
   `attendance_rate` float NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `grade12_november2022`
+--
+
+INSERT INTO `grade12_november2022` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
+(1, '136699989688', 'Taneza, James Reginald Gabriel', 'HUMMS 11-A', '', '', 'present', 'present', 'present', 'present', 'present', '', 'present', 'present', 'absent', '', 'present', '', 'present', '', 'absent', 'present', 'present', 'noclass', 'present', 'present', '', '', '', '', '', '', '', '', '', 15, 13, 2, 86.6667, '2022-12-12 16:22:07'),
+(2, '136699989677', 'Martinez, Laica Mae Tardio', 'ICT 11-A', '', 'present', '', 'present', '', '', 'present', 'present', '', '', 'present', 'present', '', 'present', '', 'absent', 'absent', 'absent', 'present', '', '', 'present', '', '', '', '', '', '', '', '', '', 12, 9, 3, 75, '2022-12-12 16:22:08'),
+(3, '136699912377', 'Pascual, Patricia Escota', 'ICT 11-A', 'present', 'present', 'present', 'present', 'present', 'absent', 'present', 'absent', 'present', 'absent', 'present', '', 'present', 'present', 'present', 'present', '', 'noclass', '', 'present', 'present', '', '', '', '', '', '', '', '', '', '', 17, 14, 3, 82.3529, '2022-12-12 16:22:10'),
+(4, '136652345678', 'Cabral, Arman Aquino', 'ABM 11-A', '', 'present', '', 'present', '', 'present', '', 'present', 'present', '', 'present', '', 'present', '', '', 'present', '', 'present', '', '', '', '', '', '', '', '', '', '', '', '', '', 9, 9, 0, 100, '2022-12-12 16:22:11');
 
 -- --------------------------------------------------------
 
@@ -657,6 +698,18 @@ CREATE TABLE `grade12_october2022` (
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `grade12_october2022`
+--
+
+INSERT INTO `grade12_october2022` (`month_id`, `lrn`, `student_name`, `section`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`, `17`, `18`, `19`, `20`, `21`, `22`, `23`, `24`, `25`, `26`, `27`, `28`, `29`, `30`, `31`, `school_days`, `present_total`, `absent_total`, `attendance_rate`, `created`) VALUES
+(9, '136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:54:52'),
+(11, '136635789546', 'Villaluna, Ronalaine Nifras ', 'ABM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:55:36'),
+(12, '136678945677', 'Julia, Judell Sano', 'ABM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:55:38'),
+(13, '136632389677', 'Llenes, Harley Dave Venida', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:55:41'),
+(14, '136632399676', 'Lauigan, Cris Joshua Arboleda', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:55:42'),
+(15, '136635789677', 'Tong, Elija Joshua Baniqued', 'STEM 12-A', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, '2022-12-12 05:55:42');
+
 -- --------------------------------------------------------
 
 --
@@ -679,12 +732,12 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`, `timestamp`) VALUES
-('136612345678', 'Cantero, Cyrus Cruza', 'STEM 11-A', 20, '#888 Libis Baesa, Barangay 160, Caloocan City', 'ccantero27@yahoo.com', '09517563059', '2022-12-06 01:23:52'),
-('136618070392', 'Tampico, Paolo Rafael Salazar', 'ICT 11-A', 20, '791B P. Galauran St. 8th Ave. Caloocan City', 'paolorafaeltampico@gmail.com', '09237981256', '2022-12-06 01:23:50'),
-('136622345678', 'Paredes, Monica Embate', 'ICT 11-A', 21, 'Caloocan City\r\n', 'monica@yahoo.com', '09456723654', '2022-12-06 01:27:47'),
+('136612345678', 'Cantero, Cyrus Cruza', 'STEM 11-A', 20, '#888 Libis Baesa, Barangay 160, Caloocan City', 'ccantero27@yahoo.com', '9517563059', '2022-12-11 06:58:04'),
+('136618070392', 'Tampico, Paolo Rafael Salazar', 'ICT 11-A', 21, '#791B P. Galauran St. 8th Ave., Caloocan City', 'paolo@gmail.com', '9237981256', '2022-12-11 06:58:04'),
+('136622345678', 'Paredes, Monica Embate', 'ICT 11-A', 21, 'Caloocan City', 'paredes@gmail.com', '9456723654', '2022-12-11 06:58:04'),
 ('136632345570', 'Hermogino, Ranilo Rarugal', 'STEM 12-A', 21, 'caloocan city\r\n', 'hermogino@gmail.com', '09562317945', '2022-12-06 01:52:23'),
-('136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', 20, 'caloocan city\r\n\r\n', 'marco@gmail.com', '095648971236', '2022-12-06 01:41:31'),
-('136632345677', 'Belardo, Arabella Bulawan', 'HUMMS 11-A', 20, 'caloocan city', 'belardo@gmail.com', '09256431897', '2022-12-06 01:29:28'),
+('136632345649', 'De Guzman, Marco Amatosa', 'ABM 11-A', 20, 'caloocan city', 'marco@gmail.com', '0956471236', '2022-12-06 01:41:31'),
+('136632345677', 'Belardo, Arabella Bulawan', 'HUMMS 11-A', 20, ' Caloocan City', 'belardo@gmail.com', '9256413897', '2022-12-11 06:58:04'),
 ('136632345691', 'Carbungco, Darren Santos', 'ABM 11-A', 21, 'caloocan city', 'carbungco@gmail.com', '09564812397', '2022-12-06 01:40:14'),
 ('136632345714', 'De Jesus, Mikaella Angela Cacho', 'HUMMS 11-A', 21, 'caloocan city', 'dejesus@gmail.com', '098974561235', '2022-12-06 01:47:26'),
 ('136632345758', 'Gonzalo, Kervin Clark Pelayo', 'HUMMS 11-A', 21, 'caloocan city', 'gonzalo@gmail.com', '09562314897', '2022-12-06 01:49:48'),
@@ -693,7 +746,7 @@ INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `co
 ('136635789546', 'Villaluna, Ronalaine Nifras ', 'ABM 12-A', 20, 'caloocan city', 'villaluna@yahoo.com', '09561379852', '2022-12-06 02:32:06'),
 ('136635789677', 'Tong, Elija Joshua Baniqued', 'STEM 12-A', 20, 'caloocan city', 'elija@gmail.com', '09569321789', '2022-12-06 02:30:10'),
 ('136652345678', 'Cabral, Arman Aquino', 'ABM 11-A', 20, 'caloocan city', 'cabral@gmail.com', '09123951753', '2022-12-06 01:33:09'),
-('136656190043', 'Viray, John Edrich Cortes', 'STEM 12-A', 21, '#75 Dau Street,6thAvenue,Caloocan City\r\n', 'virayjohnedrich@gmail.com', '09760500860', '2022-12-03 03:20:29'),
+('136656190043', 'Viray, John Edrich Cortez', 'STEM 11-A', 21, '#75 Dau St. 6th Ave., Caloocan City', 'viray@yahoo.com', '9760500860', '2022-12-11 06:58:04'),
 ('136678945677', 'Julia, Judell Sano', 'ABM 12-A', 21, 'caloocan city', 'julia@yahoo.com', '09451237895', '2022-12-06 01:56:30'),
 ('136688889677', 'Saturnino, Francis Bartolome', 'ICT 11-A', 20, 'caloocan city', 'francis@gmail.com', '09789632598', '2022-12-06 02:20:37'),
 ('136699912377', 'Pascual, Patricia Escota', 'ICT 11-A', 20, 'caloocan city', 'pascual@gmail.com', '09963685294', '2022-12-06 02:18:41'),
@@ -722,9 +775,8 @@ CREATE TABLE `students_archive` (
 --
 
 INSERT INTO `students_archive` (`time_deleted`, `lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES
-('2022-12-06 04:42:07', '123456789123', '123', '123', 0, '213', '123', ''),
-('2022-12-06 01:23:58', '20200126-M', 'Arnel Jay Bajalan', 'HUMMS 11-b', 20, 'Caloocan City', 'arnel@yahoo.com', '2147483647'),
-('2022-12-06 01:24:00', '20200226-M', 'Marc Isaac Ablay', 'STEM 11-B', 21, 'Caloocan City', 'marcisaacablay@gmail.com', '2147483647'),
+('2022-12-11 00:37:38', '20200126-M', 'Arnel Jay Bajalan', 'HUMMS 11-b', 20, 'Caloocan City', 'arnel@yahoo.com', '2147483647'),
+('2022-12-11 00:37:40', '20200226-M', 'Marc Isaac Ablay', 'STEM 11-B', 21, 'Caloocan City', 'marcisaacablay@gmail.com', '2147483647'),
 ('2022-12-06 01:24:02', '20200232-M', 'Rowee Capinpin', 'ICT 11-A', 20, 'Caloocan City\r\n', 'rowee@gmail.com', '912345');
 
 --
@@ -842,13 +894,13 @@ ALTER TABLE `students_archive`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `grade11_december2022`
 --
 ALTER TABLE `grade11_december2022`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `grade11_february2023`
@@ -866,7 +918,7 @@ ALTER TABLE `grade11_january2023`
 -- AUTO_INCREMENT for table `grade11_march2023`
 --
 ALTER TABLE `grade11_march2023`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `grade11_november2022`
@@ -878,7 +930,7 @@ ALTER TABLE `grade11_november2022`
 -- AUTO_INCREMENT for table `grade11_october2022`
 --
 ALTER TABLE `grade11_october2022`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `grade12_december2022`
@@ -902,19 +954,19 @@ ALTER TABLE `grade12_january2023`
 -- AUTO_INCREMENT for table `grade12_march2023`
 --
 ALTER TABLE `grade12_march2023`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `grade12_november2022`
 --
 ALTER TABLE `grade12_november2022`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `grade12_october2022`
 --
 ALTER TABLE `grade12_october2022`
-  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `month_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables

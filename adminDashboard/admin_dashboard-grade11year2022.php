@@ -210,7 +210,7 @@ $_SESSION['monthYear'] = "";
                   data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $oct2022Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -247,7 +247,7 @@ $_SESSION['monthYear'] = "";
                   data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $nov2022Absent) . ' " ' ?>],
                   borderWidth: 0
@@ -284,7 +284,7 @@ $_SESSION['monthYear'] = "";
                   data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Present) . ' " ' ?>],
                   borderWidth: 0,
                }, {
-                  label: 'Total Present',
+                  label: 'Total Absent',
                   backgroundColor: ['red'],
                   data: [<?php echo ' " ' . implode(' ", "  ', $dec2022Absent) . ' " ' ?>],
                   borderWidth: 0
