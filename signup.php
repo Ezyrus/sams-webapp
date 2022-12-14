@@ -21,11 +21,13 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username', '$password')";
+                $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+                $insertAdminSql = "INSERT INTO admin (username,password) VALUES ('$username', '$password_hashed')";
 
                 $initiateSelectSql = mysqli_query(databaseConnection(), $insertAdminSql);
 
-                echo '<script>alert("New Administrator has been successfully Registered")</script>';
+                echo '<script>alert("New Administrator has been successfully registered")</script>';
             }
         } else {
             echo '<script>alert("All fields are required!")</script>';

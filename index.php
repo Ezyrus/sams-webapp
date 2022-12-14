@@ -5,27 +5,30 @@
       $adminUsername = $_POST['username'];
       $adminPassword = $_POST['password'];
 
-      $selectAdminSql = "SELECT * FROM admin WHERE username = '$adminUsername' AND password = '$adminPassword' ";
-      $initiateSelectSql = mysqli_query(databaseConnection(), $selectAdminSql);
+      $usernameRS = mysqli_real_escape_string(databaseConnection(), $adminUsername);
+      $passwordRS = mysqli_real_escape_string(databaseConnection(), $adminPassword);
+      
+      $selectAdminSql = "SELECT * FROM admin WHERE username = '$usernameRS' ";
+      $initiateSelectSql = mysqli_query(databaseConnection(), $selectAdminSql) or die;
       $adminTableNumRows = mysqli_num_rows($initiateSelectSql);
       $adminTableRows = mysqli_fetch_assoc($initiateSelectSql);
 
       if ($adminTableNumRows > 0) {
-
+         
          // while ($adminTableRows = mysqli_fetch_assoc($initiateSelectSql)) {
 
-         //    if (password_verify($adminPassword, $adminTableRows['password'])) {
-         //       echo "<script>alert('Login Successfully!');</script>";
+            if (password_verify($passwordRS, $adminTableRows['password'])) {
             session_start();
             $_SESSION['username'] = $adminTableRows['username'];
             header('Location:/Sams/adminDashboard/admin_dashboard-gradeLevel.php');
-            // } else {
-            //    echo "<script>alert('LogIn Failed!');</script>";
-            // }
-         // }   
+            } else {
+               echo "<script>alert('Invalid Password!');</script>";
+            }
+
+       //  }   
 
       } else {
-         echo '<script>alert("Invalid Username or Password!")</script>';
+         echo '<script>alert("Invalid username and password")</script>';
       }
    }
 ?>
@@ -71,7 +74,7 @@
 
          <section class="loginFormContainer">
 
-            <form action="" method="post">
+            <form method="post">
                <h3>Log-in here</h3>
 
                <label for="Username">Username</label>
@@ -82,7 +85,7 @@
 
                <button type="submit" class="button-LogIn" name="goLog">Log-In</button>
                
-               <!-- <h6>Not a member? <a href="signup.php">Sign-Up Now</a></h6> -->
+               <h6>Not a member? <a href="signup.php">Sign-Up Now</a></h6>
 
             </form>
          </section>
