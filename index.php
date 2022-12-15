@@ -85,7 +85,7 @@
 
                <button type="submit" class="button-LogIn" name="goLog">Log-In</button>
                
-               <h6>Not a member? <a href="signup.php">Sign-Up Now</a></h6>
+               <!-- <h6>Not a member? <a href="signup.php">Sign-Up Now</a></h6> -->
 
             </form>
          </section>
