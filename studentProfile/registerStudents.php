@@ -10,11 +10,11 @@ require_once "../databaseConnection.php";
 
 if (isset($_POST['registerStudent'])) {
    $studentLrn = htmlentities($_POST['lrn']);
-   $studentName = htmlentities($_POST['name']);
-   $studentSection = htmlentities($_POST['section']);
+   $studentName = ($_POST['name']);
+   $studentSection = ($_POST['section']);
    $studentAge = htmlentities($_POST['age']);
-   $studentAddress = htmlentities($_POST['address']);
-   $studentEmail = htmlentities($_POST['email']);
+   $studentAddress = ($_POST['address']);
+   $studentEmail = ($_POST['email']);
    $studentNumber = htmlentities($_POST['number']);
 
    $selectStudentSql = "SELECT * FROM students WHERE lrn = '$studentLrn'";
@@ -31,7 +31,12 @@ if (isset($_POST['registerStudent'])) {
          window.location.href ="registerStudents.php";
          </script>';
       } else {
-         $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$studentName', '$studentSection', '$studentAge', '$studentAddress', '$studentEmail', '$studentNumber')";
+         $newName = preg_replace('/[^A-Za-z., ]/', ' ', $studentName);
+         $newSection = preg_replace('/[^A-Za-z0-9-., ]/', ' ', $studentSection);
+         $newAddress = preg_replace('/[^A-Za-z0-9.,# ]/', ' ', $studentAddress);
+         $newEmail = preg_replace('/[^A-Za-z0-9.,@ ]/', ' ', $studentEmail);
+
+         $insertToDatabase = "INSERT INTO `students` (`lrn`, `name`, `section`, `age`, `address`, `email`, `contact_number`) VALUES ('$studentLrn', '$newName', '$newSection', '$studentAge', '$newAddress', '$newEmail', '$studentNumber')";
 
          $startInsertion = mysqli_query(databaseConnection(), $insertToDatabase);
 

@@ -1,0 +1,472 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* NAVIGATION BAR */
+section.nav {
+  font-family: "Tomorrow", sans-serif;
+  height: 5vh;
+  top: 10vh;
+  width: 100%;
+  position: fixed;
+  background-image: url("../assets/bg01.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section.nav div.back-container {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.nav div.back-container h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 7px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
+  cursor: pointer;
+  color: white;
+}
+
+section.nav div.back-container h1:hover {
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+section.nav div.back-container a {
+  text-decoration: none;
+  color: white;
+}
+
+section.nav div.title {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+section.nav div.title img {
+  height: 35px;
+}
+
+section.nav div.title h3 {
+  font-size: 30px;
+  letter-spacing: 10px;
+  text-shadow: -2px 2px 1px rgba(70, 167, 202, 1);
+}
+
+section.nav div.title h3:hover {
+  font-size: 31px;
+  transition: 0.2s;
+}
+
+section.nav div.title h3 a {
+  text-decoration: none;
+  color: white;
+}
+
+section.nav div.admin-container {
+  width: 30%;
+  display: flex;
+  height: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-transform: uppercase;
+}
+
+section.nav div.admin-container h6.adminLogged {
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: -2px 2px 1px darkgreen;
+  color: white;
+}
+
+section.nav div.admin-container h6.adminLogged span {
+  text-transform: none;
+  color: rgb(168, 255, 118);
+  letter-spacing: 2px;
+  font-style: italic;
+  text-shadow: -2px 2px 1px darkgreen;
+}
+
+section.nav div.admin-container h2.logout {
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  color: darkred;
+  text-shadow: -1px 1px 1px palevioletred;
+}
+
+section.nav div.admin-container h2.logout:hover {
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+section.nav div.admin-container h2.logout a {
+  color: darkred;
+  text-decoration: none;
+}
+/* NAVIGATION BAR */
+
+div.registerContainer {
+  font-family: "Tomorrow", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/bg01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+div.registerContainer form {
+  height: 100%;
+  width: 100%;
+}
+
+div.indivInput {
+  margin-top: 10vh;
+  height: 55%;
+  width: 70%;
+  font-family: "Tomorrow", sans-serif;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px rgba(22, 110, 174, 0.5);
+  border-radius: 15px;
+}
+
+div.indivInput:hover {
+  box-shadow: -3px 3px 10px rgba(22, 110, 174, 0.5);
+}
+
+div.indivInput form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.indivInput form .studentInfo {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+div.indivInput form .studentInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-items: flex-start;
+  height: 100%;
+  width: 45%;
+}
+
+div.indivInput form .studentInfo .mainInfo .additionalInfo {
+  height: max-content;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+div.indivInput form .studentInfo .mainInfo .additionalInfo div {
+  height: max-content;
+  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.indivInput form .studentInfo .otherInfo textarea {
+  width: 100%;
+  height: 35%;
+  padding: 3px;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  border: 0px solid black;
+  resize: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+div.indivInput form .studentInfo .otherInfo textarea:hover {
+  box-shadow: -1px 1px 10px rgba(22, 110, 174);
+}
+
+div.indivInput form .studentInfo div label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 2px rgba(22, 110, 174);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+div.indivInput form .studentInfo div input {
+  padding: 3px;
+  text-align: center;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  border: 0px solid black;
+}
+
+div.indivInput form .studentInfo div input:hover {
+  box-shadow: -1px 1px 10px rgba(22, 110, 174);
+}
+
+div.indivInput form .studentInfo div .error-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 70%;
+}
+
+div.indivInput form .studentInfo div .error-container h6.required {
+  color: red;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+div.indivInput form .studentInfo div .error-container span {
+  display: flex;
+  align-items: center;
+}
+
+div.indivInput form .studentInfo div .error-container span img {
+  height: 30px;
+}
+
+div.indivInput form button {
+  padding: 10px;
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 10px;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  font-weight: bolder;
+  border-style: none;
+  color: white;
+  background-color: rgba(22, 110, 174, 0.5);
+  width: 20%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+div.indivInput form button:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  color: white;
+  background-color: green;
+  transform: scale(1.2);
+}
+
+div.indivInput form button:active {
+  transform: scale(1.3);
+  transition: 0.2s;
+}
+
+div.indivInput form button img {
+  height: 20px;
+}
+
+div.batchInput {
+  margin-top: 10vh;
+  height: 40%;
+  width: 20%;
+  font-family: "Tomorrow", sans-serif;
+  background-color: rgba(171, 221, 183, 0.3);
+  box-shadow: -3px 3px 1px green;
+  border-radius: 15px;
+}
+
+div.batchInput:hover {
+  box-shadow: -3px 3px 10px green;
+}
+
+div.batchInput form {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+div.batchInput form label {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 5px;
+  text-shadow: -1px 1px 2px green;
+  width: 80%;
+}
+
+div.batchInput form input {
+  padding: 3px;
+  text-align: center;
+  font-family: "Tomorrow", sans-serif;
+  font-size: 18px;
+  width: 80%;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+div.batchInput form input:hover {
+  box-shadow: -1px 1px 10px green;
+}
+
+div.batchInput form button {
+  padding: 10px;
+  font-family: "Tomorrow", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 10px;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+  font-weight: bolder;
+  border-style: none;
+  color: white;
+  background-color: rgba(22, 110, 174, 0.5);
+  width: 50%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+div.batchInput form button:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  color: white;
+  background-color: green;
+  transform: scale(1.2);
+}
+
+
+div.batchInput form button:active {
+  transform: scale(1.3);
+  transition: 0.2s;
+}
+
+div.batchInput form button img {
+  height: 20px;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1400px) {
+  section.nav div.back-container h1 {
+    font-size: 17px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.title img {
+    height: 30px;
+  }
+
+  section.nav div.title h3 {
+    font-size: 25px;
+    letter-spacing: 7px;
+  }
+
+  section.nav div.title h3:hover {
+    font-size: 22px;
+  }
+
+  section.nav div.admin-container {
+    gap: 30px;
+  }
+
+  section.nav div.admin-container h6.adminLogged {
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.admin-container h6.adminLogged span {
+    letter-spacing: 1px;
+  }
+
+  section.nav div.admin-container h2.logout {
+    font-size: 17px;
+    letter-spacing: 3px;
+  }
+
+  section.nav div.admin-container h2.logout:hover {
+    font-size: 17px;
+  }
+
+  div.registerContainer div.studentInfo {
+    gap: 0px;
+  }
+
+  div.registerContainer form {
+    width: 70%;
+  }
+
+  div.registerContainer div.studentInfo div.otherInfo textarea {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  div.registerContainer form div label {
+    font-size: 20px;
+  }
+
+  div.registerContainer form div input {
+    font-size: 15px;
+  }
+
+  div.registerContainer form button {
+    font-size: 15px;
+  }
+
+  div.registerContainer div.studentInfo h6.required {
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin-top: -15px;
+  }
+}
+/* RESPONSIVE DESIGN */

@@ -26,7 +26,13 @@ if (isset($_POST['registerStudent'])) {
    $studentEmail = $_POST['email'];
    $studentNumber = $_POST['number'];
 
-   $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$studentName',`section`='$studentSection',`age`='$studentAge',`address`='$studentAddress',`email`='$studentEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
+   $newName = preg_replace('/[^A-Za-z., ]/', ' ', $studentName);
+   $newSection = preg_replace('/[^A-Za-z0-9-., ]/', ' ', $studentSection);
+   $newAddress = preg_replace('/[^A-Za-z0-9.,# ]/', ' ', $studentAddress);
+   $newEmail = preg_replace('/[^A-Za-z0-9.,@ ]/', ' ', $studentEmail);
+
+
+   $updateStudentSql = "UPDATE `students` SET `lrn`='$studentLrn',`name`='$newName',`section`='$newSection',`age`='$studentAge',`address`='$newAddress',`email`='$newEmail',`contact_number`='$studentNumber' WHERE `lrn`='$studentLrn'";
 
    mysqli_query(databaseConnection(), $updateStudentSql);
 
@@ -174,7 +180,9 @@ if (isset($_POST['registerStudent'])) {
 
    </div>
 
+
    <script src="../js/registerUpdateValidation.js?v=<?php echo time(); ?>"></script>
+
    <footer>
 
       <div class="fdswdLogo">
